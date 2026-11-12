@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://dnirs5h7um8bf"]
+
+[ext_resource type="Script" uid="uid://dhi6racmubnap" path="res://ZeroAimZone-Godot/1_Scripts/UI_Controllers/LoaderPopupController.gd" id="1_ic7ep"]
+[ext_resource type="Texture2D" uid="uid://d233jxa8v0k1" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/InGamePops/loader.png" id="2_ic7ep"]
+
+[sub_resource type="Gradient" id="Gradient_sa4p6"]
+offsets = PackedFloat32Array(0, 0.44929245, 0.7110849)
+colors = PackedColorArray(0, 0, 0, 0.654902, 0, 0, 0, 0.654902, 0, 0, 0, 0.654902)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_40d87"]
+gradient = SubResource("Gradient_sa4p6")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d30id"]
+bg_color = Color(0, 0, 0, 0.34509805)
+
+[node name="LoaderPopup" type="Control" unique_id=1310680636 node_paths=PackedStringArray("bullet_loader")]
+z_index = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ic7ep")
+bullet_loader = NodePath("MainContainer/LoaderImage")
+
+[node name="Overlay" type="TextureButton" parent="." unique_id=1603438967]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = SubResource("GradientTexture2D_40d87")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="MainContainer" type="Panel" parent="." unique_id=1603438968]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_d30id")
+
+[node name="LoaderImage" type="TextureRect" parent="MainContainer" unique_id=1409845422]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("2_ic7ep")
+expand_mode = 1
+stretch_mode = 5

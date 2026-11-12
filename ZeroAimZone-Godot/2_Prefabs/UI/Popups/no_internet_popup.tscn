@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://d3kif5u1gw2hb"]
+
+[ext_resource type="Script" uid="uid://cvo6744m7pcfd" path="res://ZeroAimZone-Godot/1_Scripts/UI_Controllers/NoInternetPopupController.gd" id="1_lbi4d"]
+[ext_resource type="Texture2D" uid="uid://col0fdekl3n4y" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/InGamePops/no internet.png" id="2_5s7a4"]
+[ext_resource type="FontFile" uid="uid://10wk3avcupsd" path="res://ZeroAimZone-Godot/3_Assets/Fonts/BarlowCondensed-Bold.ttf" id="4_hbw66"]
+
+[sub_resource type="Gradient" id="Gradient_sa4p6"]
+offsets = PackedFloat32Array(0, 0.44929245, 0.7110849)
+colors = PackedColorArray(0, 0, 0, 0.654902, 0, 0, 0, 0.654902, 0, 0, 0, 0.654902)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_wxwat"]
+gradient = SubResource("Gradient_sa4p6")
+
+[sub_resource type="FontVariation" id="FontVariation_wxwat"]
+base_font = ExtResource("4_hbw66")
+
+[node name="NoInternetPopup" type="Control" unique_id=2091519957]
+z_index = 1000
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lbi4d")
+
+[node name="Overlay" type="TextureButton" parent="." unique_id=369421779]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = SubResource("GradientTexture2D_wxwat")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="MainContainer" type="VBoxContainer" parent="." unique_id=948530185]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -324.5
+offset_top = -178.5
+offset_right = 324.5
+offset_bottom = 178.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="WifiIcon" type="TextureRect" parent="MainContainer" unique_id=1021889729]
+custom_minimum_size = Vector2(194, 194)
+layout_mode = 2
+texture = ExtResource("2_5s7a4")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="MessageText" type="Label" parent="MainContainer" unique_id=616787900]
+custom_minimum_size = Vector2(295, 72)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.45882353, 0.40784314, 0.92941177, 0.39215687)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = SubResource("FontVariation_wxwat")
+theme_override_font_sizes/font_size = 68
+text = "Please connect internet to 
+continue playing."
+horizontal_alignment = 1
+vertical_alignment = 1

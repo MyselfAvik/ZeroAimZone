@@ -1,0 +1,150 @@
+[gd_scene format=3 uid="uid://bmy8or2itb238"]
+
+[ext_resource type="Script" uid="uid://4rmpgue7nq1p" path="res://ZeroAimZone-Godot/1_Scripts/UI_Controllers/PopupPanelController.gd" id="1_ceeth"]
+[ext_resource type="PackedScene" uid="uid://dh3w4ccr5l0u6" path="res://ZeroAimZone-Godot/2_Prefabs/UI/Popups/daily_reward_popup.tscn" id="2_04h2p"]
+[ext_resource type="PackedScene" uid="uid://ckrt0cv8gbumk" path="res://ZeroAimZone-Godot/2_Prefabs/UI/Popups/round_countdown_popup.tscn" id="3_uj3l4"]
+[ext_resource type="PackedScene" uid="uid://d3kif5u1gw2hb" path="res://ZeroAimZone-Godot/2_Prefabs/UI/Popups/no_internet_popup.tscn" id="4_busjt"]
+[ext_resource type="PackedScene" uid="uid://d3hw8t5mbpb1i" path="res://ZeroAimZone-Godot/2_Prefabs/UI/Popups/update_popup.tscn" id="5_aemjr"]
+[ext_resource type="PackedScene" uid="uid://bnajq2mjr87id" path="res://ZeroAimZone-Godot/2_Prefabs/UI/Popups/friend_request_popup.tscn" id="6_j1l1x"]
+[ext_resource type="PackedScene" uid="uid://dxw037xk565u7" path="res://ZeroAimZone-Godot/2_Prefabs/UI/Popups/chest_popup.tscn" id="7_chest"]
+[ext_resource type="PackedScene" uid="uid://ca5if83nrx16b" path="res://ZeroAimZone-Godot/2_Prefabs/UI/UICards/GunStatsCard.tscn" id="8_afgdb"]
+[ext_resource type="PackedScene" uid="uid://druohe71omdqi" path="res://ZeroAimZone-Godot/2_Prefabs/UI/Popups/BlackScreenPopup.tscn" id="9_7rpyc"]
+[ext_resource type="PackedScene" uid="uid://bwk750i37yves" path="res://ZeroAimZone-Godot/2_Prefabs/UI/Popups/RoomClosePopup.tscn" id="10_6voeg"]
+[ext_resource type="PackedScene" uid="uid://bdg1ygedmqon1" path="res://ZeroAimZone-Godot/2_Prefabs/UI/Popups/quit_popup.tscn" id="11_quit"]
+[ext_resource type="PackedScene" uid="uid://dsoftabcfcg5h" path="res://ZeroAimZone-Godot/2_Prefabs/UI/Popups/confirm_purchase_popup.tscn" id="12_purchase"]
+[ext_resource type="PackedScene" uid="uid://ba8b0bslxvjye" path="res://ZeroAimZone-Godot/2_Prefabs/UI/Popups/enoghcoins.tscn" id="13_insufficient"]
+[ext_resource type="PackedScene" uid="uid://d3kwbdbdqgfgh" path="res://ZeroAimZone-Godot/2_Prefabs/UI/Popups/credits_popup.tscn" id="14_credits"]
+[ext_resource type="PackedScene" uid="uid://dbts6f8xxogj8" path="res://ZeroAimZone-Godot/2_Prefabs/UI/Popups/tc_popup.tscn" id="15_tc"]
+[ext_resource type="PackedScene" uid="uid://c8lwbisrryqo8" path="res://ZeroAimZone-Godot/2_Prefabs/UI/Popups/game_quit_popup.tscn" id="16_2eihw"]
+[ext_resource type="PackedScene" uid="uid://xqn0a8iuxwnc" path="res://ZeroAimZone-Godot/2_Prefabs/UI/Popups/Adbreak.tscn" id="17_adbreak"]
+[ext_resource type="PackedScene" uid="uid://6oviv234xixb" path="res://ZeroAimZone-Godot/2_Prefabs/UI/Popups/deleteaccount_popup.tscn" id="18_delete_account"]
+[ext_resource type="PackedScene" uid="uid://qa675kvs85ug" path="res://ZeroAimZone-Godot/2_Prefabs/UI/Popups/confirm_skin_purchase_popup.tscn" id="19_skin_purchase"]
+[ext_resource type="PackedScene" uid="uid://cx4j5q6w7e8sa" path="res://ZeroAimZone-Godot/2_Prefabs/UI/Panels/SkinRewardPanel.tscn" id="20_skin_reward"]
+[ext_resource type="PackedScene" path="res://ZeroAimZone-Godot/2_Prefabs/UI/Popups/noadspopup.tscn" id="21_noads"]
+[ext_resource type="PackedScene" uid="uid://c3hhtp7urp5kl" path="res://ZeroAimZone-Godot/2_Prefabs/UI/Popups/daily_gun_card_reward_popup.tscn" id="22_daily_gun_card_reward"]
+[ext_resource type="PackedScene" path="res://ZeroAimZone-Godot/2_Prefabs/UI/Popups/auth_retry_popup.tscn" id="23_auth_retry"]
+
+[node name="PopupPanel" type="Control" unique_id=1951436528 node_paths=PackedStringArray("daily_reward_popup", "round_countdown_popup", "no_internet_popup", "freind_request_popup", "chest_popup", "gun_stat_popup", "black_screen_popup", "room_close_popup", "quit_popup", "confirm_purchase_popup", "insufficient_diamonds_popup", "credits_popup", "tc_popup", "game_quit_popup", "adbreak_popup", "delete_account_popup", "update_popup", "confirm_skin_purchase_popup", "skin_reward_panel", "daily_gun_card_reward_popup", "no_ads_popup", "auth_retry_popup")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_ceeth")
+daily_reward_popup = NodePath("DailyRewardPopup")
+round_countdown_popup = NodePath("RoundCountdownPopup")
+no_internet_popup = NodePath("NoInternetPopup")
+freind_request_popup = NodePath("FriendRequestPopup")
+chest_popup = NodePath("ChestPopup")
+gun_stat_popup = NodePath("GunStatsPopup")
+black_screen_popup = NodePath("BlackScreenPopup")
+room_close_popup = NodePath("RoomClosePopup")
+quit_popup = NodePath("QuitPopup")
+confirm_purchase_popup = NodePath("ConfirmPurchasePopup")
+insufficient_diamonds_popup = NodePath("InsufficientDiamondsPopup")
+credits_popup = NodePath("CreditsPopup")
+tc_popup = NodePath("TCPopup")
+game_quit_popup = NodePath("GameQuitPopup")
+adbreak_popup = NodePath("AdBreakPopup")
+delete_account_popup = NodePath("DeleteAccountPopup")
+update_popup = NodePath("Update_Popup")
+confirm_skin_purchase_popup = NodePath("ConfirmSkinPurchasePopup")
+skin_reward_panel = NodePath("SkinRewardPanel")
+daily_gun_card_reward_popup = NodePath("DailyGunCardRewardPopup")
+no_ads_popup = NodePath("NoAdsPopup")
+auth_retry_popup = NodePath("AuthRetryPopup")
+
+[node name="DailyRewardPopup" parent="." unique_id=1535655500 instance=ExtResource("2_04h2p")]
+visible = false
+layout_mode = 1
+mouse_filter = 2
+
+[node name="RoundCountdownPopup" parent="." unique_id=713760686 instance=ExtResource("3_uj3l4")]
+visible = false
+layout_mode = 1
+mouse_filter = 2
+
+[node name="NoInternetPopup" parent="." unique_id=2091519957 instance=ExtResource("4_busjt")]
+visible = false
+layout_mode = 1
+mouse_filter = 2
+
+[node name="Update_Popup" parent="." unique_id=1635810906 instance=ExtResource("5_aemjr")]
+visible = false
+layout_mode = 1
+mouse_filter = 2
+
+[node name="FriendRequestPopup" parent="." unique_id=473889628 instance=ExtResource("6_j1l1x")]
+visible = false
+layout_mode = 1
+
+[node name="ChestPopup" parent="." unique_id=414254801 instance=ExtResource("7_chest")]
+visible = false
+layout_mode = 1
+mouse_filter = 2
+
+[node name="GunStatsPopup" parent="." unique_id=1954991765 instance=ExtResource("8_afgdb")]
+visible = false
+layout_mode = 1
+
+[node name="BlackScreenPopup" parent="." unique_id=1653828190 instance=ExtResource("9_7rpyc")]
+visible = false
+layout_mode = 1
+
+[node name="RoomClosePopup" parent="." unique_id=1342872950 instance=ExtResource("10_6voeg")]
+visible = false
+layout_mode = 1
+
+[node name="QuitPopup" parent="." unique_id=457283489 instance=ExtResource("11_quit")]
+visible = false
+layout_mode = 1
+
+[node name="ConfirmPurchasePopup" parent="." unique_id=1279329849 instance=ExtResource("12_purchase")]
+visible = false
+layout_mode = 1
+
+[node name="InsufficientDiamondsPopup" parent="." unique_id=928760919 instance=ExtResource("13_insufficient")]
+visible = false
+layout_mode = 1
+
+[node name="CreditsPopup" parent="." unique_id=457819034 instance=ExtResource("14_credits")]
+visible = false
+layout_mode = 1
+
+[node name="TCPopup" parent="." unique_id=457819035 instance=ExtResource("15_tc")]
+visible = false
+layout_mode = 1
+
+[node name="GameQuitPopup" parent="." unique_id=1566024582 instance=ExtResource("16_2eihw")]
+visible = false
+layout_mode = 1
+
+[node name="AdBreakPopup" parent="." unique_id=1079713221 instance=ExtResource("17_adbreak")]
+visible = false
+layout_mode = 1
+
+[node name="DeleteAccountPopup" parent="." unique_id=498015923 instance=ExtResource("18_delete_account")]
+visible = false
+layout_mode = 1
+
+[node name="ConfirmSkinPurchasePopup" parent="." unique_id=909500831 instance=ExtResource("19_skin_purchase")]
+visible = false
+layout_mode = 1
+
+[node name="SkinRewardPanel" parent="." unique_id=708112145 instance=ExtResource("20_skin_reward")]
+visible = false
+layout_mode = 1
+
+[node name="DailyGunCardRewardPopup" parent="." unique_id=979980980 instance=ExtResource("22_daily_gun_card_reward")]
+visible = false
+layout_mode = 1
+
+[node name="NoAdsPopup" parent="." unique_id=678391319 instance=ExtResource("21_noads")]
+visible = false
+layout_mode = 1
+
+[node name="AuthRetryPopup" parent="." unique_id=987165324 instance=ExtResource("23_auth_retry")]
+visible = false
+layout_mode = 1

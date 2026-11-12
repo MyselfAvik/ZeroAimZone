@@ -1,0 +1,281 @@
+[gd_scene format=3 uid="uid://s2m1tw5x7n4p"]
+
+[ext_resource type="Texture2D" uid="uid://00qjah7ajees" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/CommonBg/CardBg.png" id="1_iyobg"]
+[ext_resource type="Script" uid="uid://xf28h8j3jajn" path="res://ZeroAimZone-Godot/1_Scripts/UI_Controllers/GunCardController.gd" id="2_ljlcj"]
+[ext_resource type="Texture2D" uid="uid://bd0h1coxlr1q1" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/CommonButton/GreenButtonNOShadow.png" id="4_l2jcg"]
+[ext_resource type="Texture2D" uid="uid://bdffw56eb5skr" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/GunPanel/info.png" id="4_rhpin"]
+[ext_resource type="FontFile" uid="uid://10wk3avcupsd" path="res://ZeroAimZone-Godot/3_Assets/Fonts/BarlowCondensed-Bold.ttf" id="6_nv1d0"]
+[ext_resource type="FontFile" uid="uid://dobi5yff3px2t" path="res://ZeroAimZone-Godot/3_Assets/Fonts/BarlowCondensed-SemiBold.ttf" id="6_w4glu"]
+[ext_resource type="Texture2D" uid="uid://d2x2cwle7gvpd" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/guns/street/glock17.png" id="7_1jho3"]
+[ext_resource type="Texture2D" uid="uid://cghihw7q8k6g5" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/Glows/gun_glow.png" id="8_1jho3"]
+[ext_resource type="AudioStream" uid="uid://gkh5cvg1wwyp" path="res://ZeroAimZone-Godot/3_Assets/AudioTracks/The Button.mp3" id="9_d8dpr"]
+[ext_resource type="Texture2D" uid="uid://di5x5c30jxh5a" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/CommonButton/BlueBtn.png" id="10_w4glu"]
+[ext_resource type="Texture2D" uid="uid://bphyrrxi76n63" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/CommonButton/lockedbtn.png" id="11_d8dpr"]
+[ext_resource type="Texture2D" uid="uid://doflltrsrcayd" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/GunPanel/lockicon.png" id="12_w2r7x"]
+[ext_resource type="PackedScene" uid="uid://b0axw3rlhqg7l" path="res://ZeroAimZone-Godot/2_Prefabs/UI/UICards/ProNode.tscn" id="13_pronode"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iva3p"]
+texture = ExtResource("1_iyobg")
+
+[sub_resource type="FontVariation" id="FontVariation_d8dpr"]
+base_font = ExtResource("6_w4glu")
+
+[sub_resource type="LabelSettings" id="LabelSettings_1jho3"]
+font = SubResource("FontVariation_d8dpr")
+font_size = 36
+
+[sub_resource type="LabelSettings" id="LabelSettings_nv1d0"]
+font = ExtResource("6_nv1d0")
+font_size = 28
+
+[sub_resource type="LabelSettings" id="LabelSettings_l2jcg"]
+font = ExtResource("6_nv1d0")
+font_size = 41
+
+[sub_resource type="LabelSettings" id="LabelSettings_d8dpr"]
+font = ExtResource("6_nv1d0")
+font_size = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_iyobg"]
+font = ExtResource("6_nv1d0")
+font_size = 50
+
+[node name="GunCard" type="Panel" unique_id=1780634996 node_paths=PackedStringArray("gun_name", "lock_icon", "progress_bar", "progress_bar_label", "gun_image", "equiped_text", "equiped_btn", "info_btn", "card")]
+custom_minimum_size = Vector2(300, 450)
+offset_right = 300.0
+offset_bottom = 450.0
+pivot_offset = Vector2(-1099, 141)
+theme_override_styles/panel = SubResource("StyleBoxTexture_iva3p")
+script = ExtResource("2_ljlcj")
+gun_name = NodePath("Label")
+lock_icon = NodePath("lock_icon")
+progress_bar = NodePath("Card/TextureProgressBar")
+progress_bar_label = NodePath("Card/TextureProgressBar/Label")
+gun_image = NodePath("TextureRect")
+equiped_text = NodePath("Equiped/Label")
+equiped_btn = NodePath("Equiped")
+info_btn = NodePath("TextureButton")
+card = NodePath("Card")
+equipped_texture = ExtResource("10_w4glu")
+equip_texture = ExtResource("4_l2jcg")
+
+[node name="Glow" type="TextureRect" parent="." unique_id=837879730]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -162.5
+offset_top = -241.5
+offset_right = 150.5
+offset_bottom = 110.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.7
+mouse_filter = 2
+texture = ExtResource("8_1jho3")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="." unique_id=429271472]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -150.5
+offset_top = 11.0
+offset_right = 137.0
+offset_bottom = 83.0
+grow_horizontal = 2
+text = "MP5"
+label_settings = SubResource("LabelSettings_1jho3")
+horizontal_alignment = 1
+autowrap_mode = 1
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=182729159]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -45.0
+offset_top = -17.0
+offset_right = 1.0
+offset_bottom = 29.0
+grow_horizontal = 0
+texture_normal = ExtResource("4_rhpin")
+texture_hover = ExtResource("4_rhpin")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1245013385]
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = -175.0
+offset_right = 125.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.17453292
+pivot_offset_ratio = Vector2(0.5, 0.5)
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.7
+texture = ExtResource("7_1jho3")
+expand_mode = 1
+
+[node name="Card" type="Control" parent="." unique_id=872910719]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -150.0
+offset_top = -150.0
+offset_right = 150.0
+offset_bottom = -118.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="Card" unique_id=1554641279]
+layout_mode = 1
+offset_left = -8.0
+offset_top = -9.0
+offset_right = 118.0
+offset_bottom = 25.0
+size_flags_vertical = 1
+text = "Cards"
+label_settings = SubResource("LabelSettings_nv1d0")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureProgressBar" parent="Card" unique_id=509797141 instance=ExtResource("13_pronode")]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -205.0
+offset_top = -18.0
+offset_right = -53.0
+offset_bottom = 22.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(0.4800055, 0.64000124)
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="Card/TextureProgressBar" unique_id=135464997]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.2870001
+anchor_top = 0.5
+anchor_right = 1.2870001
+anchor_bottom = 0.5
+offset_left = -58.12558
+offset_top = -24.68748
+offset_right = 62.706375
+offset_bottom = 25.31252
+grow_horizontal = 2
+grow_vertical = 2
+text = "1/4"
+label_settings = SubResource("LabelSettings_l2jcg")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Equiped" type="TextureButton" parent="." unique_id=1748949316]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -124.0
+offset_top = 117.0
+offset_right = 112.0
+offset_bottom = 193.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+texture_normal = ExtResource("10_w4glu")
+texture_hover = ExtResource("10_w4glu")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Equiped" unique_id=943136562]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 5.0
+offset_right = -5.0
+offset_bottom = -8.000076
+grow_horizontal = 2
+grow_vertical = 2
+text = "Equipped"
+label_settings = SubResource("LabelSettings_d8dpr")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="lock_icon" type="TextureRect" parent="." unique_id=321670086]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -124.0
+offset_top = -108.0
+offset_right = 112.0
+offset_bottom = -32.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("11_d8dpr")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="lock_icon" unique_id=1175416911]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.5
+offset_top = -30.0
+offset_right = 40.5
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "LOCKED"
+label_settings = SubResource("LabelSettings_iyobg")
+uppercase = true
+
+[node name="TextureRect" type="TextureRect" parent="lock_icon" unique_id=1713502727]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -81.0
+offset_top = -26.5
+offset_right = -27.0
+offset_bottom = 26.5
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("12_w2r7x")
+expand_mode = 1
+stretch_mode = 5

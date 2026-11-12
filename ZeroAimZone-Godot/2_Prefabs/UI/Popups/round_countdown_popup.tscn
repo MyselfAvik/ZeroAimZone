@@ -1,0 +1,179 @@
+[gd_scene format=3 uid="uid://ckrt0cv8gbumk"]
+
+[ext_resource type="Script" uid="uid://bavywykpo77w6" path="res://ZeroAimZone-Godot/1_Scripts/UI_Controllers/RoundCountdownController.gd" id="1_r5lfg"]
+[ext_resource type="Script" uid="uid://dwbw6kfjgwi8b" path="res://ZeroAimZone-Godot/1_Scripts/Utils/SafeArea.gd" id="2_eqrm4"]
+[ext_resource type="Texture2D" uid="uid://0vmct52wljwd" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/InGamePanel/game_bg.png" id="2_qbu6g"]
+[ext_resource type="FontFile" uid="uid://10wk3avcupsd" path="res://ZeroAimZone-Godot/3_Assets/Fonts/BarlowCondensed-Bold.ttf" id="3_0cmcx"]
+[ext_resource type="Script" uid="uid://bseoee573hg03" path="res://ZeroAimZone-Godot/3_Assets/Shaders/round.gd" id="3_jwa86"]
+[ext_resource type="Texture2D" uid="uid://dpvx1ve2s5fq7" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/InGamePanel/game_area.png" id="3_pf2fp"]
+[ext_resource type="FontFile" uid="uid://bwi6e3xaodcgb" path="res://ZeroAimZone-Godot/3_Assets/Fonts/Teko-Bold.ttf" id="4_f04lu"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_eqrm4"]
+font = ExtResource("4_f04lu")
+font_size = 121
+font_color = Color(0.972549, 0.88235295, 0.40392157, 1)
+shadow_color = Color(0.8392157, 0.49019608, 0.19215687, 1)
+shadow_offset = Vector2(0, 2)
+
+[sub_resource type="LabelSettings" id="LabelSettings_pf2fp"]
+font = ExtResource("3_0cmcx")
+font_size = 100
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(0, 2)
+
+[sub_resource type="LabelSettings" id="LabelSettings_mwfqm"]
+font = ExtResource("4_f04lu")
+font_size = 121
+shadow_color = Color(0.105882354, 0.105882354, 0.105882354, 1)
+shadow_offset = Vector2(0, 2)
+
+[sub_resource type="LabelSettings" id="LabelSettings_f04lu"]
+font = ExtResource("3_0cmcx")
+font_size = 58
+
+[node name="RoundCountdownPopup" type="Control" unique_id=962988329 node_paths=PackedStringArray("countdown", "result_label", "round_name_label", "bg_overlay", "gameplay_bg")]
+z_index = -10
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_r5lfg")
+countdown = NodePath("bg/bg_overlay/gameplay_bg/MainContainer/CountdownLabel")
+result_label = NodePath("bg/bg_overlay/gameplay_bg/MainContainer/RoundResultBanner/WinLooseLabel")
+round_name_label = NodePath("bg/bg_overlay/gameplay_bg/MainContainer/RoundName")
+bg_overlay = NodePath("bg/bg_overlay")
+gameplay_bg = NodePath("bg/bg_overlay/gameplay_bg")
+countdown_color = Array[Color]([Color(0.3529412, 0.8509804, 0.17254902, 1), Color(1, 0.8117647, 0.2901961, 1), Color(1, 0.2901961, 0.2901961, 1)])
+
+[node name="bg" type="TextureRect" parent="." unique_id=948551375]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+
+[node name="bg_overlay" type="TextureRect" parent="bg" unique_id=734867097]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_qbu6g")
+expand_mode = 1
+
+[node name="gameplay_bg" type="TextureRect" parent="bg/bg_overlay" unique_id=1611764642]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -451.0
+offset_top = -590.0
+offset_right = 451.0
+offset_bottom = 784.73804
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_pf2fp")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="MainContainer" type="Control" parent="bg/bg_overlay/gameplay_bg" unique_id=1715199548]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_eqrm4")
+
+[node name="RoundResultBanner" type="Control" parent="bg/bg_overlay/gameplay_bg/MainContainer" unique_id=1772075298]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -306.898
+offset_top = -100.00104
+offset_right = 306.898
+offset_bottom = 100.00104
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="WinLooseLabel" type="Label" parent="bg/bg_overlay/gameplay_bg/MainContainer/RoundResultBanner" unique_id=415931195]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 134
+text = "VICTORY"
+label_settings = SubResource("LabelSettings_eqrm4")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_jwa86")
+reveal_duration = 1.0
+
+[node name="CountdownLabel" type="Label" parent="bg/bg_overlay/gameplay_bg/MainContainer" unique_id=479249856]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -43.0
+offset_top = -7.3690186
+offset_right = 43.0
+offset_bottom = 112.635254
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 150
+text = "3"
+label_settings = SubResource("LabelSettings_pf2fp")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RoundName" type="Label" parent="bg/bg_overlay/gameplay_bg/MainContainer" unique_id=710382518]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -339.0
+offset_top = -157.36902
+offset_right = 339.0
+offset_bottom = 47.63098
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 150
+text = "ROUND 2"
+label_settings = SubResource("LabelSettings_mwfqm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="bg/bg_overlay/gameplay_bg/MainContainer/RoundName" unique_id=1349256407]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -106.5
+offset_top = -6.0
+offset_right = 106.5
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Starts IN"
+label_settings = SubResource("LabelSettings_f04lu")
+uppercase = true

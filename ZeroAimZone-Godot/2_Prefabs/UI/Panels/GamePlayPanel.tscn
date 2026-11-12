@@ -1,0 +1,709 @@
+[gd_scene format=3 uid="uid://bi8sflr1v61i4"]
+
+[ext_resource type="Script" uid="uid://dr1opbeijw1u4" path="res://ZeroAimZone-Godot/1_Scripts/UI_Controllers/GamePlayPanelController.gd" id="1_ujb5s"]
+[ext_resource type="Texture2D" uid="uid://bmofb7l2abd0x" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/InGamePanel/bullet_inactive.png" id="2_70hce"]
+[ext_resource type="Texture2D" uid="uid://ygti7rmv0igf" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/InGamePanel/bullet_active.png" id="3_486xr"]
+[ext_resource type="Texture2D" uid="uid://bd718gdq4j3g2" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/CommonButton/SmallGreenbutton.png" id="3_jdfpb"]
+[ext_resource type="Texture2D" uid="uid://dhfrppl4ldfe7" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/InGamePanel/vibrate_off.png" id="4_ra6b2"]
+[ext_resource type="Script" uid="uid://dwbw6kfjgwi8b" path="res://ZeroAimZone-Godot/1_Scripts/Utils/SafeArea.gd" id="5_4eiu5"]
+[ext_resource type="Texture2D" uid="uid://185cu3s7sgij" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/InGamePanel/vibrate_on.png" id="5_krgnl"]
+[ext_resource type="Texture2D" uid="uid://c4tnbsv0uugrc" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/InGamePanel/sfx_off.png" id="6_ynb7r"]
+[ext_resource type="Texture2D" uid="uid://dpqflep48013h" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/ShopPanel/Pile.png" id="7_486xr"]
+[ext_resource type="Texture2D" uid="uid://bv8lq438v3b6a" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/InGamePanel/sfx_on.png" id="7_esuxp"]
+[ext_resource type="Texture2D" uid="uid://cyny36emhegpj" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/BasePanel/SettingPanel.png" id="7_tw5mq"]
+[ext_resource type="Texture2D" uid="uid://dmn6pyrbqiqc0" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/CommonButton/ExitButton.png" id="8_0368u"]
+[ext_resource type="Texture2D" uid="uid://dopsn58osekuv" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/CommonBg/playerundertect.png" id="8_ujb5s"]
+[ext_resource type="Texture2D" uid="uid://bpiopxl43tnao" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/InGamePanel/music_off.png" id="8_v01n5"]
+[ext_resource type="FontFile" uid="uid://10wk3avcupsd" path="res://ZeroAimZone-Godot/3_Assets/Fonts/BarlowCondensed-Bold.ttf" id="9_4nyvw"]
+[ext_resource type="Texture2D" uid="uid://ddxryaru1e01u" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/CommonBg/playergreenhealth.png" id="9_0368u"]
+[ext_resource type="Texture2D" uid="uid://g73hf2ba41gl" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/InGamePanel/ingame_setting.png" id="9_486xr"]
+[ext_resource type="Texture2D" uid="uid://bk0l06di1dg6e" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/CommonButton/TransparentButton2.png" id="9_jdfpb"]
+[ext_resource type="Texture2D" uid="uid://yia3dlefp8pg" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/InGamePanel/music_on.png" id="9_ryhvt"]
+[ext_resource type="Texture2D" uid="uid://b0rfb6t08tj38" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/CommonBg/playerredhealth.png" id="11_q7y3e"]
+[ext_resource type="Texture2D" uid="uid://nv30qxw2hdpa" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/Profile/frame_default.png" id="14_drafs"]
+[ext_resource type="Texture2D" uid="uid://dw618xwjucpvw" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/InGamePanel/not played.png" id="15_72poy"]
+[ext_resource type="Texture2D" uid="uid://dremug6bcklcc" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/Profile/avatar1.png" id="15_ra6b2"]
+[ext_resource type="Texture2D" uid="uid://ddsg00h7a0wgn" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/InGamePanel/round lost.png" id="16_70hce"]
+[ext_resource type="Texture2D" uid="uid://copkgfk1vt561" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/Profile/frame_icon1.png" id="16_rdhm0"]
+[ext_resource type="Texture2D" uid="uid://co44k1e57upgg" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/InGamePanel/round won.png" id="17_486xr"]
+[ext_resource type="Texture2D" uid="uid://du3s1n1rksxy7" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/InGamePanel/exit.png" id="18_v01n5"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rdhm0"]
+load_path = "res://.godot/imported/round won.png-7f4fbc03dc0f7f84bbb450bf2f7eebd9.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_iktp8"]
+load_path = "res://.godot/imported/round lost.png-13b91827b643b3f38a7da1ce8aa29d62.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4eiu5"]
+load_path = "res://.godot/imported/not played.png-959f9380fd78bd65aa18e3ec01ece3ec.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ryhvt"]
+atlas = ExtResource("7_486xr")
+region = Rect2(5, 10, 151, 148)
+
+[sub_resource type="LabelSettings" id="LabelSettings_4nyvw"]
+font = ExtResource("9_4nyvw")
+font_size = 54
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q7y3e"]
+texture = ExtResource("7_tw5mq")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3oron"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_krgnl"]
+atlas = ExtResource("14_drafs")
+region = Rect2(16, 21.731323, 251, 301.66785)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jdfpb"]
+load_path = "res://.godot/imported/frame_icon1.png-3cd223566b92be6f583115ce40abc8e7.ctex"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tw5mq"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0r7lp"]
+atlas = ExtResource("14_drafs")
+region = Rect2(16, 21.731323, 251, 301.66785)
+
+[node name="GamePlayPanel" type="Control" unique_id=1389951526 node_paths=PackedStringArray("ingame_setting_panel", "player_health_bar", "enemy_health_bar", "player_round_container", "enemy_round_container", "player_bullet_container", "enemy_bullet_container", "vibrate_button", "sound_button", "music_button", "player_avatar", "enemy_avatar", "player_name_label", "enemy_name_label", "coin_bulk", "total_amount", "enemy_frame", "player_frame", "enemy_frame_icon", "player_frame_icon")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_ujb5s")
+ingame_setting_panel = NodePath("SafeArea/MarginContainer/HBoxContainer/Control/IngameSettingPanel")
+player_health_bar = NodePath("SafeArea/MarginContainer/HBoxContainer/Control/PlayerPanel/ProgressBar")
+enemy_health_bar = NodePath("SafeArea/MarginContainer/HBoxContainer/Control/OpponentPanel/ProgressBar")
+player_round_container = NodePath("SafeArea/MarginContainer/HBoxContainer/Control/PlayerPanel/RoundContainer")
+enemy_round_container = NodePath("SafeArea/MarginContainer/HBoxContainer/Control/OpponentPanel/RoundContainer")
+round_win_texture = SubResource("CompressedTexture2D_rdhm0")
+round_lose_texture = SubResource("CompressedTexture2D_iktp8")
+round_normal_texture = SubResource("CompressedTexture2D_4eiu5")
+bullet_empty_texture = ExtResource("2_70hce")
+bullet_filled_texture = ExtResource("3_486xr")
+player_bullet_container = NodePath("SafeArea/MarginContainer/HBoxContainer/Control/PlayerPanel/PlayerBulletConatiner")
+enemy_bullet_container = NodePath("SafeArea/MarginContainer/HBoxContainer/Control/OpponentPanel/EnemyBulletConatiner")
+vibrate_button = NodePath("SafeArea/MarginContainer/HBoxContainer/Control/IngameSettingPanel/HBoxContainer2/TextureButton")
+sound_button = NodePath("SafeArea/MarginContainer/HBoxContainer/Control/IngameSettingPanel/HBoxContainer/TextureButton")
+music_button = NodePath("SafeArea/MarginContainer/HBoxContainer/Control/IngameSettingPanel/HBoxContainer/TextureButton2")
+player_avatar = NodePath("SafeArea/MarginContainer/HBoxContainer/Control/PlayerPanel/CoverLayer/Avatar")
+enemy_avatar = NodePath("SafeArea/MarginContainer/HBoxContainer/Control/OpponentPanel/CoverLayer/Avatar")
+player_name_label = NodePath("SafeArea/MarginContainer/HBoxContainer/Control/PlayerPanel/PlayerNameLabel")
+enemy_name_label = NodePath("SafeArea/MarginContainer/HBoxContainer/Control/OpponentPanel/OpponentNameLabel")
+vibrate_icon = Array[Texture2D]([ExtResource("4_ra6b2"), ExtResource("5_krgnl")])
+sound_icon = Array[Texture2D]([ExtResource("6_ynb7r"), ExtResource("7_esuxp")])
+music_icon = Array[Texture2D]([ExtResource("8_v01n5"), ExtResource("9_ryhvt")])
+enabled_setting_button_texture = ExtResource("3_jdfpb")
+coin_bulk = NodePath("SafeArea/MarginContainer/HBoxContainer/Control/CoinBulk")
+total_amount = NodePath("SafeArea/MarginContainer/HBoxContainer/Control/TotalAmount")
+enemy_frame = NodePath("SafeArea/MarginContainer/HBoxContainer/Control/OpponentPanel/CoverLayer/Avatar/frame")
+player_frame = NodePath("SafeArea/MarginContainer/HBoxContainer/Control/PlayerPanel/CoverLayer/Avatar/frame")
+enemy_frame_icon = NodePath("SafeArea/MarginContainer/HBoxContainer/Control/OpponentPanel/CoverLayer/Avatar/enemy_frame_icon")
+player_frame_icon = NodePath("SafeArea/MarginContainer/HBoxContainer/Control/PlayerPanel/CoverLayer/Avatar/player_frame_icon")
+
+[node name="SafeArea" type="Control" parent="." unique_id=125854657]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("5_4eiu5")
+
+[node name="MarginContainer" type="MarginContainer" parent="SafeArea" unique_id=270925023]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 370.0
+grow_horizontal = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 85
+theme_override_constants/margin_top = 70
+theme_override_constants/margin_right = 85
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SafeArea/MarginContainer" unique_id=925443916]
+layout_mode = 2
+alignment = 1
+
+[node name="Control" type="Control" parent="SafeArea/MarginContainer/HBoxContainer" unique_id=1945229385]
+custom_minimum_size = Vector2(910, 0)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="CoinBulk" type="TextureRect" parent="SafeArea/MarginContainer/HBoxContainer/Control" unique_id=1581233732]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -55.0
+offset_top = -50.0
+offset_right = 55.0
+offset_bottom = 61.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_ryhvt")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TotalAmount" type="Label" parent="SafeArea/MarginContainer/HBoxContainer/Control" unique_id=1959193324]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -41.0
+offset_top = 50.0
+offset_right = 41.0
+offset_bottom = 115.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 48
+text = "400"
+label_settings = SubResource("LabelSettings_4nyvw")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="IngameSetting" type="TextureButton" parent="SafeArea/MarginContainer/HBoxContainer/Control" unique_id=1537412833]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -32.5
+offset_top = 3.0
+offset_right = 32.5
+offset_bottom = 93.0
+grow_horizontal = 2
+action_mode = 0
+texture_normal = ExtResource("9_486xr")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="IngameSettingPanel" type="Panel" parent="SafeArea/MarginContainer/HBoxContainer/Control" unique_id=1453662740]
+visible = false
+z_index = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -123.0
+offset_top = 65.0
+offset_right = 124.0
+offset_bottom = 271.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_q7y3e")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SafeArea/MarginContainer/HBoxContainer/Control/IngameSettingPanel" unique_id=1176755279]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -85.0
+offset_top = 15.0
+offset_right = 85.0
+offset_bottom = 85.0
+grow_horizontal = 2
+mouse_filter = 2
+theme_override_constants/separation = 30
+
+[node name="TextureButton" type="TextureButton" parent="SafeArea/MarginContainer/HBoxContainer/Control/IngameSettingPanel/HBoxContainer" unique_id=1967012003]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+texture_normal = ExtResource("9_jdfpb")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="SafeArea/MarginContainer/HBoxContainer/Control/IngameSettingPanel/HBoxContainer/TextureButton" unique_id=829693497]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -26.5
+offset_top = -26.5
+offset_right = 26.5
+offset_bottom = 26.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_ynb7r")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureButton2" type="TextureButton" parent="SafeArea/MarginContainer/HBoxContainer/Control/IngameSettingPanel/HBoxContainer" unique_id=1351472270]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+texture_normal = ExtResource("9_jdfpb")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="SafeArea/MarginContainer/HBoxContainer/Control/IngameSettingPanel/HBoxContainer/TextureButton2" unique_id=2038693965]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 25.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_v01n5")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="SafeArea/MarginContainer/HBoxContainer/Control/IngameSettingPanel" unique_id=1955249538]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -85.0
+offset_top = -85.0
+offset_right = 85.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+theme_override_constants/separation = 30
+
+[node name="TextureButton" type="TextureButton" parent="SafeArea/MarginContainer/HBoxContainer/Control/IngameSettingPanel/HBoxContainer2" unique_id=1174356150]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+texture_normal = ExtResource("9_jdfpb")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="SafeArea/MarginContainer/HBoxContainer/Control/IngameSettingPanel/HBoxContainer2/TextureButton" unique_id=595962063]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -26.5
+offset_top = -26.5
+offset_right = 26.5
+offset_bottom = 26.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_ra6b2")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Quitbutton" type="TextureButton" parent="SafeArea/MarginContainer/HBoxContainer/Control/IngameSettingPanel/HBoxContainer2" unique_id=1240450268]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+texture_normal = ExtResource("8_0368u")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="SafeArea/MarginContainer/HBoxContainer/Control/IngameSettingPanel/HBoxContainer2/Quitbutton" unique_id=86190595]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -26.5
+offset_top = -26.5
+offset_right = 26.5
+offset_bottom = 26.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("18_v01n5")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PlayerPanel" type="Panel" parent="SafeArea/MarginContainer/HBoxContainer/Control" unique_id=1381182481]
+layout_mode = 1
+offset_right = 350.0
+offset_bottom = 270.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_3oron")
+
+[node name="ProgressBar" type="TextureProgressBar" parent="SafeArea/MarginContainer/HBoxContainer/Control/PlayerPanel" unique_id=1849748717]
+layout_mode = 1
+offset_right = 396.0
+offset_bottom = 50.0
+value = 70.0
+nine_patch_stretch = true
+texture_under = ExtResource("8_ujb5s")
+texture_progress = ExtResource("9_0368u")
+
+[node name="CoverLayer" type="TextureRect" parent="SafeArea/MarginContainer/HBoxContainer/Control/PlayerPanel" unique_id=1495683754]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -75.0
+offset_right = 129.0
+offset_bottom = 54.0
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Avatar" type="TextureRect" parent="SafeArea/MarginContainer/HBoxContainer/Control/PlayerPanel/CoverLayer" unique_id=1427567259]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("15_ra6b2")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="frame" type="TextureRect" parent="SafeArea/MarginContainer/HBoxContainer/Control/PlayerPanel/CoverLayer/Avatar" unique_id=997940301]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -4.0
+offset_bottom = 22.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_krgnl")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="player_frame_icon" type="TextureRect" parent="SafeArea/MarginContainer/HBoxContainer/Control/PlayerPanel/CoverLayer/Avatar" unique_id=1428025483]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -24.5
+offset_top = -18.688004
+offset_right = 20.5
+offset_bottom = 16.311996
+grow_horizontal = 2
+grow_vertical = 0
+texture = SubResource("CompressedTexture2D_jdfpb")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="PlayerNameLabel" type="Label" parent="SafeArea/MarginContainer/HBoxContainer/Control/PlayerPanel" unique_id=308581631]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -70.0
+offset_right = 125.0
+offset_bottom = -12.0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("9_4nyvw")
+theme_override_font_sizes/font_size = 48
+text = "Hritik"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RoundContainer" type="HBoxContainer" parent="SafeArea/MarginContainer/HBoxContainer/Control/PlayerPanel" unique_id=640017584]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -10.0
+offset_right = 125.0
+offset_bottom = 30.0
+grow_vertical = 0
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="SafeArea/MarginContainer/HBoxContainer/Control/PlayerPanel/RoundContainer" unique_id=1513699193]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+texture = ExtResource("15_72poy")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect2" type="TextureRect" parent="SafeArea/MarginContainer/HBoxContainer/Control/PlayerPanel/RoundContainer" unique_id=1631688600]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+texture = ExtResource("16_70hce")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect3" type="TextureRect" parent="SafeArea/MarginContainer/HBoxContainer/Control/PlayerPanel/RoundContainer" unique_id=1639126138]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+texture = ExtResource("17_486xr")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PlayerBulletConatiner" type="VBoxContainer" parent="SafeArea/MarginContainer/HBoxContainer/Control/PlayerPanel" unique_id=1762953176]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 135.0
+offset_top = -65.0
+offset_right = 170.0
+offset_bottom = 64.0
+grow_vertical = 2
+theme_override_constants/separation = -8
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="SafeArea/MarginContainer/HBoxContainer/Control/PlayerPanel/PlayerBulletConatiner" unique_id=2041092008]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("2_70hce")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect2" type="TextureRect" parent="SafeArea/MarginContainer/HBoxContainer/Control/PlayerPanel/PlayerBulletConatiner" unique_id=719844028]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("2_70hce")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect3" type="TextureRect" parent="SafeArea/MarginContainer/HBoxContainer/Control/PlayerPanel/PlayerBulletConatiner" unique_id=276300742]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("2_70hce")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect4" type="TextureRect" parent="SafeArea/MarginContainer/HBoxContainer/Control/PlayerPanel/PlayerBulletConatiner" unique_id=978558733]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("2_70hce")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect5" type="TextureRect" parent="SafeArea/MarginContainer/HBoxContainer/Control/PlayerPanel/PlayerBulletConatiner" unique_id=802650493]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("3_486xr")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect6" type="TextureRect" parent="SafeArea/MarginContainer/HBoxContainer/Control/PlayerPanel/PlayerBulletConatiner" unique_id=1847522592]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("3_486xr")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="OpponentPanel" type="Panel" parent="SafeArea/MarginContainer/HBoxContainer/Control" unique_id=1681676565]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -350.0
+offset_bottom = 270.0
+grow_horizontal = 0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_tw5mq")
+
+[node name="ProgressBar" type="TextureProgressBar" parent="SafeArea/MarginContainer/HBoxContainer/Control/OpponentPanel" unique_id=813482043]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -397.0
+offset_bottom = 50.0
+grow_horizontal = 0
+value = 40.0
+fill_mode = 1
+nine_patch_stretch = true
+texture_under = ExtResource("8_ujb5s")
+texture_progress = ExtResource("11_q7y3e")
+
+[node name="CoverLayer" type="TextureRect" parent="SafeArea/MarginContainer/HBoxContainer/Control/OpponentPanel" unique_id=1312541840]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -130.0
+offset_top = -75.0
+offset_right = -1.0
+offset_bottom = 54.0
+grow_horizontal = 0
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Avatar" type="TextureRect" parent="SafeArea/MarginContainer/HBoxContainer/Control/OpponentPanel/CoverLayer" unique_id=1191145742]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("15_ra6b2")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="frame" type="TextureRect" parent="SafeArea/MarginContainer/HBoxContainer/Control/OpponentPanel/CoverLayer/Avatar" unique_id=334516198]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -4.0
+offset_bottom = 22.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_0r7lp")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="enemy_frame_icon" type="TextureRect" parent="SafeArea/MarginContainer/HBoxContainer/Control/OpponentPanel/CoverLayer/Avatar" unique_id=655238124]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -24.5
+offset_top = -18.688004
+offset_right = 20.5
+offset_bottom = 16.311996
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("16_rdhm0")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="OpponentNameLabel" type="Label" parent="SafeArea/MarginContainer/HBoxContainer/Control/OpponentPanel" unique_id=2122826893]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -143.0
+offset_top = -70.0
+offset_bottom = -12.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("9_4nyvw")
+theme_override_font_sizes/font_size = 48
+text = "Roshan"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RoundContainer" type="HBoxContainer" parent="SafeArea/MarginContainer/HBoxContainer/Control/OpponentPanel" unique_id=1551926895]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -130.0
+offset_top = -10.0
+offset_right = -5.0
+offset_bottom = 30.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="SafeArea/MarginContainer/HBoxContainer/Control/OpponentPanel/RoundContainer" unique_id=1298277101]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+texture = ExtResource("15_72poy")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect2" type="TextureRect" parent="SafeArea/MarginContainer/HBoxContainer/Control/OpponentPanel/RoundContainer" unique_id=1183130937]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+texture = ExtResource("17_486xr")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect3" type="TextureRect" parent="SafeArea/MarginContainer/HBoxContainer/Control/OpponentPanel/RoundContainer" unique_id=1499207678]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+texture = ExtResource("16_70hce")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="EnemyBulletConatiner" type="VBoxContainer" parent="SafeArea/MarginContainer/HBoxContainer/Control/OpponentPanel" unique_id=613976926]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -175.0
+offset_top = -70.0
+offset_right = -140.0
+offset_bottom = 70.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/separation = -8
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="SafeArea/MarginContainer/HBoxContainer/Control/OpponentPanel/EnemyBulletConatiner" unique_id=1982983818]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+texture = ExtResource("2_70hce")
+expand_mode = 1
+stretch_mode = 5
+flip_h = true
+
+[node name="TextureRect2" type="TextureRect" parent="SafeArea/MarginContainer/HBoxContainer/Control/OpponentPanel/EnemyBulletConatiner" unique_id=736668412]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+texture = ExtResource("2_70hce")
+expand_mode = 1
+stretch_mode = 5
+flip_h = true
+
+[node name="TextureRect3" type="TextureRect" parent="SafeArea/MarginContainer/HBoxContainer/Control/OpponentPanel/EnemyBulletConatiner" unique_id=1676854459]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+texture = ExtResource("3_486xr")
+expand_mode = 1
+stretch_mode = 5
+flip_h = true
+
+[node name="TextureRect4" type="TextureRect" parent="SafeArea/MarginContainer/HBoxContainer/Control/OpponentPanel/EnemyBulletConatiner" unique_id=1880729921]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+texture = ExtResource("3_486xr")
+expand_mode = 1
+stretch_mode = 5
+flip_h = true
+
+[node name="TextureRect5" type="TextureRect" parent="SafeArea/MarginContainer/HBoxContainer/Control/OpponentPanel/EnemyBulletConatiner" unique_id=1512436130]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+texture = ExtResource("3_486xr")
+expand_mode = 1
+stretch_mode = 5
+flip_h = true
+
+[node name="TextureRect6" type="TextureRect" parent="SafeArea/MarginContainer/HBoxContainer/Control/OpponentPanel/EnemyBulletConatiner" unique_id=1772204391]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+texture = ExtResource("3_486xr")
+expand_mode = 1
+stretch_mode = 5
+flip_h = true
+
+[connection signal="pressed" from="SafeArea/MarginContainer/HBoxContainer/Control/IngameSetting" to="." method="_on_ingame_setting_pressed"]
+[connection signal="pressed" from="SafeArea/MarginContainer/HBoxContainer/Control/IngameSettingPanel/HBoxContainer2/Quitbutton" to="." method="_on_quit_game_button_pressed"]

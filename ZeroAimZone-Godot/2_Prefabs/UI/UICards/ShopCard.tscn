@@ -1,0 +1,228 @@
+[gd_scene format=3 uid="uid://bsh70ads65ppw"]
+
+[ext_resource type="Texture2D" uid="uid://00qjah7ajees" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/CommonBg/CardBg.png" id="1_qcqhm"]
+[ext_resource type="Script" uid="uid://bk3pr34ytxyn0" path="res://ZeroAimZone-Godot/1_Scripts/UI_Controllers/ShopCardController.gd" id="2_3tw26"]
+[ext_resource type="Texture2D" uid="uid://dex7y18bo6nth" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/Glows/coin_glow.png" id="3_owl4o"]
+[ext_resource type="Texture2D" uid="uid://ct07he0m5dr26" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/Glows/diamond_glow.png" id="4_e74og"]
+[ext_resource type="FontFile" uid="uid://dobi5yff3px2t" path="res://ZeroAimZone-Godot/3_Assets/Fonts/BarlowCondensed-SemiBold.ttf" id="4_uahqf"]
+[ext_resource type="FontFile" uid="uid://10wk3avcupsd" path="res://ZeroAimZone-Godot/3_Assets/Fonts/BarlowCondensed-Bold.ttf" id="5_qcqhm"]
+[ext_resource type="Texture2D" uid="uid://cfrjsawth2cfb" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/Ushop/handfulcoins.png" id="5_uahqf"]
+[ext_resource type="Texture2D" uid="uid://cxy3i1f1xscrq" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/CommonButton/GreenBtn.png" id="7_e74og"]
+[ext_resource type="AudioStream" uid="uid://gkh5cvg1wwyp" path="res://ZeroAimZone-Godot/3_Assets/AudioTracks/The Button.mp3" id="10_e74og"]
+[ext_resource type="Texture2D" uid="uid://bhw0mb5axaecr" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/InGamePops/VideoIcon.png" id="11_owl4o"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_item"]
+texture = ExtResource("1_qcqhm")
+
+[sub_resource type="FontVariation" id="FontVariation_owl4o"]
+base_font = ExtResource("4_uahqf")
+
+[sub_resource type="FontVariation" id="FontVariation_e74og"]
+base_font = ExtResource("5_qcqhm")
+
+[sub_resource type="LabelSettings" id="LabelSettings_3tw26"]
+font = ExtResource("5_qcqhm")
+font_size = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_uahqf"]
+font = ExtResource("5_qcqhm")
+font_size = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_60pwi"]
+font = ExtResource("5_qcqhm")
+font_size = 50
+
+[node name="ShopCard" type="Panel" unique_id=1645220359 node_paths=PackedStringArray("icon", "pack_name", "amount", "btn", "coin_control", "diamond_control", "coin_cost", "diamond_cost", "glow_rect")]
+custom_minimum_size = Vector2(300, 450)
+offset_right = 300.0
+offset_bottom = 450.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxTexture_item")
+script = ExtResource("2_3tw26")
+icon = NodePath("Icon")
+pack_name = NodePath("Name")
+amount = NodePath("amount")
+btn = NodePath("PriceBtn")
+coin_control = NodePath("PriceBtn/Coins")
+diamond_control = NodePath("PriceBtn/Diamonds")
+coin_cost = NodePath("PriceBtn/Coins/Control/cost")
+diamond_cost = NodePath("PriceBtn/Diamonds/Control/Label")
+glow_rect = NodePath("GlowRect")
+coin_glow = ExtResource("3_owl4o")
+gem_glow = ExtResource("4_e74og")
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Icon" type="TextureRect" parent="." unique_id=1751354262]
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = -170.0
+offset_right = 125.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_uahqf")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Name" type="Label" parent="." unique_id=906578186]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -115.5
+offset_top = 10.0
+offset_right = 115.5
+offset_bottom = 58.0
+grow_horizontal = 2
+mouse_filter = 1
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = SubResource("FontVariation_owl4o")
+theme_override_font_sizes/font_size = 40
+text = "Handful of Coins"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="amount" type="Label" parent="." unique_id=2118302545]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.66700006
+anchor_right = 0.5
+anchor_bottom = 0.66700006
+offset_left = -72.5
+offset_top = -20.150024
+offset_right = 72.5
+offset_bottom = 29.849976
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = SubResource("FontVariation_e74og")
+theme_override_font_sizes/font_size = 40
+text = "100"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="PriceBtn" type="TextureButton" parent="." unique_id=347966153]
+custom_minimum_size = Vector2(240, 70)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.878
+anchor_right = 0.5
+anchor_bottom = 0.878
+offset_left = -121.0
+offset_top = -45.100006
+offset_right = 119.0
+offset_bottom = 24.899994
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 1
+texture_normal = ExtResource("7_e74og")
+texture_hover = ExtResource("7_e74og")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Coins" type="HBoxContainer" parent="PriceBtn" unique_id=160460960]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_right = -6.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="Control" type="HBoxContainer" parent="PriceBtn/Coins" unique_id=916041584]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="cost" type="Label" parent="PriceBtn/Coins/Control" unique_id=158980044]
+layout_mode = 2
+size_flags_vertical = 1
+mouse_filter = 1
+theme_override_fonts/font = SubResource("FontVariation_e74og")
+text = "0/1"
+label_settings = SubResource("LabelSettings_3tw26")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureRect" type="TextureRect" parent="PriceBtn/Coins/Control" unique_id=334312405]
+custom_minimum_size = Vector2(55, 44)
+layout_mode = 2
+texture = ExtResource("11_owl4o")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Diamonds" type="HBoxContainer" parent="PriceBtn" unique_id=1200316461]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_right = -5.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/separation = 1
+alignment = 1
+
+[node name="Control" type="HBoxContainer" parent="PriceBtn/Diamonds" unique_id=413822635]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="TextureRect" type="Label" parent="PriceBtn/Diamonds/Control" unique_id=886411544]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+text = "₹"
+label_settings = SubResource("LabelSettings_uahqf")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="PriceBtn/Diamonds/Control" unique_id=1736840560]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = SubResource("FontVariation_e74og")
+text = "80.00"
+label_settings = SubResource("LabelSettings_60pwi")
+vertical_alignment = 1
+
+[node name="GlowRect" type="TextureRect" parent="." unique_id=614073665]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -133.0
+offset_top = -167.0
+offset_right = 120.0
+offset_bottom = 81.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1

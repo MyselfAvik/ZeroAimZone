@@ -1,0 +1,1468 @@
+[gd_scene format=3 uid="uid://dmnlo2otvsttb"]
+
+[ext_resource type="Script" uid="uid://cfvtmd0jtttc5" path="res://ZeroAimZone-Godot/1_Scripts/UI_Controllers/GamePlayResultController.gd" id="1_4xl24"]
+[ext_resource type="Script" uid="uid://dwbw6kfjgwi8b" path="res://ZeroAimZone-Godot/1_Scripts/Utils/SafeArea.gd" id="2_ersok"]
+[ext_resource type="Script" uid="uid://bjvhjvpah3nod" path="res://ZeroAimZone-Godot/1_Scripts/UI_Controllers/PremiumCurrencyEffect.gd" id="2_yr38t"]
+[ext_resource type="Shader" uid="uid://dkr0njldxwde4" path="res://ZeroAimZone-Godot/3_Assets/Shaders/WinnerMirror.gdshader" id="3_y2phr"]
+[ext_resource type="PackedScene" uid="uid://dkrqis772adbo" path="res://ZeroAimZone-Godot/2_Prefabs/ParticleEffects/confetti.tscn" id="4_2yvsr"]
+[ext_resource type="Texture2D" uid="uid://dapm2hsogybmi" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/CommonBg/ui_common_bg.png" id="5_d2m8u"]
+[ext_resource type="Texture2D" uid="uid://beblrue3ywoon" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/CommonBg/OverLayblueBG.png" id="6_dq24e"]
+[ext_resource type="FontFile" uid="uid://8ke38pirmuef" path="res://ZeroAimZone-Godot/3_Assets/Fonts/BarlowCondensed-ExtraBold.ttf" id="7_yr38t"]
+[ext_resource type="Texture2D" uid="uid://pfvia1y1niep" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/CommonButton/back_button.png" id="8_apxmj"]
+[ext_resource type="Texture2D" uid="uid://didfnm61eo3i3" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/CommonButton/CurrencyContainer.png" id="10_aiwfl"]
+[ext_resource type="Texture2D" uid="uid://bi73xexguxhwk" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/ShopPanel/headergem.png" id="10_amx2a"]
+[ext_resource type="Texture2D" uid="uid://rwvqbm11idf3" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/ShopPanel/headercoin.png" id="12_apxmj"]
+[ext_resource type="Texture2D" uid="uid://4bg30b4n73nn" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/ArenaSelection/NewYorkLogo.png" id="12_np5tu"]
+[ext_resource type="FontFile" uid="uid://giru623cv661" path="res://ZeroAimZone-Godot/3_Assets/Fonts/BarlowCondensed-Medium.ttf" id="12_y2phr"]
+[ext_resource type="Texture2D" uid="uid://bgsk7cjfj7gg8" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/Profile/avatar6.png" id="13_0hkv2"]
+[ext_resource type="Shader" uid="uid://bos4qh4ckrnyy" path="res://ZeroAimZone-Godot/3_Assets/Shaders/WinnerShine.gdshader" id="13_5jbls"]
+[ext_resource type="Texture2D" uid="uid://cg65c3213ue7c" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/CommonBg/FadedTitleBg.png" id="14_apxmj"]
+[ext_resource type="Texture2D" uid="uid://nv30qxw2hdpa" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/Profile/frame_default.png" id="15_3mqeg"]
+[ext_resource type="Texture2D" uid="uid://d2x2cwle7gvpd" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/guns/street/glock17.png" id="15_n6byp"]
+[ext_resource type="FontFile" uid="uid://10wk3avcupsd" path="res://ZeroAimZone-Godot/3_Assets/Fonts/BarlowCondensed-Bold.ttf" id="16_thauf"]
+[ext_resource type="Texture2D" uid="uid://cbmnrychgpc5b" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/Glows/bronze_glow.png" id="18_j5y8h"]
+[ext_resource type="FontFile" uid="uid://bwi6e3xaodcgb" path="res://ZeroAimZone-Godot/3_Assets/Fonts/Teko-Bold.ttf" id="19_d2m8u"]
+[ext_resource type="Texture2D" uid="uid://bamvpd5siofiu" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/CommonButton/friendacceptbg.png" id="19_np5tu"]
+[ext_resource type="Texture2D" uid="uid://cr2s8rokrastc" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/CommonButton/friendrejectbg.png" id="20_3mqeg"]
+[ext_resource type="FontFile" uid="uid://b50qd8lfh3rbn" path="res://ZeroAimZone-Godot/3_Assets/Fonts/Teko-SemiBold.ttf" id="20_dq24e"]
+[ext_resource type="Script" uid="uid://c1umaqh6220vy" path="res://addons/SmoothScroll/smooth_scroll_container.gd" id="21_2m8ne"]
+[ext_resource type="Script" uid="uid://bp2ueafm1hjdu" path="res://addons/SmoothScroll/scroll_damper/expo_scroll_damper.gd" id="22_u4tia"]
+[ext_resource type="Texture2D" uid="uid://h8yasv0w80il" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/ResultPanel/Winner screen.png" id="23_0hkv2"]
+[ext_resource type="Shader" uid="uid://dxsl0vdqsld3v" path="res://ZeroAimZone-Godot/3_Assets/Shaders/RewardCard.gdshader" id="23_u4tia"]
+[ext_resource type="Texture2D" uid="uid://b0ymeqs3cepds" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/CommonBg/BottomBarBlue.png" id="24_d2m8u"]
+[ext_resource type="Texture2D" uid="uid://7btssnrfaj47" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/Crates/bronze_close.png" id="26_np5tu"]
+[ext_resource type="FontFile" uid="uid://dxv3myqk8v50" path="res://ZeroAimZone-Godot/3_Assets/Fonts/BarlowCondensed-Regular.ttf" id="27_y76t0"]
+[ext_resource type="Texture2D" uid="uid://268en5nxloku" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/ShopPanel/bunch.png" id="28_j5y8h"]
+[ext_resource type="Texture2D" uid="uid://d2icly2pa3xt2" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/CommonButton/mupclosebtnbg.png" id="28_np5tu"]
+[ext_resource type="Texture2D" uid="uid://b8f3kmlkeyj0m" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/CommonButton/yellow_button.png" id="30_j5y8h"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y2phr"]
+texture = ExtResource("5_d2m8u")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d2m8u"]
+texture = ExtResource("6_dq24e")
+
+[sub_resource type="LabelSettings" id="LabelSettings_ueq0l"]
+font = ExtResource("16_thauf")
+font_size = 44
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ire6e"]
+atlas = ExtResource("15_n6byp")
+region = Rect2(15, 93, 513, 355)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3mqeg"]
+atlas = ExtResource("13_0hkv2")
+region = Rect2(12, 5.653777, 245.5896, 261.78372)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j5y8h"]
+atlas = ExtResource("15_3mqeg")
+region = Rect2(16, 21.731323, 251, 301.66785)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ueq0l"]
+shader = ExtResource("13_5jbls")
+shader_parameter/min_brightness = 0.75
+shader_parameter/max_brightness = 1.25
+shader_parameter/pulse_speed = 1.0
+shader_parameter/color_a = Color(1, 0.25, 0.05, 1)
+shader_parameter/color_b = Color(1, 0.75, 0.2, 1)
+shader_parameter/color_strength = 0.25
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ijliv"]
+atlas = ExtResource("18_j5y8h")
+region = Rect2(-0.32546997, 1.2452068, 297.17242, 295.0828)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3mqeg"]
+load_path = "res://.godot/imported/frame_icon1.png-3cd223566b92be6f583115ce40abc8e7.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n6byp"]
+atlas = ExtResource("23_0hkv2")
+region = Rect2(93, 939, 270, 121)
+
+[sub_resource type="FontVariation" id="FontVariation_y76t0"]
+base_font = ExtResource("12_y2phr")
+
+[sub_resource type="FontVariation" id="FontVariation_aiwfl"]
+base_font = ExtResource("12_y2phr")
+
+[sub_resource type="FontVariation" id="FontVariation_nh8uo"]
+base_font = ExtResource("12_y2phr")
+
+[sub_resource type="LabelSettings" id="LabelSettings_f6m3h"]
+font = ExtResource("19_d2m8u")
+font_size = 130
+font_color = Color(0.9137255, 0.9019608, 1, 1)
+outline_size = 1
+outline_color = Color(0.0627451, 0.28235295, 1, 1)
+shadow_color = Color(0.03137255, 0.003921569, 0.827451, 1)
+shadow_offset = Vector2(0, 7)
+stacked_shadow_count = 1
+stacked_shadow_0/offset = Vector2(0, 11)
+stacked_shadow_0/color = Color(0, 0, 0, 0.09803922)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0hkv2"]
+atlas = ExtResource("13_0hkv2")
+region = Rect2(12, 5.653777, 245.5896, 261.78372)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_323lq"]
+atlas = ExtResource("15_3mqeg")
+region = Rect2(16, 21.731323, 251, 301.66785)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_54e7b"]
+shader = ExtResource("13_5jbls")
+shader_parameter/min_brightness = 0.75
+shader_parameter/max_brightness = 1.25
+shader_parameter/pulse_speed = 1.0
+shader_parameter/color_a = Color(1, 0.25, 0.05, 1)
+shader_parameter/color_b = Color(1, 0.75, 0.2, 1)
+shader_parameter/color_strength = 0.25
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0hkv2"]
+load_path = "res://.godot/imported/frame_icon1.png-3cd223566b92be6f583115ce40abc8e7.ctex"
+
+[sub_resource type="FontVariation" id="FontVariation_np5tu"]
+base_font = ExtResource("12_y2phr")
+
+[sub_resource type="FontVariation" id="FontVariation_3mqeg"]
+base_font = ExtResource("12_y2phr")
+
+[sub_resource type="FontVariation" id="FontVariation_0hkv2"]
+base_font = ExtResource("12_y2phr")
+
+[sub_resource type="FontVariation" id="FontVariation_ersok"]
+base_font = ExtResource("12_y2phr")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yr38t"]
+atlas = ExtResource("23_0hkv2")
+region = Rect2(93, 543, 910, 339)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2m8ne"]
+atlas = ExtResource("23_0hkv2")
+region = Rect2(91, 160, 558, 92)
+
+[sub_resource type="LabelSettings" id="LabelSettings_y2phr"]
+font = ExtResource("20_dq24e")
+font_size = 56
+shadow_color = Color(0.35686275, 0.41568628, 0.8039216, 1)
+shadow_offset = Vector2(0, 1)
+
+[sub_resource type="Resource" id="Resource_d2m8u"]
+script = ExtResource("22_u4tia")
+
+[sub_resource type="Resource" id="Resource_dq24e"]
+script = ExtResource("22_u4tia")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d2m8u"]
+shader = ExtResource("23_u4tia")
+shader_parameter/flash_amount = 0.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_thauf"]
+atlas = ExtResource("23_0hkv2")
+region = Rect2(93, 303, 180, 182)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2yvsr"]
+atlas = ExtResource("28_j5y8h")
+region = Rect2(16, 10, 135, 138)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dq24e"]
+shader = ExtResource("23_u4tia")
+shader_parameter/flash_amount = 0.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_amx2a"]
+atlas = ExtResource("23_0hkv2")
+region = Rect2(93, 303, 180, 182)
+
+[sub_resource type="LabelSettings" id="LabelSettings_43hov"]
+font = ExtResource("19_d2m8u")
+font_size = 72
+font_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_dq24e"]
+font = ExtResource("27_y76t0")
+font_size = 40
+
+[node name="GamePlayResultPanel" type="Control" unique_id=1202336535 node_paths=PackedStringArray("rematching_label", "rematch_button", "back_button", "coin_reward_label", "coin_count_label", "diamond_count_label", "arena_logo", "room_result", "reward_section", "scroll_container", "reward_container", "tip_label", "player_win_label", "player_rematch_card", "player_rematch_label", "player_cant_rematch_label", "player_avatar", "player_name_label", "player_frame", "player_frame_icon", "player_container", "enemy_win_label", "enemy_rematch_card", "enemy_rematch_accept_button", "enemy_rematch_reject_button", "enemy_rematch_reject_label", "enemy_rematch_label", "enemy_avatar", "enemy_name_label", "enemy_frame", "enemy_frame_icon", "enemy_left", "enemy_container", "player_shine", "enemy_shine", "particle_spawn_area")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4xl24")
+rematching_label = NodePath("ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/Rematch/RematchButton/RematchingLabel")
+rematch_button = NodePath("ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/Rematch/RematchButton")
+back_button = NodePath("ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/Rematch/BackButton")
+coin_reward_label = NodePath("ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/Reward/RewardBg/ScrollContainer/HBoxContainer/Reward1/Label")
+coin_count_label = NodePath("ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/Top_Control/Coin_btn/coin_count")
+diamond_count_label = NodePath("ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/Top_Control/Diamond_btn/Diamond_count")
+premium_currency_effect_script = ExtResource("2_yr38t")
+arena_logo = NodePath("ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/ArenaIcon/ArenaLogo")
+room_result = NodePath("ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/ArenaIcon/RoomResult")
+reward_section = NodePath("ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/Reward")
+scroll_container = NodePath("ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/Reward/RewardBg/ScrollContainer")
+reward_container = NodePath("ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/Reward/RewardBg/ScrollContainer/HBoxContainer")
+tip_label = NodePath("ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/Tip/TextureRect/Label")
+player_win_label = NodePath("ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/VersusResult/MarginContainer/HBoxContainer/PlayerControl/VBoxContainer/VBoxContainer/Avatar/WinnerLabel1")
+player_rematch_card = NodePath("ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/VersusResult/MarginContainer/HBoxContainer/PlayerControl/VBoxContainer/Control/PlayerRematchCard")
+player_rematch_label = NodePath("ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/VersusResult/MarginContainer/HBoxContainer/PlayerControl/VBoxContainer/Control/PlayerRematchL")
+player_cant_rematch_label = NodePath("ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/VersusResult/MarginContainer/HBoxContainer/PlayerControl/VBoxContainer/Control/PlayerRejectL")
+player_avatar = NodePath("ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/VersusResult/MarginContainer/HBoxContainer/PlayerControl/VBoxContainer/VBoxContainer/Avatar")
+player_name_label = NodePath("ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/VersusResult/MarginContainer/HBoxContainer/PlayerControl/VBoxContainer/VBoxContainer/Label")
+player_frame = NodePath("ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/VersusResult/MarginContainer/HBoxContainer/PlayerControl/VBoxContainer/VBoxContainer/Avatar/CoverLayer")
+player_frame_icon = NodePath("ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/VersusResult/MarginContainer/HBoxContainer/PlayerControl/VBoxContainer/VBoxContainer/Avatar/player_frame_icon")
+player_container = NodePath("ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/VersusResult/MarginContainer/HBoxContainer/PlayerControl/VBoxContainer")
+enemy_win_label = NodePath("ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/VersusResult/MarginContainer/HBoxContainer/OpponentControl/VBoxContainer/VBoxContainer/Avatar/WinnerLabel2")
+enemy_rematch_card = NodePath("ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/VersusResult/MarginContainer/HBoxContainer/OpponentControl/VBoxContainer/Control/EnemyRematchCard")
+enemy_rematch_accept_button = NodePath("ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/VersusResult/MarginContainer/HBoxContainer/OpponentControl/VBoxContainer/Control/EnemyRematchCard/AcceptButton")
+enemy_rematch_reject_button = NodePath("ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/VersusResult/MarginContainer/HBoxContainer/OpponentControl/VBoxContainer/Control/EnemyRematchCard/RejectButton")
+enemy_rematch_reject_label = NodePath("ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/VersusResult/MarginContainer/HBoxContainer/OpponentControl/VBoxContainer/Control/EnemyRejectL")
+enemy_rematch_label = NodePath("ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/VersusResult/MarginContainer/HBoxContainer/OpponentControl/VBoxContainer/Control/EnemyRematchL")
+enemy_avatar = NodePath("ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/VersusResult/MarginContainer/HBoxContainer/OpponentControl/VBoxContainer/VBoxContainer/Avatar")
+enemy_name_label = NodePath("ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/VersusResult/MarginContainer/HBoxContainer/OpponentControl/VBoxContainer/VBoxContainer/Label")
+enemy_frame = NodePath("ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/VersusResult/MarginContainer/HBoxContainer/OpponentControl/VBoxContainer/VBoxContainer/Avatar/CoverLayer")
+enemy_frame_icon = NodePath("ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/VersusResult/MarginContainer/HBoxContainer/OpponentControl/VBoxContainer/VBoxContainer/Avatar/enemy_frame_icon")
+enemy_left = NodePath("ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/VersusResult/MarginContainer/HBoxContainer/OpponentControl/VBoxContainer/Control/EnemyLeft")
+enemy_container = NodePath("ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/VersusResult/MarginContainer/HBoxContainer/OpponentControl/VBoxContainer")
+player_shine = NodePath("ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/VersusResult/MarginContainer/HBoxContainer/PlayerControl/VBoxContainer/VBoxContainer/Avatar/PlayerShine")
+enemy_shine = NodePath("ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/VersusResult/MarginContainer/HBoxContainer/OpponentControl/VBoxContainer/VBoxContainer/Avatar/EnemyShine")
+winner_shader = ExtResource("3_y2phr")
+particle_spawn_area = NodePath("ArenaPanel/Bg/SafeArea")
+particle_scene = ExtResource("4_2yvsr")
+
+[node name="ArenaPanel" type="Panel" parent="." unique_id=704434267]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_y2phr")
+
+[node name="Bg" type="Panel" parent="ArenaPanel" unique_id=1920179314]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_d2m8u")
+
+[node name="SafeArea" type="Control" parent="ArenaPanel/Bg" unique_id=2099295665]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_ersok")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ArenaPanel/Bg/SafeArea" unique_id=1165720353]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="ArenaPanel/Bg/SafeArea/HBoxContainer" unique_id=441868740]
+custom_minimum_size = Vector2(1080, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 80
+theme_override_constants/margin_right = 80
+
+[node name="Control" type="Control" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer" unique_id=591344036]
+layout_mode = 2
+
+[node name="Top_Control" type="Control" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control" unique_id=242617095]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 220.0
+grow_horizontal = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.15
+mouse_filter = 2
+
+[node name="Back_btn" type="TextureButton" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/Top_Control" unique_id=1384452854]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -64.0
+offset_right = 72.0
+offset_bottom = 10.0
+grow_vertical = 0
+texture_normal = ExtResource("8_apxmj")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Diamond_btn" type="TextureButton" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/Top_Control" unique_id=2063821048]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -390.0
+offset_top = 160.0
+offset_right = -200.0
+offset_bottom = 234.0
+grow_horizontal = 0
+texture_normal = ExtResource("10_aiwfl")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="diamond_icon" type="TextureRect" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/Top_Control/Diamond_btn" unique_id=2081151715]
+layout_mode = 0
+offset_left = -5.0
+offset_top = -15.0
+offset_right = 73.0
+offset_bottom = 85.0
+texture = ExtResource("10_amx2a")
+expand_mode = 1
+
+[node name="Diamond_count" type="Label" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/Top_Control/Diamond_btn" unique_id=1916432494]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -117.0
+offset_top = -34.0
+offset_right = -13.0
+offset_bottom = 23.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 45
+text = "444.4k"
+label_settings = SubResource("LabelSettings_ueq0l")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Coin_btn" type="TextureButton" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/Top_Control" unique_id=1717795390]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -167.0
+offset_top = 160.0
+offset_right = 18.0
+offset_bottom = 234.0
+grow_horizontal = 0
+texture_normal = ExtResource("10_aiwfl")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="coin_icon" type="TextureRect" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/Top_Control/Coin_btn" unique_id=1138613028]
+layout_mode = 0
+offset_left = -10.0
+offset_top = -11.0
+offset_right = 67.0
+offset_bottom = 77.0
+texture = ExtResource("12_apxmj")
+stretch_mode = 2
+
+[node name="coin_count" type="Label" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/Top_Control/Coin_btn" unique_id=353390780]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -122.0
+offset_top = -34.0
+offset_right = -14.0
+offset_bottom = 23.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 45
+text = "444.4k"
+label_settings = SubResource("LabelSettings_ueq0l")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control" unique_id=1516807384]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 221.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ArenaIcon" type="Control" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer" unique_id=1945296886]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.45
+mouse_filter = 2
+
+[node name="ArenaLogo" type="TextureRect" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/ArenaIcon" unique_id=1946158025]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -175.0
+offset_top = -175.0
+offset_right = 175.0
+offset_bottom = 175.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_np5tu")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="RoomResult" type="TextureRect" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/ArenaIcon" unique_id=1198762155]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -310.0
+offset_top = -208.0
+offset_right = 310.0
+offset_bottom = 208.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_apxmj")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="GunTexture" type="TextureRect" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/ArenaIcon/RoomResult" unique_id=514472539]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -100.0
+offset_right = 167.0
+offset_bottom = 55.0
+grow_vertical = 2
+rotation = -0.17453292
+pivot_offset_ratio = Vector2(0.5, 0.5)
+mouse_filter = 2
+texture = SubResource("AtlasTexture_ire6e")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/ArenaIcon/RoomResult" unique_id=643412776]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -190.0
+offset_top = -46.0
+offset_right = 190.0
+offset_bottom = 58.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = ExtResource("20_dq24e")
+theme_override_font_sizes/font_size = 72
+text = "BATTLE RESULT"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="VersusResult" type="Control" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer" unique_id=1915458070]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.35
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/VersusResult" unique_id=1392714710]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -64.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/VersusResult/MarginContainer" unique_id=1475399124]
+layout_mode = 2
+alignment = 1
+
+[node name="PlayerControl" type="Control" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/VersusResult/MarginContainer/HBoxContainer" unique_id=1754660951]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_stretch_ratio = 2.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/VersusResult/MarginContainer/HBoxContainer/PlayerControl" unique_id=60448412]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -15.0
+offset_top = -32.0
+offset_right = 15.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/VersusResult/MarginContainer/HBoxContainer/PlayerControl/VBoxContainer" unique_id=2136785218]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Avatar" type="TextureRect" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/VersusResult/MarginContainer/HBoxContainer/PlayerControl/VBoxContainer/VBoxContainer" unique_id=676210200]
+z_index = 2
+custom_minimum_size = Vector2(280, 280)
+layout_mode = 2
+texture = SubResource("AtlasTexture_3mqeg")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="WinnerLabel1" type="Label" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/VersusResult/MarginContainer/HBoxContainer/PlayerControl/VBoxContainer/VBoxContainer/Avatar" unique_id=1710159053]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -180.0
+offset_top = -95.0
+offset_right = 180.0
+offset_bottom = 1.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.972549, 0.88235295, 0.40392157, 1)
+theme_override_colors/font_shadow_color = Color(0.8392157, 0.49019608, 0.19215687, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 5
+theme_override_fonts/font = ExtResource("7_yr38t")
+theme_override_font_sizes/font_size = 70
+text = "Winner"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CoverLayer" type="TextureRect" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/VersusResult/MarginContainer/HBoxContainer/PlayerControl/VBoxContainer/VBoxContainer/Avatar" unique_id=257916553]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = 4.0
+offset_right = 20.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_j5y8h")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PlayerShine" type="TextureRect" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/VersusResult/MarginContainer/HBoxContainer/PlayerControl/VBoxContainer/VBoxContainer/Avatar" unique_id=511458792]
+z_index = -2
+material = SubResource("ShaderMaterial_ueq0l")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -236.0
+offset_right = 250.0
+offset_bottom = 264.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = SubResource("AtlasTexture_ijliv")
+expand_mode = 1
+
+[node name="player_frame_icon" type="TextureRect" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/VersusResult/MarginContainer/HBoxContainer/PlayerControl/VBoxContainer/VBoxContainer/Avatar" unique_id=1280104564]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -47.0
+offset_top = -35.0
+offset_right = 33.0
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = SubResource("CompressedTexture2D_3mqeg")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Label" type="Label" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/VersusResult/MarginContainer/HBoxContainer/PlayerControl/VBoxContainer/VBoxContainer" unique_id=2001785012]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.18039216, 0.16470589, 0.5882353, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_fonts/font = ExtResource("16_thauf")
+theme_override_font_sizes/font_size = 65
+text = "Hritik"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/VersusResult/MarginContainer/HBoxContainer/PlayerControl/VBoxContainer" unique_id=1631645866]
+layout_mode = 2
+
+[node name="PlayerRematchCard" type="TextureRect" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/VersusResult/MarginContainer/HBoxContainer/PlayerControl/VBoxContainer/Control" unique_id=1464245845]
+visible = false
+z_index = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -190.0
+offset_right = 190.0
+offset_bottom = 170.0
+grow_horizontal = 2
+texture = SubResource("AtlasTexture_n6byp")
+expand_mode = 1
+flip_v = true
+
+[node name="Label" type="Label" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/VersusResult/MarginContainer/HBoxContainer/PlayerControl/VBoxContainer/Control/PlayerRematchCard" unique_id=225901396]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -153.5
+offset_top = -55.0
+offset_right = 153.5
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_y76t0")
+theme_override_font_sizes/font_size = 50
+text = "I want to rematch"
+
+[node name="AcceptButton" type="TextureButton" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/VersusResult/MarginContainer/HBoxContainer/PlayerControl/VBoxContainer/Control/PlayerRematchCard" unique_id=1219428223]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -155.0
+offset_top = -70.0
+offset_right = -5.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("19_np5tu")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/VersusResult/MarginContainer/HBoxContainer/PlayerControl/VBoxContainer/Control/PlayerRematchCard/AcceptButton" unique_id=502509526]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -27.5
+offset_right = 50.0
+offset_bottom = 23.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_aiwfl")
+theme_override_font_sizes/font_size = 42
+text = "Accept"
+
+[node name="RejectButton" type="TextureButton" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/VersusResult/MarginContainer/HBoxContainer/PlayerControl/VBoxContainer/Control/PlayerRematchCard" unique_id=667541121]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = -70.0
+offset_right = 155.0
+offset_bottom = -15.000153
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("20_3mqeg")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/VersusResult/MarginContainer/HBoxContainer/PlayerControl/VBoxContainer/Control/PlayerRematchCard/RejectButton" unique_id=1549566334]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -45.5
+offset_top = -27.499924
+offset_right = 45.5
+offset_bottom = 23.500076
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource("FontVariation_nh8uo")
+theme_override_font_sizes/font_size = 42
+text = "Reject"
+
+[node name="PlayerRematchL" type="TextureRect" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/VersusResult/MarginContainer/HBoxContainer/PlayerControl/VBoxContainer/Control" unique_id=747880516]
+visible = false
+z_index = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -135.0
+offset_right = 135.0
+offset_bottom = 100.0
+grow_horizontal = 2
+texture = SubResource("AtlasTexture_n6byp")
+expand_mode = 1
+flip_v = true
+
+[node name="PlayerRematchLabel" type="Label" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/VersusResult/MarginContainer/HBoxContainer/PlayerControl/VBoxContainer/Control/PlayerRematchL" unique_id=12343112]
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -123.0
+offset_top = -15.0
+offset_right = 123.0
+offset_bottom = 29.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_y2phr")
+theme_override_font_sizes/font_size = 36
+text = "I want to rematch"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerRejectL" type="TextureRect" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/VersusResult/MarginContainer/HBoxContainer/PlayerControl/VBoxContainer/Control" unique_id=2137451383]
+visible = false
+z_index = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -135.0
+offset_right = 135.0
+offset_bottom = 121.0
+grow_horizontal = 2
+texture = SubResource("AtlasTexture_n6byp")
+expand_mode = 1
+flip_v = true
+
+[node name="PlayerRematchRejectLabel" type="Label" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/VersusResult/MarginContainer/HBoxContainer/PlayerControl/VBoxContainer/Control/PlayerRejectL" unique_id=1254799826]
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = -35.5
+offset_right = 125.0
+offset_bottom = 55.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_y2phr")
+theme_override_font_sizes/font_size = 36
+text = "Sorry! Can't play right now"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="VS" type="Control" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/VersusResult/MarginContainer/HBoxContainer" unique_id=1169679955]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.5
+
+[node name="VSIcon" type="Label" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/VersusResult/MarginContainer/HBoxContainer/VS" unique_id=1577847595]
+custom_minimum_size = Vector2(150, 120)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -10.0
+offset_right = 75.0
+offset_bottom = 177.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "VS"
+label_settings = SubResource("LabelSettings_f6m3h")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="OpponentControl" type="Control" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/VersusResult/MarginContainer/HBoxContainer" unique_id=182134549]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_stretch_ratio = 2.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/VersusResult/MarginContainer/HBoxContainer/OpponentControl" unique_id=1087748588]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -15.0
+offset_top = -32.0
+offset_right = 15.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/VersusResult/MarginContainer/HBoxContainer/OpponentControl/VBoxContainer" unique_id=256799097]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Avatar" type="TextureRect" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/VersusResult/MarginContainer/HBoxContainer/OpponentControl/VBoxContainer/VBoxContainer" unique_id=186401431]
+z_index = 2
+custom_minimum_size = Vector2(280, 280)
+layout_mode = 2
+texture = SubResource("AtlasTexture_0hkv2")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="WinnerLabel2" type="Label" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/VersusResult/MarginContainer/HBoxContainer/OpponentControl/VBoxContainer/VBoxContainer/Avatar" unique_id=7666335]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -180.0
+offset_top = -95.0
+offset_right = 180.0
+offset_bottom = 1.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.972549, 0.88235295, 0.40392157, 1)
+theme_override_colors/font_shadow_color = Color(0.8392157, 0.49019608, 0.19215687, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 5
+theme_override_fonts/font = ExtResource("7_yr38t")
+theme_override_font_sizes/font_size = 70
+text = "Winner"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CoverLayer" type="TextureRect" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/VersusResult/MarginContainer/HBoxContainer/OpponentControl/VBoxContainer/VBoxContainer/Avatar" unique_id=1052906919]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = 4.0
+offset_right = 20.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_323lq")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="EnemyShine" type="TextureRect" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/VersusResult/MarginContainer/HBoxContainer/OpponentControl/VBoxContainer/VBoxContainer/Avatar" unique_id=685673893]
+z_index = -2
+material = SubResource("ShaderMaterial_54e7b")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -236.0
+offset_right = 250.0
+offset_bottom = 264.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = SubResource("AtlasTexture_ijliv")
+expand_mode = 1
+
+[node name="enemy_frame_icon" type="TextureRect" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/VersusResult/MarginContainer/HBoxContainer/OpponentControl/VBoxContainer/VBoxContainer/Avatar" unique_id=924387707]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -47.0
+offset_top = -35.0
+offset_right = 33.0
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = SubResource("CompressedTexture2D_0hkv2")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Label" type="Label" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/VersusResult/MarginContainer/HBoxContainer/OpponentControl/VBoxContainer/VBoxContainer" unique_id=733920568]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.18039216, 0.16470589, 0.5882353, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_fonts/font = ExtResource("16_thauf")
+theme_override_font_sizes/font_size = 65
+text = "Roshan"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/VersusResult/MarginContainer/HBoxContainer/OpponentControl/VBoxContainer" unique_id=370965554]
+layout_mode = 2
+
+[node name="EnemyRematchCard" type="TextureRect" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/VersusResult/MarginContainer/HBoxContainer/OpponentControl/VBoxContainer/Control" unique_id=1645587336]
+visible = false
+z_index = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -190.0
+offset_top = -10.0
+offset_right = 190.0
+offset_bottom = 160.0
+grow_horizontal = 2
+texture = SubResource("AtlasTexture_n6byp")
+expand_mode = 1
+flip_v = true
+
+[node name="Label" type="Label" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/VersusResult/MarginContainer/HBoxContainer/OpponentControl/VBoxContainer/Control/EnemyRematchCard" unique_id=339018346]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -153.5
+offset_top = -55.0
+offset_right = 153.5
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_np5tu")
+theme_override_font_sizes/font_size = 50
+text = "I want to rematch"
+
+[node name="AcceptButton" type="TextureButton" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/VersusResult/MarginContainer/HBoxContainer/OpponentControl/VBoxContainer/Control/EnemyRematchCard" unique_id=1214710848]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -155.0
+offset_top = -70.0
+offset_right = -5.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("19_np5tu")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/VersusResult/MarginContainer/HBoxContainer/OpponentControl/VBoxContainer/Control/EnemyRematchCard/AcceptButton" unique_id=1562315540]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -27.5
+offset_right = 50.0
+offset_bottom = 23.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_3mqeg")
+theme_override_font_sizes/font_size = 42
+text = "Accept"
+
+[node name="RejectButton" type="TextureButton" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/VersusResult/MarginContainer/HBoxContainer/OpponentControl/VBoxContainer/Control/EnemyRematchCard" unique_id=1583409564]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = -70.0
+offset_right = 155.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("20_3mqeg")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/VersusResult/MarginContainer/HBoxContainer/OpponentControl/VBoxContainer/Control/EnemyRematchCard/RejectButton" unique_id=878530063]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -45.5
+offset_top = -27.5
+offset_right = 45.5
+offset_bottom = 23.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource("FontVariation_0hkv2")
+theme_override_font_sizes/font_size = 42
+text = "Reject"
+
+[node name="EnemyRematchL" type="TextureRect" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/VersusResult/MarginContainer/HBoxContainer/OpponentControl/VBoxContainer/Control" unique_id=621910924]
+visible = false
+z_index = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -135.0
+offset_right = 135.0
+offset_bottom = 100.0
+grow_horizontal = 2
+texture = SubResource("AtlasTexture_n6byp")
+expand_mode = 1
+flip_v = true
+
+[node name="EnemyRematchLabel" type="Label" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/VersusResult/MarginContainer/HBoxContainer/OpponentControl/VBoxContainer/Control/EnemyRematchL" unique_id=882535514]
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -123.0
+offset_top = -15.0
+offset_right = 123.0
+offset_bottom = 29.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_y2phr")
+theme_override_font_sizes/font_size = 36
+text = "I want to rematch"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EnemyRejectL" type="TextureRect" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/VersusResult/MarginContainer/HBoxContainer/OpponentControl/VBoxContainer/Control" unique_id=1899276843]
+visible = false
+z_index = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -135.0
+offset_right = 135.0
+offset_bottom = 121.0
+grow_horizontal = 2
+texture = SubResource("AtlasTexture_n6byp")
+expand_mode = 1
+flip_v = true
+
+[node name="EnemyRematchRejectLabel" type="Label" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/VersusResult/MarginContainer/HBoxContainer/OpponentControl/VBoxContainer/Control/EnemyRejectL" unique_id=483621033]
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = -35.5
+offset_right = 125.0
+offset_bottom = 55.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_y2phr")
+theme_override_font_sizes/font_size = 36
+text = "Sorry! Can't play right now"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="EnemyLeft" type="TextureRect" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/VersusResult/MarginContainer/HBoxContainer/OpponentControl/VBoxContainer/Control" unique_id=92171821]
+visible = false
+z_index = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -135.0
+offset_right = 135.0
+offset_bottom = 121.0
+grow_horizontal = 2
+texture = SubResource("AtlasTexture_n6byp")
+expand_mode = 1
+flip_v = true
+
+[node name="EnemyRematchRejectLabel" type="Label" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/VersusResult/MarginContainer/HBoxContainer/OpponentControl/VBoxContainer/Control/EnemyLeft" unique_id=929489645]
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -115.0
+offset_top = -35.5
+offset_right = 115.0
+offset_bottom = 55.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_ersok")
+theme_override_font_sizes/font_size = 36
+text = "Opponent has left the Room"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Reward" type="Control" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer" unique_id=1096635041]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.27
+mouse_filter = 2
+
+[node name="RewardBg" type="TextureRect" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/Reward" unique_id=1441463886]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("AtlasTexture_yr38t")
+expand_mode = 1
+
+[node name="RewardHeader" type="TextureRect" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/Reward/RewardBg" unique_id=2056751905]
+custom_minimum_size = Vector2(554, 83.23)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -277.0
+offset_right = 277.0
+offset_bottom = 83.23
+grow_horizontal = 2
+size_flags_vertical = 3
+mouse_filter = 2
+texture = SubResource("AtlasTexture_2m8ne")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/Reward/RewardBg/RewardHeader" unique_id=756432221]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -118.0
+offset_top = -39.615
+offset_right = 118.0
+offset_bottom = 41.385
+grow_horizontal = 2
+grow_vertical = 2
+text = "REWARDS"
+label_settings = SubResource("LabelSettings_y2phr")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/Reward/RewardBg" unique_id=580306421]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -374.75
+offset_top = -77.0
+offset_right = 374.75
+offset_bottom = 153.00003
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 0
+script = ExtResource("21_2m8ne")
+wheel_scroll_damper = SubResource("Resource_d2m8u")
+dragging_scroll_damper = SubResource("Resource_dq24e")
+metadata/_custom_type_script = "uid://c1umaqh6220vy"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/Reward/RewardBg/ScrollContainer" unique_id=2015214183]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 70
+alignment = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Reward1" type="TextureRect" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/Reward/RewardBg/ScrollContainer/HBoxContainer" unique_id=492813843]
+material = SubResource("ShaderMaterial_d2m8u")
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+size_flags_vertical = 3
+texture = SubResource("AtlasTexture_thauf")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="CoinBulk" type="TextureRect" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/Reward/RewardBg/ScrollContainer/HBoxContainer/Reward1" unique_id=1030460892]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -55.0
+offset_top = -74.5
+offset_right = 55.0
+offset_bottom = 25.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_2yvsr")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Label" type="Label" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/Reward/RewardBg/ScrollContainer/HBoxContainer/Reward1" unique_id=2019971744]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -84.0
+offset_right = 32.0
+offset_bottom = -26.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.16470589, 0.24705882, 0.5882353, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_fonts/font = ExtResource("12_y2phr")
+theme_override_font_sizes/font_size = 48
+text = "400"
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Reward2" type="TextureRect" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/Reward/RewardBg/ScrollContainer/HBoxContainer" unique_id=1269986324]
+material = SubResource("ShaderMaterial_dq24e")
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+size_flags_vertical = 3
+texture = SubResource("AtlasTexture_amx2a")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureRect" type="TextureRect" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/Reward/RewardBg/ScrollContainer/HBoxContainer/Reward2" unique_id=1314033992]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -60.0
+offset_top = 40.0
+offset_right = 60.0
+offset_bottom = 152.0
+grow_horizontal = 2
+texture = ExtResource("26_np5tu")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Label" type="Label" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/Reward/RewardBg/ScrollContainer/HBoxContainer/Reward2" unique_id=1491446425]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -16.0
+offset_top = -84.0
+offset_right = 16.0
+offset_bottom = -26.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.16470589, 0.24705882, 0.5882353, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_fonts/font = ExtResource("12_y2phr")
+theme_override_font_sizes/font_size = 48
+text = "x1"
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Rematch" type="Control" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer" unique_id=1702832806]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.17
+mouse_filter = 2
+
+[node name="RematchButton" type="TextureButton" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/Rematch" unique_id=1436167393]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -220.5
+offset_top = -60.0
+offset_right = 220.5
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("30_j5y8h")
+texture_disabled = ExtResource("28_np5tu")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="RematchLabel" type="Label" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/Rematch/RematchButton" unique_id=447726887]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "REMATCH"
+label_settings = SubResource("LabelSettings_43hov")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RematchingLabel" type="Label" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/Rematch/RematchButton" unique_id=1107767139]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -280.0
+offset_top = -70.0
+offset_right = 280.0
+offset_bottom = 70.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 80
+text = "REMATCHING"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BackButton" type="TextureButton" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/Rematch" unique_id=1320340867]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -220.5
+offset_top = -60.0
+offset_right = 220.5
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("28_np5tu")
+texture_disabled = ExtResource("28_np5tu")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="BackLabel" type="Label" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/Rematch/BackButton" unique_id=610867467]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "BACK"
+label_settings = SubResource("LabelSettings_43hov")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RematchingLabel" type="Label" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/Rematch/BackButton" unique_id=906141833]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -280.0
+offset_top = -70.0
+offset_right = 280.0
+offset_bottom = 70.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 80
+text = "REMATCHING"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Tip" type="Control" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer" unique_id=439782669]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.15
+
+[node name="TextureRect" type="TextureRect" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/Tip" unique_id=60406575]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -460.0
+offset_right = 460.0
+offset_bottom = 108.0
+grow_horizontal = 2
+texture = ExtResource("24_d2m8u")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/Tip/TextureRect" unique_id=1905780107]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -340.5
+offset_top = -22.5
+offset_right = 340.5
+offset_bottom = 22.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Tip: Running out of health will cause you to die."
+label_settings = SubResource("LabelSettings_dq24e")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/Top_Control/Back_btn" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="ArenaPanel/Bg/SafeArea/HBoxContainer/MarginContainer/Control/VBoxContainer/Rematch/BackButton" to="." method="_on_back_button_pressed"]

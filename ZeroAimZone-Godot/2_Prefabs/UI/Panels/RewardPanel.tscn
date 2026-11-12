@@ -1,0 +1,657 @@
+[gd_scene format=3 uid="uid://bynee7nlc1gcj"]
+
+[ext_resource type="Script" uid="uid://c3060cjnixxcb" path="res://ZeroAimZone-Godot/1_Scripts/UI_Controllers/RewardPanelController.gd" id="1_7m8l3"]
+[ext_resource type="Texture2D" uid="uid://nlek6bml78lt" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/Crates/silver_close.png" id="2_voxga"]
+[ext_resource type="Script" uid="uid://bjvhjvpah3nod" path="res://ZeroAimZone-Godot/1_Scripts/UI_Controllers/PremiumCurrencyEffect.gd" id="3_jgmkg"]
+[ext_resource type="Texture2D" uid="uid://25ack11amhot" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/Crates/silver_open.png" id="3_qhnwj"]
+[ext_resource type="PackedScene" uid="uid://dymdhfaug6rf2" path="res://ZeroAimZone-Godot/2_Prefabs/UI/UICards/RewardCard.tscn" id="4_yvh6a"]
+[ext_resource type="Resource" uid="uid://beyhjmowv3yds" path="res://ZeroAimZone-Godot/4_Resources/Tres/all_gun_data.tres" id="6_7m8l3"]
+[ext_resource type="Texture2D" uid="uid://dhhl0c3uf25sq" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/ShopPanel/coin.png" id="6_k1qmc"]
+[ext_resource type="Script" uid="uid://dwbw6kfjgwi8b" path="res://ZeroAimZone-Godot/1_Scripts/Utils/SafeArea.gd" id="7_35h7j"]
+[ext_resource type="Shader" uid="uid://dxsl0vdqsld3v" path="res://ZeroAimZone-Godot/3_Assets/Shaders/RewardCard.gdshader" id="8_8pupt"]
+[ext_resource type="Texture2D" uid="uid://dapm2hsogybmi" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/CommonBg/ui_common_bg.png" id="10_sm5n0"]
+[ext_resource type="Texture2D" uid="uid://beblrue3ywoon" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/CommonBg/OverLayblueBG.png" id="11_mtcwc"]
+[ext_resource type="Resource" uid="uid://din8j3gg5vyce" path="res://ZeroAimZone-Godot/4_Resources/Tres/Avatar_frame_list.tres" id="12_avatar"]
+[ext_resource type="FontFile" uid="uid://10wk3avcupsd" path="res://ZeroAimZone-Godot/3_Assets/Fonts/BarlowCondensed-Bold.ttf" id="13_fr4qn"]
+[ext_resource type="Shader" uid="uid://bos4qh4ckrnyy" path="res://ZeroAimZone-Godot/3_Assets/Shaders/WinnerShine.gdshader" id="13_jgmkg"]
+[ext_resource type="Texture2D" uid="uid://pfvia1y1niep" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/CommonButton/back_button.png" id="13_sm5n0"]
+[ext_resource type="Texture2D" uid="uid://didfnm61eo3i3" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/CommonButton/CurrencyContainer.png" id="14_mtcwc"]
+[ext_resource type="AudioStream" uid="uid://dku8p4b3256nc" path="res://ZeroAimZone-Godot/3_Assets/AudioTracks/Large_Chest_Open_1.mp3" id="16_4w7ha"]
+[ext_resource type="AudioStream" uid="uid://gkh5cvg1wwyp" path="res://ZeroAimZone-Godot/3_Assets/AudioTracks/The Button.mp3" id="16_pvmih"]
+[ext_resource type="Texture2D" uid="uid://bi73xexguxhwk" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/ShopPanel/headergem.png" id="16_voxga"]
+[ext_resource type="PackedScene" uid="uid://c0mkuqt26seo8" path="res://ZeroAimZone-Godot/2_Prefabs/ParticleEffects/chest_sparkle.tscn" id="18_4kcc4"]
+[ext_resource type="Script" uid="uid://c1umaqh6220vy" path="res://addons/SmoothScroll/smooth_scroll_container.gd" id="18_eplp2"]
+[ext_resource type="Texture2D" uid="uid://rwvqbm11idf3" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/ShopPanel/headercoin.png" id="18_qhnwj"]
+[ext_resource type="Script" uid="uid://bp2ueafm1hjdu" path="res://addons/SmoothScroll/scroll_damper/expo_scroll_damper.gd" id="19_sm5n0"]
+[ext_resource type="Texture2D" uid="uid://ceq18vdb3psvf" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/RewardPanel/RewardHeader.png" id="20_k1qmc"]
+[ext_resource type="FontFile" uid="uid://dobi5yff3px2t" path="res://ZeroAimZone-Godot/3_Assets/Fonts/BarlowCondensed-SemiBold.ttf" id="21_38uvy"]
+[ext_resource type="FontFile" uid="uid://b50qd8lfh3rbn" path="res://ZeroAimZone-Godot/3_Assets/Fonts/Teko-SemiBold.ttf" id="21_hucxa"]
+[ext_resource type="FontFile" uid="uid://dxv3myqk8v50" path="res://ZeroAimZone-Godot/3_Assets/Fonts/BarlowCondensed-Regular.ttf" id="21_wd1ia"]
+[ext_resource type="Texture2D" uid="uid://b0ymeqs3cepds" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/CommonBg/BottomBarBlue.png" id="23_sm5n0"]
+[ext_resource type="Texture2D" uid="uid://bouq0mrdf25q" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/Glows/sparkle_glow.png" id="25_hucxa"]
+[ext_resource type="Texture2D" uid="uid://dnha3s6jxw13i" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/RewardPanel/reward_card.png" id="26_hucxa"]
+[ext_resource type="Texture2D" uid="uid://h8yasv0w80il" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/ResultPanel/Winner screen.png" id="27_hucxa"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8pupt"]
+texture = ExtResource("10_sm5n0")
+
+[sub_resource type="LabelSettings" id="LabelSettings_g1crh"]
+font = ExtResource("13_fr4qn")
+font_size = 44
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4kcc4"]
+atlas = ExtResource("20_k1qmc")
+region = Rect2(0, 0, 910, 78)
+
+[sub_resource type="Resource" id="Resource_mtcwc"]
+script = ExtResource("19_sm5n0")
+
+[sub_resource type="Resource" id="Resource_voxga"]
+script = ExtResource("19_sm5n0")
+
+[sub_resource type="Theme" id="Theme_fr4qn"]
+default_font = ExtResource("13_fr4qn")
+default_font_size = 26
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fr4qn"]
+shader = ExtResource("13_jgmkg")
+shader_parameter/min_brightness = 0.750000035625
+shader_parameter/max_brightness = 1.25
+shader_parameter/pulse_speed = 1.0
+shader_parameter/color_a = Color(1.8247963, 1.8247963, 0.9164289, 1)
+shader_parameter/color_b = Color(1.8247963, 1.8247963, 1.8247963, 1)
+shader_parameter/color_strength = 1.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fi21f"]
+atlas = ExtResource("25_hucxa")
+region = Rect2(16.909271, 17.72731, 199.091, 198.18193)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4j7wr"]
+shader = ExtResource("8_8pupt")
+shader_parameter/flash_amount = 0.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wd804"]
+atlas = ExtResource("27_hucxa")
+region = Rect2(93, 939, 270, 121)
+
+[sub_resource type="FontVariation" id="FontVariation_35h7j"]
+base_font = ExtResource("13_fr4qn")
+
+[sub_resource type="Animation" id="Animation_fr4qn"]
+resource_name = "Crate_open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel/SafeArea/OpenCrateButton/HBoxContainer/Control/MarginContainer/VBoxContainer/Crate/ChestCrate:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.1308997, 0.0, 0.1308996938995747, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel/SafeArea/OpenCrateButton/HBoxContainer/Control/MarginContainer/VBoxContainer/Crate/ChestCrate:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("2_voxga"), ExtResource("3_qhnwj")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Panel/SafeArea/OpenCrateButton/HBoxContainer/Control/MarginContainer/VBoxContainer/Crate/ChestCrate:size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.79, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(509.3055, 451.4265), Vector2(509.3055, 451.4265), Vector2(718.67206, 637)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Panel/SafeArea/OpenCrateButton/HBoxContainer/Control/MarginContainer/VBoxContainer/Crate/ChestCrate:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.79, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(264.7814, -56.87497), Vector2(264.7814, -56.87497), Vector2(173.33057, -178)]
+}
+
+[sub_resource type="Animation" id="Animation_4j7wr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel/SafeArea/OpenCrateButton/HBoxContainer/Control/MarginContainer/VBoxContainer/Crate/ChestCrate:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel/SafeArea/OpenCrateButton/HBoxContainer/Control/MarginContainer/VBoxContainer/Crate/ChestCrate:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_voxga")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Panel/SafeArea/OpenCrateButton/HBoxContainer/Control/MarginContainer/VBoxContainer/Crate/ChestCrate:size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(509.3055, 451.4265)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Panel/SafeArea/OpenCrateButton/HBoxContainer/Control/MarginContainer/VBoxContainer/Crate/ChestCrate:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(264.7814, -56.87497)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4j7wr"]
+_data = {
+&"Crate_open": SubResource("Animation_fr4qn"),
+&"RESET": SubResource("Animation_4j7wr")
+}
+
+[node name="RewardPanel" type="Control" unique_id=1825069698 node_paths=PackedStringArray("open_crate_button", "crate", "crate_glow", "back_button", "diamond_count_label", "coin_count_label", "card_count_label", "card_count_image", "open_indication", "reward_card_parent", "scroll_container", "anim")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7m8l3")
+open_crate_button = NodePath("Panel/SafeArea/OpenCrateButton")
+crate = NodePath("Panel/SafeArea/OpenCrateButton/HBoxContainer/Control/MarginContainer/VBoxContainer/Crate/ChestCrate")
+crate_glow = NodePath("Panel/SafeArea/OpenCrateButton/HBoxContainer/Control/MarginContainer/VBoxContainer/Crate/ChestGlow")
+crate_sprites = Array[Texture]([ExtResource("2_voxga"), ExtResource("3_qhnwj"), ExtResource("3_qhnwj")])
+back_button = NodePath("Panel/SafeArea/OpenCrateButton/Top_Control/HBoxContainer/Control/BackButton")
+diamond_count_label = NodePath("Panel/SafeArea/OpenCrateButton/Top_Control/HBoxContainer/Control/Diamond_btn/Diamond_count")
+premium_currency_effect_script = ExtResource("3_jgmkg")
+coin_count_label = NodePath("Panel/SafeArea/OpenCrateButton/Top_Control/HBoxContainer/Control/Coin_btn/coin_count")
+card_count_label = NodePath("Panel/SafeArea/OpenCrateButton/HBoxContainer/Control/MarginContainer/VBoxContainer/Crate/CardCount/CardCountLabel")
+card_count_image = NodePath("Panel/SafeArea/OpenCrateButton/HBoxContainer/Control/MarginContainer/VBoxContainer/Crate/CardCount")
+open_indication = NodePath("Panel/SafeArea/OpenCrateButton/HBoxContainer/Control/MarginContainer/VBoxContainer/Crate/OpenIndication")
+reward_card = ExtResource("4_yvh6a")
+reward_card_parent = NodePath("Panel/SafeArea/OpenCrateButton/HBoxContainer/Control/MarginContainer/VBoxContainer/Cards/ScrollContainer/HBoxContainer")
+scroll_container = NodePath("Panel/SafeArea/OpenCrateButton/HBoxContainer/Control/MarginContainer/VBoxContainer/Cards/ScrollContainer")
+coin_texture = ExtResource("6_k1qmc")
+diamond_texture = ExtResource("16_voxga")
+avatar_frame_resource = ExtResource("12_avatar")
+all_guns_database = ExtResource("6_7m8l3")
+card_flash_shader = ExtResource("8_8pupt")
+anim = NodePath("AnimationPlayer")
+glow_paricles = ExtResource("18_4kcc4")
+chest_open_sound = ExtResource("16_4w7ha")
+
+[node name="Panel" type="Panel" parent="." unique_id=439469470]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_8pupt")
+
+[node name="Bg" type="TextureRect" parent="Panel" unique_id=647459152]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_mtcwc")
+expand_mode = 1
+
+[node name="SafeArea" type="Control" parent="Panel" unique_id=1563643045]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("7_35h7j")
+
+[node name="OpenCrateButton" type="TextureButton" parent="Panel/SafeArea" unique_id=135180407]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Top_Control" type="Control" parent="Panel/SafeArea/OpenCrateButton" unique_id=820953242]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 220.0
+grow_horizontal = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.15
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/SafeArea/OpenCrateButton/Top_Control" unique_id=1213810603]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Control" type="Control" parent="Panel/SafeArea/OpenCrateButton/Top_Control/HBoxContainer" unique_id=2074326515]
+custom_minimum_size = Vector2(1080, 0)
+layout_mode = 2
+
+[node name="BackButton" type="TextureButton" parent="Panel/SafeArea/OpenCrateButton/Top_Control/HBoxContainer/Control" unique_id=690103408]
+layout_mode = 1
+offset_left = 83.0
+offset_top = 160.0
+offset_right = 151.0
+offset_bottom = 234.0
+texture_normal = ExtResource("13_sm5n0")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Diamond_btn" type="TextureButton" parent="Panel/SafeArea/OpenCrateButton/Top_Control/HBoxContainer/Control" unique_id=303934983]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -465.0
+offset_top = 160.0
+offset_right = -275.0
+offset_bottom = 234.0
+grow_horizontal = 0
+texture_normal = ExtResource("14_mtcwc")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="diamond_icon" type="TextureRect" parent="Panel/SafeArea/OpenCrateButton/Top_Control/HBoxContainer/Control/Diamond_btn" unique_id=954562533]
+layout_mode = 0
+offset_left = -5.0
+offset_top = -15.0
+offset_right = 73.0
+offset_bottom = 85.0
+texture = ExtResource("16_voxga")
+
+[node name="Diamond_count" type="Label" parent="Panel/SafeArea/OpenCrateButton/Top_Control/HBoxContainer/Control/Diamond_btn" unique_id=979207609]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = -34.0
+offset_right = -10.0
+offset_bottom = 23.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 45
+text = "444.4K"
+label_settings = SubResource("LabelSettings_g1crh")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Coin_btn" type="TextureButton" parent="Panel/SafeArea/OpenCrateButton/Top_Control/HBoxContainer/Control" unique_id=1359767060]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -247.0
+offset_top = 160.0
+offset_right = -62.0
+offset_bottom = 234.0
+grow_horizontal = 0
+texture_normal = ExtResource("14_mtcwc")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="coin_icon" type="TextureRect" parent="Panel/SafeArea/OpenCrateButton/Top_Control/HBoxContainer/Control/Coin_btn" unique_id=1153072726]
+layout_mode = 0
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 67.0
+offset_bottom = 78.0
+texture = ExtResource("18_qhnwj")
+stretch_mode = 2
+
+[node name="coin_count" type="Label" parent="Panel/SafeArea/OpenCrateButton/Top_Control/HBoxContainer/Control/Coin_btn" unique_id=1825756454]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = -34.0
+offset_right = -10.0
+offset_bottom = 23.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 45
+text = "444.4K"
+label_settings = SubResource("LabelSettings_g1crh")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/SafeArea/OpenCrateButton" unique_id=1057134685]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+alignment = 1
+
+[node name="Control" type="Control" parent="Panel/SafeArea/OpenCrateButton/HBoxContainer" unique_id=492914058]
+custom_minimum_size = Vector2(1080, 0)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/SafeArea/OpenCrateButton/HBoxContainer/Control" unique_id=1798721319]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 246.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_bottom = 80
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/SafeArea/OpenCrateButton/HBoxContainer/Control/MarginContainer" unique_id=2004651839]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 40
+
+[node name="Header" type="Control" parent="Panel/SafeArea/OpenCrateButton/HBoxContainer/Control/MarginContainer/VBoxContainer" unique_id=1035564448]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/SafeArea/OpenCrateButton/HBoxContainer/Control/MarginContainer/VBoxContainer/Header" unique_id=1520492777]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -70.0
+offset_bottom = 70.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 85
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 85
+theme_override_constants/margin_bottom = 20
+
+[node name="RewardHeader" type="TextureRect" parent="Panel/SafeArea/OpenCrateButton/HBoxContainer/Control/MarginContainer/VBoxContainer/Header/MarginContainer" unique_id=1277228045]
+custom_minimum_size = Vector2(910, 78)
+layout_mode = 2
+texture = SubResource("AtlasTexture_4kcc4")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Panel/SafeArea/OpenCrateButton/HBoxContainer/Control/MarginContainer/VBoxContainer/Header/MarginContainer/RewardHeader" unique_id=297479665]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.05882353, 0.08235294, 0.2509804, 1)
+theme_override_colors/font_outline_color = Color(0.18431373, 0.27058825, 0.827451, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("21_hucxa")
+theme_override_font_sizes/font_size = 62
+text = "REWARDS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Cards" type="Control" parent="Panel/SafeArea/OpenCrateButton/HBoxContainer/Control/MarginContainer/VBoxContainer" unique_id=608056286]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/SafeArea/OpenCrateButton/HBoxContainer/Control/MarginContainer/VBoxContainer/Cards" unique_id=1580625621]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 92.0
+offset_right = -83.0
+offset_bottom = -330.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 0
+script = ExtResource("18_eplp2")
+wheel_scroll_damper = SubResource("Resource_mtcwc")
+dragging_scroll_damper = SubResource("Resource_voxga")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/SafeArea/OpenCrateButton/HBoxContainer/Control/MarginContainer/VBoxContainer/Cards/ScrollContainer" unique_id=1580625622]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+theme = SubResource("Theme_fr4qn")
+theme_override_constants/separation = 30
+alignment = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Crate" type="Control" parent="Panel/SafeArea/OpenCrateButton/HBoxContainer/Control/MarginContainer/VBoxContainer" unique_id=1293529457]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+mouse_filter = 2
+
+[node name="ChestGlow" type="TextureRect" parent="Panel/SafeArea/OpenCrateButton/HBoxContainer/Control/MarginContainer/VBoxContainer/Crate" unique_id=2120125891]
+material = SubResource("ShaderMaterial_fr4qn")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -325.0
+offset_top = -325.0
+offset_right = 325.0
+offset_bottom = 325.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = SubResource("AtlasTexture_fi21f")
+
+[node name="CardCount" type="TextureRect" parent="Panel/SafeArea/OpenCrateButton/HBoxContainer/Control/MarginContainer/VBoxContainer/Crate" unique_id=867977371]
+material = SubResource("ShaderMaterial_4j7wr")
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -240.0
+offset_top = -125.0
+offset_right = -140.0
+offset_bottom = -25.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("26_hucxa")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CardCountLabel" type="Label" parent="Panel/SafeArea/OpenCrateButton/HBoxContainer/Control/MarginContainer/VBoxContainer/Crate/CardCount" unique_id=1891293956]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 10.0
+offset_top = -38.5
+offset_right = 42.0
+offset_bottom = 38.5
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.9137255, 0.9019608, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.050980393, 0.043137256, 0.18431373, 1)
+theme_override_colors/font_outline_color = Color(0.13333334, 0, 0.18431373, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("13_fr4qn")
+theme_override_font_sizes/font_size = 48
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ChestCrate" type="TextureRect" parent="Panel/SafeArea/OpenCrateButton/HBoxContainer/Control/MarginContainer/VBoxContainer/Crate" unique_id=1731763903]
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -275.2186
+offset_top = -240.87497
+offset_right = 234.08691
+offset_bottom = 210.55154
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("2_voxga")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="OpenIndication" type="TextureRect" parent="Panel/SafeArea/OpenCrateButton/HBoxContainer/Control/MarginContainer/VBoxContainer/Crate" unique_id=1469772423]
+z_index = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -117.18701
+offset_top = -170.0
+offset_right = 117.18799
+offset_bottom = -48.0
+grow_horizontal = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = SubResource("AtlasTexture_wd804")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Panel/SafeArea/OpenCrateButton/HBoxContainer/Control/MarginContainer/VBoxContainer/Crate/OpenIndication" unique_id=1520866583]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -110.25
+offset_top = 7.0
+offset_right = 110.25
+offset_bottom = 90.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = -5
+theme_override_fonts/font = ExtResource("21_38uvy")
+theme_override_font_sizes/font_size = 36
+text = "Tap to open Chest"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="Panel/SafeArea/OpenCrateButton/HBoxContainer/Control/MarginContainer/VBoxContainer/Crate/OpenIndication" unique_id=1052235435]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -96.5
+offset_top = 45.0
+offset_right = 96.5
+offset_bottom = 93.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_35h7j")
+theme_override_font_sizes/font_size = 40
+text = "Chest"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Tip" type="Control" parent="Panel/SafeArea/OpenCrateButton/HBoxContainer/Control/MarginContainer/VBoxContainer" unique_id=296780021]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.2
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/SafeArea/OpenCrateButton/HBoxContainer/Control/MarginContainer/VBoxContainer/Tip" unique_id=1523351609]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="TextureRect" type="TextureRect" parent="Panel/SafeArea/OpenCrateButton/HBoxContainer/Control/MarginContainer/VBoxContainer/Tip/MarginContainer" unique_id=1436356901]
+layout_mode = 2
+texture = ExtResource("23_sm5n0")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Panel/SafeArea/OpenCrateButton/HBoxContainer/Control/MarginContainer/VBoxContainer/Tip/MarginContainer/TextureRect" unique_id=769241365]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -340.5
+offset_top = -24.0
+offset_right = 340.5
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("21_wd1ia")
+theme_override_font_sizes/font_size = 40
+text = "Tip: 50% chance to get premium rewards."
+horizontal_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1278339433]
+libraries/ = SubResource("AnimationLibrary_4j7wr")
+speed_scale = 2.0

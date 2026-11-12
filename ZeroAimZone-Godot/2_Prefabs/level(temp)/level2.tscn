@@ -1,0 +1,214 @@
+[gd_scene format=3 uid="uid://qmp1m56e585e"]
+
+[ext_resource type="Script" uid="uid://cg5bn5nr8le1o" path="res://ZeroAimZone-Godot/1_Scripts/levelScripts(temp)/level.gd" id="1_jftkj"]
+[ext_resource type="Texture2D" uid="uid://cwdd0olfrw3oe" path="res://ZeroAimZone-Godot/2_Prefabs/level(temp)/rtpa.png" id="3_k6uxx"]
+[ext_resource type="Texture2D" uid="uid://0vmct52wljwd" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/InGamePanel/game_bg.png" id="3_y7lf3"]
+[ext_resource type="Texture2D" uid="uid://do14737ld77cp" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/InGamePanel/brightbouncy.png" id="4_k6uxx"]
+[ext_resource type="Texture2D" uid="uid://dpvx1ve2s5fq7" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/InGamePanel/game_area.png" id="4_y7lf3"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_6fa5t"]
+resource_local_to_scene = true
+bounce = 0.25
+
+[sub_resource type="BoxMesh" id="BoxMesh_6fa5t"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_iqynm"]
+bounce = 1.0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iqynm"]
+texture = ExtResource("3_k6uxx")
+margins = Vector2i(5, 0)
+texture_region_size = Vector2i(25, 25)
+21:0/size_in_atlas = Vector2i(11, 13)
+21:0/0 = 0
+8:7/size_in_atlas = Vector2i(7, 6)
+8:7/0 = 0
+15:9/size_in_atlas = Vector2i(6, 4)
+15:9/0 = 0
+25:18/size_in_atlas = Vector2i(7, 8)
+25:18/0 = 0
+19:15/size_in_atlas = Vector2i(6, 11)
+19:15/0 = 0
+18:17/0 = 0
+17:21/size_in_atlas = Vector2i(2, 2)
+17:21/0 = 0
+8:21/size_in_atlas = Vector2i(3, 5)
+8:21/0 = 0
+26:32/size_in_atlas = Vector2i(5, 3)
+26:32/0 = 0
+8:32/size_in_atlas = Vector2i(13, 7)
+8:32/0 = 0
+29:36/size_in_atlas = Vector2i(3, 3)
+29:36/0 = 0
+21:33/size_in_atlas = Vector2i(3, 2)
+21:33/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_h7cxy"]
+sources/0 = SubResource("TileSetAtlasSource_iqynm")
+
+[node name="Level2" type="Node2D" unique_id=517722274 node_paths=PackedStringArray("playerSpawn", "enemySpawn", "gameplay_bg", "bg2")]
+scale = Vector2(2.5, 2.5)
+script = ExtResource("1_jftkj")
+playerSpawn = NodePath("playerSpawn")
+enemySpawn = NodePath("enemySpawn")
+gameplay_bg = NodePath("SubViewportContainer2/SubViewport/TextureRect")
+bg2 = NodePath("bg2")
+
+[node name="bg2" type="Sprite2D" parent="." unique_id=171314565]
+position = Vector2(346.99997, -502.99997)
+texture = ExtResource("3_y7lf3")
+
+[node name="SubViewportContainer2" type="SubViewportContainer" parent="." unique_id=815961088]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 97.59998
+offset_top = -840.5001
+offset_right = 847.6
+offset_bottom = 409.49988
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.6779418, 0.6347166)
+mouse_filter = 2
+stretch = true
+metadata/_edit_use_anchors_ = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer2" unique_id=1299955383]
+disable_3d = true
+transparent_bg = true
+handle_input_locally = false
+gui_disable_input = true
+size = Vector2i(750, 1250)
+render_target_update_mode = 4
+
+[node name="TextureRect" type="TextureRect" parent="SubViewportContainer2/SubViewport" unique_id=680286512]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("4_y7lf3")
+expand_mode = 1
+
+[node name="BouncyFrame" type="Sprite2D" parent="SubViewportContainer2/SubViewport/TextureRect" unique_id=1270624316]
+position = Vector2(372.8934, 622.7979)
+scale = Vector2(0.8243358, 0.9142036)
+texture = ExtResource("4_k6uxx")
+
+[node name="Walls" type="Node2D" parent="." unique_id=1706318172]
+position = Vector2(19.199997, -1142.4)
+rotation = 1.5707964
+scale = Vector2(1, 1.1919999)
+
+[node name="Left" type="StaticBody2D" parent="Walls" unique_id=862218710 groups=["bouncy_wall"]]
+position = Vector2(560, -24)
+scale = Vector2(2.2538707, 4.793495)
+collision_mask = 2
+physics_material_override = SubResource("PhysicsMaterial_6fa5t")
+
+[node name="Visual" type="MeshInstance2D" parent="Walls/Left" unique_id=20700553]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(0, 1.1820421)
+scale = Vector2(518.8146, 26.778912)
+mesh = SubResource("BoxMesh_6fa5t")
+
+[node name="Collider" type="CollisionPolygon2D" parent="Walls/Left" unique_id=1539525801]
+polygon = PackedVector2Array(260.52957, -1.8537521, 214.56421, -19.285095, 202.3186, -14.524726, -80.04007, -14.734738, -90.865906, -19.145077, -133.2818, 1.0164752)
+
+[node name="Top" type="StaticBody2D" parent="Walls" unique_id=1868741778 groups=["bouncy_wall"]]
+position = Vector2(212.8, 31.54362)
+scale = Vector2(6.3083587, 2.4088006)
+collision_mask = 2
+physics_material_override = SubResource("PhysicsMaterial_6fa5t")
+
+[node name="Visual" type="MeshInstance2D" parent="Walls/Top" unique_id=1208467257]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(-8.479193, -128.09383)
+scale = Vector2(58.329193, 272.18756)
+mesh = SubResource("BoxMesh_6fa5t")
+
+[node name="Collider" type="CollisionPolygon2D" parent="Walls/Top" unique_id=122654249]
+polygon = PackedVector2Array(22.509819, -61.157177, 18.958984, -68.819244, 18.958984, -188.626, 22.953674, -197.68117, 4.882416, -235.99147, 7.5455475, -21.31446)
+
+[node name="Right" type="StaticBody2D" parent="Walls" unique_id=2092009044 groups=["bouncy_wall"]]
+position = Vector2(560, -528.00006)
+scale = Vector2(2.272785, 6.6715493)
+collision_mask = 2
+physics_material_override = SubResource("PhysicsMaterial_6fa5t")
+
+[node name="Collider" type="CollisionPolygon2D" parent="Walls/Right" unique_id=123890264]
+position = Vector2(123.72481, -0.8832476)
+rotation = 3.1415927
+scale = Vector2(0.99167794, 0.71849805)
+polygon = PackedVector2Array(264.96637, 0.6300125, 215.09659, -18.90149, 204.62573, -14.771172, -78.442856, -14.771133, -87.8489, -18.761436, -133.81425, 2.8702316)
+
+[node name="Visual" type="MeshInstance2D" parent="Walls/Right" unique_id=1279584559]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -0.9328058)
+scale = Vector2(520.06335, 23.476114)
+mesh = SubResource("BoxMesh_6fa5t")
+
+[node name="Bottom" type="StaticBody2D" parent="Walls" unique_id=2015819295 groups=["bouncy_wall"]]
+position = Vector2(1072.0001, -272)
+scale = Vector2(5.4450297, 2.3841808)
+collision_mask = 2
+physics_material_override = SubResource("PhysicsMaterial_iqynm")
+
+[node name="Collider2" type="CollisionPolygon2D" parent="Walls/Bottom" unique_id=1664472291]
+scale = Vector2(1, 0.99999994)
+polygon = PackedVector2Array(-5.2892437, 65.52696, 13.957667, 100.5734, 13.884201, -117.44642, -6.0973225, -71.984566, -1.7630949, -63.96189, -1.5427084, 57.926533)
+
+[node name="Visual" type="MeshInstance2D" parent="Walls/Bottom" unique_id=1837974150]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(0.9760589, 0)
+scale = Vector2(25.814087, 271.99997)
+mesh = SubResource("BoxMesh_6fa5t")
+
+[node name="ParallaxBackground" type="Parallax2D" parent="." unique_id=765664100]
+visible = false
+z_index = 10
+scroll_scale = Vector2(0.085, 0)
+scroll_offset = Vector2(-33, 0)
+follow_viewport = false
+
+[node name="TileMap" type="TileMap" parent="ParallaxBackground" unique_id=1234340773]
+tile_set = SubResource("TileSet_h7cxy")
+format = 2
+layer_0/tile_data = PackedInt32Array(-720894, 1376256, 0, -196618, 983040, 9, -196624, 983040, 9, -196633, 983040, 9, -262178, 524288, 7, -851994, 1245184, 15, -327640, 1638400, 18, -262104, 1245184, 15, -131020, 1245184, 15, -262087, 1245184, 15, -393166, 1245184, 15, -196568, 1245184, 15, -196563, 1245184, 15, -196562, 1245184, 15, -917509, 524288, 32, -589838, 524288, 32, -524306, 524288, 32, -262163, 1638400, 18, 65525, 1638400, 18, -917454, 1245184, 15, -1507274, 1245184, 15, -1834954, 1245184, 15, -2359242, 1245184, 15, -720838, 1245184, 15, -851905, 1245184, 15, -1179584, 1245184, 15, -1441728, 1245184, 15, -2359229, 1245184, 15, -2555914, 1245184, 15, -1245198, 1245184, 15, -1376264, 1376256, 0, -2228230, 1376256, 0, -3473406, 1376256, 0, -3997700, 1376256, 0, -4587512, 524288, 32, -4587499, 524288, 32, -4587498, 524288, 32, -4587478, 524288, 32, -3997642, 1638400, 18, -3604426, 1638400, 18, -3538894, 1638400, 18, -2949074, 1638400, 18, -3145678, 1638400, 18, -3080141, 1638400, 18, -3014604, 1638400, 18, -2686920, 1638400, 18, -458741, 524288, 32, -131046, 524288, 32, -196598, 524288, 32)
+
+[node name="playerSpawn" type="Marker2D" parent="." unique_id=1778342091]
+position = Vector2(177.6, -712.00006)
+
+[node name="enemySpawn" type="Marker2D" parent="." unique_id=145723205]
+position = Vector2(502.00003, -194.40001)
+
+[node name="BounceEffectSpawnPoints" type="Node2D" parent="." unique_id=2015197935 groups=["bouncy_wall"]]
+
+[node name="LeftMarkerUp" type="Marker2D" parent="BounceEffectSpawnPoints" unique_id=376760130]
+position = Vector2(123.6, -470.8)
+
+[node name="LeftMarkerDown" type="Marker2D" parent="BounceEffectSpawnPoints" unique_id=1897880111]
+position = Vector2(123.6, -410.8)
+
+[node name="RightMarkerDown" type="Marker2D" parent="BounceEffectSpawnPoints" unique_id=689326092]
+position = Vector2(572.4, -408)
+
+[node name="RightMarkerUp" type="Marker2D" parent="BounceEffectSpawnPoints" unique_id=1287624622]
+position = Vector2(573.60004, -473.2)
+
+[node name="TopMarkerLeft" type="Marker2D" parent="BounceEffectSpawnPoints" unique_id=1439932962]
+position = Vector2(317.19998, -811.2)
+
+[node name="TopMarkerRight" type="Marker2D" parent="BounceEffectSpawnPoints" unique_id=1219051443]
+position = Vector2(384, -811.2)
+
+[node name="BottomMarkerRight" type="Marker2D" parent="BounceEffectSpawnPoints" unique_id=969772640]
+position = Vector2(382.4, -78)
+
+[node name="BottomMarkerLeft" type="Marker2D" parent="BounceEffectSpawnPoints" unique_id=545726445]
+position = Vector2(314, -78.4)

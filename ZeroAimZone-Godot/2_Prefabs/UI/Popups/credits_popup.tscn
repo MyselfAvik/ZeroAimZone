@@ -1,0 +1,142 @@
+[gd_scene format=3 uid="uid://d3kwbdbdqgfgh"]
+
+[ext_resource type="Script" uid="uid://colf8vgoutxqv" path="res://ZeroAimZone-Godot/1_Scripts/UI_Controllers/CreditPopupController.gd" id="1_vy85a"]
+[ext_resource type="Texture2D" uid="uid://08xuh01j03gt" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/InGamePops/creditspopup.png" id="2_odina"]
+[ext_resource type="FontFile" uid="uid://10wk3avcupsd" path="res://ZeroAimZone-Godot/3_Assets/Fonts/BarlowCondensed-Bold.ttf" id="3_vy85a"]
+[ext_resource type="FontFile" uid="uid://bwi6e3xaodcgb" path="res://ZeroAimZone-Godot/3_Assets/Fonts/Teko-Bold.ttf" id="4_qpwjk"]
+[ext_resource type="FontFile" uid="uid://dobi5yff3px2t" path="res://ZeroAimZone-Godot/3_Assets/Fonts/BarlowCondensed-SemiBold.ttf" id="5_58h0g"]
+[ext_resource type="Script" uid="uid://c1umaqh6220vy" path="res://addons/SmoothScroll/smooth_scroll_container.gd" id="5_vy85a"]
+[ext_resource type="Script" uid="uid://bp2ueafm1hjdu" path="res://addons/SmoothScroll/scroll_damper/expo_scroll_damper.gd" id="6_qpwjk"]
+
+[sub_resource type="Gradient" id="Gradient_sa4p6"]
+offsets = PackedFloat32Array(0, 0.44929245, 0.7110849)
+colors = PackedColorArray(0, 0, 0, 0.654902, 0, 0, 0, 0.654902, 0, 0, 0, 0.654902)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_vp86q"]
+gradient = SubResource("Gradient_sa4p6")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wavmv"]
+texture = ExtResource("2_odina")
+
+[sub_resource type="FontVariation" id="FontVariation_ltxcg"]
+base_font = ExtResource("3_vy85a")
+
+[sub_resource type="LabelSettings" id="LabelSettings_dwxdb"]
+font = ExtResource("4_qpwjk")
+font_size = 86
+
+[sub_resource type="Resource" id="Resource_58h0g"]
+script = ExtResource("6_qpwjk")
+
+[sub_resource type="Resource" id="Resource_prevq"]
+script = ExtResource("6_qpwjk")
+
+[sub_resource type="FontVariation" id="FontVariation_sa4p6"]
+base_font = ExtResource("3_vy85a")
+
+[sub_resource type="FontVariation" id="FontVariation_odina"]
+base_font = ExtResource("5_58h0g")
+
+[sub_resource type="LabelSettings" id="LabelSettings_kx2wb"]
+font = SubResource("FontVariation_odina")
+font_size = 40
+
+[node name="CreditsPopup" type="Control" unique_id=1279329849]
+z_index = 5
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vy85a")
+
+[node name="Overlay" type="TextureButton" parent="." unique_id=33624614]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = SubResource("GradientTexture2D_vp86q")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="MainContainer" type="Panel" parent="." unique_id=548632290]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -455.0
+offset_top = -502.0
+offset_right = 455.0
+offset_bottom = 502.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(2305, 506)
+theme_override_styles/panel = SubResource("StyleBoxTexture_wavmv")
+
+[node name="Label" type="Label" parent="MainContainer" unique_id=1103075106]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -145.0
+offset_top = 40.0
+offset_right = 129.0
+offset_bottom = 164.0
+grow_horizontal = 2
+theme_override_fonts/font = SubResource("FontVariation_ltxcg")
+theme_override_font_sizes/font_size = 87
+text = "CREDITS"
+label_settings = SubResource("LabelSettings_dwxdb")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MainContainer" unique_id=1807651942]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -373.0
+offset_top = -312.0
+offset_right = 373.0
+offset_bottom = 404.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+script = ExtResource("5_vy85a")
+wheel_scroll_damper = SubResource("Resource_58h0g")
+dragging_scroll_damper = SubResource("Resource_prevq")
+
+[node name="Label2" type="Label" parent="MainContainer/ScrollContainer" unique_id=531967750]
+custom_minimum_size = Vector2(746, 739)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+theme_override_fonts/font = SubResource("FontVariation_sa4p6")
+theme_override_font_sizes/font_size = 54
+text = "This game uses Godot Engine, available under the following license: 
+
+Copyright (c) 2014-present Godot Engine contributors. 
+Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur. 
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell 
+copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: 
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. 
+
+THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."
+label_settings = SubResource("LabelSettings_kx2wb")
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[connection signal="pressed" from="Overlay" to="." method="_on_overlay_pressed"]

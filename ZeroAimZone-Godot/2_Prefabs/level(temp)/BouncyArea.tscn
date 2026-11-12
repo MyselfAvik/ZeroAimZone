@@ -1,0 +1,130 @@
+[gd_scene format=3 uid="uid://jk5abdywvqma"]
+
+[ext_resource type="Script" uid="uid://bdmedv7gott1w" path="res://ZeroAimZone-Godot/2_Prefabs/level(temp)/bouncy_area.gd" id="1_g1stk"]
+[ext_resource type="Script" uid="uid://b4sflb5c576wo" path="res://ZeroAimZone-Godot/2_Prefabs/level(temp)/test_ball.gd" id="2_onxfd"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_g1stk"]
+bounce = 10.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8xkkg"]
+size = Vector2(912, 34)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_onxfd"]
+bounce = 10.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g1stk"]
+size = Vector2(909, 20)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_svivb"]
+bounce = 10.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_onxfd"]
+size = Vector2(32, 1207)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_md0so"]
+bounce = 10.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_svivb"]
+size = Vector2(22.5, 1211.5)
+
+[node name="BouncyArea" type="Control" unique_id=1111369788]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_g1stk")
+test_ball_scene = ExtResource("2_onxfd")
+
+[node name="Panel" type="Panel" parent="." unique_id=325046675]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -450.0
+offset_top = -600.0
+offset_right = 450.0
+offset_bottom = 600.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Panel" unique_id=672362265]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.32348046, 0.27881122, 0.3030402, 1)
+
+[node name="Walls" type="Node2D" parent="Panel" unique_id=16534254]
+
+[node name="RapierStaticBody2D" type="StaticBody2D" parent="Panel/Walls" unique_id=1683943588]
+physics_material_override = SubResource("PhysicsMaterial_g1stk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Panel/Walls/RapierStaticBody2D" unique_id=1085727609]
+position = Vector2(446, 7)
+shape = SubResource("RectangleShape2D_8xkkg")
+
+[node name="Line2D" type="Line2D" parent="Panel/Walls/RapierStaticBody2D/CollisionShape2D" unique_id=1719447921]
+position = Vector2(-446, 19.600006)
+scale = Vector2(1, 1.8)
+points = PackedVector2Array(-7, -7, 900, -7)
+width = 12.0
+default_color = Color(0.7161399, 3.4942925e-05, 0.54021, 1)
+
+[node name="RapierStaticBody2D2" type="StaticBody2D" parent="Panel/Walls" unique_id=158470055]
+physics_material_override = SubResource("PhysicsMaterial_onxfd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Panel/Walls/RapierStaticBody2D2" unique_id=1551959873]
+position = Vector2(451.5, 1191)
+shape = SubResource("RectangleShape2D_g1stk")
+
+[node name="Line2D" type="Line2D" parent="Panel/Walls/RapierStaticBody2D2/CollisionShape2D" unique_id=117498658]
+position = Vector2(-447.5, 13.000122)
+scale = Vector2(1, 1.8)
+points = PackedVector2Array(-7, -7, 900, -7)
+width = 12.0
+default_color = Color(0.7161399, 3.4942925e-05, 0.54021, 1)
+
+[node name="RapierStaticBody2D3" type="StaticBody2D" parent="Panel/Walls" unique_id=473003668]
+physics_material_override = SubResource("PhysicsMaterial_svivb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Panel/Walls/RapierStaticBody2D3" unique_id=1667160787]
+position = Vector2(6, 593.5)
+shape = SubResource("RectangleShape2D_onxfd")
+
+[node name="Line2D" type="Line2D" parent="Panel/Walls/RapierStaticBody2D3/CollisionShape2D" unique_id=1944285118]
+position = Vector2(1.5999985, -593.5)
+scale = Vector2(1.95, 1)
+points = PackedVector2Array(2, 23, 2, 603.2355, 2, 1183)
+width = 12.0
+default_color = Color(0.7176471, 0, 0.5411765, 1)
+
+[node name="RapierStaticBody2D4" type="StaticBody2D" parent="Panel/Walls" unique_id=1530042041]
+physics_material_override = SubResource("PhysicsMaterial_md0so")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Panel/Walls/RapierStaticBody2D4" unique_id=2053870490]
+position = Vector2(893.75, 598.25)
+shape = SubResource("RectangleShape2D_svivb")
+
+[node name="Line2D" type="Line2D" parent="Panel/Walls/RapierStaticBody2D4/CollisionShape2D" unique_id=868330124]
+position = Vector2(-3.750061, -605.305)
+scale = Vector2(1.95, 1.0042301)
+points = PackedVector2Array(2, 23, 2, 603.2355, 2.0513, 1184.9999)
+width = 12.0
+default_color = Color(0.7176471, 0, 0.5411765, 1)
+
+[node name="Node2D" type="Node2D" parent="Panel" unique_id=901267355]
+
+[node name="PlayerSpawn" type="Marker2D" parent="Panel/Node2D" unique_id=1943222849]
+position = Vector2(135, 395)
+
+[node name="EnemySpawn" type="Marker2D" parent="Panel/Node2D" unique_id=501855787]
+position = Vector2(747, 599)
+
+[node name="TestBallSpawn" type="Marker2D" parent="Panel/Node2D" unique_id=718768868]
+position = Vector2(443, 172)

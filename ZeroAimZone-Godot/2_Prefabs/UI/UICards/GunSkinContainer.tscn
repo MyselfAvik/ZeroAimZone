@@ -1,0 +1,111 @@
+[gd_scene format=3 uid="uid://dw6u33pmmonev"]
+
+[ext_resource type="Script" uid="uid://3htfx16vsioh" path="res://ZeroAimZone-Godot/1_Scripts/UI_Controllers/GunSkinContainerController.gd" id="1_x0a5k"]
+[ext_resource type="Texture2D" uid="uid://bhhbpy5bc8l6e" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/CommonBg/Titlebg.png" id="2_t0ld1"]
+[ext_resource type="FontFile" uid="uid://10wk3avcupsd" path="res://ZeroAimZone-Godot/3_Assets/Fonts/BarlowCondensed-Bold.ttf" id="2_x0a5k"]
+[ext_resource type="Script" uid="uid://be5v725nuybix" path="res://ZeroAimZone-Godot/1_Scripts/Utils/HorizontalScroll.gd.gd" id="4_cth1s"]
+[ext_resource type="PackedScene" uid="uid://dfs2idhx2u0ai" path="res://ZeroAimZone-Godot/2_Prefabs/UI/UICards/SkinCard.tscn" id="5_luef6"]
+[ext_resource type="Texture2D" uid="uid://00qjah7ajees" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/CommonBg/CardBg.png" id="6_t0ld1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5ujcn"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_36kdi"]
+font = ExtResource("2_x0a5k")
+font_size = 60
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f6now"]
+texture = ExtResource("6_t0ld1")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t0ld1"]
+texture = ExtResource("6_t0ld1")
+
+[node name="GunSkinContainer" type="Panel" unique_id=453301573 node_paths=PackedStringArray("skin_cards", "gun_name", "horizontal_scroll")]
+custom_minimum_size = Vector2(0, 580)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -1342.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxEmpty_5ujcn")
+script = ExtResource("1_x0a5k")
+skin_cards = [NodePath("GunCards/MarginContainer/StreetWeaponsHBox/SkinCard"), NodePath("GunCards/MarginContainer/StreetWeaponsHBox/SkinCard2"), NodePath("GunCards/MarginContainer/StreetWeaponsHBox/SkinCard3")]
+gun_name = NodePath("GunName/Label")
+horizontal_scroll = NodePath("GunCards")
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="GunName" type="TextureRect" parent="." unique_id=1423129529]
+custom_minimum_size = Vector2(960, 100)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+size_flags_vertical = 3
+texture = ExtResource("2_t0ld1")
+expand_mode = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Label" type="Label" parent="GunName" unique_id=660759058]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "Street Weapons"
+label_settings = SubResource("LabelSettings_36kdi")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="GunCards" type="ScrollContainer" parent="." unique_id=1209448653]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 108.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 0
+script = ExtResource("4_cth1s")
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="MarginContainer" type="MarginContainer" parent="GunCards" unique_id=1494631592]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_top = 20
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="StreetWeaponsHBox" type="HBoxContainer" parent="GunCards/MarginContainer" unique_id=1083199963]
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="SkinCard" parent="GunCards/MarginContainer/StreetWeaponsHBox" unique_id=1780634996 instance=ExtResource("5_luef6")]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxTexture_f6now")
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="SkinCard2" parent="GunCards/MarginContainer/StreetWeaponsHBox" unique_id=1824196590 instance=ExtResource("5_luef6")]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxTexture_t0ld1")
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="SkinCard3" parent="GunCards/MarginContainer/StreetWeaponsHBox" unique_id=683294062 instance=ExtResource("5_luef6")]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true

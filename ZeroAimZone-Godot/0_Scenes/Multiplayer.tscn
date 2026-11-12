@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://cfpjljxunvn4n"]
+
+[ext_resource type="Script" uid="uid://ck8uoa5nvw1dh" path="res://ZeroAimZone-Godot/1_Scripts/Managers/MultiplayerManager.gd" id="1_6ksip"]
+[ext_resource type="Resource" uid="uid://dve5e43sdwl30" path="res://ZeroAimZone-Godot/4_Resources/Tres/multiplayer_player_data.tres" id="2_qpwfq"]
+[ext_resource type="Script" uid="uid://duh53qaqb8qmk" path="res://ZeroAimZone-Godot/1_Scripts/Network/MultiplayerSpawnerController.gd" id="3_bwliw"]
+
+[node name="Multiplayer" type="Node2D" unique_id=1692486103]
+script = ExtResource("1_6ksip")
+multiplayer_player_data = ExtResource("2_qpwfq")
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="." unique_id=1508214911 node_paths=PackedStringArray("multiplayer_manager")]
+spawn_path = NodePath("..")
+script = ExtResource("3_bwliw")
+multiplayer_manager = NodePath("..")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=224059277]
+scale = Vector2(0.4, 0.4)
+zoom = Vector2(0.9, 0.9)
+limit_left = 113
+limit_top = -2575
+limit_right = 1497
+limit_bottom = 13
+limit_smoothed = true
+position_smoothing_enabled = true
+position_smoothing_speed = 3.5

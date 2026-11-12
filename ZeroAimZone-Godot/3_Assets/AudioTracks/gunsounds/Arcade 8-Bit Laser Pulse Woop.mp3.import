@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cpub0vnu5i682"
+path="res://.godot/imported/Arcade 8-Bit Laser Pulse Woop.mp3-edb0f7dbece5ff3045777859177aa2d6.mp3str"
+
+[deps]
+
+source_file="res://ZeroAimZone-Godot/3_Assets/AudioTracks/gunsounds/Arcade 8-Bit Laser Pulse Woop.mp3"
+dest_files=["res://.godot/imported/Arcade 8-Bit Laser Pulse Woop.mp3-edb0f7dbece5ff3045777859177aa2d6.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

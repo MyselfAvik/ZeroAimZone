@@ -1,0 +1,144 @@
+[gd_scene format=3 uid="uid://cak0w7nrwvlnd"]
+
+[ext_resource type="Script" uid="uid://ht7p7ownomkg" path="res://ZeroAimZone-Godot/3_Assets/obstacles/Laser/laser_beam_vfx.gd" id="1_luiiw"]
+[ext_resource type="Shader" uid="uid://c12q86oobdlt3" path="res://ZeroAimZone-Godot/3_Assets/obstacles/Laser/LaserBeamVFX.gdshader" id="2_dab61"]
+[ext_resource type="Texture2D" uid="uid://cq7v64140ig1j" path="res://ZeroAimZone-Godot/3_Assets/obstacles/Laser/Sprites/glowing_circle.png" id="3_golhy"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_dab61"]
+blend_mode = 1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fx50q"]
+shader = ExtResource("2_dab61")
+shader_parameter/beam_color = Color(1, 0.05, 0.05, 1)
+shader_parameter/core_color = Color(1, 1, 1, 1)
+shader_parameter/glow_intensity = 1.1
+shader_parameter/glow_falloff = 3.8
+shader_parameter/core_intensity = 2.2
+shader_parameter/core_sharpness = 1200.0
+shader_parameter/flicker_strength = 0.03
+shader_parameter/pulse_speed = 3.0
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_luiiw"]
+blend_mode = 1
+
+[sub_resource type="Gradient" id="Gradient_fx50q"]
+offsets = PackedFloat32Array(0, 0.35, 0.75, 1)
+colors = PackedColorArray(1, 0.9, 0.5, 1, 1, 0.15, 0, 0.9, 1, 0, 0, 0.6, 0.8, 0, 0, 0)
+
+[sub_resource type="Curve" id="Curve_casting"]
+_data = [Vector2(0, 0.4), 0.0, 1.5, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -2.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_beam_particles"]
+_data = [Vector2(0, 0), 0.0, 3.0, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -3.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_impact"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -1.8, 0.0, 0, 0]
+point_count = 2
+
+[node name="LaserBeamVfx" type="Node2D" unique_id=226927838]
+z_index = 10
+material = SubResource("CanvasItemMaterial_dab61")
+script = ExtResource("1_luiiw")
+color = Color(1, 1, 1, 1)
+
+[node name="Line2D" type="Line2D" parent="." unique_id=1820858359]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_fx50q")
+width = 85.0
+texture_mode = 2
+joint_mode = 2
+sharp_limit = 8.0
+
+[node name="StartMuzzleOrb" type="Node2D" parent="." unique_id=598371201]
+unique_name_in_owner = true
+
+[node name="OuterGlow" type="Sprite2D" parent="StartMuzzleOrb" unique_id=148392019]
+modulate = Color(3, 0.05, 0, 0.9)
+material = SubResource("CanvasItemMaterial_luiiw")
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("3_golhy")
+
+[node name="CoreGlow" type="Sprite2D" parent="StartMuzzleOrb" unique_id=739182034]
+modulate = Color(3.5, 2.8, 1.5, 1)
+material = SubResource("CanvasItemMaterial_luiiw")
+scale = Vector2(0.32, 0.32)
+texture = ExtResource("3_golhy")
+
+[node name="EndMuzzleOrb" type="Node2D" parent="." unique_id=984371029]
+unique_name_in_owner = true
+z_index = 12
+
+[node name="OuterGlow" type="Sprite2D" parent="EndMuzzleOrb" unique_id=648391023]
+modulate = Color(3, 0.05, 0, 0.9)
+material = SubResource("CanvasItemMaterial_luiiw")
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("3_golhy")
+
+[node name="CoreGlow" type="Sprite2D" parent="EndMuzzleOrb" unique_id=384910283]
+modulate = Color(3.5, 2.8, 1.5, 1)
+material = SubResource("CanvasItemMaterial_luiiw")
+scale = Vector2(0.28, 0.28)
+texture = ExtResource("3_golhy")
+
+[node name="CastingParticles2D" type="CPUParticles2D" parent="." unique_id=1954160347]
+unique_name_in_owner = true
+material = SubResource("CanvasItemMaterial_luiiw")
+emitting = false
+amount = 12
+texture = ExtResource("3_golhy")
+lifetime = 0.28
+emission_shape = 1
+emission_sphere_radius = 8.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 35.0
+scale_amount_min = 0.35
+scale_amount_max = 0.35
+scale_amount_curve = SubResource("Curve_casting")
+color = Color(1, 0, 0, 1)
+color_ramp = SubResource("Gradient_fx50q")
+
+[node name="BeamParticles2D" type="CPUParticles2D" parent="." unique_id=269205366]
+unique_name_in_owner = true
+material = SubResource("CanvasItemMaterial_luiiw")
+emitting = false
+amount = 40
+texture = ExtResource("3_golhy")
+lifetime = 0.45
+emission_shape = 3
+emission_rect_extents = Vector2(450, 35)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 4.0
+initial_velocity_max = 16.0
+scale_amount_min = 0.02
+scale_amount_max = 0.055
+scale_amount_curve = SubResource("Curve_beam_particles")
+color_ramp = SubResource("Gradient_fx50q")
+
+[node name="ImpactParticles2D" type="CPUParticles2D" parent="." unique_id=1321231160]
+unique_name_in_owner = true
+z_index = 12
+material = SubResource("CanvasItemMaterial_luiiw")
+emitting = false
+amount = 16
+texture = ExtResource("3_golhy")
+lifetime = 0.22
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 80.0
+initial_velocity_max = 240.0
+damping_min = 50.0
+damping_max = 120.0
+scale_amount_min = 0.15
+scale_amount_max = 1.2
+scale_amount_curve = SubResource("Curve_impact")
+color_ramp = SubResource("Gradient_fx50q")
+
+[node name="BeamCast" type="RayCast2D" parent="." unique_id=969857953]
+unique_name_in_owner = true
+target_position = Vector2(0, 0)
+collision_mask = 3

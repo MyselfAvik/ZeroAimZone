@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://dt3ccir5fpvuy"]
+
+[ext_resource type="Script" uid="uid://dt2xwggm2krip" path="res://ZeroAimZone-Godot/3_Assets/obstacles/VFX/ChevronBurst.gd" id="1_5qr6v"]
+[ext_resource type="Texture2D" uid="uid://8nnalpapabra" path="res://ZeroAimZone-Godot/3_Assets/obstacles/VFX/Capa_1.png" id="1_wrswc"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_5qr6v"]
+blend_mode = 1
+
+[node name="BounceEffect" type="Node2D" unique_id=92499806]
+script = ExtResource("1_5qr6v")
+
+[node name="Chevron1" type="Sprite2D" parent="." unique_id=35068977]
+material = SubResource("CanvasItemMaterial_5qr6v")
+texture = ExtResource("1_wrswc")
+
+[node name="Chevron2" type="Sprite2D" parent="." unique_id=1926189590]
+material = SubResource("CanvasItemMaterial_5qr6v")
+position = Vector2(0, -24)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("1_wrswc")
+
+[node name="Chevron3" type="Sprite2D" parent="." unique_id=383326507]
+material = SubResource("CanvasItemMaterial_5qr6v")
+position = Vector2(0, -48)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("1_wrswc")
+
+[node name="Chevron4" type="Sprite2D" parent="." unique_id=711105213]
+material = SubResource("CanvasItemMaterial_5qr6v")
+position = Vector2(0, -67)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("1_wrswc")
+
+[node name="Chevron5" type="Sprite2D" parent="." unique_id=231805752]
+material = SubResource("CanvasItemMaterial_5qr6v")
+position = Vector2(0, -84)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_wrswc")

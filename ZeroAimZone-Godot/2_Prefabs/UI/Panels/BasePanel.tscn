@@ -1,0 +1,505 @@
+[gd_scene format=3 uid="uid://c04qs0mlcw2p7"]
+
+[ext_resource type="Script" uid="uid://d4k61p31o02jp" path="res://ZeroAimZone-Godot/1_Scripts/UI_Controllers/BasePanelController.gd" id="1_yqsai"]
+[ext_resource type="Script" uid="uid://dwbw6kfjgwi8b" path="res://ZeroAimZone-Godot/1_Scripts/Utils/SafeArea.gd" id="2_1nppr"]
+[ext_resource type="Script" uid="uid://bjvhjvpah3nod" path="res://ZeroAimZone-Godot/1_Scripts/UI_Controllers/PremiumCurrencyEffect.gd" id="2_r2i6d"]
+[ext_resource type="Texture2D" uid="uid://didfnm61eo3i3" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/CommonButton/CurrencyContainer.png" id="2_wlafl"]
+[ext_resource type="Texture2D" uid="uid://bcjbvlxu42opy" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/BasePanel/FooterActiveButton.png" id="4_e0tdl"]
+[ext_resource type="Texture2D" uid="uid://dapm2hsogybmi" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/CommonBg/ui_common_bg.png" id="6_2dhpf"]
+[ext_resource type="Texture2D" uid="uid://bgsk7cjfj7gg8" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/Profile/avatar6.png" id="8_0rh08"]
+[ext_resource type="Texture2D" uid="uid://nv30qxw2hdpa" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/Profile/frame_default.png" id="9_0rh08"]
+[ext_resource type="Texture2D" uid="uid://ua6q2wy5r1th" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/BasePanel/SettingButton.png" id="9_20uhy"]
+[ext_resource type="Texture2D" uid="uid://cfr7ja8jqmcr4" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/CommonButton/currency_button.png" id="10_20uhy"]
+[ext_resource type="Texture2D" uid="uid://bi73xexguxhwk" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/ShopPanel/headergem.png" id="11_qex1c"]
+[ext_resource type="FontFile" uid="uid://10wk3avcupsd" path="res://ZeroAimZone-Godot/3_Assets/Fonts/BarlowCondensed-Bold.ttf" id="12_kept5"]
+[ext_resource type="Texture2D" uid="uid://rwvqbm11idf3" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/ShopPanel/headercoin.png" id="13_0rh08"]
+[ext_resource type="Texture2D" uid="uid://pfvia1y1niep" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/CommonButton/back_button.png" id="13_20uhy"]
+[ext_resource type="PackedScene" uid="uid://bg6tlqclgi7gt" path="res://ZeroAimZone-Godot/2_Prefabs/UI/Panels/HomePanel.tscn" id="13_jgc3w"]
+[ext_resource type="PackedScene" uid="uid://cyn8kcyqe7s07" path="res://ZeroAimZone-Godot/2_Prefabs/UI/Panels/GunPanel.tscn" id="15_7foed"]
+[ext_resource type="PackedScene" uid="uid://bqkmj0ncdstti" path="res://ZeroAimZone-Godot/2_Prefabs/UI/Panels/ProfilePanel.tscn" id="16_kept5"]
+[ext_resource type="PackedScene" uid="uid://b2twncpjhy5q" path="res://ZeroAimZone-Godot/2_Prefabs/UI/Panels/ShopPanel.tscn" id="17_8etpv"]
+[ext_resource type="Texture2D" uid="uid://bjmhxodjd6ti6" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/BasePanel/Footer.png" id="20_20uhy"]
+[ext_resource type="PackedScene" uid="uid://caugg3fmnmbip" path="res://ZeroAimZone-Godot/2_Prefabs/UI/Panels/FriendPanel.tscn" id="20_qex1c"]
+[ext_resource type="Texture2D" uid="uid://chq34g1r0mil2" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/BasePanel/FooterInactiveButton.png" id="21_qex1c"]
+[ext_resource type="PackedScene" uid="uid://dlddpv16exc5" path="res://ZeroAimZone-Godot/2_Prefabs/UI/Panels/SettingPanel.tscn" id="21_wlafl"]
+[ext_resource type="Texture2D" uid="uid://bl0pfvd4d1apq" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/BasePanel/HomeIcon.png" id="22_0rh08"]
+[ext_resource type="Resource" uid="uid://din8j3gg5vyce" path="res://ZeroAimZone-Godot/4_Resources/Tres/Avatar_frame_list.tres" id="22_avatar"]
+[ext_resource type="Texture2D" uid="uid://vrrfskvimt5d" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/BasePanel/FriendIcon.png" id="23_wlafl"]
+[ext_resource type="Texture2D" uid="uid://b8npaiqoj2665" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/BasePanel/GunIcon.png" id="24_tvj3u"]
+[ext_resource type="Texture2D" uid="uid://de4ve5oq06phk" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/BasePanel/ShopIcon.png" id="25_qex1c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nicdn"]
+atlas = ExtResource("8_0rh08")
+region = Rect2(12, 5.653777, 245.5896, 261.78372)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wlafl"]
+atlas = ExtResource("9_0rh08")
+region = Rect2(16, 21.731323, 251, 301.66785)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0rh08"]
+load_path = "res://.godot/imported/frame_icon1.png-3cd223566b92be6f583115ce40abc8e7.ctex"
+
+[sub_resource type="LabelSettings" id="LabelSettings_0c5ol"]
+font = ExtResource("12_kept5")
+font_size = 44
+
+[node name="BasePanel" type="Control" unique_id=831527309 node_paths=PackedStringArray("home_panel", "setting_panel", "profile_panel", "gun_panel", "friend_panel", "shop_panel", "diamond_btn", "coin_count_label", "diamond_count_label", "home_avatar", "home_frame", "home_frame_icon", "home_btn", "friend_btn", "gun_btn", "shop_btn", "back_btn")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_yqsai")
+home_panel = NodePath("SafeArea/Panel_Area/HomePanel")
+setting_panel = NodePath("SafeArea/Panel_Area/SettingsPanel")
+profile_panel = NodePath("SafeArea/Panel_Area/ProfilePanel")
+gun_panel = NodePath("SafeArea/Panel_Area/GunPanel")
+friend_panel = NodePath("SafeArea/Panel_Area/FriendsPanel")
+shop_panel = NodePath("SafeArea/Panel_Area/ShopPanel")
+ios_diamond_texture = ExtResource("2_wlafl")
+diamond_btn = NodePath("SafeArea/Top_Control/HBoxContainer/Control/Diamond_btn")
+coin_count_label = NodePath("SafeArea/Top_Control/HBoxContainer/Control/Coin_btn/coin_count")
+diamond_count_label = NodePath("SafeArea/Top_Control/HBoxContainer/Control/Diamond_btn/Diamond_count")
+premium_currency_effect_script = ExtResource("2_r2i6d")
+home_avatar = NodePath("SafeArea/Top_Control/HBoxContainer/Control/Profile_btn")
+home_frame = NodePath("SafeArea/Top_Control/HBoxContainer/Control/Profile_btn/frame")
+home_frame_icon = NodePath("SafeArea/Top_Control/HBoxContainer/Control/Profile_btn/frame_icon")
+avatar_frame_res = ExtResource("22_avatar")
+active_texture = ExtResource("4_e0tdl")
+inactive_texture = ExtResource("21_qex1c")
+home_btn = NodePath("SafeArea/Bottom_Control/HBoxContainer/Home")
+friend_btn = NodePath("SafeArea/Bottom_Control/HBoxContainer/Friend")
+gun_btn = NodePath("SafeArea/Bottom_Control/HBoxContainer/Gun")
+shop_btn = NodePath("SafeArea/Bottom_Control/HBoxContainer/Shop")
+back_btn = NodePath("SafeArea/Top_Control/HBoxContainer/Control/BackBtn")
+
+[node name="Bg" type="TextureRect" parent="." unique_id=1101374631]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_2dhpf")
+expand_mode = 1
+
+[node name="SafeArea" type="Control" parent="." unique_id=1113075257]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("2_1nppr")
+
+[node name="Top_Control" type="Control" parent="SafeArea" unique_id=553449939]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 273.0
+grow_horizontal = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.15
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SafeArea/Top_Control" unique_id=1658120726]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Control" type="Control" parent="SafeArea/Top_Control/HBoxContainer" unique_id=739593107]
+custom_minimum_size = Vector2(1080, 0)
+layout_mode = 2
+
+[node name="Profile_btn" type="TextureButton" parent="SafeArea/Top_Control/HBoxContainer/Control" unique_id=638305545]
+z_index = 1
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 85.0
+offset_top = -162.0
+offset_right = 222.68799
+offset_bottom = -24.312012
+grow_vertical = 0
+mouse_filter = 1
+texture_normal = SubResource("AtlasTexture_nicdn")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="frame" type="TextureRect" parent="SafeArea/Top_Control/HBoxContainer/Control/Profile_btn" unique_id=174883382]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3.0
+offset_top = 3.0
+offset_right = -3.6879883
+offset_bottom = 24.312012
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_wlafl")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="frame_icon" type="TextureRect" parent="SafeArea/Top_Control/HBoxContainer/Control/Profile_btn" unique_id=807111833]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -23.843994
+offset_top = -18.687988
+offset_right = 21.156006
+offset_bottom = 16.312012
+grow_horizontal = 2
+grow_vertical = 0
+texture = SubResource("CompressedTexture2D_0rh08")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Setting_btn" type="TextureButton" parent="SafeArea/Top_Control/HBoxContainer/Control" unique_id=1098755628]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -145.37
+offset_top = -115.0
+offset_right = -75.369995
+offset_bottom = -39.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 8
+size_flags_vertical = 0
+texture_normal = ExtResource("9_20uhy")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Diamond_btn" type="TextureButton" parent="SafeArea/Top_Control/HBoxContainer/Control" unique_id=1482328776]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -610.0
+offset_top = -113.0
+offset_right = -405.0
+offset_bottom = -37.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = ExtResource("10_20uhy")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="diamond_icon" type="TextureRect" parent="SafeArea/Top_Control/HBoxContainer/Control/Diamond_btn" unique_id=250805927]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -53.0
+offset_right = 55.0
+offset_bottom = 47.0
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("11_qex1c")
+expand_mode = 1
+
+[node name="Diamond_count" type="Label" parent="SafeArea/Top_Control/HBoxContainer/Control/Diamond_btn" unique_id=1404977593]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -56.5
+offset_top = -36.0
+offset_right = 47.5
+offset_bottom = 23.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "143.9K"
+label_settings = SubResource("LabelSettings_0c5ol")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="diamond_icon_ios" type="TextureRect" parent="SafeArea/Top_Control/HBoxContainer/Control/Diamond_btn" unique_id=1842291179]
+visible = false
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -5.0
+offset_top = -53.0
+offset_right = 70.0
+offset_bottom = 47.0
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("11_qex1c")
+expand_mode = 1
+
+[node name="Coin_btn" type="TextureButton" parent="SafeArea/Top_Control/HBoxContainer/Control" unique_id=1491758197]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -370.15997
+offset_top = -113.0
+offset_right = -165.15997
+offset_bottom = -37.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = ExtResource("10_20uhy")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="coin_icon" type="TextureRect" parent="SafeArea/Top_Control/HBoxContainer/Control/Coin_btn" unique_id=578984083]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -18.0
+offset_top = -53.0
+offset_right = 60.0
+offset_bottom = 42.0
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("13_0rh08")
+expand_mode = 1
+
+[node name="coin_count" type="Label" parent="SafeArea/Top_Control/HBoxContainer/Control/Coin_btn" unique_id=700291573]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -57.5
+offset_top = -35.0
+offset_right = 52.5
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 45
+text = "2.05K"
+label_settings = SubResource("LabelSettings_0c5ol")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BackBtn" type="TextureButton" parent="SafeArea/Top_Control/HBoxContainer/Control" unique_id=222096581]
+visible = false
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 85.0
+offset_top = -113.0
+offset_right = 153.0
+offset_bottom = -39.0
+grow_vertical = 0
+texture_normal = ExtResource("13_20uhy")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Panel_Area" type="Control" parent="SafeArea" unique_id=1168013440]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 279.0
+offset_bottom = -201.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+mouse_filter = 1
+
+[node name="HomePanel" parent="SafeArea/Panel_Area" unique_id=1440207613 instance=ExtResource("13_jgc3w")]
+visible = false
+layout_mode = 1
+
+[node name="GunPanel" parent="SafeArea/Panel_Area" unique_id=1464647650 instance=ExtResource("15_7foed")]
+visible = false
+layout_mode = 1
+
+[node name="ProfilePanel" parent="SafeArea/Panel_Area" unique_id=182201356 instance=ExtResource("16_kept5")]
+visible = false
+layout_mode = 1
+
+[node name="SettingsPanel" parent="SafeArea/Panel_Area" unique_id=1904461192 instance=ExtResource("21_wlafl")]
+visible = false
+layout_mode = 1
+
+[node name="ShopPanel" parent="SafeArea/Panel_Area" unique_id=111914105 instance=ExtResource("17_8etpv")]
+visible = false
+layout_mode = 1
+
+[node name="FriendsPanel" parent="SafeArea/Panel_Area" unique_id=279920194 instance=ExtResource("20_qex1c")]
+visible = false
+layout_mode = 1
+
+[node name="Bottom_Control" type="Control" parent="SafeArea" unique_id=844506143]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -200.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.13
+
+[node name="bg" type="TextureRect" parent="SafeArea/Bottom_Control" unique_id=6942741]
+custom_minimum_size = Vector2(1080, 200)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("20_20uhy")
+expand_mode = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SafeArea/Bottom_Control" unique_id=2035642079]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -485.0
+offset_top = -60.0
+offset_right = 485.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Home" type="TextureButton" parent="SafeArea/Bottom_Control/HBoxContainer" unique_id=909196351]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.2
+texture_normal = ExtResource("21_qex1c")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="SafeArea/Bottom_Control/HBoxContainer/Home" unique_id=1377382945]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.5
+offset_top = -46.5
+offset_right = 40.5
+offset_bottom = 30.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("22_0rh08")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Friend" type="TextureButton" parent="SafeArea/Bottom_Control/HBoxContainer" unique_id=538983722]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.2
+texture_normal = ExtResource("21_qex1c")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="SafeArea/Bottom_Control/HBoxContainer/Friend" unique_id=829800272]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -47.0
+offset_top = -42.5
+offset_right = 47.0
+offset_bottom = 30.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("23_wlafl")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Gun" type="TextureButton" parent="SafeArea/Bottom_Control/HBoxContainer" unique_id=1684018447]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.2
+texture_normal = ExtResource("21_qex1c")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="SafeArea/Bottom_Control/HBoxContainer/Gun" unique_id=1810153864]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.5
+offset_top = -36.5
+offset_right = 48.5
+offset_bottom = 28.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("24_tvj3u")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Shop" type="TextureButton" parent="SafeArea/Bottom_Control/HBoxContainer" unique_id=84346858]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.2
+texture_normal = ExtResource("21_qex1c")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="SafeArea/Bottom_Control/HBoxContainer/Shop" unique_id=1351034813]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.0
+offset_top = -42.5
+offset_right = 36.99991
+offset_bottom = 32.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("25_qex1c")
+expand_mode = 1
+stretch_mode = 4
+
+[connection signal="pressed" from="SafeArea/Top_Control/HBoxContainer/Control/Profile_btn" to="." method="_on_profile_btn_pressed"]
+[connection signal="pressed" from="SafeArea/Top_Control/HBoxContainer/Control/Setting_btn" to="." method="_on_setting_btn_pressed"]
+[connection signal="pressed" from="SafeArea/Top_Control/HBoxContainer/Control/Diamond_btn" to="." method="_on_diamond_btn_pressed"]
+[connection signal="pressed" from="SafeArea/Top_Control/HBoxContainer/Control/Coin_btn" to="." method="_on_coin_btn_pressed"]
+[connection signal="pressed" from="SafeArea/Bottom_Control/HBoxContainer/Home" to="." method="_on_home_pressed"]
+[connection signal="pressed" from="SafeArea/Bottom_Control/HBoxContainer/Friend" to="." method="_on_friend_pressed"]
+[connection signal="pressed" from="SafeArea/Bottom_Control/HBoxContainer/Gun" to="." method="_on_gun_pressed"]
+[connection signal="pressed" from="SafeArea/Bottom_Control/HBoxContainer/Shop" to="." method="_on_shop_pressed"]

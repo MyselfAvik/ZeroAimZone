@@ -1,0 +1,390 @@
+[gd_scene format=3 uid="uid://btjcv4n1ifxbb"]
+
+[ext_resource type="Script" uid="uid://cpttnrsthx6re" path="res://ZeroAimZone-Godot/1_Scripts/UI_Controllers/ArenaCardController.gd" id="1_qsxko"]
+[ext_resource type="Texture2D" uid="uid://c4ygpxnuq8lmi" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/ArenaSelection/blue_arena.png" id="2_anrms"]
+[ext_resource type="Texture2D" uid="uid://dyffpkkg2101n" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/Glows/common_star_glow.png" id="3_41gh3"]
+[ext_resource type="Texture2D" uid="uid://4bg30b4n73nn" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/ArenaSelection/NewYorkLogo.png" id="3_anrms"]
+[ext_resource type="FontFile" uid="uid://b50qd8lfh3rbn" path="res://ZeroAimZone-Godot/3_Assets/Fonts/Teko-SemiBold.ttf" id="3_b1to1"]
+[ext_resource type="FontFile" uid="uid://10wk3avcupsd" path="res://ZeroAimZone-Godot/3_Assets/Fonts/BarlowCondensed-Bold.ttf" id="5_41gh3"]
+[ext_resource type="FontFile" uid="uid://dobi5yff3px2t" path="res://ZeroAimZone-Godot/3_Assets/Fonts/BarlowCondensed-SemiBold.ttf" id="5_bhw4b"]
+[ext_resource type="Texture2D" uid="uid://cfrjsawth2cfb" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/Ushop/handfulcoins.png" id="8_anrms"]
+[ext_resource type="Texture2D" uid="uid://d2x2cwle7gvpd" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/guns/street/glock17.png" id="9_anrms"]
+[ext_resource type="Texture2D" uid="uid://cv44kfjnh0n5s" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/LoadingPanel/bullet.png" id="10_anrms"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pfo0h"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_j7g8u"]
+font = ExtResource("3_b1to1")
+font_size = 60
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_vwfqk"]
+font = ExtResource("5_41gh3")
+font_size = 65
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_o10fe"]
+font = ExtResource("5_bhw4b")
+font_size = 86
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s4bs2"]
+atlas = ExtResource("8_anrms")
+region = Rect2(62, 72, 114, 122)
+
+[sub_resource type="LabelSettings" id="LabelSettings_tyysm"]
+font = ExtResource("5_41gh3")
+font_size = 61
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(0, 1)
+
+[sub_resource type="FontVariation" id="FontVariation_o435i"]
+base_font = ExtResource("5_bhw4b")
+
+[sub_resource type="LabelSettings" id="LabelSettings_anrms"]
+font = ExtResource("5_bhw4b")
+font_size = 61
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_b1to1"]
+font = ExtResource("5_41gh3")
+font_size = 45
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_bhw4b"]
+font = ExtResource("5_41gh3")
+font_size = 45
+font_color = Color(0.99215686, 0.8627451, 0.3764706, 1)
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7sm04"]
+atlas = ExtResource("9_anrms")
+region = Rect2(15, 93, 513, 355)
+
+[node name="ArenaCard" type="Panel" unique_id=2057006940 node_paths=PackedStringArray("reward_amount_label", "entry_amount_label", "bg_btn", "logo", "logo_star")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -425.0
+offset_top = -600.0
+offset_right = 425.0
+offset_bottom = 600.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_pfo0h")
+script = ExtResource("1_qsxko")
+reward_amount_label = NodePath("MarginContainer/VBoxContainer/VBoxContainer2/RewardPanel/HBoxContainer/AmountLabel")
+entry_amount_label = NodePath("MarginContainer/VBoxContainer/VBoxContainer2/EntryFeePanel/HBoxContainer/AmountLabel")
+bg_btn = NodePath("ArenaSelectButton")
+logo = NodePath("MarginContainer/VBoxContainer/LogoControl/ArenaLogo")
+logo_star = NodePath("MarginContainer/VBoxContainer/LogoControl/ArenaLogo/LogoStar")
+
+[node name="ArenaSelectButton" type="TextureButton" parent="." unique_id=1165203333]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("2_anrms")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1149627894]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_right = 100
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=344300855]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="LogoControl" type="Control" parent="MarginContainer/VBoxContainer" unique_id=160462650]
+custom_minimum_size = Vector2(400, 407)
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.5
+mouse_filter = 2
+
+[node name="ArenaLogo" type="TextureRect" parent="MarginContainer/VBoxContainer/LogoControl" unique_id=1662263104]
+z_index = 2
+custom_minimum_size = Vector2(400, 407)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -225.0
+offset_top = -323.5
+offset_right = 225.00092
+offset_bottom = 183.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+mouse_filter = 2
+texture = ExtResource("3_anrms")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="LogoStar" type="TextureRect" parent="MarginContainer/VBoxContainer/LogoControl/ArenaLogo" unique_id=1063264421]
+z_index = -3
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -260.5
+offset_top = -333.5
+offset_right = 260.5
+offset_bottom = 126.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+mouse_filter = 2
+texture = ExtResource("3_41gh3")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="RewardHeader" type="TextureRect" parent="MarginContainer/VBoxContainer" unique_id=1795422960]
+custom_minimum_size = Vector2(550, 110)
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/RewardHeader" unique_id=47852883]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -118.0
+offset_top = -42.5
+offset_right = 118.0
+offset_bottom = 44.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "REWARDS"
+label_settings = SubResource("LabelSettings_j7g8u")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1890382234]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_constants/separation = 115
+
+[node name="RewardPanel" type="TextureRect" parent="MarginContainer/VBoxContainer/VBoxContainer2" unique_id=1838526775]
+custom_minimum_size = Vector2(550, 225)
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+expand_mode = 1
+
+[node name="RewardLabel" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer2/RewardPanel" unique_id=792420528]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -69.5
+offset_top = 40.0
+offset_right = 69.5
+offset_bottom = 124.0
+grow_horizontal = 2
+text = "Prize:"
+label_settings = SubResource("LabelSettings_vwfqk")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/VBoxContainer2/RewardPanel" unique_id=1578632223]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = 27.5
+offset_right = 150.0
+offset_bottom = 137.50003
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="AmountLabel" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer2/RewardPanel/HBoxContainer" unique_id=1738495997]
+layout_mode = 2
+theme_override_font_sizes/font_size = 80
+text = "400"
+label_settings = SubResource("LabelSettings_o10fe")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CoinImage" type="TextureRect" parent="MarginContainer/VBoxContainer/VBoxContainer2/RewardPanel/HBoxContainer" unique_id=777042668]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+mouse_filter = 2
+texture = SubResource("AtlasTexture_s4bs2")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="EntryFeePanel" type="TextureRect" parent="MarginContainer/VBoxContainer/VBoxContainer2" unique_id=361192464]
+custom_minimum_size = Vector2(550, 100)
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+expand_mode = 1
+
+[node name="EntryFeeLabel" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer2/EntryFeePanel" unique_id=1302160149]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 35.0
+offset_top = -45.0
+offset_right = 299.0
+offset_bottom = 39.0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 42
+text = "Entry Fees:"
+label_settings = SubResource("LabelSettings_tyysm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/VBoxContainer2/EntryFeePanel" unique_id=1741281356]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -220.0
+offset_top = -42.0
+offset_right = -35.0
+offset_bottom = 42.0
+grow_horizontal = 0
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/separation = 20
+alignment = 2
+
+[node name="AmountLabel" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer2/EntryFeePanel/HBoxContainer" unique_id=795628127]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_fonts/font = SubResource("FontVariation_o435i")
+text = "200"
+label_settings = SubResource("LabelSettings_anrms")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CoinImage" type="TextureRect" parent="MarginContainer/VBoxContainer/VBoxContainer2/EntryFeePanel/HBoxContainer" unique_id=2139454398]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+mouse_filter = 2
+texture = SubResource("AtlasTexture_s4bs2")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer" unique_id=584027802]
+custom_minimum_size = Vector2(420, 58)
+layout_mode = 2
+size_flags_vertical = 6
+size_flags_stretch_ratio = 2.0
+mouse_filter = 2
+
+[node name="RuleContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Control" unique_id=25301429]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -222.5
+offset_top = -30.0
+offset_right = 222.5
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="RuleLabel" type="Label" parent="MarginContainer/VBoxContainer/Control/RuleContainer" unique_id=1260832262]
+layout_mode = 2
+text = "Rule: Best of"
+label_settings = SubResource("LabelSettings_b1to1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RuleLabel2" type="Label" parent="MarginContainer/VBoxContainer/Control/RuleContainer" unique_id=1519296948]
+layout_mode = 2
+text = "Three"
+label_settings = SubResource("LabelSettings_bhw4b")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GunImageControl" type="Control" parent="MarginContainer/VBoxContainer/Control/RuleContainer" unique_id=2135072113]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="GunTextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/Control/RuleContainer/GunImageControl" unique_id=111286375]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 5.0
+offset_right = 87.0
+offset_bottom = 65.0
+grow_horizontal = 0
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+size_flags_horizontal = 3
+mouse_filter = 2
+texture = SubResource("AtlasTexture_7sm04")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="BulletTextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/Control/RuleContainer/GunImageControl/GunTextureRect" unique_id=973099253]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 4.5
+offset_top = 2.0
+offset_right = 19.5
+offset_bottom = 17.0
+grow_horizontal = 0
+mouse_filter = 2
+texture = ExtResource("10_anrms")
+expand_mode = 1
+stretch_mode = 5
+
+[connection signal="pressed" from="ArenaSelectButton" to="." method="_on_arena_select_button_pressed"]

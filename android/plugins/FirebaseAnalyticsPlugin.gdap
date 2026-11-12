@@ -1,0 +1,9 @@
+[config]
+name="FirebaseAnalyticsPlugin"
+binary_type="local"
+binary="FirebaseAnalyticsPlugin-release.aar"
+
+[dependencies]
+local=[]
+remote=["com.google.firebase:firebase-analytics:22.0.0", "com.google.firebase:firebase-bom:34.0.0"]
+custom_maven_repos=[]

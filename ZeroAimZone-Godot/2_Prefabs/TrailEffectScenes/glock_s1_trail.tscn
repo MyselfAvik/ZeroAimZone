@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://ciygcp1gafvct"]
+
+[ext_resource type="Texture2D" uid="uid://bjucofqvt0l60" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/TrailSprites/glock_s1_t.png" id="1_vlf3t"]
+[ext_resource type="Script" uid="uid://dr08beijcf6mt" path="res://addons/trail_renderer/trail_renderer.gd" id="2_xadoc"]
+
+[node name="BulletTrail" type="Node2D" unique_id=706928379]
+
+[node name="bulletTrail" type="Sprite2D" parent="." unique_id=603269117]
+position = Vector2(-20, 0)
+rotation = 0.4712389
+scale = Vector2(0.3, 0.18)
+texture = ExtResource("1_vlf3t")
+
+[node name="TrailRenderer" type="Node2D" parent="." unique_id=23233196]
+script = ExtResource("2_xadoc")
+trail_length = 6
+trail_color = Color(1, 0.7058824, 0.078431375, 0.59607846)

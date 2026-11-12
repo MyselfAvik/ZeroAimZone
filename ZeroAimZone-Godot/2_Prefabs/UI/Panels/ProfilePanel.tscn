@@ -1,0 +1,3661 @@
+[gd_scene format=3 uid="uid://bqkmj0ncdstti"]
+
+[ext_resource type="Script" uid="uid://lebxw6wocf8d" path="res://ZeroAimZone-Godot/1_Scripts/UI_Controllers/ProfilePanelController.gd" id="1_ltgi5"]
+[ext_resource type="FontFile" uid="uid://giru623cv661" path="res://ZeroAimZone-Godot/3_Assets/Fonts/BarlowCondensed-Medium.ttf" id="2_8lmmn"]
+[ext_resource type="FontFile" uid="uid://10wk3avcupsd" path="res://ZeroAimZone-Godot/3_Assets/Fonts/BarlowCondensed-Bold.ttf" id="3_5wwce"]
+[ext_resource type="Resource" uid="uid://din8j3gg5vyce" path="res://ZeroAimZone-Godot/4_Resources/Tres/Avatar_frame_list.tres" id="4_d6bki"]
+[ext_resource type="Resource" uid="uid://bkdff2m74ylv0" path="res://ZeroAimZone-Godot/4_Resources/Tres/Single_Player_Data.tres" id="4_rvq8v"]
+[ext_resource type="Texture2D" uid="uid://brjibm754nwih" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/Profile/active_points.png" id="4_tubed"]
+[ext_resource type="Texture2D" uid="uid://c64cugrqfe7rb" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/CommonBg/panelbg.png" id="6_kywpq"]
+[ext_resource type="FontFile" uid="uid://8ke38pirmuef" path="res://ZeroAimZone-Godot/3_Assets/Fonts/BarlowCondensed-ExtraBold.ttf" id="7_cy1t3"]
+[ext_resource type="Script" uid="uid://c1umaqh6220vy" path="res://addons/SmoothScroll/smooth_scroll_container.gd" id="9_hwcet"]
+[ext_resource type="Texture2D" uid="uid://c52te11k1dgkj" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/Profile/profile_icon.png" id="9_qg7lo"]
+[ext_resource type="Script" uid="uid://bp2ueafm1hjdu" path="res://addons/SmoothScroll/scroll_damper/expo_scroll_damper.gd" id="10_csfs4"]
+[ext_resource type="Texture2D" uid="uid://blne76am08wvw" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/CommonButton/Close Container.png" id="11_r0rqq"]
+[ext_resource type="Texture2D" uid="uid://bvup8j2jc7omw" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/Profile/avatar2.png" id="13_0807p"]
+[ext_resource type="Texture2D" uid="uid://bsqkxf3ljiok" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/Profile/avatar21.png" id="14_262ab"]
+[ext_resource type="Texture2D" uid="uid://copkgfk1vt561" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/Profile/frame_icon1.png" id="14_fv64d"]
+[ext_resource type="Texture2D" uid="uid://bhhbpy5bc8l6e" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/CommonBg/Titlebg.png" id="16_fwbhx"]
+[ext_resource type="Texture2D" uid="uid://b8wmgokdi12h8" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/Profile/profile_edit.png" id="17_0807p"]
+[ext_resource type="Texture2D" uid="uid://puhu2psieuu6" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/InGamePops/tick.png" id="17_r0hpj"]
+[ext_resource type="Texture2D" uid="uid://cfawes403drib" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/Profile/validator.png" id="18_0ondu"]
+[ext_resource type="Texture2D" uid="uid://dvddijjdihmst" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/Profile/profile_star.png" id="18_h8mq4"]
+[ext_resource type="Texture2D" uid="uid://nv30qxw2hdpa" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/Profile/frame_default.png" id="19_kywpq"]
+[ext_resource type="Texture2D" uid="uid://dy3bm5bliegw4" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/Profile/gun_bg.png" id="21_kgdw0"]
+[ext_resource type="Texture2D" uid="uid://dx7qjtohbrdu" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/Profile/inactive_points.png" id="22_tubed"]
+[ext_resource type="Texture2D" uid="uid://drsydgr3fk88c" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/CommonBg/Settingtitlebg.png" id="22_uxbmq"]
+[ext_resource type="Texture2D" uid="uid://br5ebddhrv50v" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/GunPanel/Inactivetect.png" id="23_fu3dd"]
+[ext_resource type="Texture2D" uid="uid://c5e3823pvvcu" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/CommonButton/switch_ tab_active.png" id="23_l82t5"]
+[ext_resource type="Texture2D" uid="uid://cigftsapwer7f" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/Profile/frame_icon2.png" id="23_oicyn"]
+[ext_resource type="Texture2D" uid="uid://buthv2g2714oo" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/GunPanel/bronze.png" id="23_qg7lo"]
+[ext_resource type="Texture2D" uid="uid://bh0cj01hpib7y" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/Profile/frame_icon3.png" id="24_fu3dd"]
+[ext_resource type="Texture2D" uid="uid://52u41oriff7y" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/Profile/stats_bg.png" id="24_v5k72"]
+[ext_resource type="Texture2D" uid="uid://c4fp2gqeijaoh" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/Profile/frame_active_default.png" id="25_3x1tu"]
+[ext_resource type="Texture2D" uid="uid://c5ok5u30xnnh8" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/Profile/frame_icon4.png" id="25_l82t5"]
+[ext_resource type="Texture2D" uid="uid://obt4oap47sqt" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/Profile/damage.png" id="25_rahk2"]
+[ext_resource type="Texture2D" uid="uid://4cv5fcj2afau" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/Profile/magazine.png" id="26_43gk3"]
+[ext_resource type="Texture2D" uid="uid://bioyx8js8q118" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/Profile/frame_icon5.png" id="26_h8mq4"]
+[ext_resource type="Texture2D" uid="uid://bsgr8oo4avqt3" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/Profile/reload.png" id="27_rahk2"]
+[ext_resource type="Texture2D" uid="uid://npj56ov1l7pn" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/Profile/frame_active.png" id="28_uxbmq"]
+[ext_resource type="Texture2D" uid="uid://f6xonh2mhc87" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/Profile/stats_icon.png" id="30_r0rqq"]
+[ext_resource type="Texture2D" uid="uid://cxy3i1f1xscrq" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/CommonButton/GreenBtn.png" id="31_0807p"]
+[ext_resource type="FontFile" uid="uid://dobi5yff3px2t" path="res://ZeroAimZone-Godot/3_Assets/Fonts/BarlowCondensed-SemiBold.ttf" id="31_r0rqq"]
+[ext_resource type="Texture2D" uid="uid://dtcisyvloxluc" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/Profile/cup_icon.png" id="32_jdws4"]
+[ext_resource type="Texture2D" uid="uid://0pnulv5c0ggf" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/ShopPanel/4Coins.png" id="33_qg7lo"]
+[ext_resource type="Texture2D" uid="uid://bhsj1i2spiqm8" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/Profile/avatar7.png" id="36_r0rqq"]
+[ext_resource type="Texture2D" uid="uid://c5j1tny7o82te" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/ShopPanel/Singlegem.png" id="36_spke6"]
+[ext_resource type="Texture2D" uid="uid://b1jr02gjdlwjl" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/Profile/avatar16.png" id="38_0ondu"]
+[ext_resource type="Texture2D" uid="uid://00fhso3vujpd" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/Profile/frame_icon6.png" id="44_0ondu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r0rqq"]
+atlas = ExtResource("4_tubed")
+region = Rect2(0, 0, 24, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hwcet"]
+atlas = ExtResource("22_tubed")
+region = Rect2(0, 0, 24, 20)
+
+[sub_resource type="LabelSettings" id="LabelSettings_8lmmn"]
+font = ExtResource("3_5wwce")
+font_size = 58
+font_color = Color(0.9137255, 0.9019608, 1, 1)
+shadow_color = Color(0.18039216, 0.16470589, 0.5882353, 1)
+shadow_offset = Vector2(0, 1)
+
+[sub_resource type="Resource" id="Resource_fwbhx"]
+script = ExtResource("10_csfs4")
+
+[sub_resource type="Resource" id="Resource_kywpq"]
+script = ExtResource("10_csfs4")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_oicyn"]
+load_path = "res://.godot/imported/profile_bg.png-219b6e053887422f77673d8b46bbac7a.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lu5d3"]
+atlas = ExtResource("14_262ab")
+region = Rect2(23.000122, 2.000084, 264.00024, 284.00027)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3q01n"]
+atlas = ExtResource("19_kywpq")
+region = Rect2(16, 21.731323, 251, 301.66785)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fu3dd"]
+load_path = "res://.godot/imported/name_edit.png-de874982ed92b5813812ad3baa04fff9.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_43gk3"]
+texture = SubResource("CompressedTexture2D_fu3dd")
+texture_margin_left = 12.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0ondu"]
+load_path = "res://.godot/imported/indicator_bg.png-2eca845e36311f09c24b2516daae0771.ctex"
+
+[sub_resource type="LabelSettings" id="LabelSettings_0ondu"]
+font = ExtResource("2_8lmmn")
+font_size = 34
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_owb48"]
+font = ExtResource("2_8lmmn")
+font_size = 42
+font_color = Color(0.9137255, 0.9019608, 1, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0807p"]
+load_path = "res://.godot/imported/playerundertect.png-c73c9a7c2bd623cae522430037732508.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_r0hpj"]
+load_path = "res://.godot/imported/playergreenhealth.png-ab7c2d4e5ce43575f711b9021fc7dadd.ctex"
+
+[sub_resource type="LabelSettings" id="LabelSettings_r0rqq"]
+font = ExtResource("3_5wwce")
+font_size = 42
+font_color = Color(0.9137255, 0.9019608, 1, 1)
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vhu6t"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r0hpj"]
+texture = ExtResource("21_kgdw0")
+
+[sub_resource type="LabelSettings" id="LabelSettings_vhu6t"]
+font = ExtResource("3_5wwce")
+font_size = 66
+font_color = Color(0.9137255, 0.9019608, 1, 1)
+shadow_color = Color(0.18039216, 0.16470589, 0.5882353, 1)
+shadow_offset = Vector2(0, 2)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qg7lo"]
+load_path = "res://.godot/imported/glock17.png-b784a0f0030867380554fc14f4ee772c.ctex"
+
+[sub_resource type="LabelSettings" id="LabelSettings_uxbmq"]
+font = ExtResource("3_5wwce")
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_kgdw0"]
+font = ExtResource("3_5wwce")
+font_size = 32
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jdws4"]
+atlas = ExtResource("22_tubed")
+region = Rect2(0, 0, 24, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r0hpj"]
+atlas = ExtResource("22_tubed")
+region = Rect2(0, 0, 24, 20)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_axukm"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_pafk2"]
+font = ExtResource("31_r0rqq")
+font_size = 62
+
+[sub_resource type="LabelSettings" id="LabelSettings_hwcet"]
+font = ExtResource("2_8lmmn")
+font_size = 41
+font_color = Color(0.9137255, 0.9019608, 1, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i88o6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_rvq8v"]
+font = ExtResource("3_5wwce")
+font_size = 83
+font_color = Color(0.9137255, 0.9019608, 1, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oicyn"]
+atlas = ExtResource("33_qg7lo")
+region = Rect2(12, 11, 114, 122)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_l82t5"]
+load_path = "res://.godot/imported/switch_ tab_active.png-1dc20663ca460b56e95ff102717e4365.ctex"
+
+[sub_resource type="LabelSettings" id="LabelSettings_axukm"]
+font = ExtResource("3_5wwce")
+font_size = 54
+font_color = Color(0.9137255, 0.9019608, 1, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_h8mq4"]
+load_path = "res://.godot/imported/Inactivetect.png-6af0793e3f71e9c6d6a941ac659649c7.ctex"
+
+[sub_resource type="LabelSettings" id="LabelSettings_csfs4"]
+font = ExtResource("3_5wwce")
+font_size = 54
+font_color = Color(0.9137255, 0.9019608, 1, 1)
+
+[sub_resource type="Resource" id="Resource_qg7lo"]
+script = ExtResource("10_csfs4")
+
+[sub_resource type="Resource" id="Resource_r0rqq"]
+script = ExtResource("10_csfs4")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5y7yi"]
+atlas = ExtResource("14_262ab")
+region = Rect2(23.000122, 2.000084, 264.00024, 284.00027)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1wwt2"]
+atlas = ExtResource("19_kywpq")
+region = Rect2(16, 21.731323, 251, 301.66785)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_43gk3"]
+atlas = ExtResource("25_3x1tu")
+region = Rect2(20, 20, 249, 281)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_spke6"]
+load_path = "res://.godot/imported/GreenBtn.png-c8fa2b2d95a8d13c9eb124273efa62f1.ctex"
+
+[sub_resource type="LabelSettings" id="LabelSettings_6u444"]
+font = ExtResource("3_5wwce")
+font_size = 50
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tubed"]
+atlas = ExtResource("13_0807p")
+region = Rect2(2, 4.7245407, 263.77258, 261.5524)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ai76j"]
+atlas = ExtResource("19_kywpq")
+region = Rect2(16, 21.731323, 251, 301.66785)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kgdw0"]
+atlas = ExtResource("13_0807p")
+region = Rect2(2, 4.7245407, 263.77258, 261.5524)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d185q"]
+atlas = ExtResource("19_kywpq")
+region = Rect2(16, 21.731323, 251, 301.66785)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tukep"]
+atlas = ExtResource("13_0807p")
+region = Rect2(2, 4.7245407, 263.77258, 261.5524)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_me4iu"]
+atlas = ExtResource("19_kywpq")
+region = Rect2(16, 21.731323, 251, 301.66785)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l82t5"]
+atlas = ExtResource("19_kywpq")
+region = Rect2(16, 21.731323, 251, 301.66785)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v5k72"]
+atlas = ExtResource("13_0807p")
+region = Rect2(2, 4.7245407, 263.77258, 261.5524)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ffhs"]
+atlas = ExtResource("19_kywpq")
+region = Rect2(16, 21.731323, 251, 301.66785)
+
+[sub_resource type="Resource" id="Resource_0ondu"]
+script = ExtResource("10_csfs4")
+
+[sub_resource type="Resource" id="Resource_spke6"]
+script = ExtResource("10_csfs4")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fxh3m"]
+atlas = ExtResource("19_kywpq")
+region = Rect2(16, 21.731323, 251, 301.66785)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ayh8i"]
+atlas = ExtResource("25_3x1tu")
+region = Rect2(20, 20, 249, 281)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7yy67"]
+atlas = ExtResource("38_0ondu")
+region = Rect2(-10.868515, 8.628997, 263.71155, 252.11856)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qg7lo"]
+atlas = ExtResource("19_kywpq")
+region = Rect2(16, 21.731323, 251, 301.66785)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iivp1"]
+atlas = ExtResource("28_uxbmq")
+region = Rect2(-0.23685837, -0.37750626, 249.11116, 220.61572)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_262ab"]
+atlas = ExtResource("36_r0rqq")
+region = Rect2(12, 5.653777, 245.5896, 261.78372)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6u444"]
+atlas = ExtResource("19_kywpq")
+region = Rect2(16, 21.731323, 251, 301.66785)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ondu"]
+atlas = ExtResource("19_kywpq")
+region = Rect2(16, 21.731323, 251, 301.66785)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_spke6"]
+atlas = ExtResource("19_kywpq")
+region = Rect2(16, 21.731323, 251, 301.66785)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w6bgl"]
+atlas = ExtResource("19_kywpq")
+region = Rect2(16, 21.731323, 251, 301.66785)
+
+[sub_resource type="LabelSettings" id="LabelSettings_kywpq"]
+font = ExtResource("31_r0rqq")
+font_size = 72
+
+[node name="ProfilePanel" type="Control" unique_id=182201356 node_paths=PackedStringArray("info_panel", "edit_panel", "info_name", "edit_btn", "avatar_btn", "frame_btn", "profile_pic", "profile_frame", "profile_frame_icon", "avatar_grid", "frame_grid", "avatar_scrollcontainer", "frame_scrollcontainer", "name_save", "warning", "warning_text", "name_text", "name_edit", "user_id", "xp_progression", "level_text", "xp_countdown_text", "win_rate_text", "match_won_text", "current_win_streak_text", "best_win_streak_text", "total_wining_coin_text", "selected_gun_texture", "selected_gun_name", "selected_gun_damage", "selected_gun_magazine", "selected_gun_accuracy", "selected_gun_reload", "damage_container", "accuracy_container", "reload_container", "magazine_container")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ltgi5")
+info_panel = NodePath("HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel")
+edit_panel = NodePath("HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel")
+info_name = NodePath("HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/profile_details/HBoxContainer/Info_margin")
+edit_btn = NodePath("HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/profile_details/HBoxContainer/Info_margin/Info/HBoxContainer/Edit_Btn")
+focus_edit_texture = ExtResource("23_l82t5")
+unfocus_edit_texture = ExtResource("23_fu3dd")
+avatar_btn = NodePath("HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/HBoxContainer/Avatar_Btn")
+frame_btn = NodePath("HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/HBoxContainer/Frame_Btn")
+profile_pic = NodePath("HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/profile_details/ProfileButton/ProfilePic")
+profile_frame = NodePath("HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/profile_details/ProfileButton/ProfilePic/Frame")
+profile_frame_icon = NodePath("HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/profile_details/ProfileButton/ProfilePic/FrameIcon")
+avatar_grid = NodePath("HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/AvatarSmoothScrollContainer/MarginContainer/AvatarGridContainer")
+frame_grid = NodePath("HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/FrameSmoothScrollContainer/FrameGridContainer")
+avatar_scrollcontainer = NodePath("HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/AvatarSmoothScrollContainer")
+frame_scrollcontainer = NodePath("HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/FrameSmoothScrollContainer")
+name_save = NodePath("HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/profile_details/HBoxContainer/Info_margin/Info/HBoxContainer/LineEdit/name_save")
+warning = NodePath("HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/profile_details/HBoxContainer/Info_margin/Info/HBoxContainer/LineEdit/name_save/warning")
+warning_text = NodePath("HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/profile_details/HBoxContainer/Info_margin/Info/HBoxContainer/LineEdit/name_save/warning/Label")
+name_text = NodePath("HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/profile_details/HBoxContainer/Info_margin/Info/HBoxContainer/Name_text")
+name_edit = NodePath("HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/profile_details/HBoxContainer/Info_margin/Info/HBoxContainer/LineEdit")
+user_id = NodePath("HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/profile_details/HBoxContainer/Info_margin/Info/User_id")
+xp_progression = NodePath("HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/profile_details/HBoxContainer/Info_margin/Info/Control/XPProgressBar")
+level_text = NodePath("HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/profile_details/HBoxContainer/Info_margin/Info/Control/XPProgressBar/TextureRect/Level")
+xp_countdown_text = NodePath("HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/profile_details/HBoxContainer/Info_margin/Info/xp_countdown")
+win_rate_text = NodePath("HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/Statistics/VBoxContainer/HBoxContainer2/Win_rate")
+match_won_text = NodePath("HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/Statistics/VBoxContainer/HBoxContainer/Game_won")
+current_win_streak_text = NodePath("HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/Statistics/VBoxContainer/HBoxContainer3/current_win_streak")
+best_win_streak_text = NodePath("HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/Statistics/VBoxContainer/HBoxContainer4/best_win_streak")
+total_wining_coin_text = NodePath("HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/Total_Wining/HBoxContainer/Total_wining")
+selected_gun_texture = NodePath("HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/gun_details/Selected_gun")
+selected_gun_name = NodePath("HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/gun_details/TextureRect2/HBoxContainer/Label")
+selected_gun_damage = NodePath("HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/gun_details/GunStat_bg/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/value")
+selected_gun_magazine = NodePath("HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/gun_details/GunStat_bg/VBoxContainer/HBoxContainer2/VBoxContainer/HBoxContainer/value")
+selected_gun_accuracy = NodePath("HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/gun_details/GunStat_bg/VBoxContainer/HBoxContainer3/VBoxContainer/HBoxContainer/value")
+selected_gun_reload = NodePath("HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/gun_details/GunStat_bg/VBoxContainer/HBoxContainer4/VBoxContainer/HBoxContainer/value")
+yellow_circle = SubResource("AtlasTexture_r0rqq")
+gray_circle = SubResource("AtlasTexture_hwcet")
+damage_container = NodePath("HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/gun_details/GunStat_bg/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2")
+accuracy_container = NodePath("HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/gun_details/GunStat_bg/VBoxContainer/HBoxContainer3/VBoxContainer/HBoxContainer2")
+reload_container = NodePath("HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/gun_details/GunStat_bg/VBoxContainer/HBoxContainer4/VBoxContainer/HBoxContainer2")
+magazine_container = NodePath("HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/gun_details/GunStat_bg/VBoxContainer/HBoxContainer2/VBoxContainer/HBoxContainer2")
+avatar_frame_res = ExtResource("4_d6bki")
+single_player_data = ExtResource("4_rvq8v")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1245249131]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="bg" type="TextureRect" parent="HBoxContainer" unique_id=108132141]
+custom_minimum_size = Vector2(1080, 0)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("6_kywpq")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/bg" unique_id=1405806265]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 82
+theme_override_constants/margin_right = 82
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/bg/MarginContainer" unique_id=686842619]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="Heading" type="Control" parent="HBoxContainer/bg/MarginContainer/VBoxContainer" unique_id=1980086472]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.04
+mouse_filter = 2
+
+[node name="icon" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/Heading" unique_id=400957562]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 30.0
+offset_top = -17.0
+offset_right = 80.0
+offset_bottom = 33.0
+grow_vertical = 2
+texture = ExtResource("9_qg7lo")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/Heading" unique_id=439989068]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 95.0
+offset_top = -28.0
+offset_right = 265.0
+offset_bottom = 42.0
+grow_vertical = 2
+size_flags_horizontal = 3
+text = "Profile"
+label_settings = SubResource("LabelSettings_8lmmn")
+uppercase = true
+
+[node name="Back" type="TextureButton" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/Heading" unique_id=1049689589]
+visible = false
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -66.0
+offset_top = -40.5
+offset_right = 19.0
+offset_bottom = 40.5
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+texture_normal = ExtResource("11_r0rqq")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="SmoothScrollContainer" type="ScrollContainer" parent="HBoxContainer/bg/MarginContainer/VBoxContainer" unique_id=471391175]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+script = ExtResource("9_hwcet")
+wheel_scroll_damper = SubResource("Resource_fwbhx")
+dragging_scroll_damper = SubResource("Resource_kywpq")
+metadata/_custom_type_script = "uid://c1umaqh6220vy"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer" unique_id=1042102374]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 20
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="profile_details" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer" unique_id=1161055984]
+custom_minimum_size = Vector2(0, 333.3)
+layout_mode = 2
+texture = SubResource("CompressedTexture2D_oicyn")
+expand_mode = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="ProfileButton" type="TextureButton" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/profile_details" unique_id=584606878]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 30.0
+offset_top = 20.0
+offset_right = 280.0
+offset_bottom = -63.299988
+grow_vertical = 2
+mouse_filter = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="ProfilePic" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/profile_details/ProfileButton" unique_id=1277691821]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+texture = SubResource("AtlasTexture_lu5d3")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="FrameIcon" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/profile_details/ProfileButton/ProfilePic" unique_id=930705794]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -43.0
+offset_top = -33.0
+offset_right = 33.0
+offset_bottom = 31.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("14_fv64d")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Frame" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/profile_details/ProfileButton/ProfilePic" unique_id=355092662]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -5.0
+offset_top = 4.0
+offset_right = -5.0
+offset_bottom = 44.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_3q01n")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/profile_details" unique_id=514000347]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 296.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Info_margin" type="MarginContainer" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/profile_details/HBoxContainer" unique_id=934769458]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 15
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Info" type="VBoxContainer" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/profile_details/HBoxContainer/Info_margin" unique_id=128785801]
+layout_mode = 2
+alignment = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/profile_details/HBoxContainer/Info_margin/Info" unique_id=1489933783]
+layout_mode = 2
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="LineEdit" type="LineEdit" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/profile_details/HBoxContainer/Info_margin/Info/HBoxContainer" unique_id=688529032]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+theme_override_colors/font_color = Color(0.9137255, 0.9019608, 1, 1)
+theme_override_fonts/font = ExtResource("3_5wwce")
+theme_override_font_sizes/font_size = 52
+theme_override_styles/normal = SubResource("StyleBoxTexture_43gk3")
+text = "PLAYER"
+max_length = 15
+emoji_menu_enabled = false
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="name_save" type="TextureButton" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/profile_details/HBoxContainer/Info_margin/Info/HBoxContainer/LineEdit" unique_id=1302902694]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -63.0
+offset_top = -23.0
+offset_right = -16.0
+offset_bottom = 24.0
+grow_horizontal = 0
+grow_vertical = 2
+texture_normal = ExtResource("17_r0hpj")
+texture_disabled = ExtResource("18_0ondu")
+ignore_texture_size = true
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="warning" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/profile_details/HBoxContainer/Info_margin/Info/HBoxContainer/LineEdit/name_save" unique_id=559685336]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -386.0
+offset_top = -57.5
+offset_right = 4.0
+offset_bottom = -2.5
+grow_horizontal = 0
+texture = SubResource("CompressedTexture2D_0ondu")
+expand_mode = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Label" type="Label" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/profile_details/HBoxContainer/Info_margin/Info/HBoxContainer/LineEdit/name_save/warning" unique_id=1116348730]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -21.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+text = "This field can’t be empty"
+label_settings = SubResource("LabelSettings_0ondu")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Name_text" type="Label" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/profile_details/HBoxContainer/Info_margin/Info/HBoxContainer" unique_id=1995409052]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+theme_override_colors/font_color = Color(0.9137255, 0.9019608, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.18039216, 0.16470589, 0.5882353, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("3_5wwce")
+theme_override_font_sizes/font_size = 52
+text = "Hritik Roshan"
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Edit_Btn" type="TextureButton" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/profile_details/HBoxContainer/Info_margin/Info/HBoxContainer" unique_id=102218472]
+visible = false
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+mouse_filter = 1
+texture_normal = ExtResource("17_0807p")
+ignore_texture_size = true
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="User_id" type="Label" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/profile_details/HBoxContainer/Info_margin/Info" unique_id=1286080846]
+layout_mode = 2
+mouse_filter = 1
+text = "User ID : 545475"
+label_settings = SubResource("LabelSettings_owb48")
+vertical_alignment = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Control" type="Control" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/profile_details/HBoxContainer/Info_margin/Info" unique_id=99476183]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+mouse_filter = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="XPProgressBar" type="TextureProgressBar" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/profile_details/HBoxContainer/Info_margin/Info/Control" unique_id=1435864512]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -25.0
+offset_right = -55.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 7
+value = 39.0
+nine_patch_stretch = true
+texture_under = SubResource("CompressedTexture2D_0807p")
+texture_progress = SubResource("CompressedTexture2D_r0hpj")
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/profile_details/HBoxContainer/Info_margin/Info/Control/XPProgressBar" unique_id=1418469439]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -56.0
+offset_right = 51.0
+offset_bottom = 24.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("18_h8mq4")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Level" type="Label" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/profile_details/HBoxContainer/Info_margin/Info/Control/XPProgressBar/TextureRect" unique_id=221828601]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_colors/font_shadow_color = Color(0.18039216, 0.16470589, 0.5882353, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("7_cy1t3")
+theme_override_font_sizes/font_size = 43
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="xp_countdown" type="Label" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/profile_details/HBoxContainer/Info_margin/Info" unique_id=410933645]
+layout_mode = 2
+mouse_filter = 1
+text = "10/100"
+label_settings = SubResource("LabelSettings_r0rqq")
+vertical_alignment = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Info_panel" type="Panel" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer" unique_id=2095500728]
+visible = false
+custom_minimum_size = Vector2(0, 1350)
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxEmpty_vhu6t")
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel" unique_id=1413910298]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="gun_details" type="Panel" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer" unique_id=140423877]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.4
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxTexture_r0hpj")
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureRect2" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/gun_details" unique_id=1134037173]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_right = 2.0
+offset_bottom = 101.0
+grow_horizontal = 2
+texture = ExtResource("22_uxbmq")
+expand_mode = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/gun_details/TextureRect2" unique_id=549013506]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 18
+alignment = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/gun_details/TextureRect2/HBoxContainer" unique_id=2022841631]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+texture = ExtResource("23_qg7lo")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Label" type="Label" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/gun_details/TextureRect2/HBoxContainer" unique_id=1483385666]
+layout_mode = 2
+mouse_filter = 1
+text = "GLOCK 7"
+label_settings = SubResource("LabelSettings_vhu6t")
+uppercase = true
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Selected_gun" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/gun_details" unique_id=1856952823]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -33.000004
+offset_top = 84.00001
+offset_right = -240.8855
+offset_bottom = 3.6082764
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.17453292
+scale = Vector2(1.0158033, 1.0158033)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+size_flags_horizontal = 3
+texture = SubResource("CompressedTexture2D_qg7lo")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="GunStat_bg" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/gun_details" unique_id=1703375534]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -349.0
+offset_top = -296.0
+offset_right = -22.0
+offset_bottom = -14.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("24_v5k72")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/gun_details/GunStat_bg" unique_id=920044577]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 23.0
+offset_top = 29.0
+offset_right = -35.0
+offset_bottom = -26.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/gun_details/GunStat_bg/VBoxContainer" unique_id=959326435]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 12
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/gun_details/GunStat_bg/VBoxContainer/HBoxContainer" unique_id=146285622]
+custom_minimum_size = Vector2(38, 0)
+layout_mode = 2
+texture = ExtResource("25_rahk2")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/gun_details/GunStat_bg/VBoxContainer/HBoxContainer" unique_id=1417213754]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = -8
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/gun_details/GunStat_bg/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1475282165]
+layout_mode = 2
+size_flags_vertical = 3
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="name" type="Label" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/gun_details/GunStat_bg/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=532389089]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+text = "Damage"
+label_settings = SubResource("LabelSettings_uxbmq")
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="value" type="Label" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/gun_details/GunStat_bg/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=1752866153]
+layout_mode = 2
+mouse_filter = 1
+text = "20"
+label_settings = SubResource("LabelSettings_kgdw0")
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/gun_details/GunStat_bg/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1206402710]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="1" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/gun_details/GunStat_bg/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2" unique_id=724589053]
+custom_minimum_size = Vector2(23.8, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("AtlasTexture_jdws4")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="2" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/gun_details/GunStat_bg/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2" unique_id=1157683042]
+custom_minimum_size = Vector2(23.8, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("AtlasTexture_r0hpj")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="3" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/gun_details/GunStat_bg/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2" unique_id=1842877822]
+custom_minimum_size = Vector2(23.8, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("AtlasTexture_r0hpj")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="4" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/gun_details/GunStat_bg/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2" unique_id=37148838]
+custom_minimum_size = Vector2(23.8, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("AtlasTexture_r0hpj")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="5" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/gun_details/GunStat_bg/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2" unique_id=1211682513]
+custom_minimum_size = Vector2(23.8, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("AtlasTexture_r0hpj")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="6" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/gun_details/GunStat_bg/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2" unique_id=1488314883]
+custom_minimum_size = Vector2(23.8, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("AtlasTexture_r0hpj")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="7" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/gun_details/GunStat_bg/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2" unique_id=554856109]
+custom_minimum_size = Vector2(23.8, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("AtlasTexture_r0hpj")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="8" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/gun_details/GunStat_bg/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2" unique_id=2103241952]
+custom_minimum_size = Vector2(23.8, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("AtlasTexture_r0hpj")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="9" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/gun_details/GunStat_bg/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2" unique_id=1040392156]
+custom_minimum_size = Vector2(23.8, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("AtlasTexture_r0hpj")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="10" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/gun_details/GunStat_bg/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2" unique_id=245517317]
+custom_minimum_size = Vector2(23.8, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("AtlasTexture_r0hpj")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/gun_details/GunStat_bg/VBoxContainer" unique_id=1067235994]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 12
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/gun_details/GunStat_bg/VBoxContainer/HBoxContainer2" unique_id=818109840]
+custom_minimum_size = Vector2(35, 0)
+layout_mode = 2
+texture = ExtResource("26_43gk3")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/gun_details/GunStat_bg/VBoxContainer/HBoxContainer2" unique_id=486153858]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = -8
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/gun_details/GunStat_bg/VBoxContainer/HBoxContainer2/VBoxContainer" unique_id=1460628996]
+layout_mode = 2
+size_flags_vertical = 3
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="name" type="Label" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/gun_details/GunStat_bg/VBoxContainer/HBoxContainer2/VBoxContainer/HBoxContainer" unique_id=2060999912]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+text = "Magazine"
+label_settings = SubResource("LabelSettings_uxbmq")
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="value" type="Label" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/gun_details/GunStat_bg/VBoxContainer/HBoxContainer2/VBoxContainer/HBoxContainer" unique_id=662049055]
+layout_mode = 2
+mouse_filter = 1
+text = "20"
+label_settings = SubResource("LabelSettings_kgdw0")
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/gun_details/GunStat_bg/VBoxContainer/HBoxContainer2/VBoxContainer" unique_id=1759600470]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="1" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/gun_details/GunStat_bg/VBoxContainer/HBoxContainer2/VBoxContainer/HBoxContainer2" unique_id=340535995]
+custom_minimum_size = Vector2(23.8, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("AtlasTexture_r0hpj")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="2" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/gun_details/GunStat_bg/VBoxContainer/HBoxContainer2/VBoxContainer/HBoxContainer2" unique_id=1502875714]
+custom_minimum_size = Vector2(23.8, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("AtlasTexture_r0hpj")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="3" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/gun_details/GunStat_bg/VBoxContainer/HBoxContainer2/VBoxContainer/HBoxContainer2" unique_id=998327083]
+custom_minimum_size = Vector2(23.8, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("AtlasTexture_r0hpj")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="4" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/gun_details/GunStat_bg/VBoxContainer/HBoxContainer2/VBoxContainer/HBoxContainer2" unique_id=331815371]
+custom_minimum_size = Vector2(23.8, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("AtlasTexture_r0hpj")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="5" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/gun_details/GunStat_bg/VBoxContainer/HBoxContainer2/VBoxContainer/HBoxContainer2" unique_id=349900462]
+custom_minimum_size = Vector2(23.8, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("AtlasTexture_r0hpj")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="6" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/gun_details/GunStat_bg/VBoxContainer/HBoxContainer2/VBoxContainer/HBoxContainer2" unique_id=590608576]
+custom_minimum_size = Vector2(23.8, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("AtlasTexture_r0hpj")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="7" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/gun_details/GunStat_bg/VBoxContainer/HBoxContainer2/VBoxContainer/HBoxContainer2" unique_id=1305685066]
+custom_minimum_size = Vector2(23.8, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("AtlasTexture_r0hpj")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="8" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/gun_details/GunStat_bg/VBoxContainer/HBoxContainer2/VBoxContainer/HBoxContainer2" unique_id=572136261]
+custom_minimum_size = Vector2(23.8, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("AtlasTexture_r0hpj")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="9" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/gun_details/GunStat_bg/VBoxContainer/HBoxContainer2/VBoxContainer/HBoxContainer2" unique_id=291751608]
+custom_minimum_size = Vector2(23.8, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("AtlasTexture_r0hpj")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="10" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/gun_details/GunStat_bg/VBoxContainer/HBoxContainer2/VBoxContainer/HBoxContainer2" unique_id=1799600413]
+custom_minimum_size = Vector2(23.8, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("AtlasTexture_r0hpj")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/gun_details/GunStat_bg/VBoxContainer" unique_id=814711500]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 12
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/gun_details/GunStat_bg/VBoxContainer/HBoxContainer3" unique_id=1845693110]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/gun_details/GunStat_bg/VBoxContainer/HBoxContainer3" unique_id=1806375130]
+layout_mode = 2
+size_flags_horizontal = 3
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/gun_details/GunStat_bg/VBoxContainer/HBoxContainer3/VBoxContainer" unique_id=777953443]
+layout_mode = 2
+size_flags_vertical = 3
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="name" type="Label" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/gun_details/GunStat_bg/VBoxContainer/HBoxContainer3/VBoxContainer/HBoxContainer" unique_id=1959860147]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+text = "Accuracy"
+label_settings = SubResource("LabelSettings_uxbmq")
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="value" type="Label" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/gun_details/GunStat_bg/VBoxContainer/HBoxContainer3/VBoxContainer/HBoxContainer" unique_id=431778103]
+layout_mode = 2
+mouse_filter = 1
+text = "20"
+label_settings = SubResource("LabelSettings_kgdw0")
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/gun_details/GunStat_bg/VBoxContainer/HBoxContainer3/VBoxContainer" unique_id=2051710453]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="1" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/gun_details/GunStat_bg/VBoxContainer/HBoxContainer3/VBoxContainer/HBoxContainer2" unique_id=348220538]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("AtlasTexture_r0hpj")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="2" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/gun_details/GunStat_bg/VBoxContainer/HBoxContainer3/VBoxContainer/HBoxContainer2" unique_id=35444379]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("AtlasTexture_r0hpj")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="3" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/gun_details/GunStat_bg/VBoxContainer/HBoxContainer3/VBoxContainer/HBoxContainer2" unique_id=710732396]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("AtlasTexture_r0hpj")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="4" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/gun_details/GunStat_bg/VBoxContainer/HBoxContainer3/VBoxContainer/HBoxContainer2" unique_id=1882079990]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("AtlasTexture_r0hpj")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="5" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/gun_details/GunStat_bg/VBoxContainer/HBoxContainer3/VBoxContainer/HBoxContainer2" unique_id=569852571]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("AtlasTexture_r0hpj")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="6" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/gun_details/GunStat_bg/VBoxContainer/HBoxContainer3/VBoxContainer/HBoxContainer2" unique_id=1388374970]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("AtlasTexture_r0hpj")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="7" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/gun_details/GunStat_bg/VBoxContainer/HBoxContainer3/VBoxContainer/HBoxContainer2" unique_id=1677926617]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("AtlasTexture_r0hpj")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="8" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/gun_details/GunStat_bg/VBoxContainer/HBoxContainer3/VBoxContainer/HBoxContainer2" unique_id=420946488]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("AtlasTexture_r0hpj")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="9" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/gun_details/GunStat_bg/VBoxContainer/HBoxContainer3/VBoxContainer/HBoxContainer2" unique_id=1929767455]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("AtlasTexture_r0hpj")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="10" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/gun_details/GunStat_bg/VBoxContainer/HBoxContainer3/VBoxContainer/HBoxContainer2" unique_id=636618062]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("AtlasTexture_r0hpj")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/gun_details/GunStat_bg/VBoxContainer" unique_id=2067689322]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 12
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/gun_details/GunStat_bg/VBoxContainer/HBoxContainer4" unique_id=314897707]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+texture = ExtResource("27_rahk2")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/gun_details/GunStat_bg/VBoxContainer/HBoxContainer4" unique_id=131824087]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = -8
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/gun_details/GunStat_bg/VBoxContainer/HBoxContainer4/VBoxContainer" unique_id=1445843931]
+layout_mode = 2
+size_flags_vertical = 3
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="name" type="Label" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/gun_details/GunStat_bg/VBoxContainer/HBoxContainer4/VBoxContainer/HBoxContainer" unique_id=452562286]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+text = "Reload"
+label_settings = SubResource("LabelSettings_uxbmq")
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="value" type="Label" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/gun_details/GunStat_bg/VBoxContainer/HBoxContainer4/VBoxContainer/HBoxContainer" unique_id=174030205]
+layout_mode = 2
+mouse_filter = 1
+text = "20"
+label_settings = SubResource("LabelSettings_kgdw0")
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/gun_details/GunStat_bg/VBoxContainer/HBoxContainer4/VBoxContainer" unique_id=21220800]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="1" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/gun_details/GunStat_bg/VBoxContainer/HBoxContainer4/VBoxContainer/HBoxContainer2" unique_id=506869836]
+custom_minimum_size = Vector2(23.8, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("AtlasTexture_r0hpj")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="2" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/gun_details/GunStat_bg/VBoxContainer/HBoxContainer4/VBoxContainer/HBoxContainer2" unique_id=1049035591]
+custom_minimum_size = Vector2(23.8, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("AtlasTexture_r0hpj")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="3" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/gun_details/GunStat_bg/VBoxContainer/HBoxContainer4/VBoxContainer/HBoxContainer2" unique_id=1854369947]
+custom_minimum_size = Vector2(23.8, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("AtlasTexture_r0hpj")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="4" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/gun_details/GunStat_bg/VBoxContainer/HBoxContainer4/VBoxContainer/HBoxContainer2" unique_id=2032531403]
+custom_minimum_size = Vector2(23.8, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("AtlasTexture_r0hpj")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="5" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/gun_details/GunStat_bg/VBoxContainer/HBoxContainer4/VBoxContainer/HBoxContainer2" unique_id=2028126595]
+custom_minimum_size = Vector2(23.8, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("AtlasTexture_r0hpj")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="6" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/gun_details/GunStat_bg/VBoxContainer/HBoxContainer4/VBoxContainer/HBoxContainer2" unique_id=1043514423]
+custom_minimum_size = Vector2(23.8, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("AtlasTexture_r0hpj")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="7" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/gun_details/GunStat_bg/VBoxContainer/HBoxContainer4/VBoxContainer/HBoxContainer2" unique_id=162944618]
+custom_minimum_size = Vector2(23.8, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("AtlasTexture_r0hpj")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="8" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/gun_details/GunStat_bg/VBoxContainer/HBoxContainer4/VBoxContainer/HBoxContainer2" unique_id=251576139]
+custom_minimum_size = Vector2(23.8, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("AtlasTexture_r0hpj")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="9" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/gun_details/GunStat_bg/VBoxContainer/HBoxContainer4/VBoxContainer/HBoxContainer2" unique_id=2013684453]
+custom_minimum_size = Vector2(23.8, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("AtlasTexture_r0hpj")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="10" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/gun_details/GunStat_bg/VBoxContainer/HBoxContainer4/VBoxContainer/HBoxContainer2" unique_id=1712539627]
+custom_minimum_size = Vector2(23.8, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("AtlasTexture_r0hpj")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Statistics" type="Panel" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer" unique_id=1846109507]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxEmpty_axukm")
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="header" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/Statistics" unique_id=591728791]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 95.0
+grow_horizontal = 2
+size_flags_vertical = 3
+texture = ExtResource("16_fwbhx")
+expand_mode = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/Statistics/header" unique_id=142640333]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+alignment = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/Statistics/header/HBoxContainer" unique_id=1372765466]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+texture = ExtResource("30_r0rqq")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Label" type="Label" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/Statistics/header/HBoxContainer" unique_id=906197154]
+layout_mode = 2
+mouse_filter = 1
+text = "STATISTICS"
+label_settings = SubResource("LabelSettings_pafk2")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/Statistics" unique_id=341616541]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 166.0
+offset_top = 88.0
+offset_right = -150.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/Statistics/VBoxContainer" unique_id=133843435]
+layout_mode = 2
+size_flags_vertical = 3
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Label" type="Label" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/Statistics/VBoxContainer/HBoxContainer" unique_id=1767131788]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.5
+mouse_filter = 1
+text = "Game won"
+label_settings = SubResource("LabelSettings_hwcet")
+uppercase = true
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Label2" type="Label" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/Statistics/VBoxContainer/HBoxContainer" unique_id=1173651739]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.35
+mouse_filter = 1
+text = ":"
+label_settings = SubResource("LabelSettings_hwcet")
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Game_won" type="Label" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/Statistics/VBoxContainer/HBoxContainer" unique_id=1222159360]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.75
+mouse_filter = 1
+text = "18 / 18"
+label_settings = SubResource("LabelSettings_hwcet")
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/Statistics/VBoxContainer" unique_id=626226504]
+layout_mode = 2
+size_flags_vertical = 3
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Label" type="Label" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/Statistics/VBoxContainer/HBoxContainer2" unique_id=1508548301]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.5
+mouse_filter = 1
+text = "Win Rate"
+label_settings = SubResource("LabelSettings_hwcet")
+uppercase = true
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Label2" type="Label" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/Statistics/VBoxContainer/HBoxContainer2" unique_id=1901931298]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.35
+mouse_filter = 1
+text = ":"
+label_settings = SubResource("LabelSettings_hwcet")
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Win_rate" type="Label" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/Statistics/VBoxContainer/HBoxContainer2" unique_id=1208199570]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.75
+mouse_filter = 1
+text = "100%"
+label_settings = SubResource("LabelSettings_hwcet")
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/Statistics/VBoxContainer" unique_id=1708565761]
+layout_mode = 2
+size_flags_vertical = 3
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Label" type="Label" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/Statistics/VBoxContainer/HBoxContainer3" unique_id=95758351]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.5
+mouse_filter = 1
+text = "Current Win Streak"
+label_settings = SubResource("LabelSettings_hwcet")
+uppercase = true
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Label2" type="Label" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/Statistics/VBoxContainer/HBoxContainer3" unique_id=621894056]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.35
+mouse_filter = 1
+text = ":"
+label_settings = SubResource("LabelSettings_hwcet")
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="current_win_streak" type="Label" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/Statistics/VBoxContainer/HBoxContainer3" unique_id=659319105]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.75
+mouse_filter = 1
+text = "18"
+label_settings = SubResource("LabelSettings_hwcet")
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/Statistics/VBoxContainer" unique_id=1993145403]
+layout_mode = 2
+size_flags_vertical = 3
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Label" type="Label" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/Statistics/VBoxContainer/HBoxContainer4" unique_id=87138863]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.5
+mouse_filter = 1
+text = "Best Win Streak"
+label_settings = SubResource("LabelSettings_hwcet")
+uppercase = true
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Label2" type="Label" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/Statistics/VBoxContainer/HBoxContainer4" unique_id=735533984]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.35
+mouse_filter = 1
+text = ":"
+label_settings = SubResource("LabelSettings_hwcet")
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="best_win_streak" type="Label" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/Statistics/VBoxContainer/HBoxContainer4" unique_id=1092390236]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.75
+mouse_filter = 1
+text = "18"
+label_settings = SubResource("LabelSettings_hwcet")
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Total_Wining" type="Panel" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer" unique_id=1106671214]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxEmpty_i88o6")
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureRect3" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/Total_Wining" unique_id=328025271]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 95.0
+grow_horizontal = 2
+size_flags_vertical = 3
+texture = ExtResource("16_fwbhx")
+expand_mode = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/Total_Wining/TextureRect3" unique_id=1731474881]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+alignment = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/Total_Wining/TextureRect3/HBoxContainer" unique_id=1555801104]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+texture = ExtResource("32_jdws4")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Label" type="Label" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/Total_Wining/TextureRect3/HBoxContainer" unique_id=1398004567]
+layout_mode = 2
+mouse_filter = 1
+text = "Total winings"
+label_settings = SubResource("LabelSettings_pafk2")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/Total_Wining" unique_id=2045103355]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -272.0
+offset_top = 82.0
+offset_right = 261.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 40
+alignment = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Total_wining" type="Label" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/Total_Wining/HBoxContainer" unique_id=1083639032]
+layout_mode = 2
+mouse_filter = 1
+text = "1,38,234"
+label_settings = SubResource("LabelSettings_rvq8v")
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/Info_panel/VBoxContainer/Total_Wining/HBoxContainer" unique_id=907649223]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+texture = SubResource("AtlasTexture_oicyn")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="EditPanel" type="Panel" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer" unique_id=1897424566]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxEmpty_vhu6t")
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel" unique_id=276573285]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -428.5725
+offset_right = 428.5725
+offset_bottom = 95.0
+grow_horizontal = 2
+theme_override_constants/separation = 30
+alignment = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Avatar_Btn" type="TextureButton" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/HBoxContainer" unique_id=1479680348]
+custom_minimum_size = Vector2(407.36, 95)
+layout_mode = 2
+mouse_filter = 1
+texture_normal = SubResource("CompressedTexture2D_l82t5")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Label" type="Label" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/HBoxContainer/Avatar_Btn" unique_id=1376922606]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+text = "Avatar"
+label_settings = SubResource("LabelSettings_axukm")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Frame_Btn" type="TextureButton" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/HBoxContainer" unique_id=1612591722]
+custom_minimum_size = Vector2(407.36, 100)
+layout_mode = 2
+mouse_filter = 1
+texture_normal = SubResource("CompressedTexture2D_h8mq4")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Label" type="Label" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/HBoxContainer/Frame_Btn" unique_id=1376014329]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -19.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+text = "Frame"
+label_settings = SubResource("LabelSettings_csfs4")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel" unique_id=493047199]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 127.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 50
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="AvatarSmoothScrollContainer" type="ScrollContainer" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer" unique_id=755917380]
+custom_minimum_size = Vector2(0, 650)
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+script = ExtResource("9_hwcet")
+wheel_scroll_damper = SubResource("Resource_qg7lo")
+dragging_scroll_damper = SubResource("Resource_r0rqq")
+metadata/_custom_type_script = "uid://c1umaqh6220vy"
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/AvatarSmoothScrollContainer" unique_id=613556833]
+layout_mode = 2
+theme_override_constants/margin_bottom = 50
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="AvatarGridContainer" type="GridContainer" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/AvatarSmoothScrollContainer/MarginContainer" unique_id=544267044]
+custom_minimum_size = Vector2(916, 2350)
+layout_mode = 2
+theme_override_constants/v_separation = 100
+columns = 3
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureButton" type="TextureButton" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/AvatarSmoothScrollContainer/MarginContainer/AvatarGridContainer" unique_id=1087148657]
+z_index = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+texture_normal = SubResource("AtlasTexture_5y7yi")
+ignore_texture_size = true
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Frame" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/AvatarSmoothScrollContainer/MarginContainer/AvatarGridContainer/TextureButton" unique_id=1764569854]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 18.0
+offset_top = 2.0
+offset_right = -29.0
+offset_bottom = 43.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_1wwt2")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/AvatarSmoothScrollContainer/MarginContainer/AvatarGridContainer/TextureButton" unique_id=619867349]
+visible = false
+z_index = -1
+layout_mode = 0
+offset_left = 26.0
+offset_top = -8.0
+offset_right = 265.0
+offset_bottom = 280.0
+texture = SubResource("AtlasTexture_43gk3")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="BuyButton" type="TextureButton" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/AvatarSmoothScrollContainer/MarginContainer/AvatarGridContainer/TextureButton" unique_id=636874289]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -95.0
+offset_top = -20.0
+offset_right = 85.0
+offset_bottom = 57.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = SubResource("CompressedTexture2D_spke6")
+ignore_texture_size = true
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Control" type="Control" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/AvatarSmoothScrollContainer/MarginContainer/AvatarGridContainer/TextureButton/BuyButton" unique_id=1444971993]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/AvatarSmoothScrollContainer/MarginContainer/AvatarGridContainer/TextureButton/BuyButton/Control" unique_id=763483868]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+alignment = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Label" type="Label" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/AvatarSmoothScrollContainer/MarginContainer/AvatarGridContainer/TextureButton/BuyButton/Control/HBoxContainer" unique_id=888626647]
+layout_mode = 2
+mouse_filter = 1
+text = "10"
+label_settings = SubResource("LabelSettings_6u444")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="DiamondControl" type="Control" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/AvatarSmoothScrollContainer/MarginContainer/AvatarGridContainer/TextureButton/BuyButton/Control/HBoxContainer" unique_id=1185598157]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+mouse_filter = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="diamond" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/AvatarSmoothScrollContainer/MarginContainer/AvatarGridContainer/TextureButton/BuyButton/Control/HBoxContainer/DiamondControl" unique_id=1511847976]
+custom_minimum_size = Vector2(50, 45)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 5.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("36_spke6")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureButton2" type="TextureButton" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/AvatarSmoothScrollContainer/MarginContainer/AvatarGridContainer" unique_id=1694406045]
+z_index = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+texture_normal = SubResource("AtlasTexture_tubed")
+ignore_texture_size = true
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Frame" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/AvatarSmoothScrollContainer/MarginContainer/AvatarGridContainer/TextureButton2" unique_id=1003637377]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 18.0
+offset_top = 2.0
+offset_right = -29.0
+offset_bottom = 43.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_ai76j")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/AvatarSmoothScrollContainer/MarginContainer/AvatarGridContainer/TextureButton2" unique_id=222528256]
+visible = false
+z_index = -1
+layout_mode = 0
+offset_left = 26.0
+offset_top = -8.0
+offset_right = 265.0
+offset_bottom = 280.0
+texture = SubResource("AtlasTexture_43gk3")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureButton3" type="TextureButton" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/AvatarSmoothScrollContainer/MarginContainer/AvatarGridContainer" unique_id=926327879]
+z_index = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+texture_normal = SubResource("AtlasTexture_kgdw0")
+ignore_texture_size = true
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Frame" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/AvatarSmoothScrollContainer/MarginContainer/AvatarGridContainer/TextureButton3" unique_id=339196283]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 18.0
+offset_top = 2.0
+offset_right = -29.0
+offset_bottom = 43.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_d185q")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/AvatarSmoothScrollContainer/MarginContainer/AvatarGridContainer/TextureButton3" unique_id=1224707447]
+visible = false
+z_index = -1
+layout_mode = 0
+offset_left = 25.0
+offset_top = -8.0
+offset_right = 265.0
+offset_bottom = 280.0
+texture = SubResource("AtlasTexture_43gk3")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureButton4" type="TextureButton" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/AvatarSmoothScrollContainer/MarginContainer/AvatarGridContainer" unique_id=990790457]
+z_index = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+texture_normal = SubResource("AtlasTexture_tukep")
+ignore_texture_size = true
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Frame" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/AvatarSmoothScrollContainer/MarginContainer/AvatarGridContainer/TextureButton4" unique_id=245528424]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 18.0
+offset_top = 2.0
+offset_right = -29.0
+offset_bottom = 43.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_me4iu")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/AvatarSmoothScrollContainer/MarginContainer/AvatarGridContainer/TextureButton4" unique_id=893711520]
+visible = false
+z_index = -1
+layout_mode = 0
+offset_left = 26.0
+offset_top = -8.0
+offset_right = 266.0
+offset_bottom = 280.0
+texture = SubResource("AtlasTexture_43gk3")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureButton5" type="TextureButton" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/AvatarSmoothScrollContainer/MarginContainer/AvatarGridContainer" unique_id=968503441]
+z_index = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+texture_normal = SubResource("AtlasTexture_tukep")
+ignore_texture_size = true
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Frame" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/AvatarSmoothScrollContainer/MarginContainer/AvatarGridContainer/TextureButton5" unique_id=200288222]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 18.0
+offset_top = 2.0
+offset_right = -28.0
+offset_bottom = 43.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_l82t5")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/AvatarSmoothScrollContainer/MarginContainer/AvatarGridContainer/TextureButton5" unique_id=704917349]
+visible = false
+z_index = -1
+layout_mode = 0
+offset_left = 27.0
+offset_top = -8.0
+offset_right = 266.0
+offset_bottom = 280.0
+texture = SubResource("AtlasTexture_43gk3")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureButton6" type="TextureButton" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/AvatarSmoothScrollContainer/MarginContainer/AvatarGridContainer" unique_id=1745038163]
+z_index = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+texture_normal = SubResource("AtlasTexture_v5k72")
+ignore_texture_size = true
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Frame" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/AvatarSmoothScrollContainer/MarginContainer/AvatarGridContainer/TextureButton6" unique_id=763854029]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 18.0
+offset_top = 2.0
+offset_right = -28.0
+offset_bottom = 43.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_8ffhs")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/AvatarSmoothScrollContainer/MarginContainer/AvatarGridContainer/TextureButton6" unique_id=924771471]
+visible = false
+z_index = -1
+layout_mode = 0
+offset_left = 26.0
+offset_top = -8.0
+offset_right = 265.0
+offset_bottom = 280.0
+texture = SubResource("AtlasTexture_43gk3")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureButton7" type="TextureButton" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/AvatarSmoothScrollContainer/MarginContainer/AvatarGridContainer" unique_id=1072067261]
+z_index = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+texture_normal = SubResource("AtlasTexture_v5k72")
+ignore_texture_size = true
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Frame" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/AvatarSmoothScrollContainer/MarginContainer/AvatarGridContainer/TextureButton7" unique_id=662496097]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 18.0
+offset_top = 2.0
+offset_right = -28.0
+offset_bottom = 43.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_8ffhs")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/AvatarSmoothScrollContainer/MarginContainer/AvatarGridContainer/TextureButton7" unique_id=569603302]
+visible = false
+z_index = -1
+layout_mode = 0
+offset_left = 26.0
+offset_top = -8.0
+offset_right = 266.0
+offset_bottom = 280.0
+texture = SubResource("AtlasTexture_43gk3")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureButton8" type="TextureButton" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/AvatarSmoothScrollContainer/MarginContainer/AvatarGridContainer" unique_id=2090506477]
+z_index = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+texture_normal = SubResource("AtlasTexture_v5k72")
+ignore_texture_size = true
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Frame" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/AvatarSmoothScrollContainer/MarginContainer/AvatarGridContainer/TextureButton8" unique_id=1201042553]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 18.0
+offset_top = 2.0
+offset_right = -28.0
+offset_bottom = 43.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_8ffhs")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/AvatarSmoothScrollContainer/MarginContainer/AvatarGridContainer/TextureButton8" unique_id=1996610013]
+visible = false
+z_index = -1
+layout_mode = 0
+offset_left = 27.0
+offset_top = -8.0
+offset_right = 267.0
+offset_bottom = 280.0
+texture = SubResource("AtlasTexture_43gk3")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureButton9" type="TextureButton" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/AvatarSmoothScrollContainer/MarginContainer/AvatarGridContainer" unique_id=1153905669]
+z_index = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+texture_normal = SubResource("AtlasTexture_v5k72")
+ignore_texture_size = true
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Frame" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/AvatarSmoothScrollContainer/MarginContainer/AvatarGridContainer/TextureButton9" unique_id=160101790]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 18.0
+offset_top = 2.0
+offset_right = -28.0
+offset_bottom = 43.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_8ffhs")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/AvatarSmoothScrollContainer/MarginContainer/AvatarGridContainer/TextureButton9" unique_id=1782598923]
+visible = false
+z_index = -1
+layout_mode = 0
+offset_left = 26.0
+offset_top = -8.0
+offset_right = 265.0
+offset_bottom = 280.0
+texture = SubResource("AtlasTexture_43gk3")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureButton10" type="TextureButton" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/AvatarSmoothScrollContainer/MarginContainer/AvatarGridContainer" unique_id=1450997913]
+z_index = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+texture_normal = SubResource("AtlasTexture_v5k72")
+ignore_texture_size = true
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Frame" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/AvatarSmoothScrollContainer/MarginContainer/AvatarGridContainer/TextureButton10" unique_id=185195283]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 18.0
+offset_top = 2.0
+offset_right = -28.0
+offset_bottom = 43.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_8ffhs")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/AvatarSmoothScrollContainer/MarginContainer/AvatarGridContainer/TextureButton10" unique_id=464858642]
+visible = false
+z_index = -1
+layout_mode = 0
+offset_left = 26.0
+offset_top = -8.0
+offset_right = 265.0
+offset_bottom = 280.0
+texture = SubResource("AtlasTexture_43gk3")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureButton11" type="TextureButton" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/AvatarSmoothScrollContainer/MarginContainer/AvatarGridContainer" unique_id=1919416043]
+z_index = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+texture_normal = SubResource("AtlasTexture_v5k72")
+ignore_texture_size = true
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Frame" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/AvatarSmoothScrollContainer/MarginContainer/AvatarGridContainer/TextureButton11" unique_id=927362686]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 18.0
+offset_top = 2.0
+offset_right = -29.0
+offset_bottom = 44.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_8ffhs")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/AvatarSmoothScrollContainer/MarginContainer/AvatarGridContainer/TextureButton11" unique_id=1798011784]
+visible = false
+z_index = -1
+layout_mode = 0
+offset_left = 24.0
+offset_top = -8.0
+offset_right = 265.0
+offset_bottom = 280.0
+texture = SubResource("AtlasTexture_43gk3")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureButton12" type="TextureButton" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/AvatarSmoothScrollContainer/MarginContainer/AvatarGridContainer" unique_id=1501216102]
+z_index = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+texture_normal = SubResource("AtlasTexture_v5k72")
+ignore_texture_size = true
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Frame" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/AvatarSmoothScrollContainer/MarginContainer/AvatarGridContainer/TextureButton12" unique_id=1413024522]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 18.0
+offset_top = 2.0
+offset_right = -29.0
+offset_bottom = 44.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_8ffhs")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/AvatarSmoothScrollContainer/MarginContainer/AvatarGridContainer/TextureButton12" unique_id=761213701]
+visible = false
+z_index = -1
+layout_mode = 0
+offset_left = 24.0
+offset_top = -8.0
+offset_right = 264.0
+offset_bottom = 280.0
+texture = SubResource("AtlasTexture_43gk3")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureButton13" type="TextureButton" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/AvatarSmoothScrollContainer/MarginContainer/AvatarGridContainer" unique_id=1606247906]
+z_index = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+texture_normal = SubResource("AtlasTexture_v5k72")
+ignore_texture_size = true
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Frame" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/AvatarSmoothScrollContainer/MarginContainer/AvatarGridContainer/TextureButton13" unique_id=203063120]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 18.0
+offset_top = 2.0
+offset_right = -29.0
+offset_bottom = 44.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_8ffhs")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/AvatarSmoothScrollContainer/MarginContainer/AvatarGridContainer/TextureButton13" unique_id=344120135]
+visible = false
+z_index = -1
+layout_mode = 0
+offset_left = 25.0
+offset_top = -8.0
+offset_right = 265.0
+offset_bottom = 280.0
+texture = SubResource("AtlasTexture_43gk3")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureButton14" type="TextureButton" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/AvatarSmoothScrollContainer/MarginContainer/AvatarGridContainer" unique_id=177217147]
+z_index = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+texture_normal = SubResource("AtlasTexture_v5k72")
+ignore_texture_size = true
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Frame" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/AvatarSmoothScrollContainer/MarginContainer/AvatarGridContainer/TextureButton14" unique_id=1831678702]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.5
+offset_top = 3.0
+offset_right = -30.5
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_8ffhs")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/AvatarSmoothScrollContainer/MarginContainer/AvatarGridContainer/TextureButton14" unique_id=316798093]
+visible = false
+z_index = -1
+layout_mode = 0
+offset_left = 22.0
+offset_top = -6.0
+offset_right = 267.0
+offset_bottom = 285.0
+texture = SubResource("AtlasTexture_43gk3")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureButton15" type="TextureButton" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/AvatarSmoothScrollContainer/MarginContainer/AvatarGridContainer" unique_id=880941286]
+z_index = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+texture_normal = SubResource("AtlasTexture_v5k72")
+ignore_texture_size = true
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Frame" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/AvatarSmoothScrollContainer/MarginContainer/AvatarGridContainer/TextureButton15" unique_id=655947244]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.5
+offset_top = 3.0
+offset_right = -29.500092
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_8ffhs")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/AvatarSmoothScrollContainer/MarginContainer/AvatarGridContainer/TextureButton15" unique_id=254549620]
+visible = false
+z_index = -1
+layout_mode = 0
+offset_left = 21.0
+offset_top = -5.0
+offset_right = 267.0
+offset_bottom = 284.0
+texture = SubResource("AtlasTexture_43gk3")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureButton16" type="TextureButton" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/AvatarSmoothScrollContainer/MarginContainer/AvatarGridContainer" unique_id=350735450]
+z_index = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+texture_normal = SubResource("AtlasTexture_v5k72")
+ignore_texture_size = true
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Frame" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/AvatarSmoothScrollContainer/MarginContainer/AvatarGridContainer/TextureButton16" unique_id=38622994]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.5
+offset_top = 3.0
+offset_right = -29.5
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_8ffhs")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/AvatarSmoothScrollContainer/MarginContainer/AvatarGridContainer/TextureButton16" unique_id=935744036]
+visible = false
+z_index = -1
+layout_mode = 0
+offset_left = 23.0
+offset_top = -2.0
+offset_right = 267.0
+offset_bottom = 281.0
+texture = SubResource("AtlasTexture_43gk3")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureButton17" type="TextureButton" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/AvatarSmoothScrollContainer/MarginContainer/AvatarGridContainer" unique_id=2145262878]
+z_index = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+texture_normal = SubResource("AtlasTexture_v5k72")
+ignore_texture_size = true
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Frame" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/AvatarSmoothScrollContainer/MarginContainer/AvatarGridContainer/TextureButton17" unique_id=357271547]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.5
+offset_top = 3.0
+offset_right = -29.500122
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_8ffhs")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/AvatarSmoothScrollContainer/MarginContainer/AvatarGridContainer/TextureButton17" unique_id=1047395134]
+visible = false
+z_index = -1
+layout_mode = 0
+offset_left = 22.0
+offset_top = -3.0
+offset_right = 268.0
+offset_bottom = 281.0
+texture = SubResource("AtlasTexture_43gk3")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureButton18" type="TextureButton" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/AvatarSmoothScrollContainer/MarginContainer/AvatarGridContainer" unique_id=564122915]
+z_index = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+texture_normal = SubResource("AtlasTexture_v5k72")
+ignore_texture_size = true
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Frame" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/AvatarSmoothScrollContainer/MarginContainer/AvatarGridContainer/TextureButton18" unique_id=190596804]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.5
+offset_top = 3.0
+offset_right = -29.5
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_8ffhs")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/AvatarSmoothScrollContainer/MarginContainer/AvatarGridContainer/TextureButton18" unique_id=1053764224]
+visible = false
+z_index = -1
+layout_mode = 0
+offset_left = 23.0
+offset_top = -2.0
+offset_right = 267.0
+offset_bottom = 282.0
+texture = SubResource("AtlasTexture_43gk3")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureButton19" type="TextureButton" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/AvatarSmoothScrollContainer/MarginContainer/AvatarGridContainer" unique_id=1019731989]
+z_index = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+texture_normal = SubResource("AtlasTexture_v5k72")
+ignore_texture_size = true
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Frame" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/AvatarSmoothScrollContainer/MarginContainer/AvatarGridContainer/TextureButton19" unique_id=998625497]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.5
+offset_top = 3.0
+offset_right = -29.5
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_8ffhs")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/AvatarSmoothScrollContainer/MarginContainer/AvatarGridContainer/TextureButton19" unique_id=176935051]
+visible = false
+z_index = -1
+layout_mode = 0
+offset_left = 24.0
+offset_top = -4.0
+offset_right = 268.0
+offset_bottom = 281.0
+texture = SubResource("AtlasTexture_43gk3")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureButton20" type="TextureButton" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/AvatarSmoothScrollContainer/MarginContainer/AvatarGridContainer" unique_id=993667202]
+z_index = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+texture_normal = SubResource("AtlasTexture_v5k72")
+ignore_texture_size = true
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Frame" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/AvatarSmoothScrollContainer/MarginContainer/AvatarGridContainer/TextureButton20" unique_id=899116150]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.5
+offset_top = 3.0
+offset_right = -29.5
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_8ffhs")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/AvatarSmoothScrollContainer/MarginContainer/AvatarGridContainer/TextureButton20" unique_id=515384010]
+visible = false
+z_index = -1
+layout_mode = 0
+offset_left = 23.0
+offset_top = -5.0
+offset_right = 267.0
+offset_bottom = 281.0
+texture = SubResource("AtlasTexture_43gk3")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureButton21" type="TextureButton" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/AvatarSmoothScrollContainer/MarginContainer/AvatarGridContainer" unique_id=982786708]
+z_index = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+texture_normal = SubResource("AtlasTexture_v5k72")
+ignore_texture_size = true
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Frame" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/AvatarSmoothScrollContainer/MarginContainer/AvatarGridContainer/TextureButton21" unique_id=459958101]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.5
+offset_top = 3.0
+offset_right = -29.5
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_8ffhs")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/AvatarSmoothScrollContainer/MarginContainer/AvatarGridContainer/TextureButton21" unique_id=2007285148]
+visible = false
+z_index = -1
+layout_mode = 0
+offset_left = 23.0
+offset_top = -5.0
+offset_right = 267.0
+offset_bottom = 281.0
+texture = SubResource("AtlasTexture_43gk3")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="FrameSmoothScrollContainer" type="ScrollContainer" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer" unique_id=726831128]
+visible = false
+custom_minimum_size = Vector2(0, 650)
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+script = ExtResource("9_hwcet")
+wheel_scroll_damper = SubResource("Resource_0ondu")
+dragging_scroll_damper = SubResource("Resource_spke6")
+metadata/_custom_type_script = "uid://c1umaqh6220vy"
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="FrameGridContainer" type="GridContainer" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/FrameSmoothScrollContainer" unique_id=1297543094]
+custom_minimum_size = Vector2(916, 950)
+layout_mode = 2
+theme_override_constants/h_separation = -10
+theme_override_constants/v_separation = 50
+columns = 3
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureButton" type="TextureButton" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/FrameSmoothScrollContainer/FrameGridContainer" unique_id=2066483815]
+layout_mode = 2
+mouse_filter = 1
+texture_normal = SubResource("AtlasTexture_fxh3m")
+ignore_texture_size = true
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/FrameSmoothScrollContainer/FrameGridContainer/TextureButton" unique_id=1287531115]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 38.0
+offset_top = -3.0
+offset_right = -39.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_ayh8i")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="ActiveAvatar" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/FrameSmoothScrollContainer/FrameGridContainer/TextureButton" unique_id=1193732123]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 39.0
+offset_top = -4.0
+offset_right = -27.0
+offset_bottom = -42.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_7yy67")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="BuyButton" type="TextureButton" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/FrameSmoothScrollContainer/FrameGridContainer/TextureButton" unique_id=1766884677]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -89.0
+offset_top = -37.0
+offset_right = 91.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = SubResource("CompressedTexture2D_spke6")
+ignore_texture_size = true
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Control" type="Control" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/FrameSmoothScrollContainer/FrameGridContainer/TextureButton/BuyButton" unique_id=104474752]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/FrameSmoothScrollContainer/FrameGridContainer/TextureButton/BuyButton/Control" unique_id=1315208887]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+alignment = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Label" type="Label" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/FrameSmoothScrollContainer/FrameGridContainer/TextureButton/BuyButton/Control/HBoxContainer" unique_id=1315313984]
+layout_mode = 2
+mouse_filter = 1
+text = "10"
+label_settings = SubResource("LabelSettings_6u444")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="DiamondControl" type="Control" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/FrameSmoothScrollContainer/FrameGridContainer/TextureButton/BuyButton/Control/HBoxContainer" unique_id=2098270268]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+mouse_filter = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="diamond" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/FrameSmoothScrollContainer/FrameGridContainer/TextureButton/BuyButton/Control/HBoxContainer/DiamondControl" unique_id=433159040]
+custom_minimum_size = Vector2(50, 45)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 5.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("36_spke6")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureButton2" type="TextureButton" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/FrameSmoothScrollContainer/FrameGridContainer" unique_id=981290181]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+texture_normal = SubResource("AtlasTexture_qg7lo")
+ignore_texture_size = true
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/FrameSmoothScrollContainer/FrameGridContainer/TextureButton2" unique_id=1440202783]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 37.0
+offset_top = -7.0
+offset_right = -38.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_iivp1")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="ActiveAvatar" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/FrameSmoothScrollContainer/FrameGridContainer/TextureButton2" unique_id=1081776364]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 39.0
+offset_top = -4.0
+offset_right = -26.0
+offset_bottom = -42.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_262ab")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="FrameIcon" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/FrameSmoothScrollContainer/FrameGridContainer/TextureButton2" unique_id=1596583656]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -38.5
+offset_top = -77.0
+offset_right = 37.5
+offset_bottom = -13.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("14_fv64d")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="BuyButton" type="TextureButton" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/FrameSmoothScrollContainer/FrameGridContainer/TextureButton2" unique_id=502231414]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -89.0
+offset_top = -37.0
+offset_right = 91.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = SubResource("CompressedTexture2D_spke6")
+ignore_texture_size = true
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Control" type="Control" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/FrameSmoothScrollContainer/FrameGridContainer/TextureButton2/BuyButton" unique_id=949289174]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/FrameSmoothScrollContainer/FrameGridContainer/TextureButton2/BuyButton/Control" unique_id=936492674]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+alignment = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Label" type="Label" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/FrameSmoothScrollContainer/FrameGridContainer/TextureButton2/BuyButton/Control/HBoxContainer" unique_id=148364723]
+layout_mode = 2
+mouse_filter = 1
+text = "10"
+label_settings = SubResource("LabelSettings_6u444")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="DiamondControl" type="Control" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/FrameSmoothScrollContainer/FrameGridContainer/TextureButton2/BuyButton/Control/HBoxContainer" unique_id=1999121129]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+mouse_filter = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="diamond" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/FrameSmoothScrollContainer/FrameGridContainer/TextureButton2/BuyButton/Control/HBoxContainer/DiamondControl" unique_id=156940898]
+custom_minimum_size = Vector2(50, 45)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 5.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("36_spke6")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureButton3" type="TextureButton" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/FrameSmoothScrollContainer/FrameGridContainer" unique_id=922949844]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+texture_normal = SubResource("AtlasTexture_6u444")
+ignore_texture_size = true
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/FrameSmoothScrollContainer/FrameGridContainer/TextureButton3" unique_id=848901969]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 37.0
+offset_top = -7.0
+offset_right = -37.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_iivp1")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="ActiveAvatar" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/FrameSmoothScrollContainer/FrameGridContainer/TextureButton3" unique_id=1130803628]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 39.0
+offset_top = -4.0
+offset_right = -26.0
+offset_bottom = -42.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_262ab")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="FrameIcon" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/FrameSmoothScrollContainer/FrameGridContainer/TextureButton3" unique_id=1161791906]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -38.0
+offset_top = -77.0
+offset_right = 38.0
+offset_bottom = -13.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("23_oicyn")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="BuyButton" type="TextureButton" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/FrameSmoothScrollContainer/FrameGridContainer/TextureButton3" unique_id=2130741285]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -89.0
+offset_top = -37.0
+offset_right = 91.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = SubResource("CompressedTexture2D_spke6")
+ignore_texture_size = true
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Control" type="Control" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/FrameSmoothScrollContainer/FrameGridContainer/TextureButton3/BuyButton" unique_id=1989036916]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/FrameSmoothScrollContainer/FrameGridContainer/TextureButton3/BuyButton/Control" unique_id=1445138662]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+alignment = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Label" type="Label" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/FrameSmoothScrollContainer/FrameGridContainer/TextureButton3/BuyButton/Control/HBoxContainer" unique_id=582191872]
+layout_mode = 2
+mouse_filter = 1
+text = "10"
+label_settings = SubResource("LabelSettings_6u444")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="DiamondControl" type="Control" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/FrameSmoothScrollContainer/FrameGridContainer/TextureButton3/BuyButton/Control/HBoxContainer" unique_id=1260229463]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+mouse_filter = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="diamond" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/FrameSmoothScrollContainer/FrameGridContainer/TextureButton3/BuyButton/Control/HBoxContainer/DiamondControl" unique_id=1851853448]
+custom_minimum_size = Vector2(50, 45)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 5.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("36_spke6")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureButton4" type="TextureButton" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/FrameSmoothScrollContainer/FrameGridContainer" unique_id=1181485271]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+texture_normal = SubResource("AtlasTexture_0ondu")
+ignore_texture_size = true
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/FrameSmoothScrollContainer/FrameGridContainer/TextureButton4" unique_id=1442295495]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 37.0
+offset_top = -9.0
+offset_right = -37.0
+offset_bottom = -13.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_iivp1")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="ActiveAvatar" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/FrameSmoothScrollContainer/FrameGridContainer/TextureButton4" unique_id=1897761213]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 39.0
+offset_top = -4.0
+offset_right = -27.0
+offset_bottom = -41.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_262ab")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="FrameIcon" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/FrameSmoothScrollContainer/FrameGridContainer/TextureButton4" unique_id=767308945]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -38.5
+offset_top = -76.0
+offset_right = 37.5
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("24_fu3dd")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="BuyButton" type="TextureButton" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/FrameSmoothScrollContainer/FrameGridContainer/TextureButton4" unique_id=2054043468]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -89.0
+offset_top = -37.0
+offset_right = 91.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = SubResource("CompressedTexture2D_spke6")
+ignore_texture_size = true
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Control" type="Control" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/FrameSmoothScrollContainer/FrameGridContainer/TextureButton4/BuyButton" unique_id=254598563]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/FrameSmoothScrollContainer/FrameGridContainer/TextureButton4/BuyButton/Control" unique_id=304750149]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+alignment = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Label" type="Label" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/FrameSmoothScrollContainer/FrameGridContainer/TextureButton4/BuyButton/Control/HBoxContainer" unique_id=1126519417]
+layout_mode = 2
+mouse_filter = 1
+text = "10"
+label_settings = SubResource("LabelSettings_6u444")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="DiamondControl" type="Control" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/FrameSmoothScrollContainer/FrameGridContainer/TextureButton4/BuyButton/Control/HBoxContainer" unique_id=1637234944]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+mouse_filter = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="diamond" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/FrameSmoothScrollContainer/FrameGridContainer/TextureButton4/BuyButton/Control/HBoxContainer/DiamondControl" unique_id=1609760399]
+custom_minimum_size = Vector2(50, 45)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 5.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("36_spke6")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureButton5" type="TextureButton" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/FrameSmoothScrollContainer/FrameGridContainer" unique_id=1709160300]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+texture_normal = SubResource("AtlasTexture_spke6")
+ignore_texture_size = true
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/FrameSmoothScrollContainer/FrameGridContainer/TextureButton5" unique_id=675114168]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 38.0
+offset_top = -9.0
+offset_right = -38.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_iivp1")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="ActiveAvatar" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/FrameSmoothScrollContainer/FrameGridContainer/TextureButton5" unique_id=1218825496]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 39.0
+offset_top = -4.0
+offset_right = -26.0
+offset_bottom = -41.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_262ab")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="FrameIcon" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/FrameSmoothScrollContainer/FrameGridContainer/TextureButton5" unique_id=464767169]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -38.5
+offset_top = -76.0
+offset_right = 37.5
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("25_l82t5")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="BuyButton" type="TextureButton" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/FrameSmoothScrollContainer/FrameGridContainer/TextureButton5" unique_id=1471521698]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -89.0
+offset_top = -37.0
+offset_right = 91.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = SubResource("CompressedTexture2D_spke6")
+ignore_texture_size = true
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Control" type="Control" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/FrameSmoothScrollContainer/FrameGridContainer/TextureButton5/BuyButton" unique_id=1342156806]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/FrameSmoothScrollContainer/FrameGridContainer/TextureButton5/BuyButton/Control" unique_id=556580417]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+alignment = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Label" type="Label" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/FrameSmoothScrollContainer/FrameGridContainer/TextureButton5/BuyButton/Control/HBoxContainer" unique_id=53314213]
+layout_mode = 2
+mouse_filter = 1
+text = "10"
+label_settings = SubResource("LabelSettings_6u444")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="DiamondControl" type="Control" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/FrameSmoothScrollContainer/FrameGridContainer/TextureButton5/BuyButton/Control/HBoxContainer" unique_id=68957130]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+mouse_filter = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="diamond" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/FrameSmoothScrollContainer/FrameGridContainer/TextureButton5/BuyButton/Control/HBoxContainer/DiamondControl" unique_id=2090824206]
+custom_minimum_size = Vector2(50, 45)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 5.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("36_spke6")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureButton6" type="TextureButton" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/FrameSmoothScrollContainer/FrameGridContainer" unique_id=361813513]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+texture_normal = SubResource("AtlasTexture_w6bgl")
+ignore_texture_size = true
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/FrameSmoothScrollContainer/FrameGridContainer/TextureButton6" unique_id=498312385]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 38.0
+offset_top = -7.0
+offset_right = -38.0
+offset_bottom = -14.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_iivp1")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="ActiveAvatar" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/FrameSmoothScrollContainer/FrameGridContainer/TextureButton6" unique_id=1205870754]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 39.0
+offset_top = -4.0
+offset_right = -26.0
+offset_bottom = -41.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_262ab")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="FrameIcon" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/FrameSmoothScrollContainer/FrameGridContainer/TextureButton6" unique_id=1850325610]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -38.0
+offset_top = -76.0
+offset_right = 38.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("26_h8mq4")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="BuyButton" type="TextureButton" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/FrameSmoothScrollContainer/FrameGridContainer/TextureButton6" unique_id=1560749809]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -89.0
+offset_top = -37.0
+offset_right = 91.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = SubResource("CompressedTexture2D_spke6")
+ignore_texture_size = true
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Control" type="Control" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/FrameSmoothScrollContainer/FrameGridContainer/TextureButton6/BuyButton" unique_id=9872104]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/FrameSmoothScrollContainer/FrameGridContainer/TextureButton6/BuyButton/Control" unique_id=275363036]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+alignment = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Label" type="Label" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/FrameSmoothScrollContainer/FrameGridContainer/TextureButton6/BuyButton/Control/HBoxContainer" unique_id=1011769106]
+layout_mode = 2
+mouse_filter = 1
+text = "10"
+label_settings = SubResource("LabelSettings_6u444")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="DiamondControl" type="Control" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/FrameSmoothScrollContainer/FrameGridContainer/TextureButton6/BuyButton/Control/HBoxContainer" unique_id=127983087]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+mouse_filter = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="diamond" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/FrameSmoothScrollContainer/FrameGridContainer/TextureButton6/BuyButton/Control/HBoxContainer/DiamondControl" unique_id=1799834868]
+custom_minimum_size = Vector2(50, 45)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 5.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("36_spke6")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureButton7" type="TextureButton" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/FrameSmoothScrollContainer/FrameGridContainer" unique_id=2080641461]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+texture_normal = SubResource("AtlasTexture_w6bgl")
+ignore_texture_size = true
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/FrameSmoothScrollContainer/FrameGridContainer/TextureButton7" unique_id=772479600]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 37.0
+offset_top = -8.0
+offset_right = -38.0
+offset_bottom = -14.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_iivp1")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="ActiveAvatar" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/FrameSmoothScrollContainer/FrameGridContainer/TextureButton7" unique_id=1852419236]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 39.0
+offset_top = -4.0
+offset_right = -26.0
+offset_bottom = -41.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_262ab")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="FrameIcon" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/FrameSmoothScrollContainer/FrameGridContainer/TextureButton7" unique_id=92034759]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -38.0
+offset_top = -76.0
+offset_right = 38.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("44_0ondu")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="BuyButton" type="TextureButton" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/FrameSmoothScrollContainer/FrameGridContainer/TextureButton7" unique_id=441765686]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -89.0
+offset_top = -37.0
+offset_right = 91.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = SubResource("CompressedTexture2D_spke6")
+ignore_texture_size = true
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Control" type="Control" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/FrameSmoothScrollContainer/FrameGridContainer/TextureButton7/BuyButton" unique_id=1753382553]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/FrameSmoothScrollContainer/FrameGridContainer/TextureButton7/BuyButton/Control" unique_id=1905883066]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+alignment = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Label" type="Label" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/FrameSmoothScrollContainer/FrameGridContainer/TextureButton7/BuyButton/Control/HBoxContainer" unique_id=1820624973]
+layout_mode = 2
+mouse_filter = 1
+text = "10"
+label_settings = SubResource("LabelSettings_6u444")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="DiamondControl" type="Control" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/FrameSmoothScrollContainer/FrameGridContainer/TextureButton7/BuyButton/Control/HBoxContainer" unique_id=443612735]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+mouse_filter = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="diamond" type="TextureRect" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/FrameSmoothScrollContainer/FrameGridContainer/TextureButton7/BuyButton/Control/HBoxContainer/DiamondControl" unique_id=1422253173]
+custom_minimum_size = Vector2(50, 45)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 5.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("36_spke6")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer" unique_id=573681217]
+layout_mode = 2
+theme_override_constants/margin_bottom = 40
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Continue_Btn" type="TextureButton" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/MarginContainer" unique_id=439341515]
+custom_minimum_size = Vector2(350, 130)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 1
+texture_normal = ExtResource("31_0807p")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Label" type="Label" parent="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/MarginContainer/Continue_Btn" unique_id=1381334556]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -139.5
+offset_top = -56.5
+offset_right = 139.5
+offset_bottom = 30.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+text = "Save"
+label_settings = SubResource("LabelSettings_kywpq")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[connection signal="pressed" from="HBoxContainer/bg/MarginContainer/VBoxContainer/Heading/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/profile_details/ProfileButton" to="." method="_on_edit_btn_pressed"]
+[connection signal="pressed" from="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/profile_details/HBoxContainer/Info_margin/Info/HBoxContainer/LineEdit/name_save" to="." method="_on_name_save_pressed"]
+[connection signal="pressed" from="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/profile_details/HBoxContainer/Info_margin/Info/HBoxContainer/Edit_Btn" to="." method="_on_edit_btn_pressed"]
+[connection signal="pressed" from="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/HBoxContainer/Avatar_Btn" to="." method="_on_avatar_btn_pressed"]
+[connection signal="pressed" from="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/HBoxContainer/Frame_Btn" to="." method="_on_frame_btn_pressed"]
+[connection signal="pressed" from="HBoxContainer/bg/MarginContainer/VBoxContainer/SmoothScrollContainer/VBoxContainer/EditPanel/VBoxContainer/MarginContainer/Continue_Btn" to="." method="_on_continue_btn_pressed"]

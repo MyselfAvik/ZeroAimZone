@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://bqsi2ktu4gmhg"]
+
+[ext_resource type="Texture2D" uid="uid://cpguqrb655dbp" path="res://ZeroAimZone-Godot/3_Assets/obstacles/StaticWall/Sprites/SlidingObstacle.png" id="2_gvcix"]
+[ext_resource type="Texture2D" uid="uid://dsqq7pmtsgi81" path="res://ZeroAimZone-Godot/3_Assets/obstacles/StaticWall/Sprites/offset_glow.png" id="3_gvcix"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0v2t7"]
+size = Vector2(368.23532, 78.82353)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_0v2t7"]
+blend_mode = 1
+particles_animation = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Curve" id="Curve_8w56o"]
+_limits = [-360.0, 360.0, 0.0, 1.0]
+_data = [Vector2(0, 8.930908), 0.0, 0.0, 0, 0, Vector2(0.99130434, -2.0715942), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_g1kqw"]
+curve = SubResource("Curve_8w56o")
+
+[sub_resource type="Gradient" id="Gradient_gvcix"]
+offsets = PackedFloat32Array(0.22857143)
+colors = PackedColorArray(1.1638972, 0.7263874, 0.56834656, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_0v2t7"]
+gradient = SubResource("Gradient_gvcix")
+use_hdr = true
+
+[sub_resource type="Curve" id="Curve_g1kqw"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.99999994, 1), 0.021955587, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_ij1k6"]
+curve = SubResource("Curve_g1kqw")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ij1k6"]
+lifetime_randomness = 1.0
+particle_flag_rotate_y = true
+particle_flag_disable_z = true
+angle_min = 1.0728835e-05
+angle_max = 360.00003
+direction = Vector3(1, 1, 0)
+spread = 180.0
+initial_velocity_min = 5.0
+initial_velocity_max = 10.0
+angular_velocity_min = 9.999984
+angular_velocity_max = 19.999983
+angular_velocity_curve = SubResource("CurveTexture_g1kqw")
+gravity = Vector3(0, -95, 0)
+scale_max = 3.0
+scale_curve = SubResource("CurveTexture_ij1k6")
+color = Color(1.1638972, 0.7753318, 0.7787987, 1)
+color_ramp = SubResource("GradientTexture1D_0v2t7")
+
+[node name="SlidingWall" type="Node2D" unique_id=1461212700]
+visible = false
+
+[node name="StaticBody2D" type="AnimatableBody2D" parent="." unique_id=2135800309]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=239742800]
+visible = false
+texture = ExtResource("2_gvcix")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=257277173]
+visible = false
+position = Vector2(-13, 14)
+shape = SubResource("RectangleShape2D_0v2t7")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=1141666571]
+unique_name_in_owner = true
+visible = false
+material = SubResource("CanvasItemMaterial_0v2t7")
+amount = 200
+texture = ExtResource("3_gvcix")
+lifetime = 1.5
+speed_scale = 0.5
+explosiveness = 0.41
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_ij1k6")
+
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="." unique_id=645965601]
+unique_name_in_owner = true
+visible = false
+material = SubResource("CanvasItemMaterial_0v2t7")
+amount = 20
+texture = ExtResource("3_gvcix")
+lifetime = 1.5
+speed_scale = 2.0
+explosiveness = 0.41
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_ij1k6")

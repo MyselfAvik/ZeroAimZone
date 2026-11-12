@@ -1,0 +1,13 @@
+[config]
+name="FirebaseAnalyticsPlugin"
+binary="firebase-analytics.xcframework"
+initialization="register_firebase_analytics_types"
+deinitialization="unregister_firebase_analytics_types"
+
+[dependencies]
+linked=[]
+embedded=[]
+system=["Foundation.framework"]
+capabilities=[]
+files=[]
+pods=["Firebase/Analytics"]

@@ -1,0 +1,138 @@
+[gd_resource type="Resource" script_class="CrateDatabase" format=3 uid="uid://ewuybj8mysrm"]
+
+[ext_resource type="Script" uid="uid://kfe7dbkui2mk" path="res://ZeroAimZone-Godot/4_Resources/scripts/CrateInfo.gd" id="1_4sw6q"]
+[ext_resource type="Script" uid="uid://bb2kgul38bbg4" path="res://ZeroAimZone-Godot/4_Resources/scripts/CrateDataBase.gd" id="2_ffock"]
+[ext_resource type="Texture2D" uid="uid://1254ax8r24d1" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/Crates/bronze_empty.png" id="2_mybmv"]
+[ext_resource type="Script" uid="uid://d1gk761sbs7g" path="res://ZeroAimZone-Godot/4_Resources/scripts/CrateReward.gd" id="2_tdmkm"]
+[ext_resource type="Texture2D" uid="uid://7btssnrfaj47" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/Crates/bronze_close.png" id="3_fv2b0"]
+[ext_resource type="Texture2D" uid="uid://c578634o6xprb" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/Crates/bronze_open.png" id="4_q74lg"]
+[ext_resource type="Texture2D" uid="uid://cbmnrychgpc5b" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/Glows/bronze_glow.png" id="5_4pvv1"]
+[ext_resource type="Texture2D" uid="uid://b7b5p0mat1sf4" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/Crates/silver_empty.png" id="6_4pvv1"]
+[ext_resource type="Texture2D" uid="uid://nlek6bml78lt" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/Crates/silver_close.png" id="7_o0lm3"]
+[ext_resource type="Texture2D" uid="uid://25ack11amhot" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/Crates/silver_open.png" id="8_3ptl0"]
+[ext_resource type="Texture2D" uid="uid://bvkcecxjpvj2a" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/Crates/gold_empty.png" id="9_t0map"]
+[ext_resource type="Texture2D" uid="uid://c8iw0axpv335v" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/Crates/gold_close.png" id="10_g7ngi"]
+[ext_resource type="Texture2D" uid="uid://cm26bjtlcw6py" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/Glows/silver_glow.png" id="10_o0lm3"]
+[ext_resource type="Texture2D" uid="uid://gbx8b40rxjx1" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/Crates/gold_open.png" id="11_67fol"]
+[ext_resource type="Texture2D" uid="uid://cxtfeqd8js0wb" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/Glows/gold_glow.png" id="14_3ptl0"]
+
+[sub_resource type="Resource" id="Resource_pjklb"]
+script = ExtResource("2_tdmkm")
+min_coin = 20
+max_coin = 50
+probability_to_get = 55.0
+
+[sub_resource type="Resource" id="Resource_l06nq"]
+script = ExtResource("2_tdmkm")
+contains = 1
+min_diamond = 2
+max_diamond = 5
+probability_to_get = 30.0
+
+[sub_resource type="Resource" id="Resource_t0map"]
+script = ExtResource("2_tdmkm")
+contains = 4
+min_cards = 1
+max_cards = 2
+probability_to_get = 15.0
+metadata/_custom_type_script = "uid://d1gk761sbs7g"
+
+[sub_resource type="Resource" id="Resource_ldety"]
+script = ExtResource("1_4sw6q")
+unlock_times_minutes = 5
+min_reward_item = 1
+max_reward_item = 2
+chest_icon = ExtResource("3_fv2b0")
+chest_open_glow_texture = ExtResource("4_q74lg")
+chest_empty_texture = ExtResource("2_mybmv")
+glow_texture = ExtResource("5_4pvv1")
+rewards = Array[ExtResource("2_tdmkm")]([SubResource("Resource_pjklb"), SubResource("Resource_l06nq"), SubResource("Resource_t0map")])
+
+[sub_resource type="Resource" id="Resource_m1uf0"]
+script = ExtResource("2_tdmkm")
+min_coin = 40
+max_coin = 65
+probability_to_get = 45.0
+
+[sub_resource type="Resource" id="Resource_3oe82"]
+script = ExtResource("2_tdmkm")
+contains = 1
+min_diamond = 5
+max_diamond = 7
+probability_to_get = 20.0
+
+[sub_resource type="Resource" id="Resource_jhwb8"]
+script = ExtResource("2_tdmkm")
+contains = 4
+min_cards = 2
+max_cards = 4
+probability_to_get = 30.0
+
+[sub_resource type="Resource" id="Resource_o0lm3"]
+script = ExtResource("2_tdmkm")
+contains = 2
+probability_to_get = 5.0
+metadata/_custom_type_script = "uid://d1gk761sbs7g"
+
+[sub_resource type="Resource" id="Resource_ffock"]
+script = ExtResource("1_4sw6q")
+crate_type = 1
+unlock_times_minutes = 30
+min_reward_item = 1
+max_reward_item = 3
+chest_icon = ExtResource("7_o0lm3")
+chest_open_glow_texture = ExtResource("8_3ptl0")
+chest_empty_texture = ExtResource("6_4pvv1")
+glow_texture = ExtResource("10_o0lm3")
+rewards = Array[ExtResource("2_tdmkm")]([SubResource("Resource_m1uf0"), SubResource("Resource_3oe82"), SubResource("Resource_jhwb8"), SubResource("Resource_o0lm3")])
+
+[sub_resource type="Resource" id="Resource_vyf8u"]
+script = ExtResource("2_tdmkm")
+min_coin = 40
+max_coin = 85
+probability_to_get = 25.0
+metadata/_custom_type_script = "uid://d1gk761sbs7g"
+
+[sub_resource type="Resource" id="Resource_3buwu"]
+script = ExtResource("2_tdmkm")
+contains = 1
+min_diamond = 6
+max_diamond = 10
+probability_to_get = 12.0
+metadata/_custom_type_script = "uid://d1gk761sbs7g"
+
+[sub_resource type="Resource" id="Resource_wdkgt"]
+script = ExtResource("2_tdmkm")
+contains = 4
+min_cards = 4
+max_cards = 8
+probability_to_get = 55.0
+metadata/_custom_type_script = "uid://d1gk761sbs7g"
+
+[sub_resource type="Resource" id="Resource_3ptl0"]
+script = ExtResource("2_tdmkm")
+contains = 2
+probability_to_get = 4.0
+metadata/_custom_type_script = "uid://d1gk761sbs7g"
+
+[sub_resource type="Resource" id="Resource_mybmv"]
+script = ExtResource("2_tdmkm")
+contains = 3
+probability_to_get = 4.0
+metadata/_custom_type_script = "uid://d1gk761sbs7g"
+
+[sub_resource type="Resource" id="Resource_tdmkm"]
+script = ExtResource("1_4sw6q")
+crate_type = 2
+unlock_times_minutes = 60
+min_reward_item = 2
+max_reward_item = 3
+chest_icon = ExtResource("10_g7ngi")
+chest_open_glow_texture = ExtResource("11_67fol")
+chest_empty_texture = ExtResource("9_t0map")
+glow_texture = ExtResource("14_3ptl0")
+rewards = Array[ExtResource("2_tdmkm")]([SubResource("Resource_vyf8u"), SubResource("Resource_3buwu"), SubResource("Resource_wdkgt"), SubResource("Resource_3ptl0"), SubResource("Resource_mybmv")])
+
+[resource]
+script = ExtResource("2_ffock")
+Crates = Array[ExtResource("1_4sw6q")]([SubResource("Resource_ldety"), SubResource("Resource_ffock"), SubResource("Resource_tdmkm")])

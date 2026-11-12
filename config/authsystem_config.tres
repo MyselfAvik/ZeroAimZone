@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="AuthSystemConfig" format=3 uid="uid://bvuev5ybuig74"]
+
+[ext_resource type="Script" uid="uid://6otokt66qnw4" path="res://addons/firebaseauthsystem/Scripts/Utils/AuthSystemConfig.gd" id="1_nxjg4"]
+
+[resource]
+script = ExtResource("1_nxjg4")
+firebase_api_key = "AIzaSyD_xb-9JbnGF6heDFobOuXFUynaHXq-v5s"
+firebase_project_id = "zero-aim-zone"
+firebase_app_id = "1:494893416541:web:afc92844c6d7ba6c18cdb4"
+firebase_messaging_sender_id = "494893416541"
+google_web_client_id = "494893416541-4suhi3vfjo6v0b816m6283o3jfeu4ac7.apps.googleusercontent.com"
+play_games_web_client_id = "494893416541-4suhi3vfjo6v0b816m6283o3jfeu4ac7.apps.googleusercontent.com"
+company_name = "TheGameWise"
+product_name = "ZeroAimZone"
+game_id = "com.TheGameWise.ZeroAimZone"
+bundle_id = "com.TheGameWise.ZeroAimZone0"
+enable_android_iap = true
+enable_remote_config = true
+remote_config_defaults = Dictionary[String, Variant]({
+"test_config": "fsdds"
+})
+android_remove_ads_product_id = "remove_ad"

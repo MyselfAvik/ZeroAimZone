@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://bra8yop1cq516"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qb7w0"]
+load_path = "res://.godot/imported/coin_glow.png-966564a6c1882e0c11b09b364d3f59b7.ctex"
+
+[sub_resource type="Curve" id="Curve_rrad4"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_rrad4"]
+offsets = PackedFloat32Array(0.09375, 0.453125, 0.653125, 0.828125)
+colors = PackedColorArray(0, 0.5882353, 0.5176471, 0.98039216, 0, 0.5882353, 0.5176471, 0.98039216, 0.8994266, 0.6719203, 7.70092e-07, 0.9411765, 1, 1, 1, 0.7764706)
+
+[node name="PlayerDamage" type="CPUParticles2D" unique_id=1831682109]
+emitting = false
+texture = SubResource("CompressedTexture2D_qb7w0")
+lifetime = 0.6
+one_shot = true
+speed_scale = 1.2
+explosiveness = 0.95
+randomness = 0.75
+fixed_fps = 30
+local_coords = true
+direction = Vector2(-1, 0)
+gravity = Vector2(0, 0)
+initial_velocity_max = 350.0
+scale_amount_min = 0.15
+scale_amount_max = 0.15
+scale_amount_curve = SubResource("Curve_rrad4")
+color_ramp = SubResource("Gradient_rrad4")

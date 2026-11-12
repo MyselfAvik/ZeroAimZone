@@ -1,0 +1,313 @@
+[gd_scene format=3 uid="uid://caugg3fmnmbip"]
+
+[ext_resource type="Script" uid="uid://ceyeyvlmcht7i" path="res://ZeroAimZone-Godot/1_Scripts/UI_Controllers/FriendPanelController.gd" id="1_28rmu"]
+[ext_resource type="PackedScene" uid="uid://bbwniicg1sov8" path="res://ZeroAimZone-Godot/2_Prefabs/UI/Panels/friend_item.tscn" id="2_dpjjk"]
+[ext_resource type="Texture2D" uid="uid://c64cugrqfe7rb" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/CommonBg/panelbg.png" id="3_7604q"]
+[ext_resource type="FontFile" uid="uid://bwi6e3xaodcgb" path="res://ZeroAimZone-Godot/3_Assets/Fonts/Teko-Bold.ttf" id="4_ytvw8"]
+[ext_resource type="FontFile" uid="uid://dobi5yff3px2t" path="res://ZeroAimZone-Godot/3_Assets/Fonts/BarlowCondensed-SemiBold.ttf" id="5_ytvw8"]
+[ext_resource type="FontFile" uid="uid://giru623cv661" path="res://ZeroAimZone-Godot/3_Assets/Fonts/BarlowCondensed-Medium.ttf" id="6_7604q"]
+[ext_resource type="Texture2D" uid="uid://d233jxa8v0k1" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/InGamePops/loader.png" id="7_qxy7m"]
+[ext_resource type="Texture2D" uid="uid://bv5r22rktfp8f" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/CommonButton/multiplayerbtnbg.png" id="8_yyr4v"]
+[ext_resource type="Texture2D" uid="uid://d2icly2pa3xt2" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/CommonButton/mupclosebtnbg.png" id="9_bhd2b"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5doib"]
+
+[sub_resource type="FontVariation" id="FontVariation_qxy7m"]
+base_font = ExtResource("4_ytvw8")
+
+[sub_resource type="FontVariation" id="FontVariation_yyr4v"]
+base_font = ExtResource("5_ytvw8")
+
+[sub_resource type="FontVariation" id="FontVariation_bhd2b"]
+base_font = ExtResource("6_7604q")
+
+[sub_resource type="LabelSettings" id="LabelSettings_m3hc6"]
+font = SubResource("FontVariation_bhd2b")
+font_size = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_7604q"]
+font = ExtResource("4_ytvw8")
+font_size = 92
+font_color = Color(0, 0, 0, 1)
+
+[node name="FriendsPanel" type="Control" unique_id=279920194 node_paths=PackedStringArray("create_btn", "close_btn", "none", "friend_list", "loading", "error")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_28rmu")
+create_btn = NodePath("HBoxContainer/MarginContainer/VBoxContainer/ConnectedFrineds/bg/CreateBtn")
+close_btn = NodePath("HBoxContainer/MarginContainer/VBoxContainer/ConnectedFrineds/bg/Close_Btn")
+none = NodePath("HBoxContainer/MarginContainer/VBoxContainer/ConnectedFrineds/bg/FriendsBackgd/None")
+friend_list = NodePath("HBoxContainer/MarginContainer/VBoxContainer/ConnectedFrineds/bg/FriendsBackgd/ScrollContainer/FriendsList")
+friend_card = ExtResource("2_dpjjk")
+loading = NodePath("HBoxContainer/MarginContainer/VBoxContainer/ConnectedFrineds/bg/FriendsBackgd/Loading")
+error = NodePath("HBoxContainer/MarginContainer/VBoxContainer/ConnectedFrineds/bg/FriendsBackgd/Error")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1249099189]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer" unique_id=1355922006]
+custom_minimum_size = Vector2(1080, 0)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/MarginContainer" unique_id=511008724]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="ConnectedFrineds" type="Panel" parent="HBoxContainer/MarginContainer/VBoxContainer" unique_id=1536930312]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_5doib")
+
+[node name="bg" type="TextureRect" parent="HBoxContainer/MarginContainer/VBoxContainer/ConnectedFrineds" unique_id=956795708]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_7604q")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="HBoxContainer/MarginContainer/VBoxContainer/ConnectedFrineds/bg" unique_id=1361256117]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -339.5
+offset_top = 30.0
+offset_right = 344.5
+offset_bottom = 180.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.9137255, 0.9019608, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.18039216, 0.16470589, 0.5882353, 1)
+theme_override_colors/font_outline_color = Color(0.60784316, 0.5921569, 0.74509805, 1)
+theme_override_fonts/font = SubResource("FontVariation_qxy7m")
+theme_override_font_sizes/font_size = 86
+text = "CREATE PRIVATE GAME"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="HBoxContainer/MarginContainer/VBoxContainer/ConnectedFrineds/bg" unique_id=2025415305]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -329.5
+offset_top = 170.0
+offset_right = 329.5
+offset_bottom = 230.0
+grow_horizontal = 2
+theme_override_fonts/font = SubResource("FontVariation_yyr4v")
+theme_override_font_sizes/font_size = 50
+text = "Private games do not award XP"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="HBoxContainer/MarginContainer/VBoxContainer/ConnectedFrineds/bg" unique_id=2074996621]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -391.5
+offset_top = 155.0
+offset_right = 391.5
+offset_bottom = 278.0
+grow_horizontal = 2
+theme_override_fonts/font = SubResource("FontVariation_yyr4v")
+theme_override_font_sizes/font_size = 50
+text = "Both players must be on the same network. Use the same Wi-Fi or one player’s hotspot."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="FriendsBackgd" type="TextureRect" parent="HBoxContainer/MarginContainer/VBoxContainer/ConnectedFrineds/bg" unique_id=1284872391]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -406.0
+offset_top = 372.99997
+offset_right = 468.70905
+offset_bottom = -450.46216
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.9728949, 1.0400006)
+expand_mode = 1
+
+[node name="None" type="Label" parent="HBoxContainer/MarginContainer/VBoxContainer/ConnectedFrineds/bg/FriendsBackgd" unique_id=1775625063]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -378.5
+offset_top = -78.0387
+offset_right = 378.5
+offset_bottom = 70.999695
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 6
+text = "No one is connected. Create room to play with friend."
+label_settings = SubResource("LabelSettings_m3hc6")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Error" type="Label" parent="HBoxContainer/MarginContainer/VBoxContainer/ConnectedFrineds/bg/FriendsBackgd" unique_id=675900025]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -378.5
+offset_top = -78.0387
+offset_right = 378.5
+offset_bottom = 70.999695
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 6
+text = "Can’t create room. Please try again later."
+label_settings = SubResource("LabelSettings_m3hc6")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Loading" type="TextureRect" parent="HBoxContainer/MarginContainer/VBoxContainer/ConnectedFrineds/bg/FriendsBackgd" unique_id=304056538]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(100, 100)
+texture = ExtResource("7_qxy7m")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer/MarginContainer/VBoxContainer/ConnectedFrineds/bg/FriendsBackgd" unique_id=1685295652]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 40.086548
+offset_top = 16.346191
+offset_right = -39.380432
+offset_bottom = -18.269287
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+
+[node name="FriendsList" type="VBoxContainer" parent="HBoxContainer/MarginContainer/VBoxContainer/ConnectedFrineds/bg/FriendsBackgd/ScrollContainer" unique_id=1036182052]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 18
+
+[node name="MarginContainer" type="Control" parent="HBoxContainer/MarginContainer/VBoxContainer/ConnectedFrineds/bg" unique_id=1158962841]
+visible = false
+layout_mode = 1
+anchor_left = 0.5
+anchor_top = 0.82000005
+anchor_right = 0.5
+anchor_bottom = 0.82000005
+offset_left = -500.0
+offset_top = -74.40015
+offset_right = 500.0
+offset_bottom = 289.59985
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.25
+
+[node name="CreateBtn" type="TextureButton" parent="HBoxContainer/MarginContainer/VBoxContainer/ConnectedFrineds/bg" unique_id=325382068]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -250.0
+offset_top = -220.0
+offset_right = 250.0
+offset_bottom = -80.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 3
+texture_normal = ExtResource("8_yyr4v")
+texture_disabled = ExtResource("9_bhd2b")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="HBoxContainer/MarginContainer/VBoxContainer/ConnectedFrineds/bg/CreateBtn" unique_id=1446167630]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 27.0
+offset_bottom = -29.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "CREATE"
+label_settings = SubResource("LabelSettings_7604q")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Close_Btn" type="TextureButton" parent="HBoxContainer/MarginContainer/VBoxContainer/ConnectedFrineds/bg" unique_id=704666]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -250.0
+offset_top = -220.0
+offset_right = 250.0
+offset_bottom = -80.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 3
+texture_normal = ExtResource("9_bhd2b")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="HBoxContainer/MarginContainer/VBoxContainer/ConnectedFrineds/bg/Close_Btn" unique_id=1351951230]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 27.0
+offset_bottom = -29.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "CLOSE"
+label_settings = SubResource("LabelSettings_7604q")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="HBoxContainer/MarginContainer/VBoxContainer/ConnectedFrineds/bg/CreateBtn" to="." method="_on_create_room_btn_pressed"]
+[connection signal="pressed" from="HBoxContainer/MarginContainer/VBoxContainer/ConnectedFrineds/bg/Close_Btn" to="." method="_on_cancel_room_btn_pressed"]

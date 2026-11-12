@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://c0mkuqt26seo8"]
+
+[ext_resource type="Texture2D" uid="uid://cm26bjtlcw6py" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/Glows/silver_glow.png" id="1_f4gvt"]
+
+[sub_resource type="Curve" id="Curve_747g8"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_3hdlf"]
+offsets = PackedFloat32Array(0, 0.9972452)
+colors = PackedColorArray(18.892157, 18.892157, 18.892157, 1, 18.892157, 18.892157, 18.892157, 1)
+
+[node name="ChestGlow" type="CPUParticles2D" unique_id=118771415]
+texture = ExtResource("1_f4gvt")
+lifetime = 3.0
+randomness = 1.0
+emission_shape = 3
+emission_rect_extents = Vector2(50, 5)
+direction = Vector2(0, -1)
+spread = 125.0
+gravity = Vector2(0, -45)
+initial_velocity_max = 100.0
+scale_amount_min = 0.04
+scale_amount_max = 0.05
+scale_amount_curve = SubResource("Curve_747g8")
+color_ramp = SubResource("Gradient_3hdlf")

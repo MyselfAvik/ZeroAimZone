@@ -1,0 +1,155 @@
+[gd_scene format=3 uid="uid://dfs2idhx2u0ai"]
+
+[ext_resource type="Texture2D" uid="uid://00qjah7ajees" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/CommonBg/CardBg.png" id="1_rtuyv"]
+[ext_resource type="Script" uid="uid://bliho5mdtt6pt" path="res://ZeroAimZone-Godot/1_Scripts/UI_Controllers/SkinCardController.gd" id="2_ywsc1"]
+[ext_resource type="Texture2D" uid="uid://di5x5c30jxh5a" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/CommonButton/BlueBtn.png" id="3_u7j7g"]
+[ext_resource type="Texture2D" uid="uid://bd0h1coxlr1q1" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/CommonButton/GreenButtonNOShadow.png" id="4_rtuyv"]
+[ext_resource type="Texture2D" uid="uid://bdffw56eb5skr" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/GunPanel/info.png" id="5_rjfmq"]
+[ext_resource type="Texture2D" uid="uid://cghihw7q8k6g5" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/Glows/gun_glow.png" id="7_rtuyv"]
+[ext_resource type="Texture2D" uid="uid://dw4hxus3lat0c" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/guns/street/beretta.png" id="7_u7j7g"]
+[ext_resource type="AudioStream" uid="uid://gkh5cvg1wwyp" path="res://ZeroAimZone-Godot/3_Assets/AudioTracks/The Button.mp3" id="8_gn6pp"]
+[ext_resource type="Texture2D" uid="uid://c5j1tny7o82te" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/ShopPanel/Singlegem.png" id="9_rtuyv"]
+[ext_resource type="FontFile" uid="uid://10wk3avcupsd" path="res://ZeroAimZone-Godot/3_Assets/Fonts/BarlowCondensed-Bold.ttf" id="9_u7j7g"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iva3p"]
+texture = ExtResource("1_rtuyv")
+
+[sub_resource type="LabelSettings" id="LabelSettings_d8dpr"]
+font = ExtResource("9_u7j7g")
+font_size = 50
+
+[node name="SkinCard" type="Panel" unique_id=1780634996 node_paths=PackedStringArray("info_btn", "gun_image", "equipped_Btn", "label", "diamond")]
+custom_minimum_size = Vector2(300, 450)
+offset_right = 300.0
+offset_bottom = 450.0
+pivot_offset = Vector2(-1099, 141)
+theme_override_styles/panel = SubResource("StyleBoxTexture_iva3p")
+script = ExtResource("2_ywsc1")
+info_btn = NodePath("InfoButton")
+gun_image = NodePath("GunImage")
+equipped_Btn = NodePath("Equiped")
+label = NodePath("Equiped/Control/HBoxContainer/Label")
+diamond = NodePath("Equiped/Control/HBoxContainer/DiamondControl")
+equipped_texture = ExtResource("3_u7j7g")
+unlock_texture = ExtResource("4_rtuyv")
+
+[node name="Glow" type="TextureRect" parent="." unique_id=819880748]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -162.5
+offset_top = -241.5
+offset_right = 150.5
+offset_bottom = 110.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.7
+mouse_filter = 2
+texture = ExtResource("7_rtuyv")
+expand_mode = 1
+
+[node name="InfoButton" type="TextureButton" parent="." unique_id=182729159]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -45.0
+offset_top = -17.0
+offset_right = 1.0
+offset_bottom = 29.0
+grow_horizontal = 0
+texture_normal = ExtResource("5_rjfmq")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="GunImage" type="TextureRect" parent="." unique_id=1245013385]
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = -175.0
+offset_right = 125.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.17453292
+pivot_offset_ratio = Vector2(0.5, 0.5)
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.7
+mouse_filter = 2
+texture = ExtResource("7_u7j7g")
+expand_mode = 1
+
+[node name="Equiped" type="TextureButton" parent="." unique_id=1748949316]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -124.0
+offset_top = 117.0
+offset_right = 112.0
+offset_bottom = 193.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+texture_normal = ExtResource("3_u7j7g")
+texture_hover = ExtResource("3_u7j7g")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Control" type="Control" parent="Equiped" unique_id=175941560]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Equiped/Control" unique_id=4266122]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 5.0
+offset_bottom = -10.999977
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="Label" type="Label" parent="Equiped/Control/HBoxContainer" unique_id=943136562]
+layout_mode = 2
+text = "10"
+label_settings = SubResource("LabelSettings_d8dpr")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="DiamondControl" type="Control" parent="Equiped/Control/HBoxContainer" unique_id=716895883]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+
+[node name="diamond" type="TextureRect" parent="Equiped/Control/HBoxContainer/DiamondControl" unique_id=1201590092]
+custom_minimum_size = Vector2(50, 45)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 5.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_rtuyv")
+expand_mode = 1
+stretch_mode = 5

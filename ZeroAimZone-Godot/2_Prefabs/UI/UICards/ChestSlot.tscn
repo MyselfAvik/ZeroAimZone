@@ -1,0 +1,208 @@
+[gd_scene format=3 uid="uid://dood7wscci3gh"]
+
+[ext_resource type="Texture2D" uid="uid://ddjdot8prnv36" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/BasePanel/ChestSlotEmpty.png" id="1_ok1oo"]
+[ext_resource type="Script" uid="uid://c1fl72jt3ofoy" path="res://ZeroAimZone-Godot/1_Scripts/UI_Controllers/CrateSlotController.gd" id="2_65j17"]
+[ext_resource type="Texture2D" uid="uid://cnvr066ghg468" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/BasePanel/Duration Rounded Container.png" id="3_fi21f"]
+[ext_resource type="Resource" uid="uid://ewuybj8mysrm" path="res://ZeroAimZone-Godot/4_Resources/Tres/CrateDatabase.tres" id="5_65j17"]
+[ext_resource type="Texture2D" uid="uid://cmimom2bpn8vi" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/BasePanel/ChestSlotFilled.png" id="5_fi21f"]
+[ext_resource type="Texture2D" uid="uid://bouq0mrdf25q" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/Glows/sparkle_glow.png" id="5_ok1oo"]
+[ext_resource type="Texture2D" uid="uid://7btssnrfaj47" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/Crates/bronze_close.png" id="6_fi21f"]
+[ext_resource type="FontFile" uid="uid://10wk3avcupsd" path="res://ZeroAimZone-Godot/3_Assets/Fonts/BarlowCondensed-Bold.ttf" id="6_xystp"]
+[ext_resource type="Texture2D" uid="uid://cjqwumhywu6xu" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/BasePanel/Open Button Rounded Container.png" id="7_u5kyw"]
+[ext_resource type="Texture2D" uid="uid://cslptd4dlltbo" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/BasePanel/Unlock Button Container.png" id="9_ok1oo"]
+[ext_resource type="Texture2D" uid="uid://dycd14wq5n7nv" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/BasePanel/Unlock Header Icon Frame.png" id="10_fi21f"]
+[ext_resource type="AudioStream" uid="uid://gkh5cvg1wwyp" path="res://ZeroAimZone-Godot/3_Assets/AudioTracks/The Button.mp3" id="10_mlgwn"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fjuek"]
+line_spacing = -5.0
+font_size = 42
+font_color = Color(0.48235294, 0.4509804, 0.76862746, 1)
+shadow_color = Color(0.12156863, 0.11372549, 0.30588236, 1)
+shadow_offset = Vector2(0, 2)
+
+[sub_resource type="LabelSettings" id="LabelSettings_action"]
+font = ExtResource("6_xystp")
+font_size = 37
+
+[sub_resource type="LabelSettings" id="LabelSettings_ad_action"]
+font = ExtResource("6_xystp")
+font_size = 25
+
+[node name="ChestSlot" type="TextureButton" unique_id=178407535]
+offset_left = 2.0
+offset_right = 211.0
+offset_bottom = 307.0
+size_flags_horizontal = 3
+mouse_filter = 2
+texture_normal = ExtResource("1_ok1oo")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("2_65j17")
+unlocking_texture = ExtResource("3_fi21f")
+open_texture = ExtResource("7_u5kyw")
+empty_slot_texture = ExtResource("1_ok1oo")
+filled_slot_texture = ExtResource("5_fi21f")
+crate_database = ExtResource("5_65j17")
+
+[node name="CrateGlow" type="TextureRect" parent="." unique_id=2079151558]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -105.0
+offset_top = -121.0
+offset_right = 105.0
+offset_bottom = 77.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("5_ok1oo")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Glow" type="TextureRect" parent="." unique_id=946608779]
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -117.5
+offset_top = -128.5
+offset_right = 111.5
+offset_bottom = 77.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="." unique_id=472253105]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -91.5
+offset_top = -102.5
+offset_right = 91.5
+offset_bottom = 102.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Chest Slot"
+label_settings = SubResource("LabelSettings_fjuek")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="CrateIcon" type="TextureRect" parent="." unique_id=1902007920]
+z_index = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.5
+offset_top = -74.5
+offset_right = 62.5
+offset_bottom = 40.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_fi21f")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ActionButton" type="TextureButton" parent="." unique_id=3102820]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -77.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("7_u5kyw")
+texture_hover = ExtResource("7_u5kyw")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="ActionLabel" type="Label" parent="ActionButton" unique_id=535114080]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 2.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Unlock"
+label_settings = SubResource("LabelSettings_action")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="AdUnlockButton" type="TextureButton" parent="." unique_id=1556678766]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -89.5
+offset_top = -25.0
+offset_right = 89.5
+offset_bottom = 40.0
+grow_horizontal = 2
+texture_normal = ExtResource("9_ok1oo")
+texture_hover = ExtResource("9_ok1oo")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="AdUnlockButton" unique_id=1137312823]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -81.0
+offset_top = -24.5
+offset_right = 81.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="ActionLabel" type="Label" parent="AdUnlockButton/HBoxContainer" unique_id=537754762]
+layout_mode = 2
+text = "Tap to Unlock"
+label_settings = SubResource("LabelSettings_ad_action")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="AdUnlockButton/HBoxContainer" unique_id=353508137]
+custom_minimum_size = Vector2(23, 23)
+layout_mode = 2
+
+[node name="AdIcon" type="TextureRect" parent="AdUnlockButton/HBoxContainer/Control" unique_id=1756687144]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -6.500006
+offset_top = -1.0000004
+offset_right = -0.04465294
+offset_bottom = 0.19415283
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.2617994
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("10_fi21f")
+expand_mode = 1
+stretch_mode = 5

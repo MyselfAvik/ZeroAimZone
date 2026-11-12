@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://b484p3vmerkcr"]
+
+[ext_resource type="Texture2D" uid="uid://dgndumucux7xq" path="res://ZeroAimZone-Godot/3_Assets/obstacles/StaticWall/Sprites/shadowall.png" id="1_er5pw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ma6ka"]
+size = Vector2(376, 73)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lqpij"]
+size = Vector2(376, 73.5)
+
+[node name="SlidingWall" type="Node2D" unique_id=1611790291]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1361184006 groups=["impact_wall"]]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=282807616]
+texture = ExtResource("1_er5pw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1200358847]
+position = Vector2(0, -5.5)
+shape = SubResource("RectangleShape2D_ma6ka")
+
+[node name="BoundsDetector" type="Area2D" parent="." unique_id=1691535760]
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BoundsDetector" unique_id=1074991186]
+position = Vector2(0, -5.595)
+shape = SubResource("RectangleShape2D_lqpij")

@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://dq6bsa1q47vic"]
+
+[ext_resource type="Script" uid="uid://lemgee3qck6" path="res://ZeroAimZone-Godot/1_Scripts/Network/multiplayer_bullet.gd" id="1_j60y3"]
+[ext_resource type="PackedScene" uid="uid://njilh4rk0w5a" path="res://ZeroAimZone-Godot/3_Assets/obstacles/StaticWall/HitEffect.tscn" id="2_6cxve"]
+
+[node name="MultiplayerBullet" type="Area2D" unique_id=1454933523]
+scale = Vector2(3.2649236, 3.2649236)
+collision_mask = 3
+script = ExtResource("1_j60y3")
+hit_effect_scene = ExtResource("2_6cxve")
+
+[node name="BulletVisual" type="Sprite2D" parent="." unique_id=487340849]
+z_index = 5
+position = Vector2(0, -9.536743e-07)
+rotation = 0.6981317
+scale = Vector2(0.1, 0.1)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=2034127587]
+position = Vector2(0, -9.536743e-07)
+scale = Vector2(0.05, 0.05)
+
+[node name="TrailPoint" type="Marker2D" parent="." unique_id=119689781]
+position = Vector2(-6, 0)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

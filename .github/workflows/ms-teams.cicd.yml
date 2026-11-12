@@ -1,0 +1,62 @@
+name: Notify Teams on Commit
+
+on:
+  push:
+    branches:
+      - main
+      - Feature/**
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send Teams Adaptive Card
+        env:
+          ACTOR: ${{ github.actor }}
+          MESSAGE: ${{ github.event.head_commit.message }}
+          BRANCH: ${{ github.ref_name }}
+          SHA: ${{ github.sha }}
+          URL: ${{ github.event.head_commit.url }}
+          WEBHOOK_URL: ${{ secrets.TEAMS_WEBHOOK_URL }}
+        run: |
+          PAYLOAD=$(jq -n \
+            --arg actor   "$ACTOR" \
+            --arg message "$MESSAGE" \
+            --arg branch  "$BRANCH" \
+            --arg sha     "$SHA" \
+            --arg url     "$URL" \
+            '{
+              type: "AdaptiveCard",
+              "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+              version: "1.4",
+              body: [
+                {
+                  type: "TextBlock",
+                  text: "New Commit Notification",
+                  weight: "Bolder",
+                  size: "Medium",
+                  wrap: true
+                },
+                {
+                  type: "FactSet",
+                  facts: [
+                    { title: "Author",  value: $actor   },
+                    { title: "Message", value: $message },
+                    { title: "Branch",  value: $branch  },
+                    { title: "SHA",     value: $sha     }
+                  ]
+                }
+              ],
+              actions: [
+                {
+                  type: "Action.OpenUrl",
+                  title: "View Commit",
+                  url: $url
+                }
+              ]
+            }')
+
+          curl --fail -s \
+            -H "Content-Type: application/json" \
+            -d "$PAYLOAD" \
+            "$WEBHOOK_URL"

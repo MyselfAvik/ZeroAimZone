@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cadkguh224hll"]
+
+[ext_resource type="Script" uid="uid://3y5d8p643my2" path="res://ZeroAimZone-Godot/3_Assets/obstacles/FireCannons/fire_cannon_obstacle.gd" id="1_55tvn"]
+[ext_resource type="PackedScene" uid="uid://duah0arftip7s" path="res://ZeroAimZone-Godot/3_Assets/obstacles/FireCannons/FireCannonPiece.tscn" id="2_8lmad"]
+
+[node name="FireCannonsObstacle" type="Node2D" unique_id=696834497]
+script = ExtResource("1_55tvn")
+cannon_scene = ExtResource("2_8lmad")
+initial_delay = 2.0
+fire_time = 2.5

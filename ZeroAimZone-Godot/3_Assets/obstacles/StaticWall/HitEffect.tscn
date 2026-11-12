@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://njilh4rk0w5a"]
+
+[ext_resource type="Script" uid="uid://cdss0inh5roqv" path="res://ZeroAimZone-Godot/3_Assets/obstacles/StaticWall/hit_effect.gd" id="1_7q0nc"]
+[ext_resource type="Texture2D" uid="uid://djpq4c7rum3ac" path="res://ZeroAimZone-Godot/3_Assets/obstacles/StaticWall/Sprites/hit3.png" id="2_7q0nc"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_7q0nc"]
+blend_mode = 1
+
+[sub_resource type="Curve" id="Curve_qybeu"]
+_data = [Vector2(0, 0.48126304), 0.0, 1.5875812, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_qybeu"]
+offsets = PackedFloat32Array(0, 0.30025446, 0.6870229, 1)
+colors = PackedColorArray(1.0413129, 0.45856875, 0, 1, 0.7294118, 0, 0, 1, 1.084415, 0, 0, 1, 0.9647059, 0.8039216, 0.21176471, 1)
+
+[node name="HitEffect" type="Node2D" unique_id=667701957]
+scale = Vector2(2, 2)
+script = ExtResource("1_7q0nc")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1630036552]
+material = SubResource("CanvasItemMaterial_7q0nc")
+rotation = 1.5707964
+scale = Vector2(0.5, 0.5)
+emitting = false
+amount = 16
+texture = ExtResource("2_7q0nc")
+lifetime = 0.1
+one_shot = true
+speed_scale = 2.0
+explosiveness = 1.0
+spread = 50.0
+gravity = Vector2(0, 0)
+scale_amount_min = 0.02
+scale_amount_max = 0.2
+scale_amount_curve = SubResource("Curve_qybeu")
+color_ramp = SubResource("Gradient_qybeu")

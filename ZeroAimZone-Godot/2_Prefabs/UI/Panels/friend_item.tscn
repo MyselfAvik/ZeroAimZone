@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://bbwniicg1sov8"]
+
+[ext_resource type="Script" uid="uid://glvxso4w8aw5" path="res://ZeroAimZone-Godot/1_Scripts/UI_Controllers/FriendCardController.gd" id="1_kqiwh"]
+[ext_resource type="FontFile" uid="uid://dobi5yff3px2t" path="res://ZeroAimZone-Godot/3_Assets/Fonts/BarlowCondensed-SemiBold.ttf" id="2_kqiwh"]
+[ext_resource type="Texture2D" uid="uid://bd0h1coxlr1q1" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/CommonButton/GreenButtonNOShadow.png" id="3_du87k"]
+[ext_resource type="Texture2D" uid="uid://di5x5c30jxh5a" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/CommonButton/BlueBtn.png" id="4_du87k"]
+[ext_resource type="AudioStream" uid="uid://gkh5cvg1wwyp" path="res://ZeroAimZone-Godot/3_Assets/AudioTracks/The Button.mp3" id="6_s03oh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vto28"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_vto28"]
+font = ExtResource("2_kqiwh")
+font_size = 66
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kqiwh"]
+texture = ExtResource("3_du87k")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vto28"]
+texture = ExtResource("4_du87k")
+
+[node name="FriendCard" type="Panel" unique_id=460191149 node_paths=PackedStringArray("friend_name", "challange_btn")]
+custom_minimum_size = Vector2(0, 150)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -383.5
+offset_top = -80.5
+offset_right = 383.5
+offset_bottom = 80.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_vto28")
+script = ExtResource("1_kqiwh")
+friend_name = NodePath("HBoxContainer/FriendName")
+challange_btn = NodePath("HBoxContainer/Control/ChallengeBtn")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=768603489]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FriendName" type="Label" parent="HBoxContainer" unique_id=320542250]
+custom_minimum_size = Vector2(300, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Hritik"
+label_settings = SubResource("LabelSettings_vto28")
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="HBoxContainer" unique_id=995826760]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ChallengeBtn" type="Button" parent="HBoxContainer/Control" unique_id=1989211477]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -230.0
+offset_top = -38.0
+offset_bottom = 38.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(0.7921569, 0.76862746, 1, 1)
+theme_override_fonts/font = ExtResource("2_kqiwh")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxTexture_kqiwh")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_kqiwh")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kqiwh")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_vto28")
+text = "Challenge"

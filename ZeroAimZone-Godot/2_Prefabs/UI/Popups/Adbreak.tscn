@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://xqn0a8iuxwnc"]
+
+[ext_resource type="Script" uid="uid://i1uo5g4hmw4u" path="res://ZeroAimZone-Godot/1_Scripts/UI_Controllers/AdBreakPopupController.gd" id="1_ei0wo"]
+[ext_resource type="Texture2D" uid="uid://bj8vtgriohmbn" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/InGamePops/AdBreak.png" id="2_ei0wo"]
+[ext_resource type="FontFile" uid="uid://10wk3avcupsd" path="res://ZeroAimZone-Godot/3_Assets/Fonts/BarlowCondensed-Bold.ttf" id="3_eik50"]
+
+[sub_resource type="Gradient" id="Gradient_sa4p6"]
+offsets = PackedFloat32Array(0, 0.44929245, 0.7110849)
+colors = PackedColorArray(0, 0, 0, 0.654902, 0, 0, 0, 0.654902, 0, 0, 0, 0.654902)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ei0wo"]
+gradient = SubResource("Gradient_sa4p6")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wavmv"]
+texture = ExtResource("2_ei0wo")
+
+[sub_resource type="FontVariation" id="FontVariation_ltxcg"]
+base_font = ExtResource("3_eik50")
+
+[sub_resource type="FontVariation" id="FontVariation_sa4p6"]
+base_font = ExtResource("3_eik50")
+
+[node name="AdBreakPopup" type="Control" unique_id=1279329849]
+z_index = 5
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ei0wo")
+
+[node name="Overlay1" type="TextureButton" parent="." unique_id=33624614]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = SubResource("GradientTexture2D_ei0wo")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="MainContainer" type="Panel" parent="." unique_id=548632290]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -455.0
+offset_top = -432.0
+offset_right = 455.0
+offset_bottom = 432.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(2305, 506)
+theme_override_styles/panel = SubResource("StyleBoxTexture_wavmv")
+
+[node name="Label" type="Label" parent="MainContainer" unique_id=1103075106]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -164.5
+offset_top = 30.0
+offset_right = 164.5
+offset_bottom = 155.0
+grow_horizontal = 2
+theme_override_fonts/font = SubResource("FontVariation_ltxcg")
+theme_override_font_sizes/font_size = 87
+text = "AD BREAK"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="MainContainer" unique_id=531967750]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -398.0
+offset_top = -135.5
+offset_right = 398.0
+offset_bottom = 243.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource("FontVariation_sa4p6")
+theme_override_font_sizes/font_size = 54
+text = "Please wait while an ad is
+ being set up"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2

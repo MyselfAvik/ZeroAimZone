@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ObstacleList" format=3 uid="uid://cr5wpte70y4xw"]
+
+[ext_resource type="PackedScene" uid="uid://dh5bqqbva0smn" path="res://ZeroAimZone-Godot/3_Assets/obstacles/Laser/LaserObstacle.tscn" id="1_6oew1"]
+[ext_resource type="PackedScene" uid="uid://dh4ynalxvqngr" path="res://ZeroAimZone-Godot/3_Assets/obstacles/ElectricRod/ElectricRodObstacle.tscn" id="2_6oew1"]
+[ext_resource type="PackedScene" uid="uid://cadkguh224hll" path="res://ZeroAimZone-Godot/3_Assets/obstacles/FireCannons/FireCannonsObstacle.tscn" id="3_6oew1"]
+[ext_resource type="Script" uid="uid://dfpw8eis0jdme" path="res://ZeroAimZone-Godot/4_Resources/scripts/ObstaclesList.gd" id="3_qhjog"]
+
+[resource]
+script = ExtResource("3_qhjog")
+obstacle_scene = Array[PackedScene]([ExtResource("1_6oew1"), ExtResource("2_6oew1"), ExtResource("3_6oew1")])
+metadata/_custom_type_script = "uid://dfpw8eis0jdme"

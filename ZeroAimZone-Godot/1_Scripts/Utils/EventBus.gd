@@ -1,0 +1,16 @@
+extends Node
+
+@warning_ignore("unused_signal")
+signal setting_changed(setting_key: String, is_on: bool)
+@warning_ignore("unused_signal")
+signal iap_purchase_success(product_id: String, purchase_data: Dictionary)
+@warning_ignore("unused_signal")
+signal auth_user_logged_in(user_data: Dictionary)
+@warning_ignore("unused_signal")
+signal auth_user_logged_out()
+@warning_ignore("unused_signal")
+signal firebase_failed(error_code: int, message: String)
+@warning_ignore("unused_signal")
+signal auth_failed(code: int, message: String)
+@warning_ignore("unused_signal")
+signal network_connectivity_changed(is_connected: bool)

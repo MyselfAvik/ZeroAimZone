@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://bp2epqcxsqgvw"]
+
+[ext_resource type="Script" uid="uid://55iai8bx2ne" path="res://ZeroAimZone-Godot/1_Scripts/Managers/UIManager.gd" id="1_cg7jk"]
+[ext_resource type="PackedScene" uid="uid://c04qs0mlcw2p7" path="res://ZeroAimZone-Godot/2_Prefabs/UI/Panels/BasePanel.tscn" id="1_wcpym"]
+[ext_resource type="PackedScene" uid="uid://dugh5alydkih2" path="res://ZeroAimZone-Godot/2_Prefabs/UI/Panels/ArenaSelectionPanel.tscn" id="3_by5s4"]
+[ext_resource type="PackedScene" uid="uid://c25joenwffm1q" path="res://ZeroAimZone-Godot/2_Prefabs/UI/Panels/MatchMakingPanel.tscn" id="4_36ptw"]
+[ext_resource type="PackedScene" uid="uid://bmy8or2itb238" path="res://ZeroAimZone-Godot/2_Prefabs/UI/Panels/PopupPanel.tscn" id="4_j0kep"]
+[ext_resource type="Script" uid="uid://ff5dberb8bit" path="res://ZeroAimZone-Godot/1_Scripts/Managers/GameFlowManager.gd" id="5_exqyr"]
+[ext_resource type="Resource" uid="uid://bkdff2m74ylv0" path="res://ZeroAimZone-Godot/4_Resources/Tres/Single_Player_Data.tres" id="6_132fr"]
+[ext_resource type="PackedScene" uid="uid://bynee7nlc1gcj" path="res://ZeroAimZone-Godot/2_Prefabs/UI/Panels/RewardPanel.tscn" id="8_jjlek"]
+[ext_resource type="PackedScene" uid="uid://ybx00kxyp3ya" path="res://ZeroAimZone-Godot/2_Prefabs/UI/Panels/LoadingPanel.tscn" id="9_uc8jg"]
+
+[node name="MainMenu" type="Node2D" unique_id=393632741]
+
+[node name="UI_Manager" type="CanvasLayer" parent="." unique_id=1906457243 node_paths=PackedStringArray("base_panel", "arena_selection_panel", "popup_panel", "match_making_panel", "reward_panel", "loading_panel")]
+script = ExtResource("1_cg7jk")
+base_panel = NodePath("BasePanel")
+arena_selection_panel = NodePath("ArenaSelectionPanel")
+popup_panel = NodePath("PopupPanel")
+match_making_panel = NodePath("MatchMakingPanel")
+reward_panel = NodePath("RewardPanel")
+loading_panel = NodePath("LoadingPanel")
+
+[node name="LoadingPanel" parent="UI_Manager" unique_id=2030769867 instance=ExtResource("9_uc8jg")]
+visible = false
+
+[node name="BasePanel" parent="UI_Manager" unique_id=831527309 instance=ExtResource("1_wcpym")]
+
+[node name="MatchMakingPanel" parent="UI_Manager" unique_id=933178472 instance=ExtResource("4_36ptw")]
+visible = false
+
+[node name="ArenaSelectionPanel" parent="UI_Manager" unique_id=87775884 instance=ExtResource("3_by5s4")]
+visible = false
+
+[node name="RewardPanel" parent="UI_Manager" unique_id=1825069698 instance=ExtResource("8_jjlek")]
+visible = false
+
+[node name="PopupPanel" parent="UI_Manager" unique_id=1951436528 instance=ExtResource("4_j0kep")]
+
+[node name="GameFlowManager" type="Node2D" parent="." unique_id=2111265663]
+script = ExtResource("5_exqyr")
+single_player_data = ExtResource("6_132fr")

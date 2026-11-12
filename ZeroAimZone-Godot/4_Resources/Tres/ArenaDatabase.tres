@@ -1,0 +1,43 @@
+[gd_resource type="Resource" script_class="ArenaDatabase" format=3 uid="uid://dtlk8hn2gu65w"]
+
+[ext_resource type="Script" uid="uid://dt1wp8rh0a2ov" path="res://ZeroAimZone-Godot/4_Resources/scripts/ArenaInfo.gd" id="1_6dcoq"]
+[ext_resource type="Script" uid="uid://de4hsbegi8crq" path="res://ZeroAimZone-Godot/4_Resources/scripts/ArenaDatabase.gd" id="2_deek0"]
+[ext_resource type="Texture2D" uid="uid://dhvr624ypwd1x" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/ArenaSelection/red_arena.png" id="2_pbgfm"]
+[ext_resource type="Texture2D" uid="uid://db2hvdgs8v57g" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/ArenaSelection/Tokyo.png" id="3_2cqhg"]
+[ext_resource type="Texture2D" uid="uid://c4ygpxnuq8lmi" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/ArenaSelection/blue_arena.png" id="4_r4wsl"]
+[ext_resource type="Texture2D" uid="uid://4bg30b4n73nn" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/ArenaSelection/NewYorkLogo.png" id="5_k686w"]
+[ext_resource type="Texture2D" uid="uid://dxrwgo3lair82" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/ArenaSelection/yellow_arena.png" id="6_nbcwu"]
+[ext_resource type="Texture2D" uid="uid://cxwksknpnp0cp" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/ArenaSelection/DelhiLogo.png" id="7_mb8ep"]
+
+[sub_resource type="Resource" id="Resource_pbgfm"]
+script = ExtResource("1_6dcoq")
+entry_fee = 200
+winning_amount = 360
+bg_texture = ExtResource("2_pbgfm")
+logo_texture = ExtResource("3_2cqhg")
+logo_glow_color = Color(0.9529412, 0.31764707, 0.54901963, 1)
+gameplay_bg_color = Color(0.87058824, 0.34509805, 0.49411765, 1)
+
+[sub_resource type="Resource" id="Resource_2cqhg"]
+script = ExtResource("1_6dcoq")
+arena_index = 1
+entry_fee = 400
+winning_amount = 720
+bg_texture = ExtResource("4_r4wsl")
+logo_texture = ExtResource("5_k686w")
+logo_glow_color = Color(0.31764707, 0.49411765, 0.9529412, 1)
+gameplay_bg_color = Color(0.36078432, 0.43137255, 0.9137255, 1)
+
+[sub_resource type="Resource" id="Resource_r4wsl"]
+script = ExtResource("1_6dcoq")
+arena_index = 2
+entry_fee = 800
+winning_amount = 1450
+bg_texture = ExtResource("6_nbcwu")
+logo_texture = ExtResource("7_mb8ep")
+logo_glow_color = Color(0.9529412, 0.85490197, 0.31764707, 1)
+gameplay_bg_color = Color(0.92941177, 0.6627451, 0.34509805, 1)
+
+[resource]
+script = ExtResource("2_deek0")
+arena_database = Array[ExtResource("1_6dcoq")]([SubResource("Resource_pbgfm"), SubResource("Resource_2cqhg"), SubResource("Resource_r4wsl")])

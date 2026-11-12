@@ -1,0 +1,793 @@
+[gd_resource type="Resource" script_class="AllGunData" format=3 uid="uid://beyhjmowv3yds"]
+
+[ext_resource type="Script" uid="uid://c6xyhl2ucgx5t" path="res://ZeroAimZone-Godot/4_Resources/scripts/GunSO.gd" id="1_jpnwb"]
+[ext_resource type="Script" uid="uid://cklnw6vaqni0y" path="res://ZeroAimZone-Godot/4_Resources/scripts/GunSkinSO.gd" id="1_skins"]
+[ext_resource type="Script" uid="uid://c5vbrka4i6km6" path="res://ZeroAimZone-Godot/4_Resources/scripts/all_gun_data.gd" id="2_8ea8o"]
+[ext_resource type="Texture2D" uid="uid://cwcyfyppst5qi" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/guns/Default gun.png" id="3_nabgw"]
+[ext_resource type="Texture2D" uid="uid://dw4hxus3lat0c" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/guns/street/beretta.png" id="4_3mogl"]
+[ext_resource type="Texture2D" uid="uid://dpo0v6p43434i" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/cosmetics/beretta/b_s1_a.png" id="5_0l6oi"]
+[ext_resource type="PackedScene" uid="uid://mi3sl80d3qry" path="res://ZeroAimZone-Godot/2_Prefabs/TrailEffectScenes/bullet_trail_gold.tscn" id="5_06ncm"]
+[ext_resource type="Texture2D" uid="uid://da3jfw56x6tft" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/cosmetics/beretta/b_skin1.png" id="6_xxh3m"]
+[ext_resource type="Texture2D" uid="uid://dj4853qn4bfja" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/cosmetics/beretta/b_s2_a.png" id="7_xe0mg"]
+[ext_resource type="PackedScene" uid="uid://ij6g7xy06vxu" path="res://ZeroAimZone-Godot/2_Prefabs/TrailEffectScenes/beretta_s1_trail.tscn" id="8_310aq"]
+[ext_resource type="Texture2D" uid="uid://dkmv0oc8craj" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/cosmetics/beretta/b_skin2.png" id="8_l1tmu"]
+[ext_resource type="Texture2D" uid="uid://bn4ppshlx85e5" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/cosmetics/beretta/egg_bullet.png" id="9_aufar"]
+[ext_resource type="Texture2D" uid="uid://d2x2cwle7gvpd" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/guns/street/glock17.png" id="9_xxh3m"]
+[ext_resource type="AudioStream" uid="uid://c1cdnbcdcwjuy" path="res://ZeroAimZone-Godot/3_Assets/AudioTracks/mac-quack.mp3" id="10_vj41q"]
+[ext_resource type="Texture2D" uid="uid://bmc3lt75tew16" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/cosmetics/glock/g_s1_a.png" id="10_xe0mg"]
+[ext_resource type="PackedScene" uid="uid://bci2bx2idetic" path="res://ZeroAimZone-Godot/2_Prefabs/TrailEffectScenes/beretta_s2_trail.tscn" id="11_38w0y"]
+[ext_resource type="Texture2D" uid="uid://824i17iqb7dr" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/cosmetics/glock/g_skin1.png" id="11_l1tmu"]
+[ext_resource type="Texture2D" uid="uid://ps317bbi6ycg" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/cosmetics/glock/g_s2_a.png" id="12_l1tmu"]
+[ext_resource type="Texture2D" uid="uid://bd6pvb28himg" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/cosmetics/glock/g_skin2.png" id="13_8nnw5"]
+[ext_resource type="Texture2D" uid="uid://cs8d0vms8lkhe" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/guns/street/sigsauer.png" id="14_8nnw5"]
+[ext_resource type="Texture2D" uid="uid://bs5tu3ma2blgo" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/cosmetics/sigsauer/sig_s1_a.png" id="15_1jhwy"]
+[ext_resource type="PackedScene" uid="uid://ciygcp1gafvct" path="res://ZeroAimZone-Godot/2_Prefabs/TrailEffectScenes/glock_s1_trail.tscn" id="15_38w0y"]
+[ext_resource type="Texture2D" uid="uid://bk3aebg38bdd6" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/cosmetics/sigsauer/sig_skin1.png" id="16_11qep"]
+[ext_resource type="Texture2D" uid="uid://ccqf848g4kc62" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/cosmetics/sigsauer/sig_s2_a.png" id="17_xgt7s"]
+[ext_resource type="PackedScene" uid="uid://2v48joewmjo4" path="res://ZeroAimZone-Godot/2_Prefabs/TrailEffectScenes/glock_s2_trail.tscn" id="18_lgtjs"]
+[ext_resource type="Texture2D" uid="uid://dnee4f7ff7esv" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/cosmetics/sigsauer/sig_skin2.png" id="18_pwvo3"]
+[ext_resource type="Texture2D" uid="uid://btuiyx2h6i5bs" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/guns/pro/fnfive-seven.png" id="19_pwvo3"]
+[ext_resource type="Texture2D" uid="uid://cu2v2ea1f55vj" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/cosmetics/fn/fn_s1_a.png" id="20_lub2v"]
+[ext_resource type="Texture2D" uid="uid://bum7hj6tuq4v0" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/cosmetics/fn/fn_skin1.png" id="21_x5u7h"]
+[ext_resource type="PackedScene" uid="uid://bt0muuf2yfct5" path="res://ZeroAimZone-Godot/2_Prefabs/TrailEffectScenes/sig_s1_trail.tscn" id="22_b6byf"]
+[ext_resource type="Texture2D" uid="uid://kywwgrog0ipp" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/cosmetics/fn/fn_s2_a.png" id="22_b53le"]
+[ext_resource type="Texture2D" uid="uid://br5fatxbkrsxp" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/cosmetics/fn/fn_skin2.png" id="23_ycwas"]
+[ext_resource type="Texture2D" uid="uid://c7fia2dgkhhle" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/guns/pro/smith&wesson.png" id="24_6fgi7"]
+[ext_resource type="PackedScene" uid="uid://cmrhpbtippira" path="res://ZeroAimZone-Godot/2_Prefabs/TrailEffectScenes/sig_s2_trail.tscn" id="25_218g2"]
+[ext_resource type="Texture2D" uid="uid://501y23o5oqlk" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/cosmetics/sw/sw_s1_a.png" id="25_sgwos"]
+[ext_resource type="Texture2D" uid="uid://bb1s0c20f37ec" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/cosmetics/sw/sw_skin1.png" id="26_vr2js"]
+[ext_resource type="Texture2D" uid="uid://csdatnwmn71kf" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/cosmetics/sw/sw_s2_a.png" id="27_vr2js"]
+[ext_resource type="Texture2D" uid="uid://dnjwuyxbhi2hl" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/cosmetics/sw/sw_skin2.png" id="28_xdjps"]
+[ext_resource type="PackedScene" uid="uid://quskxnn4fvbt" path="res://ZeroAimZone-Godot/2_Prefabs/TrailEffectScenes/fn_s1_trail.tscn" id="29_8w7wl"]
+[ext_resource type="Texture2D" uid="uid://6rdhkeusaj7h" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/guns/silver.png" id="29_oqobd"]
+[ext_resource type="Texture2D" uid="uid://dcpk4iwk4bu40" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/guns/pro/colt1911.png" id="30_cn25r"]
+[ext_resource type="Texture2D" uid="uid://cofm3y8wpcity" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/cosmetics/colt/clt_s1_a.png" id="31_40dqb"]
+[ext_resource type="PackedScene" uid="uid://d52idqnr5cqc" path="res://ZeroAimZone-Godot/2_Prefabs/TrailEffectScenes/fn_s2_trail.tscn" id="32_1vh6x"]
+[ext_resource type="Texture2D" uid="uid://dkoyj4efkplr2" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/cosmetics/colt/colt_skin1.png" id="32_xqvei"]
+[ext_resource type="Texture2D" uid="uid://cj1rhyydjoe1s" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/cosmetics/colt/clt_s2_a.png" id="33_40dqb"]
+[ext_resource type="Texture2D" uid="uid://chlyb8iy41a5s" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/cosmetics/colt/colt_skin2.png" id="34_xqvei"]
+[ext_resource type="Texture2D" uid="uid://bk4lmutfijjvj" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/guns/apex/deserteagle.png" id="35_xqvei"]
+[ext_resource type="PackedScene" uid="uid://c7hnurewgrnrx" path="res://ZeroAimZone-Godot/2_Prefabs/TrailEffectScenes/sw_s1_trail.tscn" id="36_a5hxv"]
+[ext_resource type="Texture2D" uid="uid://djdt4seeot5iv" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/cosmetics/desert_eagle/de_s1_.png" id="36_iqhqu"]
+[ext_resource type="Texture2D" uid="uid://bgw3ntft6hyw8" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/cosmetics/desert_eagle/de_skin1.png" id="37_vj8d0"]
+[ext_resource type="Texture2D" uid="uid://c151lnico8dss" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/cosmetics/desert_eagle/de_s2_a.png" id="38_fab1h"]
+[ext_resource type="PackedScene" uid="uid://87g4pwh5odfc" path="res://ZeroAimZone-Godot/2_Prefabs/TrailEffectScenes/sw_s2_trail.tscn" id="39_anyje"]
+[ext_resource type="Texture2D" uid="uid://b01wljipirvhu" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/cosmetics/desert_eagle/de_skin2.png" id="39_mjyg5"]
+[ext_resource type="Texture2D" uid="uid://b3sgj4y68hxr6" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/guns/apex/coltpython.png" id="40_mjyg5"]
+[ext_resource type="Texture2D" uid="uid://b7plsb2d2umqs" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/cosmetics/colt_pyt/cp_s1_a.png" id="41_ct1hb"]
+[ext_resource type="Texture2D" uid="uid://bf75vvfrlkfdo" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/cosmetics/colt_pyt/cp_skin1.png" id="42_1iqsd"]
+[ext_resource type="PackedScene" uid="uid://c83lki1l347bc" path="res://ZeroAimZone-Godot/2_Prefabs/TrailEffectScenes/bullet_trail_silver.tscn" id="42_y5ktp"]
+[ext_resource type="Texture2D" uid="uid://c6fool8h8tul3" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/cosmetics/colt_pyt/cp_s2_a.png" id="43_6gqt2"]
+[ext_resource type="Texture2D" uid="uid://n5rb1a4vdwk2" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/cosmetics/colt_pyt/cp_skin2.png" id="44_c2qud"]
+[ext_resource type="Texture2D" uid="uid://uj4jfwmyos2e" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/guns/apex/rugersuper.png" id="45_c2qud"]
+[ext_resource type="PackedScene" uid="uid://dxnqh8bjp7t71" path="res://ZeroAimZone-Godot/2_Prefabs/TrailEffectScenes/clt_s1_trail.tscn" id="45_xdly8"]
+[ext_resource type="Texture2D" uid="uid://d4efufqa43vcm" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/cosmetics/rugursuper/rg_s1_a.png" id="46_270of"]
+[ext_resource type="Texture2D" uid="uid://0y3xhmudkwsu" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/cosmetics/rugursuper/rg_skin1.png" id="47_06ncm"]
+[ext_resource type="Texture2D" uid="uid://bcqfmurs6flu6" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/cosmetics/rugursuper/rg_s2_a.png" id="48_270of"]
+[ext_resource type="PackedScene" uid="uid://bjhqtj6kmnkxs" path="res://ZeroAimZone-Godot/2_Prefabs/TrailEffectScenes/clt_s2_trail.tscn" id="48_uirb4"]
+[ext_resource type="Texture2D" uid="uid://cfd25who2ieyh" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/cosmetics/rugursuper/rg_skin2.png" id="49_06ncm"]
+[ext_resource type="PackedScene" uid="uid://gxhkmne47xfs" path="res://ZeroAimZone-Godot/2_Prefabs/TrailEffectScenes/de_s1_trail.tscn" id="52_uirb4"]
+[ext_resource type="PackedScene" uid="uid://doix8f8q0ry37" path="res://ZeroAimZone-Godot/2_Prefabs/TrailEffectScenes/de_s2_trail.tscn" id="55_rlrvk"]
+[ext_resource type="PackedScene" uid="uid://nivgn6d053m4" path="res://ZeroAimZone-Godot/2_Prefabs/TrailEffectScenes/clp_s1_trail.tscn" id="59_t3kpd"]
+[ext_resource type="PackedScene" uid="uid://c54tinebv8clk" path="res://ZeroAimZone-Godot/2_Prefabs/TrailEffectScenes/clp_s2_trail.tscn" id="62_6uoiu"]
+[ext_resource type="Texture2D" uid="uid://78lsbdb3u2d1" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/cosmetics/colt_pyt/cp_s2_muzzle.png" id="65_82w8i"]
+[ext_resource type="PackedScene" uid="uid://11hm55dv2x0u" path="res://ZeroAimZone-Godot/2_Prefabs/TrailEffectScenes/rg_s1_trail.tscn" id="66_svu10"]
+[ext_resource type="PackedScene" uid="uid://6kfvhftunw67" path="res://ZeroAimZone-Godot/2_Prefabs/TrailEffectScenes/rg_s2_trail.tscn" id="69_vj41q"]
+[ext_resource type="AudioStream" uid="uid://cotygkaoipfut" path="res://ZeroAimZone-Godot/3_Assets/AudioTracks/gunsounds/Cartoon Pistol Shot v1.mp3" id="70_cartoon"]
+[ext_resource type="AudioStream" uid="uid://weps08otu4tx" path="res://ZeroAimZone-Godot/3_Assets/AudioTracks/gunsounds/glock 17 pistol fire shot.mp3" id="72_glock"]
+[ext_resource type="AudioStream" uid="uid://bo17nma4g81pf" path="res://ZeroAimZone-Godot/3_Assets/AudioTracks/gunsounds/Coin Pop 04.mp3" id="74_coin"]
+[ext_resource type="AudioStream" uid="uid://cpub0vnu5i682" path="res://ZeroAimZone-Godot/3_Assets/AudioTracks/gunsounds/Arcade 8-Bit Laser Pulse Woop.mp3" id="75_arcade"]
+[ext_resource type="AudioStream" uid="uid://dujh3o17evtxm" path="res://ZeroAimZone-Godot/3_Assets/AudioTracks/gunsounds/Laser Splat Zap 03.mp3" id="76_laser"]
+[ext_resource type="AudioStream" uid="uid://tt383ykoutc0" path="res://ZeroAimZone-Godot/3_Assets/AudioTracks/gunsounds/FIREBrst_Fire Ball_SDFIRE0214.mp3" id="77_fireball"]
+[ext_resource type="AudioStream" uid="uid://hkvu4x6iunip" path="res://ZeroAimZone-Godot/3_Assets/AudioTracks/gunsounds/Pirate Ship Cannon Shot 3.mp3" id="78_cannon"]
+[ext_resource type="AudioStream" uid="uid://hun5swv7338m" path="res://ZeroAimZone-Godot/3_Assets/AudioTracks/gunsounds/SharkBiteLowDeepPunchySnappingTeeth_jtpXr_03.mp3" id="79_shark"]
+[ext_resource type="AudioStream" uid="uid://d3c5mjvog8evy" path="res://ZeroAimZone-Godot/3_Assets/AudioTracks/gunsounds/SuctionPop_xVwH6_06.mp3" id="80_suction"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6fgi7"]
+atlas = ExtResource("3_nabgw")
+region = Rect2(420, 165, 113, 101)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xdjps"]
+atlas = ExtResource("3_nabgw")
+region = Rect2(679, 160, 185, 106)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fqr2u"]
+atlas = ExtResource("3_nabgw")
+region = Rect2(105, 157, 174, 145)
+
+[sub_resource type="Resource" id="GunSkin_1"]
+script = ExtResource("1_skins")
+skin_name = "Default"
+gun_texture = ExtResource("4_3mogl")
+bullet_texture = SubResource("AtlasTexture_6fgi7")
+muzzle_flash_icon = SubResource("AtlasTexture_xdjps")
+trail_effect_icon = SubResource("AtlasTexture_fqr2u")
+trail_effect_scene = ExtResource("5_06ncm")
+fire_sound = ExtResource("72_glock")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sgwos"]
+atlas = ExtResource("5_0l6oi")
+region = Rect2(369, 129, 116, 102)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vw84v"]
+atlas = ExtResource("5_0l6oi")
+region = Rect2(580, 122, 187, 121)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oqobd"]
+atlas = ExtResource("5_0l6oi")
+region = Rect2(80, 126, 185, 161)
+
+[sub_resource type="Resource" id="GunSkin_2"]
+script = ExtResource("1_skins")
+skin_name = "beretta"
+diamonds_to_unlock = 35
+gun_texture = ExtResource("6_xxh3m")
+bullet_texture = SubResource("AtlasTexture_sgwos")
+muzzle_flash_icon = SubResource("AtlasTexture_vw84v")
+trail_effect_icon = SubResource("AtlasTexture_oqobd")
+trail_effect_scene = ExtResource("8_310aq")
+fire_sound = ExtResource("72_glock")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7oi1v"]
+atlas = ExtResource("9_aufar")
+region = Rect2(39, 39, 97, 106)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cn25r"]
+atlas = ExtResource("7_xe0mg")
+region = Rect2(446, 109, 178, 118)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_40dqb"]
+atlas = ExtResource("7_xe0mg")
+region = Rect2(61, 103, 175, 163)
+
+[sub_resource type="Resource" id="GunSkin_3"]
+script = ExtResource("1_skins")
+skin_name = "beretta"
+diamonds_to_unlock = 95
+gun_texture = ExtResource("8_l1tmu")
+bullet_texture = SubResource("AtlasTexture_7oi1v")
+muzzle_flash_icon = SubResource("AtlasTexture_cn25r")
+trail_effect_icon = SubResource("AtlasTexture_40dqb")
+trail_effect_scene = ExtResource("11_38w0y")
+fire_sound = ExtResource("10_vj41q")
+
+[sub_resource type="Resource" id="Resource_p0k3v"]
+script = ExtResource("1_jpnwb")
+collision_shape = PackedVector2Array(276.25342, -303.3333, 276.25342, -293.3333, 276.25342, -289.99997, 272.92007, -286.66663, -283.74658, -189.99997, -293.74658, -206.66664, -313.74658, -199.99997, -313.74658, -186.66664, -333.74658, -179.99997, -343.74658, -169.99997, -330.41324, -99.999985, -333.74658, -79.999985, -303.74658, -76.66665, -287.0799, -69.999985, -267.0799, -49.999985, -260.41324, -26.666653, -263.74658, 3.3333468, -273.74658, 56.66668, -287.0799, 100.00001, -317.0799, 196.66669, -317.0799, 243.33334, -283.74658, 263.33334, -263.74658, 263.33334, -273.74658, 283.33334, -263.74658, 290, -230.41324, 283.33334, -193.74658, 280, -153.74658, 273.33334, -140.41324, 263.33334, -133.74658, 253.33334, -133.74658, 236.66669, -123.74658, 223.33334, -117.07991, 206.66669, -123.74658, 190.00002, -113.74658, 146.66669, -100.413246, 133.33334, -103.74658, 130.00002, -107.07991, 113.33334, -100.413246, 83.33334, -87.07991, 73.33334, -93.74658, 56.66668, -90.413246, 20.000011, -80.413246, 6.6666803, -67.07992, 3.3333468, -40.413246, 10.000013, -20.413248, 10.000013, 102.92008, -16.666653, 109.58675, -19.999985, 109.58675, -23.33332, 99.58675, -49.999985, 92.92008, -79.999985, 92.92008, -109.999985, 109.58675, -123.33332, 159.58675, -133.33331, 242.92007, -149.99997, 242.92007, -156.66664, 252.92007, -159.99997, 259.58673, -153.33331, 322.92007, -169.99997, 332.92007, -186.66664, 326.25342, -223.33331, 322.92007, -223.33331, 322.92007, -233.33331, 329.58673, -236.66664, 329.58673, -249.99997, 322.92007, -283.3333, 312.92007, -283.3333, 309.58673, -289.99997, 302.92007, -293.3333, 286.25342, -306.66663)
+skins = Array[ExtResource("1_skins")]([SubResource("GunSkin_1"), SubResource("GunSkin_2"), SubResource("GunSkin_3")])
+name = "Beretta"
+damage = 20.0
+fire_cooldown = 0.25
+cartridge = 6
+reload_time = 1.8
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xqvei"]
+atlas = ExtResource("3_nabgw")
+region = Rect2(420, 165, 113, 101)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gh4pe"]
+atlas = ExtResource("3_nabgw")
+region = Rect2(679, 160, 185, 106)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iqhqu"]
+atlas = ExtResource("3_nabgw")
+region = Rect2(105, 157, 174, 145)
+
+[sub_resource type="Resource" id="GunSkin_4"]
+script = ExtResource("1_skins")
+skin_name = "Glock 17"
+gun_texture = ExtResource("9_xxh3m")
+bullet_texture = SubResource("AtlasTexture_xqvei")
+muzzle_flash_icon = SubResource("AtlasTexture_gh4pe")
+trail_effect_icon = SubResource("AtlasTexture_iqhqu")
+trail_effect_scene = ExtResource("5_06ncm")
+fire_sound = ExtResource("72_glock")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vj8d0"]
+atlas = ExtResource("10_xe0mg")
+region = Rect2(70, 101, 99, 92)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fab1h"]
+atlas = ExtResource("10_xe0mg")
+region = Rect2(449, 91, 171, 107)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mjyg5"]
+atlas = ExtResource("10_xe0mg")
+region = Rect2(202, 95, 176, 150)
+
+[sub_resource type="Resource" id="GunSkin_5"]
+script = ExtResource("1_skins")
+skin_name = "Glock 41"
+diamonds_to_unlock = 35
+gun_texture = ExtResource("11_l1tmu")
+bullet_texture = SubResource("AtlasTexture_vj8d0")
+muzzle_flash_icon = SubResource("AtlasTexture_fab1h")
+trail_effect_icon = SubResource("AtlasTexture_mjyg5")
+trail_effect_scene = ExtResource("15_38w0y")
+fire_sound = ExtResource("72_glock")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7x6u1"]
+atlas = ExtResource("12_l1tmu")
+region = Rect2(92, 169, 122, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ct1hb"]
+atlas = ExtResource("12_l1tmu")
+region = Rect2(552.5, 136, 141.5, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1iqsd"]
+atlas = ExtResource("12_l1tmu")
+region = Rect2(292.5, 147, 179, 159)
+
+[sub_resource type="Resource" id="GunSkin_6"]
+script = ExtResource("1_skins")
+skin_name = "Glock 33"
+diamonds_to_unlock = 95
+gun_texture = ExtResource("13_8nnw5")
+bullet_texture = SubResource("AtlasTexture_7x6u1")
+muzzle_flash_icon = SubResource("AtlasTexture_ct1hb")
+trail_effect_icon = SubResource("AtlasTexture_1iqsd")
+trail_effect_scene = ExtResource("18_lgtjs")
+fire_sound = ExtResource("70_cartoon")
+
+[sub_resource type="Resource" id="Resource_mi6rs"]
+script = ExtResource("1_jpnwb")
+skins = Array[ExtResource("1_skins")]([SubResource("GunSkin_4"), SubResource("GunSkin_5"), SubResource("GunSkin_6")])
+name = "Glock 17"
+cards_needed = 15
+damage = 18.0
+fire_cooldown = 0.2
+cartridge = 7
+reload_time = 1.6
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6gqt2"]
+atlas = ExtResource("3_nabgw")
+region = Rect2(420, 165, 113, 101)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c2qud"]
+atlas = ExtResource("3_nabgw")
+region = Rect2(679, 160, 185, 106)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ul5ig"]
+atlas = ExtResource("3_nabgw")
+region = Rect2(105, 157, 174, 145)
+
+[sub_resource type="Resource" id="GunSkin_7"]
+script = ExtResource("1_skins")
+skin_name = "SG1"
+gun_texture = ExtResource("14_8nnw5")
+bullet_texture = SubResource("AtlasTexture_6gqt2")
+muzzle_flash_icon = SubResource("AtlasTexture_c2qud")
+trail_effect_icon = SubResource("AtlasTexture_ul5ig")
+trail_effect_scene = ExtResource("5_06ncm")
+fire_sound = ExtResource("72_glock")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_270of"]
+atlas = ExtResource("15_1jhwy")
+region = Rect2(104, 106, 114, 99)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_06ncm"]
+atlas = ExtResource("15_1jhwy")
+region = Rect2(514, 99, 181, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gq0jo"]
+atlas = ExtResource("15_1jhwy")
+region = Rect2(289, 87, 172, 156)
+
+[sub_resource type="Resource" id="GunSkin_8"]
+script = ExtResource("1_skins")
+skin_name = "SG_2"
+diamonds_to_unlock = 35
+gun_texture = ExtResource("16_11qep")
+bullet_texture = SubResource("AtlasTexture_270of")
+muzzle_flash_icon = SubResource("AtlasTexture_06ncm")
+trail_effect_icon = SubResource("AtlasTexture_gq0jo")
+trail_effect_scene = ExtResource("22_b6byf")
+fire_sound = ExtResource("72_glock")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_310aq"]
+atlas = ExtResource("17_xgt7s")
+region = Rect2(200, 146, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_38w0y"]
+atlas = ExtResource("17_xgt7s")
+region = Rect2(670, 145, 144, 116)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lgtjs"]
+atlas = ExtResource("17_xgt7s")
+region = Rect2(410, 97, 179, 159)
+
+[sub_resource type="Resource" id="GunSkin_9"]
+script = ExtResource("1_skins")
+skin_name = "SG_3"
+diamonds_to_unlock = 95
+gun_texture = ExtResource("18_pwvo3")
+bullet_texture = SubResource("AtlasTexture_310aq")
+muzzle_flash_icon = SubResource("AtlasTexture_38w0y")
+trail_effect_icon = SubResource("AtlasTexture_lgtjs")
+trail_effect_scene = ExtResource("25_218g2")
+fire_sound = ExtResource("78_cannon")
+
+[sub_resource type="Resource" id="Resource_3mogl"]
+script = ExtResource("1_jpnwb")
+skins = Array[ExtResource("1_skins")]([SubResource("GunSkin_7"), SubResource("GunSkin_8"), SubResource("GunSkin_9")])
+name = "Sig Sauer"
+cards_needed = 30
+damage = 24.0
+fire_cooldown = 0.28
+cartridge = 6
+reload_time = 2.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k66yv"]
+atlas = ExtResource("3_nabgw")
+region = Rect2(420, 165, 113, 101)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b6byf"]
+atlas = ExtResource("3_nabgw")
+region = Rect2(679, 160, 185, 106)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_218g2"]
+atlas = ExtResource("3_nabgw")
+region = Rect2(105, 157, 174, 145)
+
+[sub_resource type="Resource" id="GunSkin_10"]
+script = ExtResource("1_skins")
+skin_name = "FN_1"
+gun_texture = ExtResource("19_pwvo3")
+bullet_texture = SubResource("AtlasTexture_k66yv")
+muzzle_flash_icon = SubResource("AtlasTexture_b6byf")
+trail_effect_icon = SubResource("AtlasTexture_218g2")
+trail_effect_scene = ExtResource("5_06ncm")
+fire_sound = ExtResource("72_glock")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8w7wl"]
+atlas = ExtResource("20_lub2v")
+region = Rect2(100, 116, 132, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1vh6x"]
+atlas = ExtResource("20_lub2v")
+region = Rect2(513, 99, 178, 130)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a5hxv"]
+atlas = ExtResource("20_lub2v")
+region = Rect2(275, 101, 179, 160)
+
+[sub_resource type="Resource" id="GunSkin_11"]
+script = ExtResource("1_skins")
+skin_name = "FN_2"
+diamonds_to_unlock = 35
+gun_texture = ExtResource("21_x5u7h")
+bullet_texture = SubResource("AtlasTexture_8w7wl")
+muzzle_flash_icon = SubResource("AtlasTexture_1vh6x")
+trail_effect_icon = SubResource("AtlasTexture_a5hxv")
+trail_effect_scene = ExtResource("29_8w7wl")
+fire_sound = ExtResource("72_glock")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_anyje"]
+atlas = ExtResource("22_b53le")
+region = Rect2(113, 154, 115, 116)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1q8hl"]
+atlas = ExtResource("22_b53le")
+region = Rect2(536, 131, 195, 84)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y5ktp"]
+atlas = ExtResource("22_b53le")
+region = Rect2(287, 137, 189, 161)
+
+[sub_resource type="Resource" id="GunSkin_12"]
+script = ExtResource("1_skins")
+skin_name = "FN_3"
+diamonds_to_unlock = 95
+gun_texture = ExtResource("23_ycwas")
+bullet_texture = SubResource("AtlasTexture_anyje")
+muzzle_flash_icon = SubResource("AtlasTexture_1q8hl")
+trail_effect_icon = SubResource("AtlasTexture_y5ktp")
+trail_effect_scene = ExtResource("32_1vh6x")
+fire_sound = ExtResource("74_coin")
+
+[sub_resource type="Resource" id="Resource_0l6oi"]
+script = ExtResource("1_jpnwb")
+gun_type = 1
+skins = Array[ExtResource("1_skins")]([SubResource("GunSkin_10"), SubResource("GunSkin_11"), SubResource("GunSkin_12")])
+name = "FN Five-Seven"
+damage = 22.0
+fire_cooldown = 0.18
+cartridge = 7
+reload_time = 1.9
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xdly8"]
+atlas = ExtResource("3_nabgw")
+region = Rect2(420, 165, 113, 101)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uirb4"]
+atlas = ExtResource("3_nabgw")
+region = Rect2(679, 160, 185, 106)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rlrvk"]
+atlas = ExtResource("3_nabgw")
+region = Rect2(105, 157, 174, 145)
+
+[sub_resource type="Resource" id="GunSkin_13"]
+script = ExtResource("1_skins")
+skin_name = "SW_1"
+gun_texture = ExtResource("24_6fgi7")
+bullet_texture = SubResource("AtlasTexture_xdly8")
+muzzle_flash_icon = SubResource("AtlasTexture_uirb4")
+trail_effect_icon = SubResource("AtlasTexture_rlrvk")
+trail_effect_scene = ExtResource("5_06ncm")
+fire_sound = ExtResource("72_glock")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t3kpd"]
+atlas = ExtResource("25_sgwos")
+region = Rect2(78, 118, 119, 90)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6uoiu"]
+atlas = ExtResource("25_sgwos")
+region = Rect2(514, 63, 164, 130)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_svu10"]
+atlas = ExtResource("25_sgwos")
+region = Rect2(268, 82, 172, 137)
+
+[sub_resource type="Resource" id="GunSkin_14"]
+script = ExtResource("1_skins")
+skin_name = "SW_2"
+diamonds_to_unlock = 35
+gun_texture = ExtResource("26_vr2js")
+bullet_texture = SubResource("AtlasTexture_t3kpd")
+muzzle_flash_icon = SubResource("AtlasTexture_6uoiu")
+trail_effect_icon = SubResource("AtlasTexture_svu10")
+trail_effect_scene = ExtResource("36_a5hxv")
+fire_sound = ExtResource("72_glock")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vj41q"]
+atlas = ExtResource("27_vr2js")
+region = Rect2(56, 216, 106, 106)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aufar"]
+atlas = ExtResource("27_vr2js")
+region = Rect2(476, 213, 172, 114)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_shl6i"]
+atlas = ExtResource("27_vr2js")
+region = Rect2(254, 198, 173, 151)
+
+[sub_resource type="Resource" id="GunSkin_15"]
+script = ExtResource("1_skins")
+skin_name = "SW_3"
+diamonds_to_unlock = 95
+gun_texture = ExtResource("28_xdjps")
+bullet_texture = SubResource("AtlasTexture_vj41q")
+muzzle_flash_icon = SubResource("AtlasTexture_aufar")
+trail_effect_icon = SubResource("AtlasTexture_shl6i")
+trail_effect_scene = ExtResource("39_anyje")
+fire_sound = ExtResource("80_suction")
+
+[sub_resource type="Resource" id="Resource_xxh3m"]
+script = ExtResource("1_jpnwb")
+gun_type = 1
+skins = Array[ExtResource("1_skins")]([SubResource("GunSkin_13"), SubResource("GunSkin_14"), SubResource("GunSkin_15")])
+name = "Smith & Wesson"
+cards_needed = 45
+damage = 28.0
+cartridge = 6
+reload_time = 2.1
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_82w8i"]
+atlas = ExtResource("29_oqobd")
+region = Rect2(413, 197, 113, 101)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n4ask"]
+atlas = ExtResource("29_oqobd")
+region = Rect2(705, 186, 166, 115)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gem1w"]
+atlas = ExtResource("29_oqobd")
+region = Rect2(94, 164, 180, 145)
+
+[sub_resource type="Resource" id="GunSkin_16"]
+script = ExtResource("1_skins")
+skin_name = "Colt_1"
+gun_texture = ExtResource("30_cn25r")
+bullet_texture = SubResource("AtlasTexture_82w8i")
+muzzle_flash_icon = SubResource("AtlasTexture_n4ask")
+trail_effect_icon = SubResource("AtlasTexture_gem1w")
+trail_effect_scene = ExtResource("42_y5ktp")
+fire_sound = ExtResource("72_glock")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kwkjr"]
+atlas = ExtResource("31_40dqb")
+region = Rect2(436, 128, 110, 109)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_730hf"]
+atlas = ExtResource("31_40dqb")
+region = Rect2(634, 141, 184, 89)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j52b4"]
+atlas = ExtResource("31_40dqb")
+region = Rect2(126, 127, 186, 153)
+
+[sub_resource type="Resource" id="GunSkin_17"]
+script = ExtResource("1_skins")
+skin_name = "Colt_2"
+diamonds_to_unlock = 35
+gun_texture = ExtResource("32_xqvei")
+bullet_texture = SubResource("AtlasTexture_kwkjr")
+muzzle_flash_icon = SubResource("AtlasTexture_730hf")
+trail_effect_icon = SubResource("AtlasTexture_j52b4")
+trail_effect_scene = ExtResource("45_xdly8")
+fire_sound = ExtResource("72_glock")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_42mpb"]
+atlas = ExtResource("33_40dqb")
+region = Rect2(431, 164, 104, 99)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h4gva"]
+atlas = ExtResource("33_40dqb")
+region = Rect2(639, 178, 149, 88)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yltiv"]
+atlas = ExtResource("33_40dqb")
+region = Rect2(150, 166, 166, 121)
+
+[sub_resource type="Resource" id="GunSkin_18"]
+script = ExtResource("1_skins")
+skin_name = "Colt_3"
+diamonds_to_unlock = 95
+gun_texture = ExtResource("34_xqvei")
+bullet_texture = SubResource("AtlasTexture_42mpb")
+muzzle_flash_icon = SubResource("AtlasTexture_h4gva")
+trail_effect_icon = SubResource("AtlasTexture_yltiv")
+trail_effect_scene = ExtResource("48_uirb4")
+fire_sound = ExtResource("77_fireball")
+
+[sub_resource type="Resource" id="Resource_xe0mg"]
+script = ExtResource("1_jpnwb")
+gun_type = 1
+skins = Array[ExtResource("1_skins")]([SubResource("GunSkin_16"), SubResource("GunSkin_17"), SubResource("GunSkin_18")])
+name = "Colt 1911"
+cards_needed = 65
+damage = 32.0
+fire_cooldown = 0.34
+cartridge = 5
+reload_time = 2.2
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nolxt"]
+atlas = ExtResource("29_oqobd")
+region = Rect2(413, 197, 113, 101)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e8yx1"]
+atlas = ExtResource("29_oqobd")
+region = Rect2(705, 186, 166, 115)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2267y"]
+atlas = ExtResource("29_oqobd")
+region = Rect2(94, 164, 180, 145)
+
+[sub_resource type="Resource" id="GunSkin_19"]
+script = ExtResource("1_skins")
+skin_name = "DE_1"
+gun_texture = ExtResource("35_xqvei")
+bullet_texture = SubResource("AtlasTexture_nolxt")
+muzzle_flash_icon = SubResource("AtlasTexture_e8yx1")
+trail_effect_icon = SubResource("AtlasTexture_2267y")
+trail_effect_scene = ExtResource("42_y5ktp")
+fire_sound = ExtResource("72_glock")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6o885"]
+atlas = ExtResource("36_iqhqu")
+region = Rect2(426, 117, 111, 111)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lgls0"]
+atlas = ExtResource("36_iqhqu")
+region = Rect2(642, 98, 141, 123)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5d5rs"]
+atlas = ExtResource("36_iqhqu")
+region = Rect2(144, 100, 186, 170)
+
+[sub_resource type="Resource" id="GunSkin_20"]
+script = ExtResource("1_skins")
+skin_name = "DE_2"
+diamonds_to_unlock = 35
+gun_texture = ExtResource("37_vj8d0")
+bullet_texture = SubResource("AtlasTexture_6o885")
+muzzle_flash_icon = SubResource("AtlasTexture_lgls0")
+trail_effect_icon = SubResource("AtlasTexture_5d5rs")
+trail_effect_scene = ExtResource("52_uirb4")
+fire_sound = ExtResource("72_glock")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vhegq"]
+atlas = ExtResource("38_fab1h")
+region = Rect2(385, 118, 82, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wpk38"]
+atlas = ExtResource("38_fab1h")
+region = Rect2(568, 102, 129, 135)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_po6ea"]
+atlas = ExtResource("38_fab1h")
+region = Rect2(128, 106, 148, 172)
+
+[sub_resource type="Resource" id="GunSkin_21"]
+script = ExtResource("1_skins")
+skin_name = "DE_3"
+diamonds_to_unlock = 95
+gun_texture = ExtResource("39_mjyg5")
+bullet_texture = SubResource("AtlasTexture_vhegq")
+muzzle_flash_icon = SubResource("AtlasTexture_wpk38")
+trail_effect_icon = SubResource("AtlasTexture_po6ea")
+trail_effect_scene = ExtResource("55_rlrvk")
+fire_sound = ExtResource("76_laser")
+
+[sub_resource type="Resource" id="Resource_xgt7s"]
+script = ExtResource("1_jpnwb")
+gun_type = 2
+skins = Array[ExtResource("1_skins")]([SubResource("GunSkin_19"), SubResource("GunSkin_20"), SubResource("GunSkin_21")])
+name = "Desert Eagle"
+damage = 40.0
+fire_cooldown = 0.4
+cartridge = 5
+reload_time = 2.4
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bw02d"]
+atlas = ExtResource("29_oqobd")
+region = Rect2(413, 197, 113, 101)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_snilg"]
+atlas = ExtResource("29_oqobd")
+region = Rect2(705, 186, 166, 115)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5unie"]
+atlas = ExtResource("29_oqobd")
+region = Rect2(94, 164, 180, 145)
+
+[sub_resource type="Resource" id="GunSkin_22"]
+script = ExtResource("1_skins")
+skin_name = "CP_1"
+gun_texture = ExtResource("40_mjyg5")
+bullet_texture = SubResource("AtlasTexture_bw02d")
+muzzle_flash_icon = SubResource("AtlasTexture_snilg")
+trail_effect_icon = SubResource("AtlasTexture_5unie")
+trail_effect_scene = ExtResource("42_y5ktp")
+fire_sound = ExtResource("72_glock")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_thwf1"]
+atlas = ExtResource("41_ct1hb")
+region = Rect2(449, 154, 115, 107)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xptkw"]
+atlas = ExtResource("41_ct1hb")
+region = Rect2(647, 146, 186, 104)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kug7r"]
+atlas = ExtResource("41_ct1hb")
+region = Rect2(174, 126, 183, 148)
+
+[sub_resource type="Resource" id="GunSkin_23"]
+script = ExtResource("1_skins")
+skin_name = "CP_2"
+diamonds_to_unlock = 35
+gun_texture = ExtResource("42_1iqsd")
+bullet_texture = SubResource("AtlasTexture_thwf1")
+muzzle_flash_icon = SubResource("AtlasTexture_xptkw")
+trail_effect_icon = SubResource("AtlasTexture_kug7r")
+trail_effect_scene = ExtResource("59_t3kpd")
+fire_sound = ExtResource("72_glock")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v2sht"]
+atlas = ExtResource("43_6gqt2")
+region = Rect2(404, 124, 104, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a2oyh"]
+atlas = ExtResource("65_82w8i")
+region = Rect2(8, 2, 109, 132)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l0mw5"]
+atlas = ExtResource("43_6gqt2")
+region = Rect2(83.5, 138, 170, 133)
+
+[sub_resource type="Resource" id="GunSkin_24"]
+script = ExtResource("1_skins")
+skin_name = "CP_3"
+diamonds_to_unlock = 95
+gun_texture = ExtResource("44_c2qud")
+bullet_texture = SubResource("AtlasTexture_v2sht")
+muzzle_flash_icon = SubResource("AtlasTexture_a2oyh")
+trail_effect_icon = SubResource("AtlasTexture_l0mw5")
+trail_effect_scene = ExtResource("62_6uoiu")
+fire_sound = ExtResource("75_arcade")
+
+[sub_resource type="Resource" id="Resource_rdauu"]
+script = ExtResource("1_jpnwb")
+gun_type = 2
+skins = Array[ExtResource("1_skins")]([SubResource("GunSkin_22"), SubResource("GunSkin_23"), SubResource("GunSkin_24")])
+name = "Colt Python"
+cards_needed = 75
+damage = 48.0
+fire_cooldown = 0.45
+cartridge = 4
+reload_time = 2.6
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hr1hg"]
+atlas = ExtResource("29_oqobd")
+region = Rect2(413, 197, 113, 101)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iqbck"]
+atlas = ExtResource("29_oqobd")
+region = Rect2(705, 186, 166, 115)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v2hmm"]
+atlas = ExtResource("29_oqobd")
+region = Rect2(94, 164, 180, 145)
+
+[sub_resource type="Resource" id="GunSkin_25"]
+script = ExtResource("1_skins")
+skin_name = "RS_1"
+gun_texture = ExtResource("45_c2qud")
+bullet_texture = SubResource("AtlasTexture_hr1hg")
+muzzle_flash_icon = SubResource("AtlasTexture_iqbck")
+trail_effect_icon = SubResource("AtlasTexture_v2hmm")
+trail_effect_scene = ExtResource("42_y5ktp")
+fire_sound = ExtResource("72_glock")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pxu1l"]
+atlas = ExtResource("46_270of")
+region = Rect2(383, 133, 112, 94)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pi2mf"]
+atlas = ExtResource("46_270of")
+region = Rect2(602, 143, 184, 88)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nkqm4"]
+atlas = ExtResource("46_270of")
+region = Rect2(99, 104, 179, 146)
+
+[sub_resource type="Resource" id="GunSkin_26"]
+script = ExtResource("1_skins")
+skin_name = "RS_2"
+diamonds_to_unlock = 35
+gun_texture = ExtResource("47_06ncm")
+bullet_texture = SubResource("AtlasTexture_pxu1l")
+muzzle_flash_icon = SubResource("AtlasTexture_pi2mf")
+trail_effect_icon = SubResource("AtlasTexture_nkqm4")
+trail_effect_scene = ExtResource("66_svu10")
+fire_sound = ExtResource("72_glock")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tu28w"]
+atlas = ExtResource("48_270of")
+region = Rect2(434, 164, 137, 95)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a8aoi"]
+atlas = ExtResource("48_270of")
+region = Rect2(689, 160, 158, 94)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5yee3"]
+atlas = ExtResource("48_270of")
+region = Rect2(172, 141, 183, 120)
+
+[sub_resource type="Resource" id="GunSkin_27"]
+script = ExtResource("1_skins")
+skin_name = "RS_3"
+diamonds_to_unlock = 95
+gun_texture = ExtResource("49_06ncm")
+bullet_texture = SubResource("AtlasTexture_tu28w")
+muzzle_flash_icon = SubResource("AtlasTexture_a8aoi")
+trail_effect_icon = SubResource("AtlasTexture_5yee3")
+trail_effect_scene = ExtResource("69_vj41q")
+fire_sound = ExtResource("79_shark")
+
+[sub_resource type="Resource" id="Resource_7okes"]
+script = ExtResource("1_jpnwb")
+gun_type = 2
+skins = Array[ExtResource("1_skins")]([SubResource("GunSkin_25"), SubResource("GunSkin_26"), SubResource("GunSkin_27")])
+name = "Ruger S Redhawk"
+cards_needed = 100
+damage = 55.0
+fire_cooldown = 0.5
+cartridge = 4
+reload_time = 2.8
+
+[resource]
+script = ExtResource("2_8ea8o")
+all_guns = Array[ExtResource("1_jpnwb")]([SubResource("Resource_p0k3v"), SubResource("Resource_mi6rs"), SubResource("Resource_3mogl"), SubResource("Resource_0l6oi"), SubResource("Resource_xxh3m"), SubResource("Resource_xe0mg"), SubResource("Resource_xgt7s"), SubResource("Resource_rdauu"), SubResource("Resource_7okes")])

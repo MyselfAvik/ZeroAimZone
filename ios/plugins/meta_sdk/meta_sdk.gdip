@@ -1,0 +1,38 @@
+[config]
+name="MetaSdk"
+binary="meta_sdk.xcframework"
+
+initialization="register_meta_sdk_plugin"
+deinitialization="unregister_meta_sdk_plugin"
+
+[dependencies]
+linked=[]
+embedded=[]
+system=["Accelerate.framework"]
+pods=[]
+
+
+capabilities=[]
+
+files=[]
+
+[plist]
+FacebookAppID="4431833103752906"
+FacebookClientToken="c2ffdf7cfb802cd688b54463dea22779"
+FacebookDisplayName="Zero Aim Zone"
+CFBundleURLTypes:raw="
+<array>
+  <dict>
+    <key>CFBundleURLSchemes</key>
+    <array>
+      <string>fb4431833103752906</string>
+    </array>
+  </dict>
+</array>
+"
+LSApplicationQueriesSchemes:raw="
+<array>
+  <string>fbapi</string>
+  <string>fb-messenger-share-api</string>
+</array>
+"

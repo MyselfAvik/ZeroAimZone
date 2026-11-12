@@ -1,0 +1,51 @@
+# Godot 4.x specific ignores
+.godot/
+
+# Godot 3.x specific ignores (if applicable)
+.import/
+
+# Export related files
+export.cfg
+export_presets.cfg
+
+# Sensitive information (Android export credentials, etc.)
+export_credentials.cfg
+
+# Mono/C# specific (if using .NET version)
+.mono/
+data_**/
+mono_crash.json
+
+# System and temporary files
+*.tmp
+
+# Android specific
+*.apk
+*.aab
+keystore/
+build/
+*.keystore
+*.jks
+android/build/
+android/.gradle/
+android/local.properties
+
+# Editor specific
+.editor/
+*.editor_settings
+*.uid
+.vs/
+.vscode/
+.idea/
+
+
+# OS specific
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+logs/
+
+

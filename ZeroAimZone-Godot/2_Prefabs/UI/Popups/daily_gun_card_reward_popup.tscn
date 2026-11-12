@@ -1,0 +1,196 @@
+[gd_scene format=3 uid="uid://c3hhtp7urp5kl"]
+
+[ext_resource type="Script" uid="uid://xntjcy3pf5pj" path="res://ZeroAimZone-Godot/1_Scripts/UI_Controllers/DailyGunCardRewardController.gd" id="1_controller"]
+[ext_resource type="Texture2D" uid="uid://00qjah7ajees" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/CommonBg/CardBg.png" id="3_8hwes"]
+[ext_resource type="Texture2D" uid="uid://cghihw7q8k6g5" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/Glows/gun_glow.png" id="3_glow"]
+[ext_resource type="Texture2D" uid="uid://bd0h1coxlr1q1" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/CommonButton/GreenButtonNOShadow.png" id="4_button"]
+[ext_resource type="FontFile" uid="uid://10wk3avcupsd" path="res://ZeroAimZone-Godot/3_Assets/Fonts/BarlowCondensed-Bold.ttf" id="5_font"]
+[ext_resource type="AudioStream" uid="uid://gkh5cvg1wwyp" path="res://ZeroAimZone-Godot/3_Assets/AudioTracks/The Button.mp3" id="7_tdhfe"]
+
+[sub_resource type="Gradient" id="Gradient_overlay"]
+colors = PackedColorArray(0, 0, 0, 0.8, 0, 0, 0, 0.8)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_overlay"]
+gradient = SubResource("Gradient_overlay")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f5nsx"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_8hwes"]
+font = ExtResource("5_font")
+font_size = 40
+font_color = Color(1, 1, 0.41568628, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_button"]
+texture = ExtResource("4_button")
+
+[sub_resource type="LabelSettings" id="LabelSettings_x4wl1"]
+font = ExtResource("5_font")
+font_size = 86
+font_color = Color(0.93569946, 0.94635826, 0, 1)
+
+[node name="DailyGunCardRewardPopup" type="Control" unique_id=365063369 node_paths=PackedStringArray("gun_image", "gun_name_label", "reward_label", "collect_button")]
+z_index = 7
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_controller")
+gun_image = NodePath("MainContainer/GunCardBg/GunImage")
+gun_name_label = NodePath("MainContainer/GunCardBg/GunName")
+reward_label = NodePath("MainContainer/RewardLabel")
+collect_button = NodePath("MainContainer/GunCardBg/CollectButton")
+
+[node name="Overlay" type="TextureButton" parent="." unique_id=436890957]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = SubResource("GradientTexture2D_overlay")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="MainContainer" type="Panel" parent="." unique_id=1401976656]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -350.0
+offset_right = 300.0
+offset_bottom = 350.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_f5nsx")
+
+[node name="Title" type="Label" parent="MainContainer" unique_id=51861017]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -260.0
+offset_top = 34.0
+offset_right = 260.0
+offset_bottom = 102.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("5_font")
+theme_override_font_sizes/font_size = 52
+text = "GUN CARD REWARD"
+label_settings = SubResource("LabelSettings_8hwes")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GunCardBg" type="TextureRect" parent="MainContainer" unique_id=30078811]
+custom_minimum_size = Vector2(300, 450)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -184.5
+offset_top = -280.5
+offset_right = 184.5
+offset_bottom = 280.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_8hwes")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="GunName" type="Label" parent="MainContainer/GunCardBg" unique_id=1488999738]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -260.0
+offset_top = 20.0
+offset_right = 260.0
+offset_bottom = 80.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("5_font")
+theme_override_font_sizes/font_size = 42
+text = "GUN"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Glow" type="TextureRect" parent="MainContainer/GunCardBg" unique_id=1073983905]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = -205.0
+offset_right = 180.0
+offset_bottom = 135.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("3_glow")
+expand_mode = 1
+
+[node name="GunImage" type="TextureRect" parent="MainContainer/GunCardBg" unique_id=873065885]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -180.0
+offset_right = 150.0
+offset_bottom = 120.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CollectButton" type="Button" parent="MainContainer/GunCardBg" unique_id=622544681]
+custom_minimum_size = Vector2(236, 76)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -156.5
+offset_top = -133.0
+offset_right = 143.5
+offset_bottom = -48.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("5_font")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxTexture_button")
+theme_override_styles/hover = SubResource("StyleBoxTexture_button")
+text = "COLLECT"
+
+[node name="RewardLabel" type="Label" parent="MainContainer" unique_id=2059985062]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -314.0
+offset_top = -400.0
+offset_right = 314.0
+offset_bottom = -82.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0.87, 0.55, 1)
+theme_override_fonts/font = ExtResource("5_font")
+theme_override_font_sizes/font_size = 30
+text = "Congratulations! You earned the gun card."
+label_settings = SubResource("LabelSettings_x4wl1")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[connection signal="pressed" from="Overlay" to="." method="_on_overlay_pressed"]

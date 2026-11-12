@@ -1,0 +1,210 @@
+[gd_scene format=3 uid="uid://dsoftabcfcg5h"]
+
+[ext_resource type="Script" uid="uid://bafx48cqvdq0e" path="res://ZeroAimZone-Godot/1_Scripts/UI_Controllers/ConfirmPurchasePopupController.gd" id="1_nd3na"]
+[ext_resource type="Texture2D" uid="uid://btu37hvwmv4yh" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/InGamePops/confirmpurchase.png" id="2_5tndm"]
+[ext_resource type="FontFile" uid="uid://10wk3avcupsd" path="res://ZeroAimZone-Godot/3_Assets/Fonts/BarlowCondensed-Bold.ttf" id="3_x5ov1"]
+[ext_resource type="FontFile" uid="uid://bwi6e3xaodcgb" path="res://ZeroAimZone-Godot/3_Assets/Fonts/Teko-Bold.ttf" id="4_x5ov1"]
+[ext_resource type="Texture2D" uid="uid://ct07he0m5dr26" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/Glows/diamond_glow.png" id="5_5tndm"]
+[ext_resource type="Texture2D" uid="uid://drmhoeb3bm22v" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/Profile/frame_1.png" id="6_c48hi"]
+[ext_resource type="Texture2D" uid="uid://beg2vumtjcik4" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/CommonButton/RedButtonNOShadow.png" id="6_x5ov1"]
+[ext_resource type="Texture2D" uid="uid://copkgfk1vt561" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/Profile/frame_icon1.png" id="7_1r47f"]
+[ext_resource type="Texture2D" uid="uid://bd0h1coxlr1q1" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/CommonButton/GreenButtonNOShadow.png" id="7_c48hi"]
+
+[sub_resource type="Gradient" id="Gradient_sa4p6"]
+offsets = PackedFloat32Array(0, 0.44929245, 0.7110849)
+colors = PackedColorArray(0, 0, 0, 0.654902, 0, 0, 0, 0.654902, 0, 0, 0, 0.654902)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1r47f"]
+gradient = SubResource("Gradient_sa4p6")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wavmv"]
+texture = ExtResource("2_5tndm")
+
+[sub_resource type="FontVariation" id="FontVariation_ltxcg"]
+base_font = ExtResource("3_x5ov1")
+
+[sub_resource type="LabelSettings" id="LabelSettings_1r47f"]
+font = ExtResource("4_x5ov1")
+font_size = 86
+
+[sub_resource type="FontVariation" id="FontVariation_sa4p6"]
+base_font = ExtResource("3_x5ov1")
+
+[sub_resource type="LabelSettings" id="LabelSettings_5tndm"]
+font = ExtResource("3_x5ov1")
+font_size = 54
+
+[sub_resource type="FontVariation" id="FontVariation_6j76o"]
+base_font = ExtResource("3_x5ov1")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rl4ek"]
+texture = ExtResource("6_x5ov1")
+
+[sub_resource type="FontVariation" id="FontVariation_3f1jj"]
+base_font = ExtResource("3_x5ov1")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h2vm0"]
+texture = ExtResource("7_c48hi")
+
+[node name="ConfirmPurchasePopup" type="Control" unique_id=1279329849 node_paths=PackedStringArray("pack_name_label", "amount_label", "exit_btn", "continue_btn", "gem_icon", "frame_icon")]
+z_index = 5
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nd3na")
+pack_name_label = NodePath("MainContainer/Label")
+amount_label = NodePath("MainContainer/Label2")
+exit_btn = NodePath("MainContainer/HBoxContainer/Button")
+continue_btn = NodePath("MainContainer/HBoxContainer/Button2")
+gem_icon = NodePath("MainContainer/TextureRect")
+frame_icon = NodePath("MainContainer/TextureRect/frame_icon")
+
+[node name="Overlay" type="TextureButton" parent="." unique_id=852054833]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = SubResource("GradientTexture2D_1r47f")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="MainContainer" type="Panel" parent="." unique_id=548632290]
+z_index = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -458.0
+offset_top = -367.0
+offset_right = 455.0
+offset_bottom = 369.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(2305, 506)
+theme_override_styles/panel = SubResource("StyleBoxTexture_wavmv")
+
+[node name="Label" type="Label" parent="MainContainer" unique_id=1103075106]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -343.0
+offset_top = 32.0
+offset_right = 343.0
+offset_bottom = 165.0
+grow_horizontal = 2
+theme_override_fonts/font = SubResource("FontVariation_ltxcg")
+theme_override_font_sizes/font_size = 87
+text = "CONFIRM PURCHASE"
+label_settings = SubResource("LabelSettings_1r47f")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Glow" type="TextureRect" parent="MainContainer" unique_id=320810774]
+z_index = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -142.5
+offset_top = 182.0
+offset_right = 161.5
+offset_bottom = 474.0
+grow_horizontal = 2
+texture = ExtResource("5_5tndm")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="MainContainer" unique_id=1686180382]
+z_index = 2
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -146.5
+offset_top = 180.0
+offset_right = 173.5
+offset_bottom = 500.0
+grow_horizontal = 2
+texture = ExtResource("6_c48hi")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="frame_icon" type="TextureRect" parent="MainContainer/TextureRect" unique_id=1559888063]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -50.000015
+offset_top = -95.0
+offset_right = 37.92726
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("7_1r47f")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label2" type="Label" parent="MainContainer" unique_id=531967750]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -123.0
+offset_top = -271.0
+offset_right = 129.0
+offset_bottom = -196.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = SubResource("FontVariation_sa4p6")
+theme_override_font_sizes/font_size = 54
+text = "5000"
+label_settings = SubResource("LabelSettings_5tndm")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainContainer" unique_id=2042094781]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -390.0
+offset_top = -152.0
+offset_right = 390.0
+offset_bottom = -36.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 60
+
+[node name="Button" type="Button" parent="MainContainer/HBoxContainer" unique_id=418317327]
+custom_minimum_size = Vector2(360, 0)
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_6j76o")
+theme_override_font_sizes/font_size = 68
+theme_override_styles/normal = SubResource("StyleBoxTexture_rl4ek")
+theme_override_styles/hover = SubResource("StyleBoxTexture_rl4ek")
+text = "Exit"
+
+[node name="Button2" type="Button" parent="MainContainer/HBoxContainer" unique_id=1728900562]
+custom_minimum_size = Vector2(360, 0)
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_3f1jj")
+theme_override_font_sizes/font_size = 68
+theme_override_styles/normal = SubResource("StyleBoxTexture_h2vm0")
+theme_override_styles/hover = SubResource("StyleBoxTexture_h2vm0")
+
+[connection signal="pressed" from="Overlay" to="." method="_on_overlay_pressed"]

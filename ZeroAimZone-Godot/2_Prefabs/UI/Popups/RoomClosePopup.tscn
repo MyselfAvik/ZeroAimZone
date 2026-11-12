@@ -1,0 +1,216 @@
+[gd_scene format=3 uid="uid://bwk750i37yves"]
+
+[ext_resource type="Script" uid="uid://d06qrhscvwn35" path="res://ZeroAimZone-Godot/1_Scripts/UI_Controllers/RoomClosePopupController.gd" id="1_3lvk1"]
+[ext_resource type="Texture2D" uid="uid://drsaeg6k25clq" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/InGamePops/Roomclosepopup.png" id="2_dqvnc"]
+[ext_resource type="FontFile" uid="uid://bwi6e3xaodcgb" path="res://ZeroAimZone-Godot/3_Assets/Fonts/Teko-Bold.ttf" id="3_dqvnc"]
+[ext_resource type="FontFile" uid="uid://dobi5yff3px2t" path="res://ZeroAimZone-Godot/3_Assets/Fonts/BarlowCondensed-SemiBold.ttf" id="5_43upx"]
+[ext_resource type="Texture2D" uid="uid://beg2vumtjcik4" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/CommonButton/RedButtonNOShadow.png" id="6_43upx"]
+[ext_resource type="FontFile" uid="uid://10wk3avcupsd" path="res://ZeroAimZone-Godot/3_Assets/Fonts/BarlowCondensed-Bold.ttf" id="6_dqvnc"]
+[ext_resource type="Texture2D" uid="uid://bd0h1coxlr1q1" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/CommonButton/GreenButtonNOShadow.png" id="7_r3fog"]
+
+[sub_resource type="Gradient" id="Gradient_dqvnc"]
+offsets = PackedFloat32Array(0, 0.44929245, 1)
+colors = PackedColorArray(0, 0, 0, 0.654902, 0, 0, 0, 0.654902, 0, 0, 0, 0.654902)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_43upx"]
+gradient = SubResource("Gradient_dqvnc")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ou1vo"]
+texture = ExtResource("2_dqvnc")
+
+[sub_resource type="LabelSettings" id="LabelSettings_43upx"]
+font = ExtResource("3_dqvnc")
+font_size = 86
+
+[sub_resource type="LabelSettings" id="LabelSettings_3lvk1"]
+font = ExtResource("6_dqvnc")
+font_size = 68
+
+[sub_resource type="LabelSettings" id="LabelSettings_dqvnc"]
+font = ExtResource("5_43upx")
+font_size = 54
+
+[sub_resource type="LabelSettings" id="LabelSettings_1l2rp"]
+font = ExtResource("6_dqvnc")
+font_size = 68
+
+[node name="RoomClosePopup" type="Control" unique_id=1342872950]
+z_index = 5
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3lvk1")
+
+[node name="Overlay" type="TextureButton" parent="." unique_id=1471651595]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = SubResource("GradientTexture2D_43upx")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="MainContainer" type="Panel" parent="." unique_id=1707989380]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -459.0
+offset_top = -367.0
+offset_right = 460.0
+offset_bottom = 376.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(10326, 1865)
+theme_override_styles/panel = SubResource("StyleBoxTexture_ou1vo")
+
+[node name="Label" type="Label" parent="MainContainer" unique_id=2071667786]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -79.5
+offset_top = 25.0
+offset_right = 84.5
+offset_bottom = 149.0
+grow_horizontal = 2
+text = "EXIT"
+label_settings = SubResource("LabelSettings_43upx")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Label2" type="Label" parent="MainContainer" unique_id=1941773391]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -162.0
+offset_top = 233.0
+offset_right = 162.0
+offset_bottom = 315.0
+grow_horizontal = 2
+text = "Are you sure."
+label_settings = SubResource("LabelSettings_3lvk1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="MainContainer" unique_id=1086480444]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -345.0
+offset_top = -52.5
+offset_right = 342.0
+offset_bottom = 22.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "This action can’t be undone"
+label_settings = SubResource("LabelSettings_dqvnc")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="MainContainer" unique_id=865054836]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -344.5
+offset_top = 32.5
+offset_right = 342.5
+offset_bottom = 108.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "You can recreate the room later."
+label_settings = SubResource("LabelSettings_dqvnc")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainContainer" unique_id=1202752799]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -391.5
+offset_top = -157.0
+offset_right = 390.5
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 54
+
+[node name="Close" type="TextureButton" parent="MainContainer/HBoxContainer" unique_id=682060242]
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("6_43upx")
+texture_hover = ExtResource("6_43upx")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="MainContainer/HBoxContainer/Close" unique_id=1998535206]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -153.5
+offset_top = -48.5
+offset_right = 153.5
+offset_bottom = 33.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 35
+text = "Exit"
+label_settings = SubResource("LabelSettings_1l2rp")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Continue" type="TextureButton" parent="MainContainer/HBoxContainer" unique_id=216639162]
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("7_r3fog")
+texture_hover = ExtResource("7_r3fog")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="MainContainer/HBoxContainer/Continue" unique_id=1377895064]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -111.0
+offset_top = -50.5
+offset_right = 106.0
+offset_bottom = 31.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 35
+text = "Continue"
+label_settings = SubResource("LabelSettings_1l2rp")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Overlay" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="MainContainer/HBoxContainer/Close" to="." method="_on_close_pressed"]
+[connection signal="pressed" from="MainContainer/HBoxContainer/Continue" to="." method="_on_continue_pressed"]

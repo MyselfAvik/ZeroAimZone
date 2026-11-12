@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="SinglePlayerData" format=3 uid="uid://bkdff2m74ylv0"]
+
+[ext_resource type="Script" uid="uid://c37q2iv8rbjr3" path="res://ZeroAimZone-Godot/4_Resources/scripts/Single_Player_Data.gd" id="1_7xlas"]
+[ext_resource type="PackedScene" uid="uid://cqkcuf23llykk" path="res://ZeroAimZone-Godot/2_Prefabs/bulletprefabs(temp)/bullet.tscn" id="1_hi1jv"]
+[ext_resource type="PackedScene" uid="uid://ccrx75ehga7l8" path="res://ZeroAimZone-Godot/2_Prefabs/level(temp)/level.tscn" id="2_qynrv"]
+[ext_resource type="PackedScene" uid="uid://bksoh3k0mwmfx" path="res://ZeroAimZone-Godot/2_Prefabs/gunprefab (temp)/PlayerGun.tscn" id="2_w0vb7"]
+[ext_resource type="PackedScene" uid="uid://qmp1m56e585e" path="res://ZeroAimZone-Godot/2_Prefabs/level(temp)/level2.tscn" id="3_hi1jv"]
+[ext_resource type="PackedScene" uid="uid://b1p2641t4qn5g" path="res://ZeroAimZone-Godot/2_Prefabs/level(temp)/level3.tscn" id="3_qynrv"]
+
+[resource]
+script = ExtResource("1_7xlas")
+playerGun = ExtResource("2_w0vb7")
+level = Array[PackedScene]([ExtResource("2_qynrv"), ExtResource("3_hi1jv"), ExtResource("3_qynrv")])
+bullet = ExtResource("1_hi1jv")

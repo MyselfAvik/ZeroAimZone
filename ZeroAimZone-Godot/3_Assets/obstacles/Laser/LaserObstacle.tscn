@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://dh5bqqbva0smn"]
+
+[ext_resource type="Script" uid="uid://bediwodhh0daa" path="res://ZeroAimZone-Godot/3_Assets/obstacles/Laser/laser_obstacle.gd" id="1_6sivg"]
+[ext_resource type="Texture2D" uid="uid://odqragr8cpco" path="res://ZeroAimZone-Godot/3_Assets/obstacles/Laser/Sprites/newon.png" id="2_3wsaw"]
+[ext_resource type="AudioStream" uid="uid://l48v41l5a6uj" path="res://ZeroAimZone-Godot/3_Assets/AudioTracks/LaserBeamRun_BW.45300.mp3" id="2_xd3dr"]
+[ext_resource type="Texture2D" uid="uid://b0shqfsychqtk" path="res://ZeroAimZone-Godot/3_Assets/obstacles/Laser/Sprites/newoff.png" id="3_tt1k4"]
+[ext_resource type="PackedScene" uid="uid://cak0w7nrwvlnd" path="res://ZeroAimZone-Godot/3_Assets/obstacles/Laser/LaserBeamVFX.tscn" id="4_oul3q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gd6ji"]
+size = Vector2(1007.24994, 17.559692)
+
+[node name="LaserObstacle" type="Node2D" unique_id=1110678332]
+script = ExtResource("1_6sivg")
+laser_on_time = 2.5
+fire_sound = ExtResource("2_xd3dr")
+
+[node name="Diagonal1" type="Node2D" parent="." unique_id=1379529913]
+
+[node name="MachineA" type="Sprite2D" parent="Diagonal1" unique_id=328929658]
+position = Vector2(110.00001, 116.00001)
+rotation = 1.066943
+scale = Vector2(0.35755828, 0.37421325)
+texture = ExtResource("2_3wsaw")
+
+[node name="Muzzle" type="Marker2D" parent="Diagonal1/MachineA" unique_id=667215436]
+position = Vector2(200.20854, 1.7152214)
+
+[node name="MachineAOff" type="Sprite2D" parent="Diagonal1" unique_id=1547243585]
+visible = false
+position = Vector2(112.88012, 116.57137)
+rotation = 1.0762018
+scale = Vector2(0.33340418, 0.3811495)
+texture = ExtResource("3_tt1k4")
+
+[node name="LaserBeamVfx" parent="Diagonal1" unique_id=226927838 instance=ExtResource("4_oul3q")]
+color = Color(1, 0.05, 0.05, 1)
+
+[node name="LaserHitBox" type="Area2D" parent="Diagonal1" unique_id=29352620]
+position = Vector2(512, 823)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Diagonal1/LaserHitBox" unique_id=350015108]
+position = Vector2(9, 154.99998)
+rotation = 2.0628507
+scale = Vector2(1.9116974, 0.88303745)
+shape = SubResource("RectangleShape2D_gd6ji")
+
+[node name="Diagonal2" type="Node2D" parent="." unique_id=1589436956]
+
+[node name="MachineA" type="Sprite2D" parent="Diagonal2" unique_id=1185536053]
+position = Vector2(110.00001, 116.00001)
+rotation = 2.0915089
+scale = Vector2(0.35755828, 0.37421325)
+texture = ExtResource("2_3wsaw")
+
+[node name="Muzzle" type="Marker2D" parent="Diagonal2/MachineA" unique_id=1635281727]
+position = Vector2(194.61963, 7.332222)
+
+[node name="MachineAOff" type="Sprite2D" parent="Diagonal2" unique_id=1649417171]
+visible = false
+position = Vector2(112.88012, 116.57137)
+rotation = 2.1007676
+scale = Vector2(0.33340418, 0.3811495)
+texture = ExtResource("3_tt1k4")
+
+[node name="LaserBeamVfx" parent="Diagonal2" unique_id=1843654703 instance=ExtResource("4_oul3q")]
+color = Color(1, 0.05, 0.05, 1)
+
+[node name="LaserHitBox" type="Area2D" parent="Diagonal2" unique_id=955263328]
+position = Vector2(512, 823)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Diagonal2/LaserHitBox" unique_id=53297254]
+position = Vector2(9, 154.99998)
+rotation = 2.0628507
+scale = Vector2(1.9116974, 0.88303745)
+shape = SubResource("RectangleShape2D_gd6ji")

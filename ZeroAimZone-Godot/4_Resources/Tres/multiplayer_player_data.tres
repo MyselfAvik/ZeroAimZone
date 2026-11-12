@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="MultiplayerPlayerData" format=3 uid="uid://dve5e43sdwl30"]
+
+[ext_resource type="PackedScene" uid="uid://bbhsar8ksiq67" path="res://ZeroAimZone-Godot/2_Prefabs/network/multiplayer_gun.tscn" id="1_om0pj"]
+[ext_resource type="Script" uid="uid://g5ylkg5thfah" path="res://ZeroAimZone-Godot/4_Resources/scripts/multiplayer_player_data.gd" id="1_ti7cq"]
+[ext_resource type="PackedScene" uid="uid://ccrx75ehga7l8" path="res://ZeroAimZone-Godot/2_Prefabs/level(temp)/level.tscn" id="1_u4kax"]
+[ext_resource type="PackedScene" uid="uid://qmp1m56e585e" path="res://ZeroAimZone-Godot/2_Prefabs/level(temp)/level2.tscn" id="2_ej2g5"]
+[ext_resource type="PackedScene" uid="uid://b1p2641t4qn5g" path="res://ZeroAimZone-Godot/2_Prefabs/level(temp)/level3.tscn" id="3_k5hnn"]
+[ext_resource type="PackedScene" uid="uid://dq6bsa1q47vic" path="res://ZeroAimZone-Godot/2_Prefabs/network/multiplayer_bullet.tscn" id="4_bullet"]
+
+[resource]
+script = ExtResource("1_ti7cq")
+playerGun = ExtResource("1_om0pj")
+level = Array[PackedScene]([ExtResource("1_u4kax"), ExtResource("2_ej2g5"), ExtResource("3_k5hnn")])
+multiplayerBullet = ExtResource("4_bullet")

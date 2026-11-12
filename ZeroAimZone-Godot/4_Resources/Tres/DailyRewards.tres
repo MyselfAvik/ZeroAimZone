@@ -1,0 +1,60 @@
+[gd_resource type="Resource" script_class="DailyRewardsConfig" format=3 uid="uid://c3ga8g1ef4ybv"]
+
+[ext_resource type="Script" uid="uid://c2pnnc4a7ijnv" path="res://ZeroAimZone-Godot/4_Resources/scripts/DailyRewardData.gd" id="1_hq6tu"]
+[ext_resource type="Script" uid="uid://cyk28yu65outu" path="res://ZeroAimZone-Godot/4_Resources/scripts/DailyRewardsConfig.gd" id="2_cxv6k"]
+[ext_resource type="Texture2D" uid="uid://diwuerqyg8gww" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/ShopPanel/3coins.png" id="2_k7te2"]
+[ext_resource type="Texture2D" uid="uid://jbfrxnr5wuhc" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/InGamePops/Prizecard.png" id="3_4q1ye"]
+[ext_resource type="Texture2D" uid="uid://ckv5yabmv38lg" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/ShopPanel/handfulgem.png" id="4_b53m1"]
+[ext_resource type="Texture2D" uid="uid://bfak7g5s02wls" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/ShopPanel/bunchgem.png" id="5_6r41o"]
+[ext_resource type="Texture2D" uid="uid://0pnulv5c0ggf" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/ShopPanel/4Coins.png" id="6_wkpfm"]
+[ext_resource type="Texture2D" uid="uid://c8iw0axpv335v" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/Crates/gold_close.png" id="7_k7te2"]
+
+[sub_resource type="Resource" id="DailyRewardData_day1"]
+script = ExtResource("1_hq6tu")
+amount = 50
+icon = ExtResource("2_k7te2")
+
+[sub_resource type="Resource" id="DailyRewardData_day2"]
+script = ExtResource("1_hq6tu")
+reward_type = 5
+icon = ExtResource("3_4q1ye")
+
+[sub_resource type="Resource" id="DailyRewardData_day3"]
+script = ExtResource("1_hq6tu")
+reward_type = 1
+amount = 10
+item_id = 0
+display_text = "10"
+icon = ExtResource("4_b53m1")
+
+[sub_resource type="Resource" id="DailyRewardData_day4"]
+script = ExtResource("1_hq6tu")
+reward_type = 1
+amount = 25
+display_text = "25"
+icon = ExtResource("5_6r41o")
+
+[sub_resource type="Resource" id="DailyRewardData_day5"]
+script = ExtResource("1_hq6tu")
+amount = 85
+item_id = 1
+display_text = "85"
+icon = ExtResource("6_wkpfm")
+
+[sub_resource type="Resource" id="DailyRewardData_day6"]
+script = ExtResource("1_hq6tu")
+reward_type = 5
+display_text = "x1"
+icon = ExtResource("3_4q1ye")
+
+[sub_resource type="Resource" id="DailyRewardData_day7"]
+script = ExtResource("1_hq6tu")
+reward_type = 6
+reward_key = "premium_crates"
+reward_name = "Gold Chest"
+display_text = "x1"
+icon = ExtResource("7_k7te2")
+
+[resource]
+script = ExtResource("2_cxv6k")
+rewards = Array[ExtResource("1_hq6tu")]([SubResource("DailyRewardData_day1"), SubResource("DailyRewardData_day2"), SubResource("DailyRewardData_day3"), SubResource("DailyRewardData_day4"), SubResource("DailyRewardData_day5"), SubResource("DailyRewardData_day6"), SubResource("DailyRewardData_day7")])

@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://kh2mg4y4spfi"]
+
+[ext_resource type="Script" uid="uid://cxpyj21aj8y35" path="res://ZeroAimZone-Godot/3_Assets/obstacles/FireCannons/fire.gd" id="1_fire"]
+[ext_resource type="Texture2D" uid="uid://b1ssoyxu33ive" path="res://ZeroAimZone-Godot/3_Assets/obstacles/FireCannons/Sprites/fire_animation_spritesheet.png" id="2_sheet"]
+
+[sub_resource type="Animation" id="Animation_reset"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_loop"]
+resource_name = "fire_loop"
+length = 0.4
+loop_mode = 1
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [4, 5, 6, 7, 8, 9]
+}
+
+[sub_resource type="Animation" id="Animation_start"]
+resource_name = "fire_start"
+length = 0.2
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_stop"]
+resource_name = "fire_stop"
+length = 0.35
+step = 0.07
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.07, 0.14, 0.21, 0.28),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [10, 11, 12, 13, 14]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fire"]
+_data = {
+&"RESET": SubResource("Animation_reset"),
+&"fire_loop": SubResource("Animation_loop"),
+&"fire_start": SubResource("Animation_start"),
+&"fire_stop": SubResource("Animation_stop")
+}
+
+[node name="Fire" type="Node2D" unique_id=1995082050]
+script = ExtResource("1_fire")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2000000001]
+texture = ExtResource("2_sheet")
+hframes = 15
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2000000002]
+libraries/ = SubResource("AnimationLibrary_fire")

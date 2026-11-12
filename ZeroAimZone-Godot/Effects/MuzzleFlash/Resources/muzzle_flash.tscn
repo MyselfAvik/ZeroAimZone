@@ -1,0 +1,254 @@
+[gd_scene format=3 uid="uid://p3pgstje7lqe"]
+
+[ext_resource type="Texture2D" uid="uid://cejaupo56qvjp" path="res://ZeroAimZone-Godot/Effects/MuzzleFlash/Assets/ChatGPT_Image_Aug_4__2026__11_58_59_AM-removebg-preview.png" id="1_rkc4a"]
+[ext_resource type="Texture2D" uid="uid://be7stoyldpqcp" path="res://ZeroAimZone-Godot/Effects/MuzzleFlash/Assets/ChatGPT_Image_Aug_3__2026__07_16_31_PM-removebg-preview.png" id="1_w4apr"]
+[ext_resource type="Texture2D" uid="uid://bntiol4xglflt" path="res://ZeroAimZone-Godot/Effects/MuzzleFlash/Assets/ChatGPT_Image_Aug_4__2026__12_21_37_PM-removebg-preview.png" id="3_6asjd"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_kqck0"]
+blend_mode = 1
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_yvpg7"]
+particle_flag_disable_z = true
+spread = 120.0
+initial_velocity_min = 150.0
+initial_velocity_max = 250.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.03
+scale_max = 0.08
+
+[sub_resource type="Animation" id="Animation_l1cel"]
+length = 0.001
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Smoke/SmokeCloud:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.175, 0.175)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Smoke/SmokeCloud:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Smoke/SmokeCloud:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Smoke/SmokeCloud:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Glow/GlowSprite:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.15, 0.15)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Glow/GlowSprite:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.003921569)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Glow/GlowSprite:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Hearts/HeartParticles:emitting")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_rkc4a"]
+resource_name = "Smoke_Puff"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Smoke/SmokeCloud:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.08, 0.18, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.175, 0.175), Vector2(0.15, 0.15), Vector2(0.25, 0.25), Vector2(0.35, 0.35)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Smoke/SmokeCloud:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.08, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Smoke/SmokeCloud:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(18, -2)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Smoke/SmokeCloud:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.13962634]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Glow/GlowSprite:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.02, 0.03, 0.04, 0.05, 0.08),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.05, 0.05), Vector2(0.45, 0.45), Vector2(0.6, 0.6), Vector2(0.6, 0.6), Vector2(0.75, 0.75), Vector2(1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Glow/GlowSprite:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.04, 0.08),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.7058824), Color(1, 1, 1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Glow/GlowSprite:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.08),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(6, -1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Hearts/HeartParticles:emitting")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.03, 0.04),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6asjd"]
+_data = {
+&"RESET": SubResource("Animation_l1cel"),
+&"Smoke_Puff": SubResource("Animation_rkc4a")
+}
+
+[node name="MuzzleFlash" type="Node2D" unique_id=222395412]
+
+[node name="Glow" type="Sprite2D" parent="." unique_id=726453831]
+
+[node name="GlowSprite" type="Sprite2D" parent="Glow" unique_id=1881691190]
+modulate = Color(1, 1, 1, 0.003921569)
+material = SubResource("CanvasItemMaterial_kqck0")
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("1_rkc4a")
+
+[node name="Smoke" type="Node2D" parent="." unique_id=985520455]
+z_index = 1
+
+[node name="SmokeCloud" type="Sprite2D" parent="Smoke" unique_id=1031110532]
+z_index = 1
+scale = Vector2(0.175, 0.175)
+texture = ExtResource("1_w4apr")
+
+[node name="Hearts" type="Node2D" parent="." unique_id=1889467043]
+
+[node name="HeartParticles" type="GPUParticles2D" parent="Hearts" unique_id=258572003]
+amount = 5
+texture = ExtResource("3_6asjd")
+lifetime = 0.3
+one_shot = true
+explosiveness = 1.0
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_yvpg7")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1555930130]
+libraries/ = SubResource("AnimationLibrary_6asjd")

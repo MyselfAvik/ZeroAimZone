@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://cqkcuf23llykk"]
+
+[ext_resource type="Script" uid="uid://83cj5jfipyhf" path="res://ZeroAimZone-Godot/1_Scripts/bullet_scripts (temp)/bullet.gd" id="1_kudvy"]
+[ext_resource type="PackedScene" uid="uid://njilh4rk0w5a" path="res://ZeroAimZone-Godot/3_Assets/obstacles/StaticWall/HitEffect.tscn" id="2_6cxve"]
+[ext_resource type="PackedScene" uid="uid://d52idqnr5cqc" path="res://ZeroAimZone-Godot/2_Prefabs/TrailEffectScenes/fn_s2_trail.tscn" id="2_pwajl"]
+[ext_resource type="Texture2D" uid="uid://bn4ppshlx85e5" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/cosmetics/beretta/egg_bullet.png" id="4_7oi1v"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7oi1v"]
+atlas = ExtResource("4_7oi1v")
+region = Rect2(39, 39, 97, 106)
+
+[node name="bullet" type="Area2D" unique_id=1454933523]
+scale = Vector2(3.2649236, 3.2649236)
+collision_mask = 3
+script = ExtResource("1_kudvy")
+bullet_trail_scene = ExtResource("2_pwajl")
+hit_effect_scene = ExtResource("2_6cxve")
+
+[node name="TrailPoint" type="Marker2D" parent="." unique_id=998826536]
+position = Vector2(-6, 0)
+
+[node name="BulletVisual" type="Sprite2D" parent="." unique_id=487340849]
+z_index = 5
+position = Vector2(0, -9.536743e-07)
+rotation = 0.6981317
+scale = Vector2(0.1, 0.1)
+texture = SubResource("AtlasTexture_7oi1v")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=2034127587]
+position = Vector2(0, -9.536743e-07)
+scale = Vector2(0.05, 0.05)

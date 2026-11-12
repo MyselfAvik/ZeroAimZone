@@ -1,0 +1,281 @@
+[gd_scene format=3 uid="uid://bg6tlqclgi7gt"]
+
+[ext_resource type="Script" uid="uid://c6p0ap2dmmx3b" path="res://ZeroAimZone-Godot/1_Scripts/UI_Controllers/HomePanelController.gd" id="1_snqd0"]
+[ext_resource type="Texture2D" uid="uid://ckhsnjos2tfs5" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/Glows/chest_glow.png" id="2_70tnt"]
+[ext_resource type="Texture2D" uid="uid://c6m2avswxx6q7" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/BasePanel/Chest.png" id="3_brlxc"]
+[ext_resource type="Texture2D" uid="uid://nsldbvl0an6u" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/CommonButton/BlueButtonSharp.png" id="3_k87ar"]
+[ext_resource type="Texture2D" uid="uid://y5ber8ixf1y7" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/BasePanel/timer_icon.png" id="4_eycbb"]
+[ext_resource type="Texture2D" uid="uid://d2x2cwle7gvpd" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/guns/street/glock17.png" id="7_eycbb"]
+[ext_resource type="FontFile" uid="uid://bwi6e3xaodcgb" path="res://ZeroAimZone-Godot/3_Assets/Fonts/Teko-Bold.ttf" id="7_fjuek"]
+[ext_resource type="FontFile" uid="uid://10wk3avcupsd" path="res://ZeroAimZone-Godot/3_Assets/Fonts/BarlowCondensed-Bold.ttf" id="7_mq5qx"]
+[ext_resource type="Texture2D" uid="uid://b8f3kmlkeyj0m" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/CommonButton/yellow_button.png" id="8_eycbb"]
+[ext_resource type="PackedScene" uid="uid://dood7wscci3gh" path="res://ZeroAimZone-Godot/2_Prefabs/UI/UICards/ChestSlot.tscn" id="8_fjuek"]
+[ext_resource type="Shader" uid="uid://dxax148smsfpe" path="res://ZeroAimZone-Godot/3_Assets/Shaders/DropShadow.gdshader" id="12_shadow"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1kpwf"]
+atlas = ExtResource("3_brlxc")
+region = Rect2(12.313202, 18.96101, 215.62743, 181.06693)
+
+[sub_resource type="LabelSettings" id="LabelSettings_l3yi3"]
+font = ExtResource("7_mq5qx")
+font_size = 24
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_shadow"]
+shader = ExtResource("12_shadow")
+shader_parameter/shadow_color = Color(0, 0, 0, 0.45)
+shader_parameter/blur_amount = 2.5
+
+[sub_resource type="LabelSettings" id="LabelSettings_fjuek"]
+font = ExtResource("7_fjuek")
+font_size = 100
+font_color = Color(0, 0, 0, 1)
+shadow_color = Color(0.9843137, 0.7490196, 0.13725491, 1)
+shadow_offset = Vector2(0, 1)
+
+[node name="HomePanel" type="Control" unique_id=1440207613 node_paths=PackedStringArray("slot_container", "selected_gun", "gun_shadow")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_snqd0")
+slot_container = NodePath("HBoxContainer/VBoxContainer/MarginContainer/HBoxContainer")
+selected_gun = NodePath("HBoxContainer/VBoxContainer/Gun/SelectedGun")
+gun_shadow = NodePath("HBoxContainer/VBoxContainer/Gun/GunShadow")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1470137886]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=177355144]
+custom_minimum_size = Vector2(1080, 0)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer" unique_id=1059301844]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+alignment = 1
+
+[node name="Daily" type="Control" parent="HBoxContainer/VBoxContainer/HBoxContainer" unique_id=1907631905]
+custom_minimum_size = Vector2(1080, 0)
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+
+[node name="Daily_Reward_btn" type="TextureButton" parent="HBoxContainer/VBoxContainer/HBoxContainer/Daily" unique_id=1713754495]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -255.0
+offset_top = -92.0
+offset_right = -34.0
+offset_bottom = 92.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_vertical = 3
+mouse_filter = 1
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer/HBoxContainer/Daily/Daily_Reward_btn" unique_id=814970699]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -110.0
+offset_top = -112.0
+offset_right = 110.0
+offset_bottom = 108.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_70tnt")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect2" type="TextureRect" parent="HBoxContainer/VBoxContainer/HBoxContainer/Daily/Daily_Reward_btn" unique_id=708137181]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_1kpwf")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect3" type="TextureRect" parent="HBoxContainer/VBoxContainer/HBoxContainer/Daily/Daily_Reward_btn" unique_id=364237249]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -74.0
+offset_top = -46.0
+offset_right = 74.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("3_k87ar")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer/Daily/Daily_Reward_btn/TextureRect3" unique_id=1324579873]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="timer_icon" type="TextureRect" parent="HBoxContainer/VBoxContainer/HBoxContainer/Daily/Daily_Reward_btn/TextureRect3/HBoxContainer" unique_id=2097909972]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+texture = ExtResource("4_eycbb")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/Daily/Daily_Reward_btn/TextureRect3/HBoxContainer" unique_id=1642650222]
+layout_mode = 2
+text = "23H 20M"
+label_settings = SubResource("LabelSettings_l3yi3")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Gun" type="Control" parent="HBoxContainer/VBoxContainer" unique_id=1523273536]
+custom_minimum_size = Vector2(0, 700)
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="GunShadow" type="TextureRect" parent="HBoxContainer/VBoxContainer/Gun" unique_id=2081947231]
+material = SubResource("ShaderMaterial_shadow")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -349.0
+offset_top = -351.5
+offset_right = 401.0
+offset_bottom = 398.5
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.17453292
+pivot_offset_ratio = Vector2(0.5, 0.5)
+size_flags_vertical = 3
+mouse_filter = 2
+texture = ExtResource("7_eycbb")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="SelectedGun" type="TextureRect" parent="HBoxContainer/VBoxContainer/Gun" unique_id=744280606]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -375.0
+offset_top = -375.0
+offset_right = 375.0
+offset_bottom = 375.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.17453292
+pivot_offset_ratio = Vector2(0.5, 0.5)
+size_flags_vertical = 3
+mouse_filter = 2
+texture = ExtResource("7_eycbb")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Control" type="Control" parent="HBoxContainer/VBoxContainer" unique_id=159975287]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="Play_Btn" type="TextureButton" parent="HBoxContainer/VBoxContainer/Control" unique_id=997633091]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -270.0
+offset_right = 270.0
+offset_bottom = 151.0
+grow_horizontal = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.2
+texture_normal = ExtResource("8_eycbb")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/Control/Play_Btn" unique_id=183040659]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -99.0
+offset_top = -65.50001
+offset_right = 99.0
+offset_bottom = 86.45447
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 0.8800098)
+text = "Play"
+label_settings = SubResource("LabelSettings_fjuek")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/VBoxContainer" unique_id=1986702927]
+custom_minimum_size = Vector2(0, 470)
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.18
+mouse_filter = 2
+theme_override_constants/margin_left = 85
+theme_override_constants/margin_top = 140
+theme_override_constants/margin_right = 85
+theme_override_constants/margin_bottom = 30
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/MarginContainer" unique_id=850874602]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="ChestSlot" parent="HBoxContainer/VBoxContainer/MarginContainer/HBoxContainer" unique_id=178407535 instance=ExtResource("8_fjuek")]
+layout_mode = 2
+
+[node name="ChestSlot2" parent="HBoxContainer/VBoxContainer/MarginContainer/HBoxContainer" unique_id=1964236783 instance=ExtResource("8_fjuek")]
+layout_mode = 2
+
+[node name="ChestSlot3" parent="HBoxContainer/VBoxContainer/MarginContainer/HBoxContainer" unique_id=1428024209 instance=ExtResource("8_fjuek")]
+layout_mode = 2
+
+[node name="ChestSlot4" parent="HBoxContainer/VBoxContainer/MarginContainer/HBoxContainer" unique_id=787475066 instance=ExtResource("8_fjuek")]
+layout_mode = 2
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/HBoxContainer/Daily/Daily_Reward_btn" to="." method="_on_daily_mission_btn_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Control/Play_Btn" to="." method="_on_play_btn_pressed"]

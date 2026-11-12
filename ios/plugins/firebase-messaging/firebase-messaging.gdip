@@ -1,0 +1,13 @@
+[config]
+name="FirebaseMessagingPlugin"
+binary="firebase-messaging.xcframework"
+initialization="register_firebase_messaging_types"
+deinitialization="unregister_firebase_messaging_types"
+
+[dependencies]
+linked=[]
+embedded=[]
+system=["Foundation.framework", "UserNotifications.framework"]
+capabilities=[]
+files=["AppDelegateHook.mm"]
+pods=["Firebase/Messaging"]

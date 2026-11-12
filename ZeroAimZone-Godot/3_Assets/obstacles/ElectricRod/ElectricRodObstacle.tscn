@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dh4ynalxvqngr"]
+
+[ext_resource type="Script" uid="uid://mgmjthalv75p" path="res://ZeroAimZone-Godot/3_Assets/obstacles/ElectricRod/electric_rod_obstacle.gd" id="1_nwrh6"]
+[ext_resource type="PackedScene" uid="uid://drps1knxe4m4w" path="res://ZeroAimZone-Godot/3_Assets/obstacles/ElectricRod/ElectricRod.tscn" id="2_rwxix"]
+
+[node name="ElectricRodObstacle" type="Node2D" unique_id=1356370470]
+script = ExtResource("1_nwrh6")
+rod_scene = ExtResource("2_rwxix")
+activation_time = 2.5
+cooldown_time = 1.5

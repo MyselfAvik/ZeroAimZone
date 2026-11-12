@@ -1,0 +1,60 @@
+[gd_resource type="Resource" script_class="ShopDataBase" format=3 uid="uid://cvwxilsp765pa"]
+
+[ext_resource type="Script" uid="uid://chcaa8psi47ac" path="res://ZeroAimZone-Godot/4_Resources/scripts/ShopData.gd" id="1_ug1ox"]
+[ext_resource type="Script" uid="uid://dn2f1pqb1bl07" path="res://ZeroAimZone-Godot/4_Resources/scripts/ShopDataBase.gd" id="2_uhe2w"]
+[ext_resource type="Texture2D" uid="uid://bc0qeoi8ud4g" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/Ushop/bcoins.png" id="3_wrdjw"]
+[ext_resource type="Texture2D" uid="uid://bamig7i8ii2on" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/Ushop/bagcoins.png" id="5_snrbc"]
+[ext_resource type="Texture2D" uid="uid://bgqqmp1qtl0ha" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/Ushop/vaultcoins.png" id="7_kd3g1"]
+[ext_resource type="Texture2D" uid="uid://dca88yvcnuwy3" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/Ushop/handfulgems.png" id="8_sa01h"]
+[ext_resource type="Texture2D" uid="uid://bptsu1ipfpyhv" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/Ushop/pilegems.png" id="10_wrta8"]
+[ext_resource type="Texture2D" uid="uid://btblcgkgu3glj" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/Ushop/lockergems.png" id="12_v3m3w"]
+
+[sub_resource type="Resource" id="Resource_uhe2w"]
+script = ExtResource("1_ug1ox")
+pack_name = "Bunch of Coins"
+icon = ExtResource("3_wrdjw")
+amount = 500
+price = 1
+
+[sub_resource type="Resource" id="Resource_i5q01"]
+script = ExtResource("1_ug1ox")
+pack_name = "Bag of Coins"
+icon = ExtResource("5_snrbc")
+amount = 1000
+price = 2
+
+[sub_resource type="Resource" id="Resource_x3avb"]
+script = ExtResource("1_ug1ox")
+pack_name = "Vault of Coins"
+icon = ExtResource("7_kd3g1")
+amount = 1800
+price = 3
+
+[sub_resource type="Resource" id="Resource_5u4d6"]
+script = ExtResource("1_ug1ox")
+pack_name = "Handful of Gems"
+icon = ExtResource("8_sa01h")
+amount = 50
+price = 80
+product_id = "50_gems"
+
+[sub_resource type="Resource" id="Resource_nw61b"]
+script = ExtResource("1_ug1ox")
+pack_name = "Pile of Gems"
+icon = ExtResource("10_wrta8")
+amount = 100
+price = 300
+product_id = "100_gems"
+
+[sub_resource type="Resource" id="Resource_n4pvh"]
+script = ExtResource("1_ug1ox")
+pack_name = "Locker of Gems"
+icon = ExtResource("12_v3m3w")
+amount = 400
+price = 2500
+product_id = "400_gems"
+
+[resource]
+script = ExtResource("2_uhe2w")
+coin_items = Array[ExtResource("1_ug1ox")]([SubResource("Resource_uhe2w"), SubResource("Resource_i5q01"), SubResource("Resource_x3avb")])
+diamond_items = Array[ExtResource("1_ug1ox")]([SubResource("Resource_5u4d6"), SubResource("Resource_nw61b"), SubResource("Resource_n4pvh")])

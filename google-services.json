@@ -1,0 +1,62 @@
+{
+  "project_info": {
+	"project_number": "494893416541",
+	"project_id": "zero-aim-zone",
+	"storage_bucket": "zero-aim-zone.firebasestorage.app"
+  },
+  "client": [
+	{
+	  "client_info": {
+		"mobilesdk_app_id": "1:494893416541:android:767af95384a16a7718cdb4",
+		"android_client_info": {
+		  "package_name": "com.TheGameWise.ZeroAimZone"
+		}
+	  },
+	  "oauth_client": [
+		{
+		  "client_id": "494893416541-1m594qi7bfve3db4qhrfgpcgblb3k6i0.apps.googleusercontent.com",
+		  "client_type": 1,
+		  "android_info": {
+			"package_name": "com.TheGameWise.ZeroAimZone",
+			"certificate_hash": "dad1c7d88dddbe91d50cbd62cfa8f6f2f4085dc6"
+		  }
+		},
+		{
+		  "client_id": "494893416541-refacm47d14pkml04h4rnttovvmna4o9.apps.googleusercontent.com",
+		  "client_type": 1,
+		  "android_info": {
+			"package_name": "com.TheGameWise.ZeroAimZone",
+			"certificate_hash": "30a4dd009e2f1bb2023299c71a354ac292a110a2"
+		  }
+		},
+		{
+		  "client_id": "494893416541-4suhi3vfjo6v0b816m6283o3jfeu4ac7.apps.googleusercontent.com",
+		  "client_type": 3
+		}
+	  ],
+	  "api_key": [
+		{
+		  "current_key": "AIzaSyDluV6ZnQQMc19aQi8AioQaDW8kaCRXD20"
+		}
+	  ],
+	  "services": {
+		"appinvite_service": {
+		  "other_platform_oauth_client": [
+			{
+			  "client_id": "494893416541-4suhi3vfjo6v0b816m6283o3jfeu4ac7.apps.googleusercontent.com",
+			  "client_type": 3
+			},
+			{
+			  "client_id": "494893416541-9uoc5ntofgi335k8et6bal8s3ashnj9i.apps.googleusercontent.com",
+			  "client_type": 2,
+			  "ios_info": {
+				"bundle_id": "com.www.jabba"
+			  }
+			}
+		  ]
+		}
+	  }
+	}
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://bksoh3k0mwmfx"]
+
+[ext_resource type="Script" uid="uid://be551qvgms6oh" path="res://ZeroAimZone-Godot/1_Scripts/GunScripts(temp)/player_gun.gd" id="1_gng3s"]
+[ext_resource type="PackedScene" uid="uid://bra8yop1cq516" path="res://ZeroAimZone-Godot/2_Prefabs/ParticleEffects/player_damage.tscn" id="2_gng3s"]
+[ext_resource type="PackedScene" uid="uid://b7crcmtdbs378" path="res://ZeroAimZone-Godot/2_Prefabs/ParticleEffects/muzzle_flash/muzzle_flash.tscn" id="2_l7sve"]
+[ext_resource type="Shader" uid="uid://dqofjq2u7ljof" path="res://ZeroAimZone-Godot/3_Assets/Shaders/player_gun.gdshader" id="3_wxmqv"]
+[ext_resource type="Texture2D" uid="uid://byo87831w1ade" path="res://ZeroAimZone-Godot/3_Assets/Sprites/temp/circle.png" id="4_57q2x"]
+[ext_resource type="Texture2D" uid="uid://d2x2cwle7gvpd" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/guns/street/glock17.png" id="5_l7sve"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_expjv"]
+bounce = 0.25
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l7sve"]
+shader = ExtResource("3_wxmqv")
+shader_parameter/blinkColor = Color(1, 1, 1, 1)
+shader_parameter/blink_intensity = 0.0
+
+[sub_resource type="Curve" id="Curve_l7sve"]
+_data = [Vector2(0, 0.9755792), 0.0, 0.0, 0, 0, Vector2(0.99999, 0), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[node name="PlayerGun" type="RigidBody2D" unique_id=1759407470 node_paths=PackedStringArray("shoot_particles", "gun_sprite", "camera2D", "visual") groups=["Player"]]
+collision_layer = 2
+physics_material_override = SubResource("PhysicsMaterial_expjv")
+gravity_scale = 0.8
+can_sleep = false
+continuous_cd = 2
+contact_monitor = true
+max_contacts_reported = 4
+script = ExtResource("1_gng3s")
+shoot_particles = NodePath("CPUParticles2D3")
+muzzle_flash_scene = ExtResource("2_l7sve")
+gun_damage_particles = ExtResource("2_gng3s")
+gun_sprite = NodePath("Visual")
+camera2D = NodePath("Camera2D")
+continuous_linear_damp = 5.0
+continuous_angular_damp = 3.5
+visual = NodePath("Visual")
+
+[node name="Visual" type="Sprite2D" parent="." unique_id=26778365]
+z_index = 5
+material = SubResource("ShaderMaterial_l7sve")
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("5_l7sve")
+
+[node name="FirePoint" type="Marker2D" parent="." unique_id=695758281]
+position = Vector2(140, -58)
+scale = Vector2(0.45, 0.45)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=789513069]
+scale = Vector2(0.45, 0.45)
+zoom = Vector2(0.9, 0.9)
+limit_left = 110
+limit_top = -2575
+limit_right = 1550
+limit_bottom = 13
+limit_smoothed = true
+position_smoothing_enabled = true
+position_smoothing_speed = 3.0
+
+[node name="CPUParticles2D3" type="CPUParticles2D" parent="." unique_id=330054249]
+z_index = 10
+position = Vector2(114, -79)
+scale = Vector2(0.45, 0.45)
+emitting = false
+amount = 150
+texture = ExtResource("4_57q2x")
+lifetime = 0.52
+spread = 4.75
+gravity = Vector2(0, 0)
+scale_amount_min = 0.0
+scale_amount_max = 0.05
+scale_amount_curve = SubResource("Curve_l7sve")
+color = Color(0.5873133, 0.59946346, 0.5634807, 1)
+anim_speed_max = 2.55
+anim_offset_max = 0.245
+
+[node name="CPUParticles2D5" type="CPUParticles2D" parent="." unique_id=1444822353]
+z_index = 10
+position = Vector2(107, -77)
+rotation = -3.1415927
+scale = Vector2(0.45, 0.45)
+emitting = false
+amount = 62
+texture = ExtResource("4_57q2x")
+lifetime = 0.03
+one_shot = true
+local_coords = true
+spread = 52.91
+gravity = Vector2(0, 0)
+initial_velocity_max = 487.78
+scale_amount_min = 0.0
+scale_amount_max = 0.05
+color = Color(1, 0.96983963, 0.60758704, 1)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

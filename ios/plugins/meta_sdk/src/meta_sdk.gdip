@@ -1,0 +1,17 @@
+[config]
+name="MetaSdk"
+binary="meta_sdk.xcframework"
+
+initialization="register_meta_sdk_plugin"
+deinitialization="unregister_meta_sdk_plugin"
+
+[dependencies]
+linked=[]
+embedded=[]
+system=[]
+
+capabilities=[]
+
+files=[]
+
+[plist]

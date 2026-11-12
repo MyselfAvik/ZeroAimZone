@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://dfetembvqycbl"]
+
+[ext_resource type="Shader" uid="uid://boehry5q1h4mf" path="res://ZeroAimZone-Godot/3_Assets/Shaders/Hit.gdshader" id="1_2prax"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mk2vk"]
+shader = ExtResource("1_2prax")
+shader_parameter/x_scale = 2.0
+shader_parameter/y_scale = 0.1
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_aj8cu"]
+load_path = "res://.godot/imported/PARTICLEs.png-57ed53fb1649a13d6fad99adeb55f49c.ctex"
+
+[sub_resource type="Gradient" id="Gradient_v3rft"]
+offsets = PackedFloat32Array(0, 0.22391857, 0.524173, 0.83206105, 0.9847328)
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.59668505, 1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_ec67d"]
+offsets = PackedFloat32Array(0, 0.27226463, 0.4783715, 0.69211197, 1)
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1)
+
+[node name="CPUParticles2D" type="CPUParticles2D" unique_id=875324995]
+material = SubResource("ShaderMaterial_mk2vk")
+scale = Vector2(8.255, 1)
+emitting = false
+amount = 1
+texture = SubResource("CompressedTexture2D_aj8cu")
+lifetime = 1.5
+one_shot = true
+speed_scale = 0.41
+gravity = Vector2(0, 0)
+scale_amount_min = 0.1
+scale_amount_max = 0.1
+color_ramp = SubResource("Gradient_v3rft")
+color_initial_ramp = SubResource("Gradient_ec67d")

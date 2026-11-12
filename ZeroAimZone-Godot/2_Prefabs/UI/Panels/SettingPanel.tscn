@@ -1,0 +1,1026 @@
+[gd_scene format=3 uid="uid://dlddpv16exc5"]
+
+[ext_resource type="Script" uid="uid://bukll8gfg48fy" path="res://ZeroAimZone-Godot/1_Scripts/UI_Controllers/SettingPanelController.gd" id="1_ef14f"]
+[ext_resource type="Texture2D" uid="uid://dckky0wehfv64" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/SettingsPanel/Togglegreen.png" id="2_eyp24"]
+[ext_resource type="Texture2D" uid="uid://dix2exqiy3o6n" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/SettingsPanel/Togglered.png" id="3_waa6d"]
+[ext_resource type="FontFile" uid="uid://10wk3avcupsd" path="res://ZeroAimZone-Godot/3_Assets/Fonts/BarlowCondensed-Bold.ttf" id="4_uyww3"]
+[ext_resource type="Texture2D" uid="uid://jo5slggirous" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/SettingsPanel/SettingsIcon.png" id="4_w1c3a"]
+[ext_resource type="Script" uid="uid://c1umaqh6220vy" path="res://addons/SmoothScroll/smooth_scroll_container.gd" id="6_n4lpm"]
+[ext_resource type="Script" uid="uid://bp2ueafm1hjdu" path="res://addons/SmoothScroll/scroll_damper/expo_scroll_damper.gd" id="7_d16uk"]
+[ext_resource type="FontFile" uid="uid://dobi5yff3px2t" path="res://ZeroAimZone-Godot/3_Assets/Fonts/BarlowCondensed-SemiBold.ttf" id="7_itcjc"]
+[ext_resource type="FontFile" uid="uid://giru623cv661" path="res://ZeroAimZone-Godot/3_Assets/Fonts/BarlowCondensed-Medium.ttf" id="8_slamk"]
+[ext_resource type="Texture2D" uid="uid://drsydgr3fk88c" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/CommonBg/Settingtitlebg.png" id="9_q58k5"]
+[ext_resource type="Texture2D" uid="uid://dfkq0nnvbnro5" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/SettingsPanel/GameIcon.png" id="10_o076p"]
+[ext_resource type="FontFile" uid="uid://dxv3myqk8v50" path="res://ZeroAimZone-Godot/3_Assets/Fonts/BarlowCondensed-Regular.ttf" id="10_vpwdc"]
+[ext_resource type="Texture2D" uid="uid://d3c10q8c0mj42" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/SettingsPanel/Boxbg.png" id="11_5nmt0"]
+[ext_resource type="Texture2D" uid="uid://bu6k6h464f2ev" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/SettingsPanel/Togglebg.png" id="13_q58k5"]
+[ext_resource type="Texture2D" uid="uid://cdpnjri4n2rj1" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/SettingsPanel/Infoicon.png" id="14_3r0sb"]
+[ext_resource type="Texture2D" uid="uid://btyi2ounlcyfc" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/SettingsPanel/profile.png" id="16_o076p"]
+[ext_resource type="Texture2D" uid="uid://cxy3i1f1xscrq" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/CommonButton/GreenBtn.png" id="16_q58k5"]
+[ext_resource type="Texture2D" uid="uid://chuliryrccfyc" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/CommonButton/RedBtn.png" id="18_q58k5"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n4lpm"]
+
+[sub_resource type="FontVariation" id="FontVariation_vpwdc"]
+base_font = ExtResource("4_uyww3")
+
+[sub_resource type="LabelSettings" id="LabelSettings_d16uk"]
+font = ExtResource("4_uyww3")
+font_size = 58
+
+[sub_resource type="Resource" id="Resource_wenmm"]
+script = ExtResource("7_d16uk")
+
+[sub_resource type="Resource" id="Resource_q5ntj"]
+script = ExtResource("7_d16uk")
+
+[sub_resource type="FontVariation" id="FontVariation_n4lpm"]
+base_font = ExtResource("7_itcjc")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4mv28"]
+texture = ExtResource("11_5nmt0")
+
+[sub_resource type="FontVariation" id="FontVariation_d16uk"]
+base_font = ExtResource("8_slamk")
+
+[sub_resource type="FontVariation" id="FontVariation_wenmm"]
+base_font = ExtResource("8_slamk")
+
+[sub_resource type="FontVariation" id="FontVariation_q5ntj"]
+base_font = ExtResource("7_itcjc")
+
+[sub_resource type="FontVariation" id="FontVariation_waa6d"]
+base_font = ExtResource("8_slamk")
+
+[sub_resource type="FontVariation" id="FontVariation_w1c3a"]
+base_font = ExtResource("8_slamk")
+
+[sub_resource type="FontVariation" id="FontVariation_o076p"]
+base_font = ExtResource("8_slamk")
+
+[sub_resource type="FontVariation" id="FontVariation_itcjc"]
+base_font = ExtResource("8_slamk")
+
+[sub_resource type="FontVariation" id="FontVariation_q58k5"]
+base_font = ExtResource("7_itcjc")
+
+[sub_resource type="FontVariation" id="FontVariation_5nmt0"]
+base_font = ExtResource("8_slamk")
+
+[sub_resource type="FontVariation" id="FontVariation_3r0sb"]
+base_font = ExtResource("8_slamk")
+
+[sub_resource type="FontVariation" id="FontVariation_fnfok"]
+base_font = ExtResource("10_vpwdc")
+
+[node name="SettingsPanel" type="Control" unique_id=1348562009 node_paths=PackedStringArray("sfx_bg", "sfx_circle", "music_bg", "music_circle", "vibration_bg", "vibration_circle", "credits_btn", "privacy_policy_btn", "delete_account_btn", "version")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+script = ExtResource("1_ef14f")
+sfx_bg = NodePath("HBoxContainer/Background/MarginContainer/MainLayout/ScrollContainer/ScrollVBox/Control/GameOptionsRows/SoundEffectsRow/Background/ContentMargin/HBoxContainer/TextureRect")
+sfx_circle = NodePath("HBoxContainer/Background/MarginContainer/MainLayout/ScrollContainer/ScrollVBox/Control/GameOptionsRows/SoundEffectsRow/Background/ContentMargin/HBoxContainer/TextureRect/TextureRect")
+music_bg = NodePath("HBoxContainer/Background/MarginContainer/MainLayout/ScrollContainer/ScrollVBox/Control/GameOptionsRows/MusicRow/Background/ContentMargin/HBoxContainer/TextureRect")
+music_circle = NodePath("HBoxContainer/Background/MarginContainer/MainLayout/ScrollContainer/ScrollVBox/Control/GameOptionsRows/MusicRow/Background/ContentMargin/HBoxContainer/TextureRect/TextureRect")
+vibration_bg = NodePath("HBoxContainer/Background/MarginContainer/MainLayout/ScrollContainer/ScrollVBox/Control/GameOptionsRows/VibrationRow/Background/ContentMargin/HBoxContainer/TextureRect")
+vibration_circle = NodePath("HBoxContainer/Background/MarginContainer/MainLayout/ScrollContainer/ScrollVBox/Control/GameOptionsRows/VibrationRow/Background/ContentMargin/HBoxContainer/TextureRect/TextureRect")
+enabled_knob_texture = ExtResource("2_eyp24")
+disabled_knob_texture = ExtResource("3_waa6d")
+credits_btn = NodePath("HBoxContainer/Background/MarginContainer/MainLayout/ScrollContainer/ScrollVBox/VBoxContainer/InfoContainer/CreditsRow/Background/ContentMargin/HBoxContainer/Credits")
+privacy_policy_btn = NodePath("HBoxContainer/Background/MarginContainer/MainLayout/ScrollContainer/ScrollVBox/VBoxContainer/InfoContainer/PrivacyPolicyRow/Background/ContentMargin/HBoxContainer/TextureButton")
+delete_account_btn = NodePath("HBoxContainer/Background/MarginContainer/MainLayout/ScrollContainer/ScrollVBox/VBoxContainer2/AccountContainer/AccountDeletion/Background/ContentMargin/HBoxContainer/delete")
+version = NodePath("HBoxContainer/Background/MarginContainer/MainLayout/ScrollContainer/ScrollVBox/Title")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=360808719]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Background" type="TextureRect" parent="HBoxContainer" unique_id=1301158132]
+custom_minimum_size = Vector2(1080, 0)
+layout_mode = 2
+size_flags_stretch_ratio = 0.04
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/Background" unique_id=1505144678]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.05
+theme_override_constants/margin_left = 82
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 82
+theme_override_constants/margin_bottom = 0
+
+[node name="MainLayout" type="VBoxContainer" parent="HBoxContainer/Background/MarginContainer" unique_id=408745070]
+layout_mode = 2
+
+[node name="Header" type="Panel" parent="HBoxContainer/Background/MarginContainer/MainLayout" unique_id=1537922100]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.09
+theme_override_styles/panel = SubResource("StyleBoxTexture_n4lpm")
+
+[node name="icon" type="TextureRect" parent="HBoxContainer/Background/MarginContainer/MainLayout/Header" unique_id=1937945238]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 30.0
+offset_top = -26.0
+offset_right = 80.0
+offset_bottom = 24.0
+grow_vertical = 2
+texture = ExtResource("4_w1c3a")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="HBoxContainer/Background/MarginContainer/MainLayout/Header" unique_id=1799141499]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 100.0
+offset_top = -40.0
+offset_right = 301.0
+offset_bottom = 30.0
+grow_vertical = 2
+size_flags_horizontal = 3
+theme_override_colors/font_shadow_color = Color(0.60784316, 0.5921569, 0.74509805, 0.39215687)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = SubResource("FontVariation_vpwdc")
+text = "Settings"
+label_settings = SubResource("LabelSettings_d16uk")
+uppercase = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer/Background/MarginContainer/MainLayout" unique_id=274773094]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.82
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+script = ExtResource("6_n4lpm")
+wheel_scroll_damper = SubResource("Resource_wenmm")
+dragging_scroll_damper = SubResource("Resource_q5ntj")
+
+[node name="ScrollVBox" type="VBoxContainer" parent="HBoxContainer/Background/MarginContainer/MainLayout/ScrollContainer" unique_id=2000311874]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 37
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Control" type="VBoxContainer" parent="HBoxContainer/Background/MarginContainer/MainLayout/ScrollContainer/ScrollVBox" unique_id=1287565733]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 24
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="GameOptionsHeader" type="Control" parent="HBoxContainer/Background/MarginContainer/MainLayout/ScrollContainer/ScrollVBox/Control" unique_id=42927635]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.07
+mouse_filter = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureRect2" type="TextureRect" parent="HBoxContainer/Background/MarginContainer/MainLayout/ScrollContainer/ScrollVBox/Control/GameOptionsHeader" unique_id=1700017349]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_q58k5")
+expand_mode = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Title" type="Label" parent="HBoxContainer/Background/MarginContainer/MainLayout/ScrollContainer/ScrollVBox/Control/GameOptionsHeader/TextureRect2" unique_id=101387892]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -144.5
+offset_top = -36.0
+offset_right = 144.5
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.60784316, 0.5921569, 0.74509805, 0.39215687)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = SubResource("FontVariation_n4lpm")
+theme_override_font_sizes/font_size = 62
+text = "GAME OPTION"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Background/MarginContainer/MainLayout/ScrollContainer/ScrollVBox/Control/GameOptionsHeader/TextureRect2" unique_id=694500250]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -215.0
+offset_top = -14.0
+offset_right = -155.0
+offset_bottom = 26.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(2455, 194)
+texture = ExtResource("10_o076p")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="GameOptionsRows" type="VBoxContainer" parent="HBoxContainer/Background/MarginContainer/MainLayout/ScrollContainer/ScrollVBox/Control" unique_id=1235376554]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+theme_override_constants/separation = 24
+alignment = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="SoundEffectsRow" type="Control" parent="HBoxContainer/Background/MarginContainer/MainLayout/ScrollContainer/ScrollVBox/Control/GameOptionsRows" unique_id=1095750895]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.01
+mouse_filter = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Background" type="Panel" parent="HBoxContainer/Background/MarginContainer/MainLayout/ScrollContainer/ScrollVBox/Control/GameOptionsRows/SoundEffectsRow" unique_id=207095870]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxTexture_4mv28")
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="ContentMargin" type="MarginContainer" parent="HBoxContainer/Background/MarginContainer/MainLayout/ScrollContainer/ScrollVBox/Control/GameOptionsRows/SoundEffectsRow/Background" unique_id=1563271609]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 48
+theme_override_constants/margin_right = 48
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/Background/MarginContainer/MainLayout/ScrollContainer/ScrollVBox/Control/GameOptionsRows/SoundEffectsRow/Background/ContentMargin" unique_id=255366241]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Label" type="Label" parent="HBoxContainer/Background/MarginContainer/MainLayout/ScrollContainer/ScrollVBox/Control/GameOptionsRows/SoundEffectsRow/Background/ContentMargin/HBoxContainer" unique_id=1993645222]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.60784316, 0.5921569, 0.74509805, 0.39215687)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = SubResource("FontVariation_d16uk")
+theme_override_font_sizes/font_size = 56
+text = "Sound Effects"
+vertical_alignment = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Background/MarginContainer/MainLayout/ScrollContainer/ScrollVBox/Control/GameOptionsRows/SoundEffectsRow/Background/ContentMargin/HBoxContainer" unique_id=1867238570]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.15
+texture = ExtResource("13_q58k5")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Background/MarginContainer/MainLayout/ScrollContainer/ScrollVBox/Control/GameOptionsRows/SoundEffectsRow/Background/ContentMargin/HBoxContainer/TextureRect" unique_id=635266427]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -30.0
+offset_right = 60.0
+offset_bottom = 30.0
+grow_vertical = 2
+texture = ExtResource("3_waa6d")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="MusicRow" type="Control" parent="HBoxContainer/Background/MarginContainer/MainLayout/ScrollContainer/ScrollVBox/Control/GameOptionsRows" unique_id=910973993]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.01
+mouse_filter = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Background" type="Panel" parent="HBoxContainer/Background/MarginContainer/MainLayout/ScrollContainer/ScrollVBox/Control/GameOptionsRows/MusicRow" unique_id=816112870]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxTexture_4mv28")
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="ContentMargin" type="MarginContainer" parent="HBoxContainer/Background/MarginContainer/MainLayout/ScrollContainer/ScrollVBox/Control/GameOptionsRows/MusicRow/Background" unique_id=326647693]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 48
+theme_override_constants/margin_right = 48
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/Background/MarginContainer/MainLayout/ScrollContainer/ScrollVBox/Control/GameOptionsRows/MusicRow/Background/ContentMargin" unique_id=2023414505]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Label" type="Label" parent="HBoxContainer/Background/MarginContainer/MainLayout/ScrollContainer/ScrollVBox/Control/GameOptionsRows/MusicRow/Background/ContentMargin/HBoxContainer" unique_id=1408433722]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.60784316, 0.5921569, 0.74509805, 0.39215687)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = SubResource("FontVariation_wenmm")
+theme_override_font_sizes/font_size = 56
+text = "Music"
+vertical_alignment = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Background/MarginContainer/MainLayout/ScrollContainer/ScrollVBox/Control/GameOptionsRows/MusicRow/Background/ContentMargin/HBoxContainer" unique_id=1218326642]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.15
+texture = ExtResource("13_q58k5")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Background/MarginContainer/MainLayout/ScrollContainer/ScrollVBox/Control/GameOptionsRows/MusicRow/Background/ContentMargin/HBoxContainer/TextureRect" unique_id=773119375]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -30.0
+offset_right = 60.0
+offset_bottom = 30.0
+grow_vertical = 2
+texture = ExtResource("3_waa6d")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="VibrationRow" type="Control" parent="HBoxContainer/Background/MarginContainer/MainLayout/ScrollContainer/ScrollVBox/Control/GameOptionsRows" unique_id=1319237206]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.01
+mouse_filter = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Background" type="Panel" parent="HBoxContainer/Background/MarginContainer/MainLayout/ScrollContainer/ScrollVBox/Control/GameOptionsRows/VibrationRow" unique_id=203735823]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxTexture_4mv28")
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="ContentMargin" type="MarginContainer" parent="HBoxContainer/Background/MarginContainer/MainLayout/ScrollContainer/ScrollVBox/Control/GameOptionsRows/VibrationRow/Background" unique_id=482867757]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 48
+theme_override_constants/margin_right = 48
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/Background/MarginContainer/MainLayout/ScrollContainer/ScrollVBox/Control/GameOptionsRows/VibrationRow/Background/ContentMargin" unique_id=149006300]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Label" type="Label" parent="HBoxContainer/Background/MarginContainer/MainLayout/ScrollContainer/ScrollVBox/Control/GameOptionsRows/VibrationRow/Background/ContentMargin/HBoxContainer" unique_id=1139589949]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.60784316, 0.5921569, 0.74509805, 0.39215687)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = SubResource("FontVariation_wenmm")
+theme_override_font_sizes/font_size = 56
+text = "Vibration"
+vertical_alignment = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Background/MarginContainer/MainLayout/ScrollContainer/ScrollVBox/Control/GameOptionsRows/VibrationRow/Background/ContentMargin/HBoxContainer" unique_id=2005468787]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.15
+texture = ExtResource("13_q58k5")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Background/MarginContainer/MainLayout/ScrollContainer/ScrollVBox/Control/GameOptionsRows/VibrationRow/Background/ContentMargin/HBoxContainer/TextureRect" unique_id=542937167]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -30.0
+offset_right = 60.0
+offset_bottom = 30.0
+grow_vertical = 2
+texture = ExtResource("3_waa6d")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/Background/MarginContainer/MainLayout/ScrollContainer/ScrollVBox" unique_id=331111195]
+layout_mode = 2
+theme_override_constants/separation = 24
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="InfoHeader" type="Control" parent="HBoxContainer/Background/MarginContainer/MainLayout/ScrollContainer/ScrollVBox/VBoxContainer" unique_id=328001112]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.07
+mouse_filter = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureRect2" type="TextureRect" parent="HBoxContainer/Background/MarginContainer/MainLayout/ScrollContainer/ScrollVBox/VBoxContainer/InfoHeader" unique_id=7375532]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_q58k5")
+expand_mode = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Label" type="Label" parent="HBoxContainer/Background/MarginContainer/MainLayout/ScrollContainer/ScrollVBox/VBoxContainer/InfoHeader/TextureRect2" unique_id=1198099771]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -77.0
+offset_top = -43.0
+offset_right = 68.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(998, 198)
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.60784316, 0.5921569, 0.74509805, 0.39215687)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = SubResource("FontVariation_q5ntj")
+theme_override_font_sizes/font_size = 62
+text = "INFO"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Background/MarginContainer/MainLayout/ScrollContainer/ScrollVBox/VBoxContainer/InfoHeader/TextureRect2" unique_id=327629757]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = -22.5
+offset_right = -75.0
+offset_bottom = 27.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_3r0sb")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="InfoContainer" type="VBoxContainer" parent="HBoxContainer/Background/MarginContainer/MainLayout/ScrollContainer/ScrollVBox/VBoxContainer" unique_id=784245675]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.2
+theme_override_constants/separation = 25
+alignment = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="PrivacyPolicyRow" type="Control" parent="HBoxContainer/Background/MarginContainer/MainLayout/ScrollContainer/ScrollVBox/VBoxContainer/InfoContainer" unique_id=808815600]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.01
+mouse_filter = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Background" type="Panel" parent="HBoxContainer/Background/MarginContainer/MainLayout/ScrollContainer/ScrollVBox/VBoxContainer/InfoContainer/PrivacyPolicyRow" unique_id=841966428]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxTexture_4mv28")
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="ContentMargin" type="MarginContainer" parent="HBoxContainer/Background/MarginContainer/MainLayout/ScrollContainer/ScrollVBox/VBoxContainer/InfoContainer/PrivacyPolicyRow/Background" unique_id=426048096]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 48
+theme_override_constants/margin_right = 48
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/Background/MarginContainer/MainLayout/ScrollContainer/ScrollVBox/VBoxContainer/InfoContainer/PrivacyPolicyRow/Background/ContentMargin" unique_id=1155873127]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Label" type="Label" parent="HBoxContainer/Background/MarginContainer/MainLayout/ScrollContainer/ScrollVBox/VBoxContainer/InfoContainer/PrivacyPolicyRow/Background/ContentMargin/HBoxContainer" unique_id=965700576]
+custom_minimum_size = Vector2(117, 29)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.60784316, 0.5921569, 0.74509805, 0.39215687)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = SubResource("FontVariation_waa6d")
+theme_override_font_sizes/font_size = 56
+text = "Privacy Policy"
+vertical_alignment = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureButton" type="TextureButton" parent="HBoxContainer/Background/MarginContainer/MainLayout/ScrollContainer/ScrollVBox/VBoxContainer/InfoContainer/PrivacyPolicyRow/Background/ContentMargin/HBoxContainer" unique_id=297404908]
+custom_minimum_size = Vector2(212, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.25
+mouse_filter = 1
+texture_normal = ExtResource("16_q58k5")
+texture_hover = ExtResource("16_q58k5")
+ignore_texture_size = true
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Label" type="Label" parent="HBoxContainer/Background/MarginContainer/MainLayout/ScrollContainer/ScrollVBox/VBoxContainer/InfoContainer/PrivacyPolicyRow/Background/ContentMargin/HBoxContainer/TextureButton" unique_id=1078826731]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -41.5
+offset_top = -42.0
+offset_right = 41.5
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.17254902, 0.35686275, 0.023529412, 0.39215687)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = SubResource("FontVariation_w1c3a")
+theme_override_font_sizes/font_size = 50
+text = "View"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="CreditsRow" type="Control" parent="HBoxContainer/Background/MarginContainer/MainLayout/ScrollContainer/ScrollVBox/VBoxContainer/InfoContainer" unique_id=1015566778]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.01
+mouse_filter = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Background" type="Panel" parent="HBoxContainer/Background/MarginContainer/MainLayout/ScrollContainer/ScrollVBox/VBoxContainer/InfoContainer/CreditsRow" unique_id=221176391]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxTexture_4mv28")
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="ContentMargin" type="MarginContainer" parent="HBoxContainer/Background/MarginContainer/MainLayout/ScrollContainer/ScrollVBox/VBoxContainer/InfoContainer/CreditsRow/Background" unique_id=1761290743]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 48
+theme_override_constants/margin_right = 48
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/Background/MarginContainer/MainLayout/ScrollContainer/ScrollVBox/VBoxContainer/InfoContainer/CreditsRow/Background/ContentMargin" unique_id=2036079228]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Label" type="Label" parent="HBoxContainer/Background/MarginContainer/MainLayout/ScrollContainer/ScrollVBox/VBoxContainer/InfoContainer/CreditsRow/Background/ContentMargin/HBoxContainer" unique_id=530084730]
+custom_minimum_size = Vector2(117, 29)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.60784316, 0.5921569, 0.74509805, 0.39215687)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = SubResource("FontVariation_o076p")
+theme_override_font_sizes/font_size = 56
+text = "Credits"
+vertical_alignment = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Credits" type="TextureButton" parent="HBoxContainer/Background/MarginContainer/MainLayout/ScrollContainer/ScrollVBox/VBoxContainer/InfoContainer/CreditsRow/Background/ContentMargin/HBoxContainer" unique_id=1218112925]
+custom_minimum_size = Vector2(212, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.25
+mouse_filter = 1
+texture_normal = ExtResource("16_q58k5")
+texture_hover = ExtResource("16_q58k5")
+ignore_texture_size = true
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Label" type="Label" parent="HBoxContainer/Background/MarginContainer/MainLayout/ScrollContainer/ScrollVBox/VBoxContainer/InfoContainer/CreditsRow/Background/ContentMargin/HBoxContainer/Credits" unique_id=794403933]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -42.0
+offset_top = -42.0
+offset_right = 41.0
+offset_bottom = 31.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.17254902, 0.35686275, 0.023529412, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = SubResource("FontVariation_itcjc")
+theme_override_font_sizes/font_size = 50
+text = "View"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer/Background/MarginContainer/MainLayout/ScrollContainer/ScrollVBox" unique_id=18771515]
+layout_mode = 2
+theme_override_constants/separation = 24
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="AccountHeader" type="Control" parent="HBoxContainer/Background/MarginContainer/MainLayout/ScrollContainer/ScrollVBox/VBoxContainer2" unique_id=916788352]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.07
+mouse_filter = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Background/MarginContainer/MainLayout/ScrollContainer/ScrollVBox/VBoxContainer2/AccountHeader" unique_id=1981794045]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_q58k5")
+expand_mode = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Label" type="Label" parent="HBoxContainer/Background/MarginContainer/MainLayout/ScrollContainer/ScrollVBox/VBoxContainer2/AccountHeader/TextureRect" unique_id=1328186684]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -113.25
+offset_top = -52.0
+offset_right = 113.25
+offset_bottom = 52.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.60784316, 0.5921569, 0.74509805, 0.39215687)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = SubResource("FontVariation_q58k5")
+theme_override_font_sizes/font_size = 62
+text = "ACCOUNTS"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Background/MarginContainer/MainLayout/ScrollContainer/ScrollVBox/VBoxContainer2/AccountHeader/TextureRect" unique_id=647702772]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -190.0
+offset_top = -25.0
+offset_right = -135.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("16_o076p")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="AccountContainer" type="VBoxContainer" parent="HBoxContainer/Background/MarginContainer/MainLayout/ScrollContainer/ScrollVBox/VBoxContainer2" unique_id=1363339938]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.2
+theme_override_constants/separation = 25
+alignment = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="LogoutRow" type="Control" parent="HBoxContainer/Background/MarginContainer/MainLayout/ScrollContainer/ScrollVBox/VBoxContainer2/AccountContainer" unique_id=1045579947]
+visible = false
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.01
+mouse_filter = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Background" type="Panel" parent="HBoxContainer/Background/MarginContainer/MainLayout/ScrollContainer/ScrollVBox/VBoxContainer2/AccountContainer/LogoutRow" unique_id=610885516]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxTexture_4mv28")
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="ContentMargin" type="MarginContainer" parent="HBoxContainer/Background/MarginContainer/MainLayout/ScrollContainer/ScrollVBox/VBoxContainer2/AccountContainer/LogoutRow/Background" unique_id=886308720]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 48
+theme_override_constants/margin_right = 48
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/Background/MarginContainer/MainLayout/ScrollContainer/ScrollVBox/VBoxContainer2/AccountContainer/LogoutRow/Background/ContentMargin" unique_id=1512179664]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Label" type="Label" parent="HBoxContainer/Background/MarginContainer/MainLayout/ScrollContainer/ScrollVBox/VBoxContainer2/AccountContainer/LogoutRow/Background/ContentMargin/HBoxContainer" unique_id=925638092]
+custom_minimum_size = Vector2(117, 29)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.60784316, 0.5921569, 0.74509805, 0.39215687)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = SubResource("FontVariation_5nmt0")
+theme_override_font_sizes/font_size = 56
+text = "Log Out"
+vertical_alignment = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureButton" type="TextureButton" parent="HBoxContainer/Background/MarginContainer/MainLayout/ScrollContainer/ScrollVBox/VBoxContainer2/AccountContainer/LogoutRow/Background/ContentMargin/HBoxContainer" unique_id=1716285459]
+custom_minimum_size = Vector2(212, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.25
+mouse_filter = 1
+texture_normal = ExtResource("18_q58k5")
+texture_hover = ExtResource("18_q58k5")
+ignore_texture_size = true
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Label" type="Label" parent="HBoxContainer/Background/MarginContainer/MainLayout/ScrollContainer/ScrollVBox/VBoxContainer2/AccountContainer/LogoutRow/Background/ContentMargin/HBoxContainer/TextureButton" unique_id=374092504]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -74.0
+offset_top = -39.0
+offset_right = 74.0
+offset_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.60784316, 0.5921569, 0.74509805, 0.39215687)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = SubResource("FontVariation_3r0sb")
+theme_override_font_sizes/font_size = 50
+text = "Log Out"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="AccountDeletion" type="Control" parent="HBoxContainer/Background/MarginContainer/MainLayout/ScrollContainer/ScrollVBox/VBoxContainer2/AccountContainer" unique_id=579921794]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.01
+mouse_filter = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Background" type="Panel" parent="HBoxContainer/Background/MarginContainer/MainLayout/ScrollContainer/ScrollVBox/VBoxContainer2/AccountContainer/AccountDeletion" unique_id=59329283]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxTexture_4mv28")
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="ContentMargin" type="MarginContainer" parent="HBoxContainer/Background/MarginContainer/MainLayout/ScrollContainer/ScrollVBox/VBoxContainer2/AccountContainer/AccountDeletion/Background" unique_id=943417723]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 48
+theme_override_constants/margin_right = 48
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/Background/MarginContainer/MainLayout/ScrollContainer/ScrollVBox/VBoxContainer2/AccountContainer/AccountDeletion/Background/ContentMargin" unique_id=119117724]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Label" type="Label" parent="HBoxContainer/Background/MarginContainer/MainLayout/ScrollContainer/ScrollVBox/VBoxContainer2/AccountContainer/AccountDeletion/Background/ContentMargin/HBoxContainer" unique_id=1146379069]
+custom_minimum_size = Vector2(117, 29)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.60784316, 0.5921569, 0.74509805, 0.39215687)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = SubResource("FontVariation_5nmt0")
+theme_override_font_sizes/font_size = 56
+text = "Delete Account"
+vertical_alignment = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="delete" type="TextureButton" parent="HBoxContainer/Background/MarginContainer/MainLayout/ScrollContainer/ScrollVBox/VBoxContainer2/AccountContainer/AccountDeletion/Background/ContentMargin/HBoxContainer" unique_id=610446395]
+custom_minimum_size = Vector2(212, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.25
+mouse_filter = 1
+texture_normal = ExtResource("18_q58k5")
+texture_hover = ExtResource("18_q58k5")
+ignore_texture_size = true
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Label" type="Label" parent="HBoxContainer/Background/MarginContainer/MainLayout/ScrollContainer/ScrollVBox/VBoxContainer2/AccountContainer/AccountDeletion/Background/ContentMargin/HBoxContainer/delete" unique_id=1153646409]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -74.0
+offset_top = -39.0
+offset_right = 74.0
+offset_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.60784316, 0.5921569, 0.74509805, 0.39215687)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = SubResource("FontVariation_3r0sb")
+theme_override_font_sizes/font_size = 50
+text = "Delete"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Title" type="Label" parent="HBoxContainer/Background/MarginContainer/MainLayout/ScrollContainer/ScrollVBox" unique_id=1264160782]
+layout_mode = 2
+size_flags_vertical = 6
+size_flags_stretch_ratio = 0.12
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 0.6039216)
+theme_override_colors/font_shadow_color = Color(0.60784316, 0.5921569, 0.74509805, 0.39215687)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 0.39215687)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = SubResource("FontVariation_fnfok")
+theme_override_font_sizes/font_size = 45
+text = "19.0.0-1448-(RLS)arm64"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[connection signal="pressed" from="HBoxContainer/Background/MarginContainer/MainLayout/ScrollContainer/ScrollVBox/VBoxContainer2/AccountContainer/AccountDeletion/Background/ContentMargin/HBoxContainer/delete" to="." method="_on_delete_pressed"]

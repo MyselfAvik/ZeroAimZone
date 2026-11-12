@@ -1,0 +1,135 @@
+[gd_scene format=3 uid="uid://crfp7hw0l4fkr"]
+
+[ext_resource type="Script" uid="uid://cqjh1a3wq4wb8" path="res://ZeroAimZone-Godot/2_Prefabs/level(temp)/obstacle_area.gd" id="1_nx7ol"]
+[ext_resource type="PackedScene" uid="uid://c3dka6eipfnd5" path="res://ZeroAimZone-Godot/2_Prefabs/level(temp)/TestBall.tscn" id="2_nx7ol"]
+[ext_resource type="Texture2D" uid="uid://d2bd38wfmy60i" path="res://ZeroAimZone-Godot/3_Assets/Sprites/temp/bg_oppo_card.png" id="3_ue2sh"]
+[ext_resource type="PackedScene" uid="uid://dh5bqqbva0smn" path="res://ZeroAimZone-Godot/3_Assets/obstacles/Laser/LaserObstacle.tscn" id="4_y1qbp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nx7ol"]
+size = Vector2(1198.9985, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ue2sh"]
+size = Vector2(204.47205, 224.27107)
+
+[node name="ObstacleArea" type="Control" unique_id=1657331004]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nx7ol")
+test_ball_scene = ExtResource("2_nx7ol")
+
+[node name="Panel" type="Panel" parent="." unique_id=304781516]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -450.0
+offset_top = -600.0
+offset_right = 450.0
+offset_bottom = 600.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Panel" unique_id=346728334]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.8784314)
+
+[node name="Walls" type="Node2D" parent="Panel" unique_id=369021010]
+
+[node name="RapierStaticBody2D" type="StaticBody2D" parent="Panel/Walls" unique_id=64114257]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Panel/Walls/RapierStaticBody2D" unique_id=1806189945]
+position = Vector2(441, 8)
+shape = SubResource("RectangleShape2D_nx7ol")
+
+[node name="Line2D" type="Line2D" parent="Panel/Walls/RapierStaticBody2D/CollisionShape2D" unique_id=862199005]
+visible = false
+points = PackedVector2Array(-443, -3, 447, -8)
+width = 12.0
+
+[node name="RapierStaticBody2D2" type="StaticBody2D" parent="Panel/Walls" unique_id=1324337779]
+position = Vector2(0, 157)
+rotation = 1.5736885
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Panel/Walls/RapierStaticBody2D2" unique_id=435498954]
+position = Vector2(441.001, -0.27545166)
+shape = SubResource("RectangleShape2D_nx7ol")
+
+[node name="Line2D" type="Line2D" parent="Panel/Walls/RapierStaticBody2D2/CollisionShape2D" unique_id=955407129]
+visible = false
+position = Vector2(7.9980807, -9.298585)
+scale = Vector2(1.348787, 1)
+points = PackedVector2Array(-443, -3, 447, -8)
+width = 12.0
+
+[node name="RapierStaticBody2D3" type="StaticBody2D" parent="Panel/Walls" unique_id=1901178817]
+position = Vector2(896, 8)
+rotation = 1.5734882
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Panel/Walls/RapierStaticBody2D3" unique_id=1582635446]
+position = Vector2(587.49915, 7.999939)
+shape = SubResource("RectangleShape2D_nx7ol")
+
+[node name="Line2D" type="Line2D" parent="Panel/Walls/RapierStaticBody2D3/CollisionShape2D" unique_id=260969127]
+visible = false
+points = PackedVector2Array(-585.48566, -3.0054321, 596.502, -9.187195)
+width = 12.0
+
+[node name="RapierStaticBody2D4" type="StaticBody2D" parent="Panel/Walls" unique_id=1713665359]
+position = Vector2(5, 1191)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Panel/Walls/RapierStaticBody2D4" unique_id=768461492]
+position = Vector2(441, 8)
+shape = SubResource("RectangleShape2D_nx7ol")
+
+[node name="Line2D" type="Line2D" parent="Panel/Walls/RapierStaticBody2D4/CollisionShape2D" unique_id=874825324]
+visible = false
+points = PackedVector2Array(-443, -3, 447, -8)
+width = 12.0
+
+[node name="ObstacleContainer" type="Node2D" parent="Panel" unique_id=716021590]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Panel/ObstacleContainer" unique_id=586688280]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel/ObstacleContainer/StaticBody2D" unique_id=707415221]
+visible = false
+modulate = Color(0.9411765, 0.9411765, 0.9411765, 1)
+position = Vector2(471.71393, 569.75116)
+rotation = 0.4920445
+scale = Vector2(0.253, 0.16031206)
+texture = ExtResource("3_ue2sh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Panel/ObstacleContainer/StaticBody2D" unique_id=1492314633]
+visible = false
+position = Vector2(468.70355, 575.053)
+rotation = 0.4920445
+shape = SubResource("RectangleShape2D_ue2sh")
+disabled = true
+
+[node name="LaserObstacle" parent="Panel/ObstacleContainer" unique_id=1110678332 instance=ExtResource("4_y1qbp")]
+position = Vector2(-91, -149)
+
+[node name="Node2D" type="Node2D" parent="Panel" unique_id=1519738837]
+position = Vector2(3, -276)
+
+[node name="PlayerSpawn" type="Marker2D" parent="Panel/Node2D" unique_id=1980191119]
+visible = false
+position = Vector2(176, 405)
+
+[node name="EnemySpawn" type="Marker2D" parent="Panel/Node2D" unique_id=632508195]
+visible = false
+position = Vector2(739, 332)
+
+[node name="TestBallSpawn" type="Marker2D" parent="Panel/Node2D" unique_id=864194928]
+position = Vector2(471, 313)

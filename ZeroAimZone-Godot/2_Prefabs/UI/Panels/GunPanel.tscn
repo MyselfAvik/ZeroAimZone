@@ -1,0 +1,679 @@
+[gd_scene format=3 uid="uid://cyn8kcyqe7s07"]
+
+[ext_resource type="Script" uid="uid://dgr24h8e6geqp" path="res://ZeroAimZone-Godot/1_Scripts/UI_Controllers/GunPanelController.gd" id="1_lgu0y"]
+[ext_resource type="Resource" uid="uid://beyhjmowv3yds" path="res://ZeroAimZone-Godot/4_Resources/Tres/all_gun_data.tres" id="2_tymmh"]
+[ext_resource type="Resource" uid="uid://bkdff2m74ylv0" path="res://ZeroAimZone-Godot/4_Resources/Tres/Single_Player_Data.tres" id="4_61qm6"]
+[ext_resource type="Texture2D" uid="uid://di5x5c30jxh5a" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/CommonButton/BlueBtn.png" id="5_j80vy"]
+[ext_resource type="Script" uid="uid://c1umaqh6220vy" path="res://addons/SmoothScroll/smooth_scroll_container.gd" id="5_og4m6"]
+[ext_resource type="Texture2D" uid="uid://bd0h1coxlr1q1" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/CommonButton/GreenButtonNOShadow.png" id="6_s4fe3"]
+[ext_resource type="Script" uid="uid://bp2ueafm1hjdu" path="res://addons/SmoothScroll/scroll_damper/expo_scroll_damper.gd" id="6_tymmh"]
+[ext_resource type="PackedScene" uid="uid://s2m1tw5x7n4p" path="res://ZeroAimZone-Godot/2_Prefabs/UI/UICards/GunCard.tscn" id="6_vtu2q"]
+[ext_resource type="PackedScene" uid="uid://ca5if83nrx16b" path="res://ZeroAimZone-Godot/2_Prefabs/UI/UICards/GunStatsCard.tscn" id="7_gun_stats"]
+[ext_resource type="Texture2D" uid="uid://c1hocycbp0nhj" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/GunPanel/Activetect.png" id="7_s4fe3"]
+[ext_resource type="Texture2D" uid="uid://br5ebddhrv50v" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/GunPanel/Inactivetect.png" id="8_mip2s"]
+[ext_resource type="AudioStream" uid="uid://gkh5cvg1wwyp" path="res://ZeroAimZone-Godot/3_Assets/AudioTracks/The Button.mp3" id="10_4u5u4"]
+[ext_resource type="Script" uid="uid://be5v725nuybix" path="res://ZeroAimZone-Godot/1_Scripts/Utils/HorizontalScroll.gd.gd" id="11_8fu8u"]
+[ext_resource type="FontFile" uid="uid://dobi5yff3px2t" path="res://ZeroAimZone-Godot/3_Assets/Fonts/BarlowCondensed-SemiBold.ttf" id="11_yqxaw"]
+[ext_resource type="PackedScene" uid="uid://dw6u33pmmonev" path="res://ZeroAimZone-Godot/2_Prefabs/UI/UICards/GunSkinContainer.tscn" id="12_8fu8u"]
+[ext_resource type="FontFile" uid="uid://10wk3avcupsd" path="res://ZeroAimZone-Godot/3_Assets/Fonts/BarlowCondensed-Bold.ttf" id="12_61qm6"]
+[ext_resource type="Texture2D" uid="uid://bhhbpy5bc8l6e" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/CommonBg/Titlebg.png" id="13_j80vy"]
+[ext_resource type="Texture2D" uid="uid://buthv2g2714oo" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/GunPanel/bronze.png" id="15_mip2s"]
+[ext_resource type="Texture2D" uid="uid://06sl4fbdpiqq" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/GunPanel/Tierbg.png" id="18_fn4we"]
+[ext_resource type="Texture2D" uid="uid://cgym87wixopwt" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/GunPanel/silver.png" id="18_nvl1i"]
+[ext_resource type="Texture2D" uid="uid://dpvi2abjlj2oy" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/GunPanel/gold.png" id="19_4u5u4"]
+[ext_resource type="Texture2D" uid="uid://diqhufa3raon6" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/GunPanel/selecttierbg.png" id="19_s4fe3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s4fe3"]
+atlas = ExtResource("7_s4fe3")
+region = Rect2(0, 8.017128, 429, 105.98287)
+
+[sub_resource type="LabelSettings" id="LabelSettings_vtu2q"]
+font = ExtResource("12_61qm6")
+font_size = 54
+
+[sub_resource type="Resource" id="Resource_og4m6"]
+script = ExtResource("6_tymmh")
+
+[sub_resource type="Resource" id="Resource_tymmh"]
+script = ExtResource("6_tymmh")
+
+[sub_resource type="LabelSettings" id="LabelSettings_36kdi"]
+font = ExtResource("11_yqxaw")
+font_size = 62
+
+[sub_resource type="LabelSettings" id="LabelSettings_8fu8u"]
+font = ExtResource("11_yqxaw")
+font_size = 62
+
+[sub_resource type="LabelSettings" id="LabelSettings_61qm6"]
+font = ExtResource("11_yqxaw")
+font_size = 62
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mip2s"]
+atlas = ExtResource("18_fn4we")
+region = Rect2(5.967856, 0, 912.0805, 107)
+
+[sub_resource type="FontVariation" id="FontVariation_vtu2q"]
+base_font = ExtResource("11_yqxaw")
+
+[sub_resource type="FontVariation" id="FontVariation_36kdi"]
+base_font = ExtResource("11_yqxaw")
+
+[sub_resource type="FontVariation" id="FontVariation_j80vy"]
+base_font = ExtResource("11_yqxaw")
+
+[node name="GunPanel" type="Control" unique_id=1464647650 node_paths=PackedStringArray("weapon_btn", "cosmetic_btn", "weapon", "cosmetic", "tier_highlight")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_lgu0y")
+all_gun_data = ExtResource("2_tymmh")
+gun_stats_card_scene = ExtResource("7_gun_stats")
+single_player_data = ExtResource("4_61qm6")
+equipped_texture = ExtResource("5_j80vy")
+equip_texture = ExtResource("6_s4fe3")
+weapon_btn = NodePath("HBoxContainer/VBoxContainer/MarginContainer/HBoxContainer/WeaponBtn")
+cosmetic_btn = NodePath("HBoxContainer/VBoxContainer/MarginContainer/HBoxContainer/CosmeticBtn")
+active_texture = SubResource("AtlasTexture_s4fe3")
+inactive_texture = ExtResource("8_mip2s")
+weapon = NodePath("HBoxContainer/VBoxContainer/Weapon")
+cosmetic = NodePath("HBoxContainer/VBoxContainer/Cosmetic")
+tier_highlight = NodePath("HBoxContainer/VBoxContainer/Cosmetic/TierSelector/SelectedTierHighlight")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=948788833]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=1952563218]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/VBoxContainer" unique_id=360419311]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/MarginContainer" unique_id=1546700573]
+custom_minimum_size = Vector2(910, 100)
+layout_mode = 2
+size_flags_vertical = 6
+size_flags_stretch_ratio = 0.1
+theme_override_constants/separation = 66
+alignment = 1
+
+[node name="WeaponBtn" type="TextureButton" parent="HBoxContainer/VBoxContainer/MarginContainer/HBoxContainer" unique_id=1370875625]
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = SubResource("AtlasTexture_s4fe3")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/MarginContainer/HBoxContainer/WeaponBtn" unique_id=1910427641]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Weapon"
+label_settings = SubResource("LabelSettings_vtu2q")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="CosmeticBtn" type="TextureButton" parent="HBoxContainer/VBoxContainer/MarginContainer/HBoxContainer" unique_id=918161863]
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("8_mip2s")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/MarginContainer/HBoxContainer/CosmeticBtn" unique_id=1611337318]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 7.0
+offset_right = -8.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Cosmetics"
+label_settings = SubResource("LabelSettings_vtu2q")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Weapon" type="VBoxContainer" parent="HBoxContainer/VBoxContainer" unique_id=1187014666]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer/VBoxContainer/Weapon" unique_id=1003267277]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+script = ExtResource("5_og4m6")
+wheel_scroll_damper = SubResource("Resource_og4m6")
+dragging_scroll_damper = SubResource("Resource_tymmh")
+
+[node name="ContentVBox" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/Weapon/ScrollContainer" unique_id=483006514]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 15
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="StreetWeaponsHeader" type="TextureRect" parent="HBoxContainer/VBoxContainer/Weapon/ScrollContainer/ContentVBox" unique_id=978945001]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("13_j80vy")
+expand_mode = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/Weapon/ScrollContainer/ContentVBox/StreetWeaponsHeader" unique_id=1791478109]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -44.0
+offset_right = 230.0
+offset_bottom = 31.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "STREET WEAPON"
+label_settings = SubResource("LabelSettings_36kdi")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer/Weapon/ScrollContainer/ContentVBox/StreetWeaponsHeader" unique_id=1485360584]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -224.0
+offset_top = -42.0
+offset_right = -154.0
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(1041, 69)
+texture = ExtResource("15_mip2s")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="StreetWeaponsScroll" type="ScrollContainer" parent="HBoxContainer/VBoxContainer/Weapon/ScrollContainer/ContentVBox" unique_id=879735663 node_paths=PackedStringArray("parent_scroll")]
+layout_mode = 2
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 0
+script = ExtResource("11_8fu8u")
+parent_scroll = NodePath("../..")
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/VBoxContainer/Weapon/ScrollContainer/ContentVBox/StreetWeaponsScroll" unique_id=1115916824]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="StreetWeaponsHBox" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/Weapon/ScrollContainer/ContentVBox/StreetWeaponsScroll/MarginContainer" unique_id=999834407]
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="GunCard" parent="HBoxContainer/VBoxContainer/Weapon/ScrollContainer/ContentVBox/StreetWeaponsScroll/MarginContainer/StreetWeaponsHBox" unique_id=1780634996 instance=ExtResource("6_vtu2q")]
+layout_mode = 2
+mouse_filter = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="GunCard2" parent="HBoxContainer/VBoxContainer/Weapon/ScrollContainer/ContentVBox/StreetWeaponsScroll/MarginContainer/StreetWeaponsHBox" unique_id=2068915122 instance=ExtResource("6_vtu2q")]
+layout_mode = 2
+mouse_filter = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="GunCard3" parent="HBoxContainer/VBoxContainer/Weapon/ScrollContainer/ContentVBox/StreetWeaponsScroll/MarginContainer/StreetWeaponsHBox" unique_id=379554505 instance=ExtResource("6_vtu2q")]
+layout_mode = 2
+mouse_filter = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="ProWeaponsHeader" type="TextureRect" parent="HBoxContainer/VBoxContainer/Weapon/ScrollContainer/ContentVBox" unique_id=1246650385]
+custom_minimum_size = Vector2(960, 100)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("13_j80vy")
+expand_mode = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/Weapon/ScrollContainer/ContentVBox/ProWeaponsHeader" unique_id=1337900783]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -124.0
+offset_top = -44.0
+offset_right = 188.0
+offset_bottom = 31.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "Pro Weapons"
+label_settings = SubResource("LabelSettings_8fu8u")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer/Weapon/ScrollContainer/ContentVBox/ProWeaponsHeader" unique_id=632585663]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -214.0
+offset_top = -40.0
+offset_right = -144.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(2831, 125)
+texture = ExtResource("18_nvl1i")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="ProWeaponsScroll2" type="ScrollContainer" parent="HBoxContainer/VBoxContainer/Weapon/ScrollContainer/ContentVBox" unique_id=289872663 node_paths=PackedStringArray("parent_scroll")]
+layout_mode = 2
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 0
+script = ExtResource("11_8fu8u")
+parent_scroll = NodePath("../..")
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/VBoxContainer/Weapon/ScrollContainer/ContentVBox/ProWeaponsScroll2" unique_id=1639827620]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="ProWeaponsHBox" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/Weapon/ScrollContainer/ContentVBox/ProWeaponsScroll2/MarginContainer" unique_id=610304879]
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="GunCard" parent="HBoxContainer/VBoxContainer/Weapon/ScrollContainer/ContentVBox/ProWeaponsScroll2/MarginContainer/ProWeaponsHBox" unique_id=1609882838 instance=ExtResource("6_vtu2q")]
+layout_mode = 2
+mouse_filter = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="GunCard2" parent="HBoxContainer/VBoxContainer/Weapon/ScrollContainer/ContentVBox/ProWeaponsScroll2/MarginContainer/ProWeaponsHBox" unique_id=1386160697 instance=ExtResource("6_vtu2q")]
+layout_mode = 2
+mouse_filter = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="GunCard3" parent="HBoxContainer/VBoxContainer/Weapon/ScrollContainer/ContentVBox/ProWeaponsScroll2/MarginContainer/ProWeaponsHBox" unique_id=1049100550 instance=ExtResource("6_vtu2q")]
+layout_mode = 2
+mouse_filter = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="ApexWeaponsHeader" type="TextureRect" parent="HBoxContainer/VBoxContainer/Weapon/ScrollContainer/ContentVBox" unique_id=5599641]
+custom_minimum_size = Vector2(960, 100)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("13_j80vy")
+expand_mode = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/Weapon/ScrollContainer/ContentVBox/ApexWeaponsHeader" unique_id=1042617816]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -106.0
+offset_top = -43.0
+offset_right = 232.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "Apex Weapons"
+label_settings = SubResource("LabelSettings_61qm6")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer/Weapon/ScrollContainer/ContentVBox/ApexWeaponsHeader" unique_id=851866127]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -194.0
+offset_top = -41.0
+offset_right = -124.0
+offset_bottom = 29.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("19_4u5u4")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="ApexWeaponsScroll2" type="ScrollContainer" parent="HBoxContainer/VBoxContainer/Weapon/ScrollContainer/ContentVBox" unique_id=1305602952 node_paths=PackedStringArray("parent_scroll")]
+layout_mode = 2
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 0
+script = ExtResource("11_8fu8u")
+parent_scroll = NodePath("../..")
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/VBoxContainer/Weapon/ScrollContainer/ContentVBox/ApexWeaponsScroll2" unique_id=1642605445]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="ApexWeaponsHBox" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/Weapon/ScrollContainer/ContentVBox/ApexWeaponsScroll2/MarginContainer" unique_id=1959332781]
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="GunCard" parent="HBoxContainer/VBoxContainer/Weapon/ScrollContainer/ContentVBox/ApexWeaponsScroll2/MarginContainer/ApexWeaponsHBox" unique_id=1004226203 instance=ExtResource("6_vtu2q")]
+layout_mode = 2
+mouse_filter = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="GunCard2" parent="HBoxContainer/VBoxContainer/Weapon/ScrollContainer/ContentVBox/ApexWeaponsScroll2/MarginContainer/ApexWeaponsHBox" unique_id=1388107401 instance=ExtResource("6_vtu2q")]
+layout_mode = 2
+mouse_filter = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="GunCard3" parent="HBoxContainer/VBoxContainer/Weapon/ScrollContainer/ContentVBox/ApexWeaponsScroll2/MarginContainer/ApexWeaponsHBox" unique_id=1525536412 instance=ExtResource("6_vtu2q")]
+layout_mode = 2
+mouse_filter = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Cosmetic" type="VBoxContainer" parent="HBoxContainer/VBoxContainer" unique_id=1456966623]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 30
+
+[node name="TierSelector" type="Control" parent="HBoxContainer/VBoxContainer/Cosmetic" unique_id=376573064]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="Background" type="TextureRect" parent="HBoxContainer/VBoxContainer/Cosmetic/TierSelector" unique_id=469772204]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("AtlasTexture_mip2s")
+expand_mode = 1
+
+[node name="SelectedTierHighlight" type="TextureRect" parent="HBoxContainer/VBoxContainer/Cosmetic/TierSelector" unique_id=1612803512]
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.33333334
+anchor_right = 0.6666667
+anchor_bottom = 1.0
+offset_right = -0.00030517578
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("19_s4fe3")
+expand_mode = 1
+
+[node name="ProBtn" type="Button" parent="HBoxContainer/VBoxContainer/Cosmetic/TierSelector" unique_id=664203241]
+z_index = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 0.33333334
+anchor_bottom = 1.0
+offset_left = 9.0
+offset_top = -50.0
+offset_right = -0.00033569336
+offset_bottom = -14.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/Cosmetic/TierSelector/ProBtn" unique_id=1799709443]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = -30.0
+offset_right = 35.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource("FontVariation_vtu2q")
+theme_override_font_sizes/font_size = 50
+text = "PRO"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ProBtn2" type="Button" parent="HBoxContainer/VBoxContainer/Cosmetic/TierSelector" unique_id=1085615392]
+z_index = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.33333334
+anchor_right = 0.6666667
+anchor_bottom = 1.0
+offset_left = 1.6666565
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/Cosmetic/TierSelector/ProBtn2" unique_id=736619201]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = -30.0
+offset_right = 35.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource("FontVariation_36kdi")
+theme_override_font_sizes/font_size = 50
+text = "STREET"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ProBtn3" type="Button" parent="HBoxContainer/VBoxContainer/Cosmetic/TierSelector" unique_id=1090501864]
+z_index = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.6666667
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -8.0
+offset_bottom = -14.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/Cosmetic/TierSelector/ProBtn3" unique_id=341625946]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = -30.0
+offset_right = 35.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource("FontVariation_j80vy")
+theme_override_font_sizes/font_size = 50
+text = "APEX"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer/VBoxContainer/Cosmetic" unique_id=1462763398]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+script = ExtResource("5_og4m6")
+wheel_scroll_damper = SubResource("Resource_og4m6")
+dragging_scroll_damper = SubResource("Resource_tymmh")
+
+[node name="ContentVBox" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/Cosmetic/ScrollContainer" unique_id=749124875]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 15
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="GunSkinContainer" parent="HBoxContainer/VBoxContainer/Cosmetic/ScrollContainer/ContentVBox" unique_id=453301573 node_paths=PackedStringArray("parent_Scroll") instance=ExtResource("12_8fu8u")]
+layout_mode = 2
+parent_Scroll = NodePath("../..")
+
+[node name="GunSkinContainer2" parent="HBoxContainer/VBoxContainer/Cosmetic/ScrollContainer/ContentVBox" unique_id=1092997500 node_paths=PackedStringArray("parent_Scroll") instance=ExtResource("12_8fu8u")]
+layout_mode = 2
+parent_Scroll = NodePath("../..")
+
+[node name="GunSkinContainer3" parent="HBoxContainer/VBoxContainer/Cosmetic/ScrollContainer/ContentVBox" unique_id=1807574364 node_paths=PackedStringArray("parent_Scroll") instance=ExtResource("12_8fu8u")]
+layout_mode = 2
+parent_Scroll = NodePath("../..")
+
+[node name="GunSkinContainer4" parent="HBoxContainer/VBoxContainer/Cosmetic/ScrollContainer/ContentVBox" unique_id=1996138706 node_paths=PackedStringArray("parent_Scroll") instance=ExtResource("12_8fu8u")]
+layout_mode = 2
+parent_Scroll = NodePath("../..")
+
+[node name="GunSkinContainer5" parent="HBoxContainer/VBoxContainer/Cosmetic/ScrollContainer/ContentVBox" unique_id=99728076 node_paths=PackedStringArray("parent_Scroll") instance=ExtResource("12_8fu8u")]
+layout_mode = 2
+parent_Scroll = NodePath("../..")
+
+[node name="GunSkinContainer6" parent="HBoxContainer/VBoxContainer/Cosmetic/ScrollContainer/ContentVBox" unique_id=173590734 node_paths=PackedStringArray("parent_Scroll") instance=ExtResource("12_8fu8u")]
+layout_mode = 2
+parent_Scroll = NodePath("../..")
+
+[node name="GunSkinContainer7" parent="HBoxContainer/VBoxContainer/Cosmetic/ScrollContainer/ContentVBox" unique_id=529309355 node_paths=PackedStringArray("parent_Scroll") instance=ExtResource("12_8fu8u")]
+layout_mode = 2
+parent_Scroll = NodePath("../..")
+
+[node name="GunSkinContainer8" parent="HBoxContainer/VBoxContainer/Cosmetic/ScrollContainer/ContentVBox" unique_id=2122270690 node_paths=PackedStringArray("parent_Scroll") instance=ExtResource("12_8fu8u")]
+layout_mode = 2
+parent_Scroll = NodePath("../..")
+
+[node name="GunSkinContainer9" parent="HBoxContainer/VBoxContainer/Cosmetic/ScrollContainer/ContentVBox" unique_id=76571525 node_paths=PackedStringArray("parent_Scroll") instance=ExtResource("12_8fu8u")]
+layout_mode = 2
+parent_Scroll = NodePath("../..")
+
+[node name="Control" type="Control" parent="HBoxContainer/VBoxContainer/Cosmetic" unique_id=1594067618]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/Cosmetic/Control" unique_id=715795968]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -201.0
+offset_top = -34.5
+offset_right = 201.0
+offset_bottom = 34.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+mouse_filter = 1
+theme_override_font_sizes/font_size = 50
+text = "Unlock the guns!"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureButton" type="TextureButton" parent="HBoxContainer/VBoxContainer/Cosmetic/Control" unique_id=1889501046]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = 64.5
+offset_right = 125.0
+offset_bottom = 164.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/Cosmetic/Control/TextureButton" unique_id=703241497]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_font_sizes/font_size = 50
+text = "Play Again"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/MarginContainer/HBoxContainer/WeaponBtn" to="." method="_on_weapon_btn_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/MarginContainer/HBoxContainer/CosmeticBtn" to="." method="_on_cosmetic_btn_pressed"]

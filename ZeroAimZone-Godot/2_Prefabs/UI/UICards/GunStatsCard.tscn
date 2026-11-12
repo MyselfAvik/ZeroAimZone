@@ -1,0 +1,770 @@
+[gd_scene format=3 uid="uid://ca5if83nrx16b"]
+
+[ext_resource type="Script" uid="uid://dw4f4lchyninl" path="res://ZeroAimZone-Godot/1_Scripts/UI_Controllers/GunStatsCard.gd" id="1_gun_stats_card"]
+[ext_resource type="Texture2D" uid="uid://dy3bm5bliegw4" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/Profile/gun_bg.png" id="2_watrt"]
+[ext_resource type="Texture2D" uid="uid://blne76am08wvw" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/CommonButton/Close Container.png" id="3_faxvq"]
+[ext_resource type="Texture2D" uid="uid://buthv2g2714oo" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/GunPanel/bronze.png" id="4_iqero"]
+[ext_resource type="Texture2D" uid="uid://bhhbpy5bc8l6e" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/CommonBg/Titlebg.png" id="4_watrt"]
+[ext_resource type="FontFile" uid="uid://10wk3avcupsd" path="res://ZeroAimZone-Godot/3_Assets/Fonts/BarlowCondensed-Bold.ttf" id="5_6ne7t"]
+[ext_resource type="AudioStream" uid="uid://gkh5cvg1wwyp" path="res://ZeroAimZone-Godot/3_Assets/AudioTracks/The Button.mp3" id="5_grvlk"]
+[ext_resource type="FontFile" uid="uid://dobi5yff3px2t" path="res://ZeroAimZone-Godot/3_Assets/Fonts/BarlowCondensed-SemiBold.ttf" id="5_watrt"]
+[ext_resource type="Texture2D" uid="uid://obt4oap47sqt" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/Profile/damage.png" id="7_wub3p"]
+[ext_resource type="Texture2D" uid="uid://4cv5fcj2afau" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/Profile/magazine.png" id="8_1rknw"]
+[ext_resource type="Texture2D" uid="uid://52u41oriff7y" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/Profile/stats_bg.png" id="8_duvmo"]
+[ext_resource type="Texture2D" uid="uid://dx7qjtohbrdu" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/Profile/inactive_points.png" id="8_jrcms"]
+[ext_resource type="Texture2D" uid="uid://bsgr8oo4avqt3" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/Profile/reload.png" id="10_jrcms"]
+[ext_resource type="Texture2D" uid="uid://ygti7rmv0igf" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/InGamePanel/bullet_active.png" id="11_faxvq"]
+[ext_resource type="Texture2D" uid="uid://ckxd52leikyfb" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/Profile/Bullet_bg.png" id="15_duvmo"]
+
+[sub_resource type="Gradient" id="Gradient_6ne7t"]
+colors = PackedColorArray(0, 0, 0, 0.654902, 0, 0, 0, 0.654902)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_iqero"]
+gradient = SubResource("Gradient_6ne7t")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_impge"]
+texture = ExtResource("2_watrt")
+
+[sub_resource type="FontVariation" id="FontVariation_duvmo"]
+base_font = ExtResource("5_watrt")
+
+[sub_resource type="LabelSettings" id="LabelSettings_jjqcb"]
+font = SubResource("FontVariation_duvmo")
+font_size = 62
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_watrt"]
+load_path = "res://.godot/imported/beretta.png-f613e2a75863624441c61bff535dcb3e.ctex"
+
+[sub_resource type="LabelSettings" id="LabelSettings_1rknw"]
+font = ExtResource("5_6ne7t")
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_jrcms"]
+font = ExtResource("5_6ne7t")
+font_size = 32
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_duvmo"]
+region = Rect2(3159, 1102, 179, 180)
+
+[sub_resource type="LabelSettings" id="LabelSettings_7ynpe"]
+font = ExtResource("5_6ne7t")
+font_size = 32
+
+[node name="GunStatsPopup" type="Control" unique_id=1830059382 node_paths=PackedStringArray("title_label", "gun_image", "damage_label", "accuracy_label", "reload_label", "magazine_label", "damage_container", "magazine_container", "accuracy_container", "reload_container", "bullet_img", "muzzle_img", "bullet_trail_img", "close_btn")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gun_stats_card")
+title_label = NodePath("ModalPanel/Header/HBoxContainer/Gun_name")
+gun_image = NodePath("ModalPanel/gun")
+damage_label = NodePath("ModalPanel/stat/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/Damage")
+accuracy_label = NodePath("ModalPanel/stat/VBoxContainer/HBoxContainer3/VBoxContainer/HBoxContainer/Accuracy")
+reload_label = NodePath("ModalPanel/stat/VBoxContainer/HBoxContainer4/VBoxContainer/HBoxContainer/Reload")
+magazine_label = NodePath("ModalPanel/stat/VBoxContainer/HBoxContainer2/VBoxContainer/HBoxContainer/Magazine")
+damage_container = NodePath("ModalPanel/stat/VBoxContainer/HBoxContainer/VBoxContainer/DamageContainer")
+magazine_container = NodePath("ModalPanel/stat/VBoxContainer/HBoxContainer2/VBoxContainer/MagazineContainer")
+accuracy_container = NodePath("ModalPanel/stat/VBoxContainer/HBoxContainer3/VBoxContainer/AccuracyContainer")
+reload_container = NodePath("ModalPanel/stat/VBoxContainer/HBoxContainer4/VBoxContainer/ReloadContainer")
+bullet_img = NodePath("ModalPanel/bullets_bg/TextureRect")
+muzzle_img = NodePath("ModalPanel/Muzzle_bg/TextureRect")
+bullet_trail_img = NodePath("ModalPanel/Bullet_Trail/TextureRect")
+close_btn = NodePath("ModalPanel/CloseBtn")
+
+[node name="ColorRect" type="TextureRect" parent="." unique_id=1571800563]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_iqero")
+expand_mode = 1
+
+[node name="ModalPanel" type="Panel" parent="." unique_id=711187064]
+custom_minimum_size = Vector2(860, 620)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -455.0
+offset_top = -400.0
+offset_right = 455.0
+offset_bottom = 400.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_impge")
+
+[node name="CloseBtn" type="TextureButton" parent="ModalPanel" unique_id=1335377275]
+z_index = 20
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -35.0
+offset_top = -25.0
+offset_right = 35.0
+offset_bottom = 45.0
+grow_horizontal = 0
+texture_normal = ExtResource("3_faxvq")
+texture_hover = ExtResource("3_faxvq")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Header" type="TextureRect" parent="ModalPanel" unique_id=1682261349]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_right = 6.0
+offset_bottom = 96.0
+grow_horizontal = 2
+mouse_filter = 2
+texture = ExtResource("4_watrt")
+expand_mode = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ModalPanel/Header" unique_id=472116239]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_right = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/separation = 22
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="ModalPanel/Header/HBoxContainer" unique_id=1342709398]
+custom_minimum_size = Vector2(80.47, 0)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("4_iqero")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Gun_name" type="Label" parent="ModalPanel/Header/HBoxContainer" unique_id=2052628507]
+layout_mode = 2
+text = "GLock 7"
+label_settings = SubResource("LabelSettings_jjqcb")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="gun" type="TextureRect" parent="ModalPanel" unique_id=2050874312]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 43.0
+offset_top = -321.0
+offset_right = 553.0
+offset_bottom = 169.0
+grow_vertical = 2
+rotation = -0.17453292
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = SubResource("CompressedTexture2D_watrt")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="stat" type="TextureRect" parent="ModalPanel" unique_id=876318338]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 105.0
+offset_top = -160.0
+offset_right = 425.0
+offset_bottom = 114.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_duvmo")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ModalPanel/stat" unique_id=418293834]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 25.0
+offset_top = 21.0
+offset_right = -25.0
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ModalPanel/stat/VBoxContainer" unique_id=1950759903]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 15
+
+[node name="TextureRect" type="TextureRect" parent="ModalPanel/stat/VBoxContainer/HBoxContainer" unique_id=919251401]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+texture = ExtResource("7_wub3p")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ModalPanel/stat/VBoxContainer/HBoxContainer" unique_id=1443675669]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ModalPanel/stat/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1413901943]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="name" type="Label" parent="ModalPanel/stat/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=392457478]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Damage"
+label_settings = SubResource("LabelSettings_1rknw")
+
+[node name="Damage" type="Label" parent="ModalPanel/stat/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=1483988201]
+layout_mode = 2
+text = "20"
+label_settings = SubResource("LabelSettings_jrcms")
+
+[node name="DamageContainer" type="HBoxContainer" parent="ModalPanel/stat/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1524256234]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="1" type="TextureRect" parent="ModalPanel/stat/VBoxContainer/HBoxContainer/VBoxContainer/DamageContainer" unique_id=905025007]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("8_jrcms")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="2" type="TextureRect" parent="ModalPanel/stat/VBoxContainer/HBoxContainer/VBoxContainer/DamageContainer" unique_id=1976412925]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("8_jrcms")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="3" type="TextureRect" parent="ModalPanel/stat/VBoxContainer/HBoxContainer/VBoxContainer/DamageContainer" unique_id=2037716373]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("8_jrcms")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="4" type="TextureRect" parent="ModalPanel/stat/VBoxContainer/HBoxContainer/VBoxContainer/DamageContainer" unique_id=1157135204]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("8_jrcms")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="5" type="TextureRect" parent="ModalPanel/stat/VBoxContainer/HBoxContainer/VBoxContainer/DamageContainer" unique_id=1625648614]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("8_jrcms")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="6" type="TextureRect" parent="ModalPanel/stat/VBoxContainer/HBoxContainer/VBoxContainer/DamageContainer" unique_id=1642187912]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("8_jrcms")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="7" type="TextureRect" parent="ModalPanel/stat/VBoxContainer/HBoxContainer/VBoxContainer/DamageContainer" unique_id=768879767]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("8_jrcms")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="8" type="TextureRect" parent="ModalPanel/stat/VBoxContainer/HBoxContainer/VBoxContainer/DamageContainer" unique_id=1061845429]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("8_jrcms")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="9" type="TextureRect" parent="ModalPanel/stat/VBoxContainer/HBoxContainer/VBoxContainer/DamageContainer" unique_id=29697060]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("8_jrcms")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="10" type="TextureRect" parent="ModalPanel/stat/VBoxContainer/HBoxContainer/VBoxContainer/DamageContainer" unique_id=401736394]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("8_jrcms")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="ModalPanel/stat/VBoxContainer" unique_id=1103288068]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 15
+
+[node name="TextureRect" type="TextureRect" parent="ModalPanel/stat/VBoxContainer/HBoxContainer2" unique_id=320204845]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+texture = ExtResource("8_1rknw")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ModalPanel/stat/VBoxContainer/HBoxContainer2" unique_id=774945669]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ModalPanel/stat/VBoxContainer/HBoxContainer2/VBoxContainer" unique_id=657359311]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="name" type="Label" parent="ModalPanel/stat/VBoxContainer/HBoxContainer2/VBoxContainer/HBoxContainer" unique_id=1567954713]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Magazine"
+label_settings = SubResource("LabelSettings_1rknw")
+
+[node name="Magazine" type="Label" parent="ModalPanel/stat/VBoxContainer/HBoxContainer2/VBoxContainer/HBoxContainer" unique_id=1988152263]
+layout_mode = 2
+text = "45"
+label_settings = SubResource("LabelSettings_jrcms")
+
+[node name="MagazineContainer" type="HBoxContainer" parent="ModalPanel/stat/VBoxContainer/HBoxContainer2/VBoxContainer" unique_id=1890200365]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="1" type="TextureRect" parent="ModalPanel/stat/VBoxContainer/HBoxContainer2/VBoxContainer/MagazineContainer" unique_id=685285407]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("8_jrcms")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="2" type="TextureRect" parent="ModalPanel/stat/VBoxContainer/HBoxContainer2/VBoxContainer/MagazineContainer" unique_id=800081336]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("8_jrcms")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="3" type="TextureRect" parent="ModalPanel/stat/VBoxContainer/HBoxContainer2/VBoxContainer/MagazineContainer" unique_id=1272638746]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("8_jrcms")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="4" type="TextureRect" parent="ModalPanel/stat/VBoxContainer/HBoxContainer2/VBoxContainer/MagazineContainer" unique_id=1249474607]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("8_jrcms")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="5" type="TextureRect" parent="ModalPanel/stat/VBoxContainer/HBoxContainer2/VBoxContainer/MagazineContainer" unique_id=410223161]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("8_jrcms")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="6" type="TextureRect" parent="ModalPanel/stat/VBoxContainer/HBoxContainer2/VBoxContainer/MagazineContainer" unique_id=1489911863]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("8_jrcms")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="7" type="TextureRect" parent="ModalPanel/stat/VBoxContainer/HBoxContainer2/VBoxContainer/MagazineContainer" unique_id=1934500896]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("8_jrcms")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="8" type="TextureRect" parent="ModalPanel/stat/VBoxContainer/HBoxContainer2/VBoxContainer/MagazineContainer" unique_id=2081154035]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("8_jrcms")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="9" type="TextureRect" parent="ModalPanel/stat/VBoxContainer/HBoxContainer2/VBoxContainer/MagazineContainer" unique_id=525272954]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("8_jrcms")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="10" type="TextureRect" parent="ModalPanel/stat/VBoxContainer/HBoxContainer2/VBoxContainer/MagazineContainer" unique_id=978626914]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("8_jrcms")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="ModalPanel/stat/VBoxContainer" unique_id=1993504873]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="ModalPanel/stat/VBoxContainer/HBoxContainer3" unique_id=805593388]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+texture = SubResource("AtlasTexture_duvmo")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ModalPanel/stat/VBoxContainer/HBoxContainer3" unique_id=1021160165]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ModalPanel/stat/VBoxContainer/HBoxContainer3/VBoxContainer" unique_id=492548901]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="name" type="Label" parent="ModalPanel/stat/VBoxContainer/HBoxContainer3/VBoxContainer/HBoxContainer" unique_id=1957345686]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Accuracy"
+label_settings = SubResource("LabelSettings_1rknw")
+
+[node name="Accuracy" type="Label" parent="ModalPanel/stat/VBoxContainer/HBoxContainer3/VBoxContainer/HBoxContainer" unique_id=917554523]
+layout_mode = 2
+text = "20"
+label_settings = SubResource("LabelSettings_jrcms")
+
+[node name="AccuracyContainer" type="HBoxContainer" parent="ModalPanel/stat/VBoxContainer/HBoxContainer3/VBoxContainer" unique_id=1422100716]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="1" type="TextureRect" parent="ModalPanel/stat/VBoxContainer/HBoxContainer3/VBoxContainer/AccuracyContainer" unique_id=1281574221]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("8_jrcms")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="2" type="TextureRect" parent="ModalPanel/stat/VBoxContainer/HBoxContainer3/VBoxContainer/AccuracyContainer" unique_id=1676220510]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("8_jrcms")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="3" type="TextureRect" parent="ModalPanel/stat/VBoxContainer/HBoxContainer3/VBoxContainer/AccuracyContainer" unique_id=749311408]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("8_jrcms")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="4" type="TextureRect" parent="ModalPanel/stat/VBoxContainer/HBoxContainer3/VBoxContainer/AccuracyContainer" unique_id=1793183119]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("8_jrcms")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="5" type="TextureRect" parent="ModalPanel/stat/VBoxContainer/HBoxContainer3/VBoxContainer/AccuracyContainer" unique_id=1230740319]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("8_jrcms")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="6" type="TextureRect" parent="ModalPanel/stat/VBoxContainer/HBoxContainer3/VBoxContainer/AccuracyContainer" unique_id=1495794363]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("8_jrcms")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="7" type="TextureRect" parent="ModalPanel/stat/VBoxContainer/HBoxContainer3/VBoxContainer/AccuracyContainer" unique_id=1609837263]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("8_jrcms")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="8" type="TextureRect" parent="ModalPanel/stat/VBoxContainer/HBoxContainer3/VBoxContainer/AccuracyContainer" unique_id=956664575]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("8_jrcms")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="9" type="TextureRect" parent="ModalPanel/stat/VBoxContainer/HBoxContainer3/VBoxContainer/AccuracyContainer" unique_id=1266791679]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("8_jrcms")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="10" type="TextureRect" parent="ModalPanel/stat/VBoxContainer/HBoxContainer3/VBoxContainer/AccuracyContainer" unique_id=1092516426]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("8_jrcms")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="ModalPanel/stat/VBoxContainer" unique_id=156071635]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 15
+
+[node name="TextureRect" type="TextureRect" parent="ModalPanel/stat/VBoxContainer/HBoxContainer4" unique_id=1314079005]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+texture = ExtResource("10_jrcms")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ModalPanel/stat/VBoxContainer/HBoxContainer4" unique_id=1715558919]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ModalPanel/stat/VBoxContainer/HBoxContainer4/VBoxContainer" unique_id=348427024]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="name" type="Label" parent="ModalPanel/stat/VBoxContainer/HBoxContainer4/VBoxContainer/HBoxContainer" unique_id=670064279]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Reload"
+label_settings = SubResource("LabelSettings_1rknw")
+
+[node name="Reload" type="Label" parent="ModalPanel/stat/VBoxContainer/HBoxContainer4/VBoxContainer/HBoxContainer" unique_id=2067041608]
+layout_mode = 2
+text = "50ms"
+label_settings = SubResource("LabelSettings_jrcms")
+
+[node name="ReloadContainer" type="HBoxContainer" parent="ModalPanel/stat/VBoxContainer/HBoxContainer4/VBoxContainer" unique_id=1185782320]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="1" type="TextureRect" parent="ModalPanel/stat/VBoxContainer/HBoxContainer4/VBoxContainer/ReloadContainer" unique_id=1087825935]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("8_jrcms")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="2" type="TextureRect" parent="ModalPanel/stat/VBoxContainer/HBoxContainer4/VBoxContainer/ReloadContainer" unique_id=1714660118]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("8_jrcms")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="3" type="TextureRect" parent="ModalPanel/stat/VBoxContainer/HBoxContainer4/VBoxContainer/ReloadContainer" unique_id=1385351235]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("8_jrcms")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="4" type="TextureRect" parent="ModalPanel/stat/VBoxContainer/HBoxContainer4/VBoxContainer/ReloadContainer" unique_id=1363585480]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("8_jrcms")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="5" type="TextureRect" parent="ModalPanel/stat/VBoxContainer/HBoxContainer4/VBoxContainer/ReloadContainer" unique_id=1544793939]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("8_jrcms")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="6" type="TextureRect" parent="ModalPanel/stat/VBoxContainer/HBoxContainer4/VBoxContainer/ReloadContainer" unique_id=719680416]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("8_jrcms")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="7" type="TextureRect" parent="ModalPanel/stat/VBoxContainer/HBoxContainer4/VBoxContainer/ReloadContainer" unique_id=1419464622]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("8_jrcms")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="8" type="TextureRect" parent="ModalPanel/stat/VBoxContainer/HBoxContainer4/VBoxContainer/ReloadContainer" unique_id=814719079]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("8_jrcms")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="9" type="TextureRect" parent="ModalPanel/stat/VBoxContainer/HBoxContainer4/VBoxContainer/ReloadContainer" unique_id=1605140325]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("8_jrcms")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="10" type="TextureRect" parent="ModalPanel/stat/VBoxContainer/HBoxContainer4/VBoxContainer/ReloadContainer" unique_id=752807937]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("8_jrcms")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="bullets_bg" type="TextureRect" parent="ModalPanel" unique_id=1697561230]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 77.0
+offset_top = -250.0
+offset_right = 277.0
+offset_bottom = -40.0
+grow_vertical = 0
+texture = ExtResource("15_duvmo")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="ModalPanel/bullets_bg" unique_id=308650609]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -42.0
+offset_top = 10.0
+offset_right = 42.0
+offset_bottom = 51.0
+grow_horizontal = 2
+text = "Bullets"
+label_settings = SubResource("LabelSettings_7ynpe")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="ModalPanel/bullets_bg" unique_id=1743036344]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -52.5
+offset_top = -30.0
+offset_right = 52.5
+offset_bottom = 70.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_faxvq")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Muzzle_bg" type="TextureRect" parent="ModalPanel" unique_id=1625887139]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -97.0
+offset_top = -250.0
+offset_right = 103.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("15_duvmo")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="ModalPanel/Muzzle_bg" unique_id=1404559589]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -72.0
+offset_top = 10.0
+offset_right = 72.0
+offset_bottom = 51.0
+grow_horizontal = 2
+text = "Muzzle Flash"
+label_settings = SubResource("LabelSettings_7ynpe")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="ModalPanel/Muzzle_bg" unique_id=1833255244]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -52.5
+offset_top = -30.0
+offset_right = 52.5
+offset_bottom = 70.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_faxvq")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Bullet_Trail" type="TextureRect" parent="ModalPanel" unique_id=1225270663]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -272.0
+offset_top = -250.0
+offset_right = -72.0
+offset_bottom = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("15_duvmo")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="ModalPanel/Bullet_Trail" unique_id=1265893131]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -60.0
+offset_top = 10.0
+offset_right = 60.0
+offset_bottom = 51.0
+grow_horizontal = 2
+text = "Bullet trail"
+label_settings = SubResource("LabelSettings_7ynpe")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="ModalPanel/Bullet_Trail" unique_id=714911358]
+z_index = 3
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -30.0
+offset_right = 50.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_faxvq")
+expand_mode = 1
+stretch_mode = 5

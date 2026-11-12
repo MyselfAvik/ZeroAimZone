@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://dyvgr4giuksxl"]
+
+[ext_resource type="Script" uid="uid://diptag7e1dxju" path="res://ZeroAimZone-Godot/3_Assets/obstacles/ElectricRod/lightening.gd" id="1_4hd78"]
+[ext_resource type="Shader" uid="uid://ehqk2rte84oa" path="res://ZeroAimZone-Godot/3_Assets/obstacles/ElectricRod/lightening.gdshader" id="1_676ia"]
+[ext_resource type="Texture2D" uid="uid://cq7v64140ig1j" path="res://ZeroAimZone-Godot/3_Assets/obstacles/Laser/Sprites/glowing_circle.png" id="3_76nkq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4hd78"]
+shader = ExtResource("1_676ia")
+shader_parameter/effect_color = Color(0, 0.11372549, 1, 1)
+shader_parameter/octave_count = 60
+shader_parameter/amp_start = -0.11
+shader_parameter/amp_coeff = -0.64
+shader_parameter/freq_coeff = 3.0
+shader_parameter/speed = 500.0
+shader_parameter/bolt_width = 0.00999999977648
+shader_parameter/progress = 1.0
+shader_parameter/edge_softness = 0.5
+shader_parameter/glow_intensity = 1.50000002375
+shader_parameter/flicker_min = 1.0
+shader_parameter/core_boost = 3.0
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_lfbcl"]
+blend_mode = 1
+
+[sub_resource type="Gradient" id="Gradient_gv5ks"]
+offsets = PackedFloat32Array(0.24449877, 0.5378973, 0.78728604, 1)
+colors = PackedColorArray(0.12835406, 0.23209421, 1, 0.98700005, 0.41706786, 0.71416456, 1.1291975, 0.83100003, 0, 0.52289784, 1.1755697, 0.62600005, 1, 1, 1, 0.88235295)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_dab61"]
+gradient = SubResource("Gradient_gv5ks")
+use_hdr = true
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_yr6hq"]
+lifetime_randomness = 0.4
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(92, 20, 1)
+direction = Vector3(0, 0, 0)
+spread = 5.0
+initial_velocity_max = 5.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.08
+scale_max = 0.12
+color_ramp = SubResource("GradientTexture1D_dab61")
+
+[node name="Lightening" type="Node2D" unique_id=944327317]
+script = ExtResource("1_4hd78")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=24959663]
+material = SubResource("ShaderMaterial_4hd78")
+offset_right = 376.0
+offset_bottom = 368.0
+
+[node name="ColorRect3" type="ColorRect" parent="." unique_id=854488452]
+visible = false
+material = SubResource("ShaderMaterial_4hd78")
+offset_right = 376.0
+offset_bottom = 368.0
+
+[node name="ColorRect5" type="ColorRect" parent="." unique_id=1345158952]
+visible = false
+material = SubResource("ShaderMaterial_4hd78")
+offset_top = 4.0
+offset_right = 376.0
+offset_bottom = 372.0
+
+[node name="ColorRect6" type="ColorRect" parent="." unique_id=1102898978]
+visible = false
+material = SubResource("ShaderMaterial_4hd78")
+offset_top = 4.0
+offset_right = 376.0
+offset_bottom = 372.0
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=1195242559]
+visible = false
+material = SubResource("ShaderMaterial_4hd78")
+offset_left = 389.00003
+offset_top = 367.0
+offset_right = 765.0
+offset_bottom = 735.0
+rotation = -3.1427581
+
+[node name="ColorRect4" type="ColorRect" parent="." unique_id=1617308279]
+material = SubResource("ShaderMaterial_4hd78")
+offset_left = 389.00003
+offset_top = 367.0
+offset_right = 765.0
+offset_bottom = 735.0
+rotation = -3.1427581
+
+[node name="BeamParticles2D" type="GPUParticles2D" parent="." unique_id=1004657925]
+unique_name_in_owner = true
+material = SubResource("CanvasItemMaterial_lfbcl")
+position = Vector2(196, 184)
+rotation = 1.5707964
+scale = Vector2(1.85, 1.85)
+amount = 10
+texture = ExtResource("3_76nkq")
+lifetime = 0.25
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_yr6hq")

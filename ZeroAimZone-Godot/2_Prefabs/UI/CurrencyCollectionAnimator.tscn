@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://7giusgb8sr26"]
+
+[ext_resource type="Script" uid="uid://y0tsa0qxgefx" path="res://ZeroAimZone-Godot/1_Scripts/UI_Controllers/CurrencyCollectionAnimator.gd" id="1_currency_animator"]
+[ext_resource type="Texture2D" uid="uid://dhhl0c3uf25sq" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/ShopPanel/coin.png" id="2_gyphx"]
+[ext_resource type="Texture2D" uid="uid://bi73xexguxhwk" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/ShopPanel/headergem.png" id="3_qh5jo"]
+[ext_resource type="AudioStream" uid="uid://btmruqsgoxs22" path="res://ZeroAimZone-Godot/3_Assets/AudioTracks/Coin Jingle.mp3" id="4_qh5jo"]
+
+[node name="CurrencyCollectionAnimator" type="Control" unique_id=29981038]
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 2
+script = ExtResource("1_currency_animator")
+coin_texture = ExtResource("2_gyphx")
+diamond_texture = ExtResource("3_qh5jo")
+collection_sound = ExtResource("4_qh5jo")

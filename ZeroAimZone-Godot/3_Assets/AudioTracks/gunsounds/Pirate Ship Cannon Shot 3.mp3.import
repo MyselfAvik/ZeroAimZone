@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://hkvu4x6iunip"
+path="res://.godot/imported/Pirate Ship Cannon Shot 3.mp3-4d4f9c21f9c89413865fbbf87ae4ee0d.mp3str"
+
+[deps]
+
+source_file="res://ZeroAimZone-Godot/3_Assets/AudioTracks/gunsounds/Pirate Ship Cannon Shot 3.mp3"
+dest_files=["res://.godot/imported/Pirate Ship Cannon Shot 3.mp3-4d4f9c21f9c89413865fbbf87ae4ee0d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

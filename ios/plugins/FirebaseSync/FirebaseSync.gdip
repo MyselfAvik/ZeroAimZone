@@ -1,0 +1,16 @@
+[config]
+name="FirebaseSync"
+binary="FirebaseSync.release.xcframework"
+binary_debug="FirebaseSync.debug.xcframework"
+
+initialization="firebase_sync_init"
+deinitialization="firebase_sync_deinit"
+
+[dependencies]
+linked=[]
+embedded=[]
+system=["Foundation.framework", "CFNetwork.framework"]
+capabilities=[]
+files=[]
+
+[plist]

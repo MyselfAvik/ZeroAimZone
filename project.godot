@@ -1,0 +1,103 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[admob]
+
+general/android/app_id="ca-app-pub-8530302013109448~2325377678"
+general/ios/app_id="ca-app-pub-8530302013109448~6083070530"
+
+[application]
+
+config/name="Zero Aim Zone"
+config/version="0.0.21"
+run/main_scene="uid://bp2epqcxsqgvw"
+config/disable_project_settings_override=true
+config/quit_on_go_back=false
+config/features=PackedStringArray("4.6", "Mobile")
+run/max_fps=200
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/image="uid://ddoqtprdaxjr2"
+config/icon="uid://m6jsdqxigg16"
+
+[autoload]
+
+Env="*res://Autoloads/Env.gd"
+EventBus="*uid://deq7cv1qi3hvi"
+AuthManager="*res://Autoloads/AuthManager.gd"
+GameManager="*res://ZeroAimZone-Godot/1_Scripts/Managers/GameManager.gd"
+AudioPlayer="*uid://bqrs5mkdyo6rw"
+GodotPlayGameServices="*uid://bttrrhs3yd8mq"
+GameCenterManager="*res://Autoloads/GameCenterManager.gd"
+AnalyticsManager="*res://Autoloads/AnalyticsManager.gd"
+CrashlyticsManager="*res://Autoloads/CrashlyticsManager.gd"
+FCMManager="*res://Autoloads/FCMManager.gd"
+Firebase="*uid://cvb26atjckwlq"
+SceneManager="*res://ZeroAimZone-Godot/1_Scripts/Managers/SceneManager.gd"
+ImpactFX="*uid://d172sfee3n0pv"
+AdManager="*res://Autoloads/ADManager.gd"
+GameAnalysis="*res://Autoloads/GameAnalysis.gd"
+MetaAnalytics="*res://Autoloads/MetaAnalytics.gd"
+ChevronFX="*res://ZeroAimZone-Godot/3_Assets/obstacles/VFX/ChevronFX.gd"
+NetworkHandler="*res://ZeroAimZone-Godot/1_Scripts/Network/NetworkHandler.gd"
+PlayerPrefs="*res://Autoloads/PlayerPrefs.gd"
+TimeManager="*res://Autoloads/TimeManager.gd"
+
+[debug]
+
+gdscript/warnings/unused_variable=0
+gdscript/warnings/unused_parameter=0
+gdscript/warnings/unused_signal=0
+gdscript/warnings/shadowed_variable=0
+gdscript/warnings/shadowed_global_identifier=0
+gdscript/warnings/integer_division=0
+gdscript/warnings/narrowing_conversion=0
+
+[display]
+
+window/size/viewport_width=1080
+window/size/viewport_height=1920
+window/size/always_on_top=true
+window/size/window_width_override=450
+window/size/window_height_override=800
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+window/handheld/orientation=1
+
+[dotnet]
+
+project/assembly_name="New Game Project"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/FirebaseSync/plugin.cfg", "res://addons/GameAnalytics/plugin.cfg", "res://addons/GameView/plugin.cfg", "res://addons/GodotGooglePlayBilling/plugin.cfg", "res://addons/GodotPlayGameServices/plugin.cfg", "res://addons/SmoothScroll/plugin.cfg", "res://addons/admob/plugin.cfg", "res://addons/godot-firebase/plugin.cfg", "res://addons/trail_renderer/plugin.cfg")
+
+[input]
+
+Shoot={
+"deadzone": 0.2,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":1,"canceled":false,"pressed":false,"double_click":false,"script":null)
+]
+}
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+
+[physics]
+
+2d/run_on_separate_thread=true
+2d/physics_engine="Rapier2D"
+3d/physics_engine="Jolt Physics"
+
+[rendering]
+
+rendering_device/driver.windows="d3d12"
+renderer/rendering_method="mobile"
+textures/vram_compression/import_etc2_astc=true

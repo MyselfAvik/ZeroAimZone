@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://lmfuw8ge5omc"]
+
+[ext_resource type="Script" uid="uid://4gwmxanyc0l6" path="res://ZeroAimZone-Godot/1_Scripts/Game_controllers/Single_Player_Controller.gd" id="1_ev33i"]
+[ext_resource type="Resource" uid="uid://bkdff2m74ylv0" path="res://ZeroAimZone-Godot/4_Resources/Tres/Single_Player_Data.tres" id="2_h6lcl"]
+[ext_resource type="PackedScene" uid="uid://cfqyu0n6ko4p" path="res://ZeroAimZone-Godot/2_Prefabs/gunprefab (temp)/enemy_gun.tscn" id="3_h6lcl"]
+[ext_resource type="Resource" uid="uid://cr5wpte70y4xw" path="res://ZeroAimZone-Godot/4_Resources/Tres/ObstaclesList.tres" id="4_n11jl"]
+
+[node name="SinglePlayer" type="Node2D" unique_id=167846553]
+script = ExtResource("1_ev33i")
+single_player_data = ExtResource("2_h6lcl")
+enemyGun = ExtResource("3_h6lcl")
+obstacle_list = ExtResource("4_n11jl")

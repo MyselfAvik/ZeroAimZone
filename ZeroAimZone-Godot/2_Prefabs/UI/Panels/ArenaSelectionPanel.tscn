@@ -1,0 +1,359 @@
+[gd_scene format=3 uid="uid://dugh5alydkih2"]
+
+[ext_resource type="PackedScene" uid="uid://btjcv4n1ifxbb" path="res://ZeroAimZone-Godot/2_Prefabs/UI/UICards/Arena_Card.tscn" id="1_0w8sp"]
+[ext_resource type="Script" uid="uid://7gvhuy2ekge" path="res://ZeroAimZone-Godot/1_Scripts/UI_Controllers/ArenaSelectionPanelController.gd" id="1_wha45"]
+[ext_resource type="Resource" uid="uid://dtlk8hn2gu65w" path="res://ZeroAimZone-Godot/4_Resources/Tres/ArenaDatabase.tres" id="2_0c5ol"]
+[ext_resource type="Script" uid="uid://dwbw6kfjgwi8b" path="res://ZeroAimZone-Godot/1_Scripts/Utils/SafeArea.gd" id="2_xgnf0"]
+[ext_resource type="Script" uid="uid://bjvhjvpah3nod" path="res://ZeroAimZone-Godot/1_Scripts/UI_Controllers/PremiumCurrencyEffect.gd" id="3_7l8tu"]
+[ext_resource type="Texture2D" uid="uid://didfnm61eo3i3" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/CommonButton/CurrencyContainer.png" id="3_ict11"]
+[ext_resource type="Script" uid="uid://ypgpywrp6yy1" path="res://ZeroAimZone-Godot/1_Scripts/Utils/CustomCarousel.gd" id="3_qvobd"]
+[ext_resource type="Texture2D" uid="uid://dapm2hsogybmi" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/CommonBg/ui_common_bg.png" id="4_2rk2f"]
+[ext_resource type="Texture2D" uid="uid://beblrue3ywoon" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/CommonBg/OverLayblueBG.png" id="5_2rk2f"]
+[ext_resource type="Texture2D" uid="uid://pfvia1y1niep" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/CommonButton/back_button.png" id="6_03bwi"]
+[ext_resource type="Texture2D" uid="uid://cfr7ja8jqmcr4" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/CommonButton/currency_button.png" id="7_0c5ol"]
+[ext_resource type="Texture2D" uid="uid://bi73xexguxhwk" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/ShopPanel/headergem.png" id="8_03bwi"]
+[ext_resource type="Texture2D" uid="uid://rwvqbm11idf3" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/ShopPanel/headercoin.png" id="10_03bwi"]
+[ext_resource type="FontFile" uid="uid://10wk3avcupsd" path="res://ZeroAimZone-Godot/3_Assets/Fonts/BarlowCondensed-Bold.ttf" id="11_lqpcg"]
+[ext_resource type="Texture2D" uid="uid://rc5y8s74idj3" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/ArenaSelection/title_bg.png" id="12_0c5ol"]
+[ext_resource type="FontFile" uid="uid://b50qd8lfh3rbn" path="res://ZeroAimZone-Godot/3_Assets/Fonts/Teko-SemiBold.ttf" id="14_0c5ol"]
+[ext_resource type="Texture2D" uid="uid://b2jl87ksb3ux4" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/ArenaSelection/left_right_button.png" id="15_0c5ol"]
+[ext_resource type="Texture2D" uid="uid://d2x2cwle7gvpd" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/guns/street/glock17.png" id="15_2rk2f"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ict11"]
+texture = ExtResource("4_2rk2f")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2rk2f"]
+texture = ExtResource("5_2rk2f")
+
+[sub_resource type="LabelSettings" id="LabelSettings_0c5ol"]
+font = ExtResource("11_lqpcg")
+font_size = 44
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2rk2f"]
+atlas = ExtResource("15_2rk2f")
+region = Rect2(15, 93, 513, 355)
+
+[sub_resource type="LabelSettings" id="LabelSettings_03bwi"]
+font = ExtResource("14_0c5ol")
+font_size = 71
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(0, 1)
+
+[node name="ArenaSelectionPanel" type="Control" unique_id=87775884 node_paths=PackedStringArray("arena_card_parent", "coin_count_label", "diamond_count_label", "coin_button", "diamond_button")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_wha45")
+arena_database = ExtResource("2_0c5ol")
+diamond_texture_ios = ExtResource("3_ict11")
+arena_card_parent = NodePath("ArenaPanel/Bg/SafeArea/HBoxContainer/Control/MarginContainer/VBoxContainer/Arena")
+coin_count_label = NodePath("ArenaPanel/Bg/SafeArea/HBoxContainer/Control/Top_Control/Coin_btn/coin_count")
+diamond_count_label = NodePath("ArenaPanel/Bg/SafeArea/HBoxContainer/Control/Top_Control/Diamond_btn/diamond_count")
+premium_currency_effect_script = ExtResource("3_7l8tu")
+coin_button = NodePath("ArenaPanel/Bg/SafeArea/HBoxContainer/Control/Top_Control/Coin_btn")
+diamond_button = NodePath("ArenaPanel/Bg/SafeArea/HBoxContainer/Control/Top_Control/Diamond_btn")
+
+[node name="ArenaPanel" type="Panel" parent="." unique_id=893263142]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_ict11")
+
+[node name="Bg" type="Panel" parent="ArenaPanel" unique_id=771619345]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_2rk2f")
+
+[node name="SafeArea" type="Control" parent="ArenaPanel/Bg" unique_id=1308509661]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_xgnf0")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ArenaPanel/Bg/SafeArea" unique_id=103519952]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Control" type="Control" parent="ArenaPanel/Bg/SafeArea/HBoxContainer" unique_id=1067001046]
+custom_minimum_size = Vector2(1080, 0)
+layout_mode = 2
+
+[node name="Top_Control" type="Control" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/Control" unique_id=144515222]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 220.0
+grow_horizontal = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.15
+
+[node name="BackButton" type="TextureButton" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/Control/Top_Control" unique_id=270404580]
+layout_mode = 1
+offset_left = 83.0
+offset_top = 160.0
+offset_right = 151.0
+offset_bottom = 234.0
+texture_normal = ExtResource("6_03bwi")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Diamond_btn" type="TextureButton" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/Control/Top_Control" unique_id=429117500]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -550.0
+offset_top = 160.0
+offset_right = -330.0
+offset_bottom = 236.0
+grow_horizontal = 0
+texture_normal = ExtResource("7_0c5ol")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="diamond_icon" type="TextureRect" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/Control/Top_Control/Diamond_btn" unique_id=1605514666]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -53.0
+offset_right = 55.0
+offset_bottom = 47.0
+grow_vertical = 2
+texture = ExtResource("8_03bwi")
+expand_mode = 1
+
+[node name="diamond_icon_ios" type="TextureRect" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/Control/Top_Control/Diamond_btn" unique_id=1960267820]
+visible = false
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -5.0
+offset_top = -53.0
+offset_right = 70.0
+offset_bottom = 47.0
+grow_vertical = 2
+texture = ExtResource("8_03bwi")
+expand_mode = 1
+
+[node name="diamond_count" type="Label" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/Control/Top_Control/Diamond_btn" unique_id=1816139550]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -59.5
+offset_top = -35.0
+offset_right = 46.5
+offset_bottom = 23.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 45
+text = "444.4K"
+label_settings = SubResource("LabelSettings_0c5ol")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Coin_btn" type="TextureButton" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/Control/Top_Control" unique_id=1081767406]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -292.0
+offset_top = 160.0
+offset_right = -72.0
+offset_bottom = 236.0
+grow_horizontal = 0
+texture_normal = ExtResource("7_0c5ol")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="coin_icon" type="TextureRect" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/Control/Top_Control/Coin_btn" unique_id=2007734112]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -18.0
+offset_top = -53.0
+offset_right = 60.0
+offset_bottom = 42.0
+grow_vertical = 2
+texture = ExtResource("10_03bwi")
+expand_mode = 1
+
+[node name="coin_count" type="Label" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/Control/Top_Control/Coin_btn" unique_id=1838295670]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -56.5
+offset_top = -35.0
+offset_right = 51.5
+offset_bottom = 23.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "444.4K"
+label_settings = SubResource("LabelSettings_0c5ol")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/Control" unique_id=1156896670]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/Control/MarginContainer" unique_id=501761158]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Arena" type="Control" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/Control/MarginContainer/VBoxContainer" unique_id=73817385 node_paths=PackedStringArray("cards_container", "left_button", "right_button")]
+custom_minimum_size = Vector2(850, 1200)
+layout_mode = 2
+size_flags_vertical = 6
+mouse_filter = 2
+script = ExtResource("3_qvobd")
+cards_container = NodePath(".")
+left_button = NodePath("../../../LeftButton")
+right_button = NodePath("../../../RightButton")
+width_ratio = 1.0
+height_ratio = 1.0
+card_aspect = 0.7
+overlap = 0.92
+center_scale = 0.85
+side_opacity = 0.85
+
+[node name="ArenaCard1" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/Control/MarginContainer/VBoxContainer/Arena" unique_id=1378128530 instance=ExtResource("1_0w8sp")]
+layout_mode = 1
+
+[node name="ArenaCard2" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/Control/MarginContainer/VBoxContainer/Arena" unique_id=66647946 instance=ExtResource("1_0w8sp")]
+layout_mode = 1
+
+[node name="ArenaCard3" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/Control/MarginContainer/VBoxContainer/Arena" unique_id=538341145 instance=ExtResource("1_0w8sp")]
+layout_mode = 1
+
+[node name="ArenaTitle" type="Control" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/Control" unique_id=1529176556]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -279.0
+offset_top = 700.0
+offset_right = 293.0
+offset_bottom = 802.928
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/Control/ArenaTitle" unique_id=1839076327]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_0c5ol")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="GunTexture" type="TextureRect" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/Control/ArenaTitle/TextureRect" unique_id=453364006]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -101.46399
+offset_right = 169.0
+offset_bottom = 57.53601
+grow_vertical = 2
+rotation = -0.17453292
+pivot_offset_ratio = Vector2(0.5, 0.5)
+mouse_filter = 2
+texture = SubResource("AtlasTexture_2rk2f")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/Control/ArenaTitle/TextureRect" unique_id=2058491536]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -103.0
+offset_top = -44.96399
+offset_right = 112.0
+offset_bottom = 58.03601
+grow_horizontal = 2
+grow_vertical = 2
+text = "ARENA"
+label_settings = SubResource("LabelSettings_03bwi")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LeftButton" type="TextureButton" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/Control" unique_id=730300606]
+z_index = 1
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 87.0
+offset_top = -18.0
+offset_right = 156.0
+offset_bottom = 48.0
+grow_vertical = 2
+texture_normal = ExtResource("15_0c5ol")
+ignore_texture_size = true
+stretch_mode = 5
+flip_h = true
+
+[node name="RightButton" type="TextureButton" parent="ArenaPanel/Bg/SafeArea/HBoxContainer/Control" unique_id=25784922]
+z_index = 1
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -156.0
+offset_top = -19.0
+offset_right = -86.0
+offset_bottom = 51.0
+grow_horizontal = 0
+grow_vertical = 2
+texture_normal = ExtResource("15_0c5ol")
+ignore_texture_size = true
+stretch_mode = 5
+
+[connection signal="pressed" from="ArenaPanel/Bg/SafeArea/HBoxContainer/Control/Top_Control/BackButton" to="." method="_on_back_button_pressed"]

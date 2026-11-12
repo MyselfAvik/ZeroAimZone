@@ -1,0 +1,118 @@
+[gd_scene format=3 uid="uid://dymdhfaug6rf2"]
+
+[ext_resource type="Script" uid="uid://bkmj0x3euuh3a" path="res://ZeroAimZone-Godot/1_Scripts/UI_Controllers/RewardCardController.gd" id="1_dvj3q"]
+[ext_resource type="Shader" uid="uid://dxsl0vdqsld3v" path="res://ZeroAimZone-Godot/3_Assets/Shaders/RewardCard.gdshader" id="1_lmmrt"]
+[ext_resource type="Texture2D" uid="uid://00qjah7ajees" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/CommonBg/CardBg.png" id="2_lmmrt"]
+[ext_resource type="FontFile" uid="uid://10wk3avcupsd" path="res://ZeroAimZone-Godot/3_Assets/Fonts/BarlowCondensed-Bold.ttf" id="3_lmmrt"]
+[ext_resource type="Texture2D" uid="uid://cghihw7q8k6g5" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/Glows/gun_glow.png" id="5_l44kq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l44kq"]
+shader = ExtResource("1_lmmrt")
+shader_parameter/flash_amount = 0.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_1yf24"]
+font = ExtResource("3_lmmrt")
+font_size = 35
+
+[node name="RewardCard" type="TextureRect" unique_id=808661444 node_paths=PackedStringArray("reward_name", "image", "frame_icon", "reward_value")]
+z_index = 2
+material = SubResource("ShaderMaterial_l44kq")
+custom_minimum_size = Vector2(284, 430)
+offset_right = 276.0
+offset_bottom = 410.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture = ExtResource("2_lmmrt")
+expand_mode = 1
+script = ExtResource("1_dvj3q")
+reward_name = NodePath("Name")
+image = NodePath("Icon")
+frame_icon = NodePath("Icon/frame_icon")
+reward_value = NodePath("Value")
+
+[node name="Name" type="Label" parent="." unique_id=701379400]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 55.0
+grow_horizontal = 2
+size_flags_vertical = 6
+size_flags_stretch_ratio = 0.3
+text = "COins"
+label_settings = SubResource("LabelSettings_1yf24")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Glow" type="TextureRect" parent="." unique_id=133520690]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -162.5
+offset_top = -214.0
+offset_right = 150.5
+offset_bottom = 110.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.7
+mouse_filter = 2
+texture = ExtResource("5_l44kq")
+expand_mode = 1
+
+[node name="Icon" type="TextureRect" parent="." unique_id=1940125397]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -115.0
+offset_top = -142.0
+offset_right = 105.0
+offset_bottom = 73.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.6
+expand_mode = 1
+stretch_mode = 5
+
+[node name="frame_icon" type="TextureRect" parent="Icon" unique_id=827523825]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -38.0
+offset_top = -64.0
+offset_right = 38.0
+offset_bottom = -14.0
+grow_horizontal = 2
+grow_vertical = 0
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Value" type="Label" parent="." unique_id=304296199]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -107.0
+offset_right = -11.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 6
+size_flags_stretch_ratio = 0.3
+text = "COins"
+label_settings = SubResource("LabelSettings_1yf24")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true

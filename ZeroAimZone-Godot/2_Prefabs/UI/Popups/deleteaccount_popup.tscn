@@ -1,0 +1,173 @@
+[gd_scene format=3 uid="uid://6oviv234xixb"]
+
+[ext_resource type="Script" uid="uid://dq8chmocdppq2" path="res://ZeroAimZone-Godot/1_Scripts/UI_Controllers/DeleteAccountPopupController.gd" id="1_c0p4n"]
+[ext_resource type="Texture2D" uid="uid://cnesg1vmiu0jo" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/InGamePops/Exitpanel.png" id="2_6uwb0"]
+[ext_resource type="FontFile" uid="uid://bwi6e3xaodcgb" path="res://ZeroAimZone-Godot/3_Assets/Fonts/Teko-Bold.ttf" id="3_yjq3o"]
+[ext_resource type="FontFile" uid="uid://10wk3avcupsd" path="res://ZeroAimZone-Godot/3_Assets/Fonts/BarlowCondensed-Bold.ttf" id="4_vkhup"]
+[ext_resource type="FontFile" uid="uid://dobi5yff3px2t" path="res://ZeroAimZone-Godot/3_Assets/Fonts/BarlowCondensed-SemiBold.ttf" id="5_7qkpu"]
+[ext_resource type="Texture2D" uid="uid://beg2vumtjcik4" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/CommonButton/RedButtonNOShadow.png" id="6_67ec5"]
+[ext_resource type="Texture2D" uid="uid://bd0h1coxlr1q1" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/CommonButton/GreenButtonNOShadow.png" id="7_7h6xy"]
+[ext_resource type="AudioStream" uid="uid://gkh5cvg1wwyp" path="res://ZeroAimZone-Godot/3_Assets/AudioTracks/The Button.mp3" id="8_vkhup"]
+
+[sub_resource type="Gradient" id="Gradient_sa4p6"]
+offsets = PackedFloat32Array(0, 0.44929245, 1)
+colors = PackedColorArray(0, 0, 0, 0.654902, 0, 0, 0, 0.654902, 0, 0, 0, 0.654902)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_xn724"]
+gradient = SubResource("Gradient_sa4p6")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wavmv"]
+texture = ExtResource("2_6uwb0")
+
+[sub_resource type="FontVariation" id="FontVariation_ltxcg"]
+base_font = ExtResource("3_yjq3o")
+
+[sub_resource type="FontVariation" id="FontVariation_rwh14"]
+base_font = ExtResource("4_vkhup")
+
+[sub_resource type="FontVariation" id="FontVariation_sa4p6"]
+base_font = ExtResource("5_7qkpu")
+
+[sub_resource type="LabelSettings" id="LabelSettings_c0p4n"]
+font = ExtResource("5_7qkpu")
+font_size = 60
+
+[sub_resource type="FontVariation" id="FontVariation_6j76o"]
+base_font = ExtResource("4_vkhup")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rl4ek"]
+texture = ExtResource("6_67ec5")
+
+[sub_resource type="FontVariation" id="FontVariation_3f1jj"]
+base_font = ExtResource("4_vkhup")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h2vm0"]
+texture = ExtResource("7_7h6xy")
+
+[node name="DeleteAccountPopup" type="Control" unique_id=1279329849 node_paths=PackedStringArray("yes_button", "no_button")]
+z_index = 5
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_c0p4n")
+yes_button = NodePath("MainContainer/HBoxContainer/Yes")
+no_button = NodePath("MainContainer/HBoxContainer/No")
+
+[node name="Overlay" type="TextureButton" parent="." unique_id=852054833]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = SubResource("GradientTexture2D_xn724")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="MainContainer" type="Panel" parent="." unique_id=548632290]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -455.0
+offset_top = -367.0
+offset_right = 455.0
+offset_bottom = 367.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_wavmv")
+
+[node name="Label" type="Label" parent="MainContainer" unique_id=1103075106]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -72.0
+offset_top = 22.0
+offset_right = 72.0
+offset_bottom = 148.0
+grow_horizontal = 2
+theme_override_fonts/font = SubResource("FontVariation_ltxcg")
+theme_override_font_sizes/font_size = 87
+text = "DELETE ACCOUNT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="MainContainer" unique_id=198136280]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -345.0
+offset_top = 250.0
+offset_right = 377.0
+offset_bottom = 334.0
+grow_horizontal = 2
+theme_override_fonts/font = SubResource("FontVariation_rwh14")
+theme_override_font_sizes/font_size = 68
+text = "Are you sure. "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="MainContainer" unique_id=531967750]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -361.0
+offset_top = -419.0
+offset_right = 361.0
+offset_bottom = -331.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = SubResource("FontVariation_sa4p6")
+theme_override_font_sizes/font_size = 60
+text = "This action cannot be undone."
+label_settings = SubResource("LabelSettings_c0p4n")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainContainer" unique_id=2042094781]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -389.0
+offset_top = -163.0
+offset_right = 403.0
+offset_bottom = -43.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 60
+
+[node name="Yes" type="Button" parent="MainContainer/HBoxContainer" unique_id=418317327]
+custom_minimum_size = Vector2(360, 0)
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_6j76o")
+theme_override_font_sizes/font_size = 68
+theme_override_styles/normal = SubResource("StyleBoxTexture_rl4ek")
+theme_override_styles/hover = SubResource("StyleBoxTexture_rl4ek")
+text = "Yes"
+
+[node name="No" type="Button" parent="MainContainer/HBoxContainer" unique_id=1728900562]
+custom_minimum_size = Vector2(360, 0)
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_3f1jj")
+theme_override_font_sizes/font_size = 68
+theme_override_styles/normal = SubResource("StyleBoxTexture_h2vm0")
+theme_override_styles/hover = SubResource("StyleBoxTexture_h2vm0")
+text = "No"
+
+[connection signal="pressed" from="Overlay" to="." method="_on_overlay_pressed"]
+[connection signal="pressed" from="MainContainer/HBoxContainer/Yes" to="." method="_on_yes_pressed"]
+[connection signal="pressed" from="MainContainer/HBoxContainer/No" to="." method="_on_no_pressed"]

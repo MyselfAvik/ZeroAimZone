@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://drps1knxe4m4w"]
+
+[ext_resource type="Script" uid="uid://x3qru3lit25t" path="res://ZeroAimZone-Godot/3_Assets/obstacles/ElectricRod/electric_rod.gd" id="1_bj742"]
+[ext_resource type="Texture2D" uid="uid://nwjmfdlush1a" path="res://ZeroAimZone-Godot/3_Assets/obstacles/ElectricRod/Sprites/FigmaRod.png" id="2_bj742"]
+[ext_resource type="PackedScene" uid="uid://dyvgr4giuksxl" path="res://ZeroAimZone-Godot/3_Assets/obstacles/ElectricRod/lightening.tscn" id="4_jmfi8"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_bj742"]
+friction = 0.0
+rough = true
+bounce = 0.1
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bj742"]
+size = Vector2(397.55762, 0.004486084)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ytden"]
+size = Vector2(446.31696, 35.188812)
+
+[node name="ElectricRodPiece" type="Node2D" unique_id=566229091 node_paths=PackedStringArray("rod_sprite", "lightning", "area", "body")]
+script = ExtResource("1_bj742")
+rod_sprite = NodePath("RodSprite")
+lightning = NodePath("Lightening")
+area = NodePath("Area2D")
+body = NodePath("StaticBody2D")
+stun_time = 1.0
+
+[node name="RodSprite" type="Sprite2D" parent="." unique_id=240260604]
+position = Vector2(196.34023, 183)
+rotation = 3.9261625
+scale = Vector2(0.30173513, 0.26073942)
+texture = ExtResource("2_bj742")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=567972544]
+position = Vector2(28.340225, 22.999992)
+scale = Vector2(1, 1.1130441)
+physics_material_override = SubResource("PhysicsMaterial_bj742")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1492864043]
+position = Vector2(167.65977, 173.39835)
+rotation = -0.73485535
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("RectangleShape2D_bj742")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1896737380]
+position = Vector2(28.340225, 22.999992)
+scale = Vector2(1, 1.1130441)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=778990327]
+position = Vector2(159.85237, 156.4164)
+rotation = -0.7278183
+shape = SubResource("RectangleShape2D_ytden")
+
+[node name="Lightening" parent="." unique_id=944327317 instance=ExtResource("4_jmfi8")]
+position = Vector2(169.34023, -55)
+rotation = -5.478528
+scale = Vector2(1, 0.9405223)
+skew = -0.025820255

@@ -1,0 +1,192 @@
+[gd_scene format=3 uid="uid://ybx00kxyp3ya"]
+
+[ext_resource type="Script" uid="uid://dhxt5k4gg2avn" path="res://ZeroAimZone-Godot/1_Scripts/UI_Controllers/LoadingPanelController.gd" id="1_a4kdf"]
+[ext_resource type="Texture2D" uid="uid://dapm2hsogybmi" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/CommonBg/ui_common_bg.png" id="2_upcgn"]
+[ext_resource type="Texture2D" uid="uid://beblrue3ywoon" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/CommonBg/OverLayblueBG.png" id="3_qa5en"]
+[ext_resource type="FontFile" uid="uid://giru623cv661" path="res://ZeroAimZone-Godot/3_Assets/Fonts/BarlowCondensed-Medium.ttf" id="4_puwb7"]
+[ext_resource type="Texture2D" uid="uid://cfmxoo3fcomtr" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/LoadingPanel/game_logo.png" id="4_upcgn"]
+[ext_resource type="Texture2D" uid="uid://bqrrbxakrxupu" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/LoadingPanel/flash.png" id="6_w1bg5"]
+[ext_resource type="Texture2D" uid="uid://cv44kfjnh0n5s" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/LoadingPanel/bullet.png" id="7_puwb7"]
+[ext_resource type="Texture2D" uid="uid://dhop3nronb10l" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/LoadingPanel/HAND HOLDING GUN.png" id="7_qa5en"]
+[ext_resource type="Texture2D" uid="uid://jw14mrflybh" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/LoadingPanel/target.png" id="9_edfbi"]
+[ext_resource type="Texture2D" uid="uid://ce8j8fyyatvp1" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/LoadingPanel/repair.png" id="10_edfbi"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_puwb7"]
+texture = ExtResource("2_upcgn")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_upcgn"]
+atlas = ExtResource("9_edfbi")
+region = Rect2(6, 4, 64, 64)
+
+[node name="LoadingPanel" type="Control" unique_id=2030769867 node_paths=PackedStringArray("fire", "moving_bullet", "hand_with_gun")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_a4kdf")
+fire = NodePath("Panel/Background/BarContainer/BarBG/Fire")
+moving_bullet = NodePath("Panel/Background/BarContainer/BarBG/Bullet")
+hand_with_gun = NodePath("Panel/Background/BarContainer/BarBG/HoldingGun")
+
+[node name="Panel" type="Panel" parent="." unique_id=349697601]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_puwb7")
+
+[node name="Background" type="TextureRect" parent="Panel" unique_id=360996399]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_qa5en")
+expand_mode = 1
+
+[node name="Logo" type="TextureRect" parent="Panel/Background" unique_id=1528440426]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -449.5
+offset_top = -781.0
+offset_right = 449.5
+offset_bottom = -181.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_upcgn")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="BarContainer" type="Control" parent="Panel/Background" unique_id=718855139]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LoadingLabel" type="Label" parent="Panel/Background/BarContainer" unique_id=1975258092]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -110.0
+offset_top = -603.0
+offset_right = 110.0
+offset_bottom = -507.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.16470589, 0.24705882, 0.5882353, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_fonts/font = ExtResource("4_puwb7")
+theme_override_font_sizes/font_size = 80
+text = "Loading"
+
+[node name="BarBG" type="TextureRect" parent="Panel/Background/BarContainer" unique_id=247814309]
+custom_minimum_size = Vector2(500, 25)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -400.0
+offset_top = -370.0
+offset_right = 400.0
+offset_bottom = -320.0
+grow_horizontal = 2
+grow_vertical = 0
+expand_mode = 1
+
+[node name="Fire" type="TextureRect" parent="Panel/Background/BarContainer/BarBG" unique_id=1646442907]
+layout_mode = 1
+offset_left = 88.0
+offset_top = -88.0
+offset_right = 118.0
+offset_bottom = -58.0
+texture = ExtResource("6_w1bg5")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Bullet" type="TextureRect" parent="Panel/Background/BarContainer/BarBG" unique_id=763308825]
+layout_mode = 1
+offset_left = 105.0
+offset_top = -88.0
+offset_right = 135.0
+offset_bottom = -58.0
+texture = ExtResource("7_puwb7")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="HoldingGun" type="TextureRect" parent="Panel/Background/BarContainer/BarBG" unique_id=1337953531]
+layout_mode = 1
+offset_left = -30.0
+offset_top = -110.0
+offset_right = 90.0
+offset_bottom = 10.0
+texture = ExtResource("7_qa5en")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Aim" type="TextureRect" parent="Panel/Background/BarContainer/BarBG" unique_id=1804614913]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -30.0
+offset_top = -110.0
+offset_right = 40.0
+offset_bottom = -40.0
+grow_horizontal = 0
+texture = SubResource("AtlasTexture_upcgn")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="BarFill" type="TextureRect" parent="Panel/Background/BarContainer" unique_id=164038623]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -400.0
+offset_top = -370.0
+offset_right = 400.0
+offset_bottom = -320.0
+grow_horizontal = 2
+grow_vertical = 0
+expand_mode = 1
+
+[node name="RepairButton" type="TextureButton" parent="Panel/Background/BarContainer" unique_id=2014802905]
+visible = false
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -180.0
+offset_top = -190.0
+offset_right = -80.0
+offset_bottom = -90.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = ExtResource("10_edfbi")
+ignore_texture_size = true
+stretch_mode = 5
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]

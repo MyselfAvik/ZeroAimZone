@@ -1,0 +1,660 @@
+[gd_scene format=3 uid="uid://dxw037xk565u7"]
+
+[ext_resource type="Texture2D" uid="uid://c0ma4ma4cqfpv" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/InGamePops/Chestpopup.png" id="2_t8sgw"]
+[ext_resource type="Texture2D" uid="uid://7btssnrfaj47" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/Crates/bronze_close.png" id="3_jxfoi"]
+[ext_resource type="Texture2D" uid="uid://dyffpkkg2101n" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/Glows/common_star_glow.png" id="4_jxfoi"]
+[ext_resource type="FontFile" uid="uid://10wk3avcupsd" path="res://ZeroAimZone-Godot/3_Assets/Fonts/BarlowCondensed-Bold.ttf" id="5_jxfoi"]
+[ext_resource type="Texture2D" uid="uid://blne76am08wvw" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/CommonButton/Close Container.png" id="5_wlwi5"]
+[ext_resource type="Texture2D" uid="uid://dusfrj8vph547" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/CommonButton/Inner Reward Container.png" id="7_c0vvd"]
+[ext_resource type="FontFile" uid="uid://bwi6e3xaodcgb" path="res://ZeroAimZone-Godot/3_Assets/Fonts/Teko-Bold.ttf" id="7_wlwi5"]
+[ext_resource type="FontFile" uid="uid://dobi5yff3px2t" path="res://ZeroAimZone-Godot/3_Assets/Fonts/BarlowCondensed-SemiBold.ttf" id="8_0503m"]
+[ext_resource type="Script" uid="uid://dfkhnhygighey" path="res://ZeroAimZone-Godot/1_Scripts/UI_Controllers/ChestPopupController.gd" id="8_chest_controller"]
+[ext_resource type="Texture2D" uid="uid://mdkop512iw2d" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/ShopPanel/Starcoin.png" id="8_rirpi"]
+[ext_resource type="FontFile" uid="uid://giru623cv661" path="res://ZeroAimZone-Godot/3_Assets/Fonts/BarlowCondensed-Medium.ttf" id="9_bqwgx"]
+[ext_resource type="Texture2D" uid="uid://cmo4rl0wu0qyr" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/InGamePops/smallcard.png" id="10_fojtm"]
+[ext_resource type="Texture2D" uid="uid://c5j1tny7o82te" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/ShopPanel/Singlegem.png" id="12_ie4a5"]
+[ext_resource type="Texture2D" uid="uid://bamvpd5siofiu" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/CommonButton/friendacceptbg.png" id="14_bqwgx"]
+[ext_resource type="Texture2D" uid="uid://bhw0mb5axaecr" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/InGamePops/VideoIcon.png" id="15_bqwgx"]
+[ext_resource type="Texture2D" uid="uid://bd0h1coxlr1q1" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/CommonButton/GreenButtonNOShadow.png" id="16_c0vvd"]
+[ext_resource type="Texture2D" uid="uid://kltgdxo4qo00" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/InGamePops/triangle.png" id="17_bqwgx"]
+
+[sub_resource type="Gradient" id="Gradient_sa4p6"]
+offsets = PackedFloat32Array(0, 0.44929245, 0.7110849)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_wjhtw"]
+gradient = SubResource("Gradient_sa4p6")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rjg4d"]
+texture = ExtResource("2_t8sgw")
+
+[sub_resource type="FontVariation" id="FontVariation_85bwd"]
+base_font = ExtResource("7_wlwi5")
+
+[sub_resource type="LabelSettings" id="LabelSettings_7p6nq"]
+font = SubResource("FontVariation_85bwd")
+font_size = 92
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c0vvd"]
+texture = ExtResource("7_c0vvd")
+
+[sub_resource type="LabelSettings" id="LabelSettings_0503m"]
+font = ExtResource("8_0503m")
+font_size = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_bqwgx"]
+font = ExtResource("8_0503m")
+font_size = 56
+font_color = Color(0.9490196, 0.62352943, 0.03529412, 1)
+outline_color = Color(1, 0.9137255, 0.5372549, 1)
+shadow_color = Color(0.29411766, 0.17254902, 0.023529412, 1)
+shadow_offset = Vector2(0, 2)
+
+[sub_resource type="FontVariation" id="FontVariation_lc0jn"]
+base_font = ExtResource("5_jxfoi")
+
+[sub_resource type="FontVariation" id="FontVariation_rn1lm"]
+base_font = ExtResource("8_0503m")
+
+[sub_resource type="LabelSettings" id="LabelSettings_c0vvd"]
+font = ExtResource("8_0503m")
+font_size = 56
+font_color = Color(0.9490196, 0.62352943, 0.03529412, 1)
+outline_color = Color(1, 0.9137255, 0.5372549, 1)
+shadow_color = Color(0.29411766, 0.17254902, 0.023529412, 1)
+shadow_offset = Vector2(0, 2)
+
+[sub_resource type="FontVariation" id="FontVariation_0eg4q"]
+base_font = ExtResource("8_0503m")
+
+[sub_resource type="LabelSettings" id="LabelSettings_rirpi"]
+font = ExtResource("8_0503m")
+font_size = 56
+
+[sub_resource type="FontVariation" id="FontVariation_7jdby"]
+base_font = ExtResource("8_0503m")
+
+[sub_resource type="LabelSettings" id="LabelSettings_fojtm"]
+font = ExtResource("8_0503m")
+font_size = 50
+
+[sub_resource type="FontVariation" id="FontVariation_kgtkg"]
+base_font = ExtResource("8_0503m")
+
+[sub_resource type="LabelSettings" id="LabelSettings_ie4a5"]
+font = ExtResource("8_0503m")
+font_size = 50
+font_color = Color(0.9490196, 0.62352943, 0.03529412, 1)
+outline_color = Color(1, 0.9137255, 0.5372549, 1)
+shadow_color = Color(0.29411766, 0.17254902, 0.023529412, 1)
+shadow_offset = Vector2(0, 2)
+
+[sub_resource type="FontVariation" id="FontVariation_ddveu"]
+base_font = ExtResource("9_bqwgx")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t8sgw"]
+texture = ExtResource("14_bqwgx")
+
+[sub_resource type="FontVariation" id="FontVariation_0yu3j"]
+base_font = ExtResource("5_jxfoi")
+
+[sub_resource type="LabelSettings" id="LabelSettings_andg8"]
+font = ExtResource("5_jxfoi")
+font_size = 44
+
+[sub_resource type="FontVariation" id="FontVariation_rqegx"]
+base_font = ExtResource("7_wlwi5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wjhtw"]
+texture = ExtResource("16_c0vvd")
+
+[sub_resource type="FontVariation" id="FontVariation_oossf"]
+base_font = ExtResource("5_jxfoi")
+
+[sub_resource type="LabelSettings" id="LabelSettings_w7gxg"]
+font = ExtResource("5_jxfoi")
+font_size = 44
+
+[sub_resource type="FontVariation" id="FontVariation_sd7o4"]
+base_font = ExtResource("7_wlwi5")
+
+[sub_resource type="LabelSettings" id="LabelSettings_85bwd"]
+font = ExtResource("7_wlwi5")
+font_size = 38
+
+[node name="ChestPopup" type="Control" unique_id=414254801 node_paths=PackedStringArray("close_button", "pointer", "max_coin", "max_diamond", "max_card", "open_now_cost_label")]
+z_index = 5
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("8_chest_controller")
+close_button = NodePath("MainContainer/CloseBtn")
+pointer = NodePath("MainContainer/TextureRect2")
+max_coin = NodePath("MainContainer/HBoxContainer2/Button/Label2")
+max_diamond = NodePath("MainContainer/Button/Label2")
+max_card = NodePath("MainContainer/HBoxContainer2/Button2/Label")
+open_now_cost_label = NodePath("MainContainer/HBoxContainer/Button2/HBoxContainer/Label2")
+
+[node name="Overlay" type="TextureButton" parent="." unique_id=1552542027]
+modulate = Color(0.4745098, 0.4745098, 0.4745098, 0.5882353)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(2135, 699)
+texture_normal = SubResource("GradientTexture2D_wjhtw")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="MainContainer" type="Panel" parent="." unique_id=350147184]
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -455.0
+offset_top = -493.0
+offset_right = 455.0
+offset_bottom = 420.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(10326, 1865)
+theme_override_styles/panel = SubResource("StyleBoxTexture_rjg4d")
+
+[node name="TextureRect" type="TextureRect" parent="MainContainer" unique_id=652932535]
+z_index = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -155.0
+offset_top = -202.0
+offset_right = 143.0
+offset_bottom = 82.0
+grow_horizontal = 2
+texture = ExtResource("3_jxfoi")
+expand_mode = 1
+
+[node name="Glow" type="TextureRect" parent="MainContainer" unique_id=1454225882]
+self_modulate = Color(0.9647059, 0.8666667, 0.6, 1)
+z_index = -1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -217.0
+offset_top = -273.0
+offset_right = 206.96802
+offset_bottom = 150.96799
+grow_horizontal = 2
+texture = ExtResource("4_jxfoi")
+expand_mode = 1
+
+[node name="CloseBtn" type="TextureButton" parent="MainContainer" unique_id=644511177]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -55.0
+offset_top = -35.0
+offset_right = 15.0
+offset_bottom = 40.0
+grow_horizontal = 0
+pivot_offset = Vector2(2994, -90)
+texture_normal = ExtResource("5_wlwi5")
+texture_hover = ExtResource("5_wlwi5")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="MainContainer" unique_id=655085187]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -220.0
+offset_top = 139.0
+offset_right = 201.0
+offset_bottom = 272.0
+grow_horizontal = 2
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 50
+text = "GOLD CHEST"
+label_settings = SubResource("LabelSettings_7p6nq")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MainContainer" unique_id=510087600]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -339.5
+offset_top = -180.75
+offset_right = 347.0
+offset_bottom = -76.75
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="Button" type="Button" parent="MainContainer/HBoxContainer2" unique_id=510925578]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxTexture_c0vvd")
+theme_override_styles/hover = SubResource("StyleBoxTexture_c0vvd")
+theme_override_styles/focus = SubResource("StyleBoxTexture_c0vvd")
+
+[node name="TextureRect" type="TextureRect" parent="MainContainer/HBoxContainer2/Button" unique_id=1961958832]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 25.5
+offset_top = -34.0
+offset_right = 93.5
+offset_bottom = 34.0
+grow_vertical = 2
+texture = ExtResource("8_rirpi")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="MainContainer/HBoxContainer2/Button" unique_id=715541622]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -63.5
+offset_top = -34.0
+offset_right = 67.5
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0.60784316, 0.5921569, 0.74509805, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 2
+theme_override_font_sizes/font_size = 50
+text = "Up to"
+label_settings = SubResource("LabelSettings_0503m")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="MainContainer/HBoxContainer2/Button" unique_id=1223975926]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -110.5
+offset_top = -34.0
+offset_right = -35.5
+offset_bottom = 35.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.9490196, 0.62352943, 0.03529412, 1)
+theme_override_colors/font_shadow_color = Color(0.29411766, 0.17254902, 0.023529412, 1)
+theme_override_colors/font_outline_color = Color(1, 0.9137255, 0.5372549, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 2
+theme_override_font_sizes/font_size = 50
+text = "450"
+label_settings = SubResource("LabelSettings_bqwgx")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button2" type="Button" parent="MainContainer/HBoxContainer2" unique_id=1626389990]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxTexture_c0vvd")
+theme_override_styles/hover = SubResource("StyleBoxTexture_c0vvd")
+theme_override_styles/focus = SubResource("StyleBoxTexture_c0vvd")
+
+[node name="TextureRect" type="TextureRect" parent="MainContainer/HBoxContainer2/Button2" unique_id=292511320]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -32.0
+offset_right = 71.0
+offset_bottom = 31.0
+grow_vertical = 2
+texture = ExtResource("10_fojtm")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="MainContainer/HBoxContainer2/Button2/TextureRect" unique_id=633671237]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -15.5
+offset_top = -19.0
+offset_right = -3.5
+offset_bottom = 23.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(966.5, 1)
+theme_override_fonts/font = SubResource("FontVariation_lc0jn")
+theme_override_font_sizes/font_size = 35
+text = "1"
+
+[node name="Label" type="Label" parent="MainContainer/HBoxContainer2/Button2" unique_id=111855922]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -258.0
+offset_top = -36.0
+offset_right = -155.0
+offset_bottom = 32.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.9490196, 0.62352943, 0.03529412, 1)
+theme_override_colors/font_outline_color = Color(1, 0.9137255, 0.5372549, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = SubResource("FontVariation_rn1lm")
+theme_override_font_sizes/font_size = 50
+text = "x1 - 5"
+label_settings = SubResource("LabelSettings_c0vvd")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="MainContainer/HBoxContainer2/Button2" unique_id=1254094757]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -146.0
+offset_top = -36.0
+offset_right = -15.0
+offset_bottom = 32.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.9137255, 0.9019608, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.16470589, 0.24705882, 0.5882353, 1)
+theme_override_colors/font_outline_color = Color(0.60784316, 0.5921569, 0.74509805, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = SubResource("FontVariation_0eg4q")
+theme_override_font_sizes/font_size = 50
+text = "Cards"
+label_settings = SubResource("LabelSettings_rirpi")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="MainContainer" unique_id=678723736]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -149.0
+offset_top = -29.125
+offset_right = 141.0
+offset_bottom = 70.875
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_c0vvd")
+theme_override_styles/hover = SubResource("StyleBoxTexture_c0vvd")
+theme_override_styles/focus = SubResource("StyleBoxTexture_c0vvd")
+
+[node name="TextureRect" type="TextureRect" parent="MainContainer/Button" unique_id=1025522238]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 39.191715
+offset_top = -46.229694
+offset_right = 104.5354
+offset_bottom = 33.306564
+grow_vertical = 2
+rotation = 0.21118484
+texture = ExtResource("12_ie4a5")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="MainContainer/Button" unique_id=1833247671]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -205.0
+offset_top = -32.5
+offset_right = -81.0
+offset_bottom = 26.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.9137255, 0.9019608, 1, 1)
+theme_override_colors/font_outline_color = Color(0.043137256, 0.02745098, 0.74509805, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = SubResource("FontVariation_7jdby")
+theme_override_font_sizes/font_size = 50
+text = "Up to"
+label_settings = SubResource("LabelSettings_fojtm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="MainContainer/Button" unique_id=155402884]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -85.0
+offset_top = -30.0
+offset_right = -16.0
+offset_bottom = 25.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.9490196, 0.62352943, 0.03529412, 1)
+theme_override_colors/font_shadow_color = Color(0.29411766, 0.17254902, 0.023529412, 1)
+theme_override_colors/font_outline_color = Color(1, 0.9137255, 0.5372549, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = SubResource("FontVariation_kgtkg")
+theme_override_font_sizes/font_size = 50
+text = "100"
+label_settings = SubResource("LabelSettings_ie4a5")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="MainContainer" unique_id=1762631647]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -357.5
+offset_top = -333.25
+offset_right = 349.5
+offset_bottom = -263.25
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = SubResource("FontVariation_ddveu")
+theme_override_font_sizes/font_size = 48
+text = "Another chest is currently being unlocked!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainContainer" unique_id=1727442116]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -400.0
+offset_top = -166.0
+offset_right = 418.0
+offset_bottom = -38.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 25
+
+[node name="Button" type="Button" parent="MainContainer/HBoxContainer" unique_id=973750557]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxTexture_t8sgw")
+theme_override_styles/hover = SubResource("StyleBoxTexture_t8sgw")
+theme_override_styles/focus = SubResource("StyleBoxTexture_t8sgw")
+
+[node name="Label" type="Label" parent="MainContainer/HBoxContainer/Button" unique_id=754121938]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -153.5
+offset_top = 15.0
+offset_right = 153.5
+offset_bottom = 70.0
+grow_horizontal = 2
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = SubResource("FontVariation_0yu3j")
+theme_override_font_sizes/font_size = 44
+text = "Unlock in parallel"
+label_settings = SubResource("LabelSettings_andg8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="MainContainer/HBoxContainer/Button" unique_id=881447343]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -51.0
+offset_top = -61.0
+offset_right = -2.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.9843137, 0.7490196, 0.13725491, 1)
+theme_override_colors/font_outline_color = Color(0.92941177, 0.84705883, 0.40784314, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = SubResource("FontVariation_rqegx")
+theme_override_font_sizes/font_size = 37
+text = "AD"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MainContainer/HBoxContainer/Button" unique_id=1749106259]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -5.0
+offset_top = -52.0
+offset_right = 36.0
+offset_bottom = -19.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("15_bqwgx")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Button2" type="Button" parent="MainContainer/HBoxContainer" unique_id=662237683]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxTexture_wjhtw")
+theme_override_styles/hover = SubResource("StyleBoxTexture_wjhtw")
+theme_override_styles/focus = SubResource("StyleBoxTexture_wjhtw")
+
+[node name="Label" type="Label" parent="MainContainer/HBoxContainer/Button2" unique_id=1010603389]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -88.0
+offset_top = 15.0
+offset_right = 90.0
+offset_bottom = 68.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.9019608, 1, 0.90588236, 1)
+theme_override_colors/font_shadow_color = Color(0.16078432, 0.5294118, 0.14117648, 1)
+theme_override_colors/font_outline_color = Color(0.5921569, 0.74509805, 0.59607846, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = SubResource("FontVariation_oossf")
+theme_override_font_sizes/font_size = 44
+text = "Open Now"
+label_settings = SubResource("LabelSettings_w7gxg")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainContainer/HBoxContainer/Button2" unique_id=856099411]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -51.0
+offset_top = -67.5
+offset_right = 51.0
+offset_bottom = -11.5
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="Label2" type="Label" parent="MainContainer/HBoxContainer/Button2/HBoxContainer" unique_id=2015204695]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9019608, 1, 0.90588236, 1)
+theme_override_colors/font_shadow_color = Color(0.16078432, 0.5294118, 0.14117648, 1)
+theme_override_colors/font_outline_color = Color(0.5921569, 0.74509805, 0.59607846, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 3
+theme_override_fonts/font = SubResource("FontVariation_sd7o4")
+theme_override_font_sizes/font_size = 38
+text = "10"
+label_settings = SubResource("LabelSettings_85bwd")
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MainContainer/HBoxContainer/Button2/HBoxContainer" unique_id=1525917345]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+texture = ExtResource("12_ie4a5")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect2" type="TextureRect" parent="MainContainer" unique_id=419447178]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 80.0
+offset_top = -18.5
+offset_right = 153.0
+offset_bottom = 44.5
+grow_vertical = 0
+texture = ExtResource("17_bqwgx")
+
+[connection signal="pressed" from="Overlay" to="." method="hide_popup"]

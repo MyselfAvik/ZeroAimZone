@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bo17nma4g81pf"
+path="res://.godot/imported/Coin Pop 04.mp3-9d13452cf6d094a9695b348c7d5cb8d9.mp3str"
+
+[deps]
+
+source_file="res://ZeroAimZone-Godot/3_Assets/AudioTracks/gunsounds/Coin Pop 04.mp3"
+dest_files=["res://.godot/imported/Coin Pop 04.mp3-9d13452cf6d094a9695b348c7d5cb8d9.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

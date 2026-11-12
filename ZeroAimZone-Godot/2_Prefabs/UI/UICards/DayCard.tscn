@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://cpb0ecbttaaby"]
+
+[ext_resource type="Texture2D" uid="uid://c360r2cvt4eqt" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/InGamePops/dailyrewardbg.png" id="1_hf7se"]
+[ext_resource type="Script" uid="uid://b2ltkfyn8hycd" path="res://ZeroAimZone-Godot/1_Scripts/UI_Controllers/DayCardController.gd" id="2_hf7se"]
+[ext_resource type="Texture2D" uid="uid://bvepg821fhv00" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/InGamePops/rewardtitlebg.png" id="3_2nog8"]
+[ext_resource type="Texture2D" uid="uid://puhu2psieuu6" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/InGamePops/tick.png" id="4_a5gcl"]
+[ext_resource type="FontFile" uid="uid://dobi5yff3px2t" path="res://ZeroAimZone-Godot/3_Assets/Fonts/BarlowCondensed-SemiBold.ttf" id="4_hf7se"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3npwa"]
+texture = ExtResource("1_hf7se")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5q4h2"]
+texture = ExtResource("3_2nog8")
+
+[sub_resource type="LabelSettings" id="LabelSettings_2nog8"]
+font = ExtResource("4_hf7se")
+font_size = 56
+
+[node name="Day1" type="Panel" unique_id=2141949903]
+custom_minimum_size = Vector2(105, 130)
+offset_right = 242.0
+offset_bottom = 290.0
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_3npwa")
+script = ExtResource("2_hf7se")
+
+[node name="TitleLabel" type="Label" parent="." unique_id=1878991381]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 62.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxTexture_5q4h2")
+text = "DAY 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icon" type="TextureRect" parent="." unique_id=1670406877]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 36.0
+offset_top = 83.0
+offset_right = -34.0
+offset_bottom = -59.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="RewardLabel" type="Label" parent="." unique_id=1819671850]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -49.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 30
+text = "50"
+label_settings = SubResource("LabelSettings_2nog8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ClaimedTick" type="TextureRect" parent="." unique_id=1027749059]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -37.0
+offset_top = -60.0
+offset_right = 87.98273
+offset_bottom = 50.371094
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.5513685, 0.5999951)
+texture = ExtResource("4_a5gcl")
+expand_mode = 1
+stretch_mode = 5

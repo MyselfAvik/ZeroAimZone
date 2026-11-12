@@ -1,0 +1,9 @@
+[config]
+name="FirebaseCrashlyticsPlugin"
+binary_type="local"
+binary="FirebaseCrashlyticsPlugin-release.aar"
+
+[dependencies]
+local=[]
+remote=["com.google.firebase:firebase-crashlytics:19.0.3", "com.google.firebase:firebase-bom:34.0.0"]
+custom_maven_repos=[]

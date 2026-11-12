@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://cfqyu0n6ko4p"]
+
+[ext_resource type="Script" uid="uid://dwij41v4xs1l4" path="res://ZeroAimZone-Godot/1_Scripts/GunScripts(temp)/enemy_gun.gd" id="1_sacmw"]
+[ext_resource type="Resource" uid="uid://beyhjmowv3yds" path="res://ZeroAimZone-Godot/4_Resources/Tres/all_gun_data.tres" id="2_bsrj2"]
+[ext_resource type="AudioStream" uid="uid://ctwck50w57s3h" path="res://ZeroAimZone-Godot/3_Assets/AudioTracks/pew-pew-sound-effect-192-kbps_FPMeLTV2.mp3" id="2_wmlmm"]
+[ext_resource type="PackedScene" uid="uid://celwqb17p4ht0" path="res://ZeroAimZone-Godot/2_Prefabs/bulletprefabs(temp)/enemy_bullet.tscn" id="3_yca0r"]
+[ext_resource type="Texture2D" uid="uid://byo87831w1ade" path="res://ZeroAimZone-Godot/3_Assets/Sprites/temp/circle.png" id="4_b0ptq"]
+[ext_resource type="PackedScene" uid="uid://b7crcmtdbs378" path="res://ZeroAimZone-Godot/2_Prefabs/ParticleEffects/muzzle_flash/muzzle_flash.tscn" id="5_kkfg4"]
+[ext_resource type="Texture2D" uid="uid://d2x2cwle7gvpd" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/guns/street/glock17.png" id="6_kkfg4"]
+[ext_resource type="PackedScene" uid="uid://bra8yop1cq516" path="res://ZeroAimZone-Godot/2_Prefabs/ParticleEffects/player_damage.tscn" id="6_wmlmm"]
+[ext_resource type="Shader" uid="uid://dqofjq2u7ljof" path="res://ZeroAimZone-Godot/3_Assets/Shaders/player_gun.gdshader" id="7_q486h"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_hydpl"]
+bounce = 0.25
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l7sve"]
+shader = ExtResource("7_q486h")
+shader_parameter/blinkColor = Color(1, 1, 1, 1)
+shader_parameter/blink_intensity = 0.0
+
+[sub_resource type="Curve" id="Curve_v0d3o"]
+_data = [Vector2(0, 0.9755792), 0.0, 0.0, 0, 0, Vector2(0.99999, 0), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[node name="EnemyGun" type="RigidBody2D" unique_id=1554263374 node_paths=PackedStringArray("gun_sprite", "shoot_particles")]
+scale = Vector2(-1, 1)
+physics_material_override = SubResource("PhysicsMaterial_hydpl")
+gravity_scale = 0.8
+center_of_mass_mode = 1
+center_of_mass = Vector2(-0.25, 0.15)
+can_sleep = false
+continuous_cd = 2
+script = ExtResource("1_sacmw")
+gun_type = 3
+guns_database = ExtResource("2_bsrj2")
+bullet_scene = ExtResource("3_yca0r")
+gun_sprite = NodePath("Visual")
+gun_fire_audio = ExtResource("2_wmlmm")
+shoot_particles = NodePath("CPUParticles2D3")
+muzzle_flash_scene = ExtResource("5_kkfg4")
+gun_damage_particles = ExtResource("6_wmlmm")
+continuous_fire_window = 0.4
+continuous_linear_damp = 5.0
+continuous_angular_damp = 3.5
+
+[node name="Visual" type="Sprite2D" parent="." unique_id=1457869395]
+z_index = 5
+material = SubResource("ShaderMaterial_l7sve")
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("6_kkfg4")
+
+[node name="FirePoint" type="Marker2D" parent="." unique_id=1752496570]
+position = Vector2(140, -58)
+scale = Vector2(0.45, 0.45)
+
+[node name="CPUParticles2D3" type="CPUParticles2D" parent="." unique_id=1280860164]
+z_index = 10
+position = Vector2(114, -79)
+scale = Vector2(0.45, 0.45)
+emitting = false
+amount = 150
+texture = ExtResource("4_b0ptq")
+lifetime = 0.52
+spread = 4.75
+gravity = Vector2(0, 0)
+scale_amount_min = 0.0
+scale_amount_max = 0.05
+scale_amount_curve = SubResource("Curve_v0d3o")
+color = Color(0.5873133, 0.59946346, 0.5634807, 1)
+anim_speed_max = 2.55
+anim_offset_max = 0.245
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="." unique_id=1901577338]
+z_index = 10
+position = Vector2(114, -79)
+scale = Vector2(0.45, 0.45)
+emitting = false
+amount = 62
+texture = ExtResource("4_b0ptq")
+lifetime = 0.03
+one_shot = true
+local_coords = true
+spread = 52.91
+gravity = Vector2(0, 0)
+initial_velocity_max = 487.78
+scale_amount_min = 0.0
+scale_amount_max = 0.05
+color = Color(1, 0.96983963, 0.60758704, 1)

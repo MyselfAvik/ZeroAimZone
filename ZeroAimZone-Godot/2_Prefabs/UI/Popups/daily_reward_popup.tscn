@@ -1,0 +1,958 @@
+[gd_scene format=3 uid="uid://dh3w4ccr5l0u6"]
+
+[ext_resource type="Script" uid="uid://dhkje4t1y3kme" path="res://ZeroAimZone-Godot/1_Scripts/UI_Controllers/DailyRewardController.gd" id="1_yyuox"]
+[ext_resource type="Texture2D" uid="uid://b1bv3dnl0pi4q" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/InGamePops/dailyreward.png" id="3_ae4ms"]
+[ext_resource type="Texture2D" uid="uid://d15nclj20u7s8" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/InGamePops/glowbg.png" id="3_iedvw"]
+[ext_resource type="Texture2D" uid="uid://buja5f6wkq7wl" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/InGamePops/Bottom Section Background (1).png" id="4_jdijm"]
+[ext_resource type="FontFile" uid="uid://10wk3avcupsd" path="res://ZeroAimZone-Godot/3_Assets/Fonts/BarlowCondensed-Bold.ttf" id="4_jedmg"]
+[ext_resource type="FontFile" uid="uid://bwi6e3xaodcgb" path="res://ZeroAimZone-Godot/3_Assets/Fonts/Teko-Bold.ttf" id="5_ae4ms"]
+[ext_resource type="Texture2D" uid="uid://blne76am08wvw" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/CommonButton/Close Container.png" id="6_4gvxs"]
+[ext_resource type="Texture2D" uid="uid://c360r2cvt4eqt" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/InGamePops/dailyrewardbg.png" id="7_h7uj1"]
+[ext_resource type="FontFile" uid="uid://giru623cv661" path="res://ZeroAimZone-Godot/3_Assets/Fonts/BarlowCondensed-Medium.ttf" id="8_ae4ms"]
+[ext_resource type="Texture2D" uid="uid://bvepg821fhv00" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/InGamePops/rewardtitlebg.png" id="8_fbycx"]
+[ext_resource type="Texture2D" uid="uid://diwuerqyg8gww" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/ShopPanel/3coins.png" id="9_8yaum"]
+[ext_resource type="FontFile" uid="uid://dobi5yff3px2t" path="res://ZeroAimZone-Godot/3_Assets/Fonts/BarlowCondensed-SemiBold.ttf" id="10_4gvxs"]
+[ext_resource type="Texture2D" uid="uid://puhu2psieuu6" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/InGamePops/tick.png" id="11_sl0ca"]
+[ext_resource type="Texture2D" uid="uid://cqv1qr2f3cjmi" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/InGamePops/Claim Button Container.png" id="12_noetd"]
+[ext_resource type="Texture2D" uid="uid://bhw0mb5axaecr" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/InGamePops/VideoIcon.png" id="13_7bxf3"]
+[ext_resource type="Texture2D" uid="uid://jbfrxnr5wuhc" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/InGamePops/Prizecard.png" id="14_noetd"]
+[ext_resource type="Texture2D" uid="uid://di3sx7in7vbxm" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/InGamePops/lockicon.png" id="15_7bxf3"]
+[ext_resource type="Texture2D" uid="uid://ckv5yabmv38lg" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/ShopPanel/handfulgem.png" id="16_7bxf3"]
+[ext_resource type="Resource" uid="uid://c3ga8g1ef4ybv" path="res://ZeroAimZone-Godot/4_Resources/Tres/DailyRewards.tres" id="17_1fn5q"]
+[ext_resource type="Texture2D" uid="uid://bfak7g5s02wls" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/ShopPanel/bunchgem.png" id="17_noetd"]
+[ext_resource type="Texture2D" uid="uid://0pnulv5c0ggf" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/ShopPanel/4Coins.png" id="18_7bxf3"]
+[ext_resource type="Texture2D" uid="uid://7btssnrfaj47" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/Crates/bronze_close.png" id="20_h7uj1"]
+[ext_resource type="Texture2D" uid="uid://dwvujvveefl3n" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/InGamePops/Bottom Section Background.png" id="20_iedvw"]
+[ext_resource type="Texture2D" uid="uid://bouq0mrdf25q" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/Glows/sparkle_glow.png" id="21_7bxf3"]
+
+[sub_resource type="Gradient" id="Gradient_sa4p6"]
+offsets = PackedFloat32Array(0, 0.44929245, 0.7110849)
+colors = PackedColorArray(0, 0, 0, 0.654902, 0, 0, 0, 0.654902, 0, 0, 0, 0.654902)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_56ur1"]
+gradient = SubResource("Gradient_sa4p6")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dnwfj"]
+texture = ExtResource("3_ae4ms")
+
+[sub_resource type="FontVariation" id="FontVariation_ae4ms"]
+base_font = ExtResource("8_ae4ms")
+
+[sub_resource type="FontVariation" id="FontVariation_sl0ca"]
+base_font = ExtResource("5_ae4ms")
+
+[sub_resource type="LabelSettings" id="LabelSettings_jedmg"]
+font = SubResource("FontVariation_sl0ca")
+font_size = 92
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3npwa"]
+texture = ExtResource("7_h7uj1")
+
+[sub_resource type="FontVariation" id="FontVariation_4gvxs"]
+base_font = ExtResource("8_ae4ms")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jdijm"]
+texture = ExtResource("8_fbycx")
+
+[sub_resource type="LabelSettings" id="LabelSettings_qu1y6"]
+font = ExtResource("4_jedmg")
+font_size = 48
+
+[sub_resource type="FontVariation" id="FontVariation_po287"]
+base_font = ExtResource("8_ae4ms")
+
+[sub_resource type="LabelSettings" id="LabelSettings_po287"]
+font = ExtResource("10_4gvxs")
+font_size = 56
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w6skl"]
+texture = ExtResource("12_noetd")
+
+[sub_resource type="FontVariation" id="FontVariation_qu1y6"]
+base_font = ExtResource("4_jedmg")
+
+[sub_resource type="LabelSettings" id="LabelSettings_ae4ms"]
+font = ExtResource("5_ae4ms")
+font_size = 30
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_4gvxs"]
+font = ExtResource("4_jedmg")
+font_size = 48
+
+[sub_resource type="LabelSettings" id="LabelSettings_8yaum"]
+font = ExtResource("10_4gvxs")
+font_size = 56
+
+[sub_resource type="LabelSettings" id="LabelSettings_sl0ca"]
+font = ExtResource("4_jedmg")
+font_size = 48
+
+[sub_resource type="LabelSettings" id="LabelSettings_noetd"]
+font = ExtResource("10_4gvxs")
+font_size = 56
+
+[sub_resource type="LabelSettings" id="LabelSettings_7bxf3"]
+font = ExtResource("4_jedmg")
+font_size = 48
+
+[sub_resource type="LabelSettings" id="LabelSettings_h7uj1"]
+font = ExtResource("10_4gvxs")
+font_size = 56
+
+[sub_resource type="LabelSettings" id="LabelSettings_fbycx"]
+font = ExtResource("4_jedmg")
+font_size = 48
+
+[sub_resource type="LabelSettings" id="LabelSettings_iedvw"]
+font = ExtResource("10_4gvxs")
+font_size = 56
+
+[sub_resource type="LabelSettings" id="LabelSettings_jdijm"]
+font = ExtResource("4_jedmg")
+font_size = 48
+
+[sub_resource type="LabelSettings" id="LabelSettings_dnwfj"]
+font = ExtResource("10_4gvxs")
+font_size = 56
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_764ik"]
+texture = ExtResource("20_iedvw")
+
+[sub_resource type="LabelSettings" id="LabelSettings_764ik"]
+font = ExtResource("4_jedmg")
+font_size = 48
+
+[sub_resource type="FontVariation" id="FontVariation_8yaum"]
+base_font = ExtResource("8_ae4ms")
+
+[sub_resource type="LabelSettings" id="LabelSettings_jwjij"]
+font = ExtResource("4_jedmg")
+font_size = 62
+
+[sub_resource type="LabelSettings" id="LabelSettings_7y8q1"]
+font = ExtResource("10_4gvxs")
+font_size = 56
+
+[node name="DailyRewardPopup" type="Control" unique_id=1535655500 node_paths=PackedStringArray("rewards_section", "collect_button", "claimed_tick")]
+z_index = 5
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yyuox")
+rewards_config = ExtResource("17_1fn5q")
+rewards_section = NodePath("PopupPanel/MainContainer/RewardsSection")
+collect_button = NodePath("PopupPanel/MainContainer/RewardsSection/Row1/Day2Card/CollectButton")
+claimed_tick = NodePath("PopupPanel/MainContainer/RewardsSection/Row1/Day1Card/ClaimedTick")
+normal_glow_bg = ExtResource("3_iedvw")
+day7_glow_bg = ExtResource("4_jdijm")
+
+[node name="Overlay" type="TextureButton" parent="." unique_id=1523142194]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = SubResource("GradientTexture2D_56ur1")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="PopupPanel" type="Panel" parent="." unique_id=1739662948]
+custom_minimum_size = Vector2(700, 900)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -459.0
+offset_top = -618.0
+offset_right = 452.5
+offset_bottom = 581.03845
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 1.04)
+theme_override_styles/panel = SubResource("StyleBoxTexture_dnwfj")
+
+[node name="MainContainer" type="VBoxContainer" parent="PopupPanel" unique_id=1127445559]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 52.0
+offset_top = 30.76926
+offset_right = -59.5
+offset_bottom = -39.423218
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 100
+
+[node name="Header" type="Control" parent="PopupPanel/MainContainer" unique_id=563670352]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="PopupPanel/MainContainer/Header" unique_id=1505984649]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -48.0
+offset_right = 309.5
+offset_bottom = 85.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.9137255, 0.9019608, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.18039216, 0.16470589, 0.5882353, 0.39215687)
+theme_override_colors/font_outline_color = Color(0.60784316, 0.5921569, 0.74509805, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = SubResource("FontVariation_ae4ms")
+theme_override_font_sizes/font_size = 30
+text = "DAILY REWARDS"
+label_settings = SubResource("LabelSettings_jedmg")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CloseBtn" type="TextureButton" parent="PopupPanel/MainContainer/Header" unique_id=1141659727]
+custom_minimum_size = Vector2(15, 15)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.047
+anchor_top = -0.26200002
+anchor_right = 1.047
+anchor_bottom = -0.26200002
+offset_left = -44.82202
+offset_top = -35.505997
+offset_right = 25.177979
+offset_bottom = 34.494003
+grow_horizontal = 0
+scale = Vector2(0.986, 1)
+texture_normal = ExtResource("6_4gvxs")
+texture_hover = ExtResource("6_4gvxs")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="RewardsSection" type="VBoxContainer" parent="PopupPanel/MainContainer" unique_id=1074333531]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="Row1" type="HBoxContainer" parent="PopupPanel/MainContainer/RewardsSection" unique_id=1895650267]
+custom_minimum_size = Vector2(341, 130)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 50
+
+[node name="Day1Card" type="Panel" parent="PopupPanel/MainContainer/RewardsSection/Row1" unique_id=1070031526]
+custom_minimum_size = Vector2(242, 290)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_3npwa")
+
+[node name="TitleLabel" type="Label" parent="PopupPanel/MainContainer/RewardsSection/Row1/Day1Card" unique_id=81258355]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 0.19232178
+offset_right = -1.0
+offset_bottom = 62.69232
+grow_horizontal = 2
+pivot_offset = Vector2(1831, 241.30768)
+theme_override_colors/font_color = Color(0.9137255, 0.9019608, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.18039216, 0.16470589, 0.5882353, 0.39215687)
+theme_override_colors/font_outline_color = Color(0.60784316, 0.5921569, 0.74509805, 0.39215687)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = SubResource("FontVariation_4gvxs")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxTexture_jdijm")
+text = "DAY 1"
+label_settings = SubResource("LabelSettings_qu1y6")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Icon" type="TextureRect" parent="PopupPanel/MainContainer/RewardsSection/Row1/Day1Card" unique_id=2064962053]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.5
+offset_top = -51.5
+offset_right = 60.5
+offset_bottom = 51.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_8yaum")
+expand_mode = 1
+
+[node name="RewardLabel" type="Label" parent="PopupPanel/MainContainer/RewardsSection/Row1/Day1Card" unique_id=1905095349]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.90500003
+anchor_right = 0.5
+anchor_bottom = 0.90500003
+offset_left = -31.5
+offset_top = -51.09001
+offset_right = 18.5
+offset_bottom = 16.909988
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.9137255, 0.9019608, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.16470589, 0.24705882, 0.5882353, 0.39215687)
+theme_override_colors/font_outline_color = Color(0.60784316, 0.5921569, 0.74509805, 0.39215687)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = SubResource("FontVariation_po287")
+theme_override_font_sizes/font_size = 40
+text = "50"
+label_settings = SubResource("LabelSettings_po287")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ClaimedTick" type="TextureRect" parent="PopupPanel/MainContainer/RewardsSection/Row1/Day1Card" unique_id=449337684]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -23.0
+offset_top = -36.0
+offset_right = 37.0
+offset_bottom = 24.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.6385428, 0.69510573)
+texture = ExtResource("11_sl0ca")
+expand_mode = 1
+
+[node name="Day2Card" type="Panel" parent="PopupPanel/MainContainer/RewardsSection/Row1" unique_id=48705799]
+custom_minimum_size = Vector2(242, 290)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_3npwa")
+
+[node name="CollectButton" type="Button" parent="PopupPanel/MainContainer/RewardsSection/Row1/Day2Card" unique_id=1291411597]
+custom_minimum_size = Vector2(169, 52)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = -0.071
+anchor_right = 0.508
+anchor_bottom = -0.071
+offset_left = -67.5
+offset_top = -21.80943
+offset_right = 99.635994
+offset_bottom = 30.19057
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.821, 0.8440388)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxTexture_w6skl")
+theme_override_styles/hover = SubResource("StyleBoxTexture_w6skl")
+theme_override_styles/focus = SubResource("StyleBoxTexture_w6skl")
+
+[node name="CollectIcon" type="TextureRect" parent="PopupPanel/MainContainer/RewardsSection/Row1/Day2Card/CollectButton" unique_id=955035177]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 21.464005
+offset_top = -16.11
+offset_right = 54.464005
+offset_bottom = 16.89
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.17453292
+texture = ExtResource("13_7bxf3")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="PopupPanel/MainContainer/RewardsSection/Row1/Day2Card/CollectButton" unique_id=730669210]
+custom_minimum_size = Vector2(71, 19)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -56.535995
+offset_top = -22.0
+offset_right = 14.4640045
+offset_bottom = 22.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.9843137, 0.7490196, 0.13725491, 0.39215687)
+theme_override_colors/font_outline_color = Color(0.92941177, 0.84705883, 0.40784314, 0.39215687)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_fonts/font = SubResource("FontVariation_qu1y6")
+theme_override_font_sizes/font_size = 25
+text = "Claim"
+label_settings = SubResource("LabelSettings_ae4ms")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TitleLabel" type="Label" parent="PopupPanel/MainContainer/RewardsSection/Row1/Day2Card" unique_id=1735972905]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -121.0
+offset_top = 0.19226074
+offset_right = 119.0
+offset_bottom = 65.57684
+grow_horizontal = 2
+pivot_offset = Vector2(1831, 241.30768)
+theme_override_colors/font_color = Color(0.9137255, 0.9019608, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.18039216, 0.16470589, 0.5882353, 0.39215687)
+theme_override_colors/font_outline_color = Color(0.60784316, 0.5921569, 0.74509805, 0.39215687)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = SubResource("FontVariation_4gvxs")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxTexture_jdijm")
+text = "DAY 2"
+label_settings = SubResource("LabelSettings_4gvxs")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Icon" type="TextureRect" parent="PopupPanel/MainContainer/RewardsSection/Row1/Day2Card" unique_id=1066540483]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -53.5
+offset_top = -69.5
+offset_right = 53.5
+offset_bottom = 69.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_noetd")
+expand_mode = 1
+
+[node name="LockIcon" type="TextureRect" parent="PopupPanel/MainContainer/RewardsSection/Row1/Day2Card" unique_id=56846603]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -33.0
+offset_top = -22.0
+offset_right = 25.0
+offset_bottom = 36.0
+grow_horizontal = 0
+texture = ExtResource("15_7bxf3")
+expand_mode = 1
+
+[node name="RewardLabel" type="Label" parent="PopupPanel/MainContainer/RewardsSection/Row1/Day2Card" unique_id=520977253]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.90500003
+anchor_right = 0.5
+anchor_bottom = 0.90500003
+offset_left = -31.5
+offset_top = -51.09001
+offset_right = 14.5
+offset_bottom = 16.909988
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.9137255, 0.9019608, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.16470589, 0.24705882, 0.5882353, 0.39215687)
+theme_override_colors/font_outline_color = Color(0.60784316, 0.5921569, 0.74509805, 0.39215687)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = SubResource("FontVariation_po287")
+theme_override_font_sizes/font_size = 40
+text = "x1"
+label_settings = SubResource("LabelSettings_8yaum")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Day3Card" type="Panel" parent="PopupPanel/MainContainer/RewardsSection/Row1" unique_id=436955090]
+custom_minimum_size = Vector2(242, 290)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_3npwa")
+
+[node name="TitleLabel" type="Label" parent="PopupPanel/MainContainer/RewardsSection/Row1/Day3Card" unique_id=782881377]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -120.0
+offset_top = 1.1537476
+offset_right = 119.0
+offset_bottom = 64.615295
+grow_horizontal = 2
+pivot_offset = Vector2(1831, 241.30768)
+theme_override_colors/font_color = Color(0.9137255, 0.9019608, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.18039216, 0.16470589, 0.5882353, 0.39215687)
+theme_override_colors/font_outline_color = Color(0.60784316, 0.5921569, 0.74509805, 0.39215687)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = SubResource("FontVariation_4gvxs")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxTexture_jdijm")
+text = "DAY 3"
+label_settings = SubResource("LabelSettings_sl0ca")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="LockIcon" type="TextureRect" parent="PopupPanel/MainContainer/RewardsSection/Row1/Day3Card" unique_id=1642052970]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -34.0
+offset_top = -22.0
+offset_right = 24.0
+offset_bottom = 36.0
+grow_horizontal = 0
+texture = ExtResource("15_7bxf3")
+expand_mode = 1
+
+[node name="Icon" type="TextureRect" parent="PopupPanel/MainContainer/RewardsSection/Row1/Day3Card" unique_id=1563123663]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -59.0
+offset_right = 46.323547
+offset_bottom = 27.534912
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.36, 1.653845)
+texture = ExtResource("16_7bxf3")
+expand_mode = 1
+
+[node name="RewardLabel" type="Label" parent="PopupPanel/MainContainer/RewardsSection/Row1/Day3Card" unique_id=973164612]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.90500003
+anchor_right = 0.5
+anchor_bottom = 0.90500003
+offset_left = -37.0
+offset_top = -51.09001
+offset_right = 9.0
+offset_bottom = 16.909988
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.9137255, 0.9019608, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.16470589, 0.24705882, 0.5882353, 0.39215687)
+theme_override_colors/font_outline_color = Color(0.60784316, 0.5921569, 0.74509805, 0.39215687)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = SubResource("FontVariation_po287")
+theme_override_font_sizes/font_size = 40
+text = "10"
+label_settings = SubResource("LabelSettings_noetd")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Row2" type="HBoxContainer" parent="PopupPanel/MainContainer/RewardsSection" unique_id=828896685]
+custom_minimum_size = Vector2(341, 130)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 50
+
+[node name="Day4Card" type="Panel" parent="PopupPanel/MainContainer/RewardsSection/Row2" unique_id=915364952]
+custom_minimum_size = Vector2(242, 290)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_3npwa")
+
+[node name="TitleLabel" type="Label" parent="PopupPanel/MainContainer/RewardsSection/Row2/Day4Card" unique_id=427043817]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -120.0
+offset_right = 121.0
+offset_bottom = 64.46155
+grow_horizontal = 2
+pivot_offset = Vector2(1831, 241.30768)
+theme_override_colors/font_color = Color(0.9137255, 0.9019608, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.18039216, 0.16470589, 0.5882353, 0.39215687)
+theme_override_colors/font_outline_color = Color(0.60784316, 0.5921569, 0.74509805, 0.39215687)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = SubResource("FontVariation_4gvxs")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxTexture_jdijm")
+text = "DAY 4"
+label_settings = SubResource("LabelSettings_7bxf3")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="LockIcon" type="TextureRect" parent="PopupPanel/MainContainer/RewardsSection/Row2/Day4Card" unique_id=995740667]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -33.0
+offset_top = -22.0
+offset_right = 25.0
+offset_bottom = 36.0
+grow_horizontal = 0
+texture = ExtResource("15_7bxf3")
+expand_mode = 1
+
+[node name="Icon" type="TextureRect" parent="PopupPanel/MainContainer/RewardsSection/Row2/Day4Card" unique_id=786830040]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -101.0
+offset_top = -55.730804
+offset_right = 5.558998
+offset_bottom = 4.2691956
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.8956597, 2.423077)
+texture = ExtResource("17_noetd")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="RewardLabel" type="Label" parent="PopupPanel/MainContainer/RewardsSection/Row2/Day4Card" unique_id=1361443962]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.90500003
+anchor_right = 0.5
+anchor_bottom = 0.90500003
+offset_left = -23.0
+offset_top = -25.090012
+offset_right = 23.0
+offset_bottom = 16.909988
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.9137255, 0.9019608, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.16470589, 0.24705882, 0.5882353, 0.39215687)
+theme_override_colors/font_outline_color = Color(0.60784316, 0.5921569, 0.74509805, 0.39215687)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = SubResource("FontVariation_po287")
+theme_override_font_sizes/font_size = 40
+text = "25"
+label_settings = SubResource("LabelSettings_h7uj1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Day5Card" type="Panel" parent="PopupPanel/MainContainer/RewardsSection/Row2" unique_id=1332502230]
+custom_minimum_size = Vector2(242, 290)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_3npwa")
+
+[node name="TitleLabel" type="Label" parent="PopupPanel/MainContainer/RewardsSection/Row2/Day5Card" unique_id=197044245]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -121.0
+offset_top = 1.6922607
+offset_right = 121.5
+offset_bottom = 64.46155
+grow_horizontal = 2
+pivot_offset = Vector2(1831, 241.30768)
+theme_override_colors/font_color = Color(0.9137255, 0.9019608, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.18039216, 0.16470589, 0.5882353, 0.39215687)
+theme_override_colors/font_outline_color = Color(0.60784316, 0.5921569, 0.74509805, 0.39215687)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = SubResource("FontVariation_4gvxs")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxTexture_jdijm")
+text = "DAY 5"
+label_settings = SubResource("LabelSettings_fbycx")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="LockIcon" type="TextureRect" parent="PopupPanel/MainContainer/RewardsSection/Row2/Day5Card" unique_id=874794707]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -33.0
+offset_top = -22.0
+offset_right = 25.0
+offset_bottom = 36.0
+grow_horizontal = 0
+texture = ExtResource("15_7bxf3")
+expand_mode = 1
+
+[node name="Icon" type="TextureRect" parent="PopupPanel/MainContainer/RewardsSection/Row2/Day5Card" unique_id=1996654857]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.485
+anchor_top = 0.5
+anchor_right = 0.485
+anchor_bottom = 0.5
+offset_left = -62.795006
+offset_top = -62.46157
+offset_right = 92.20499
+offset_bottom = 68.53842
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("18_7bxf3")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="RewardLabel" type="Label" parent="PopupPanel/MainContainer/RewardsSection/Row2/Day5Card" unique_id=1285172213]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.90500003
+anchor_right = 0.5
+anchor_bottom = 0.90500003
+offset_left = -23.0
+offset_top = -25.090012
+offset_right = 23.0
+offset_bottom = 16.909988
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.9137255, 0.9019608, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.16470589, 0.24705882, 0.5882353, 0.39215687)
+theme_override_colors/font_outline_color = Color(0.60784316, 0.5921569, 0.74509805, 0.39215687)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = SubResource("FontVariation_po287")
+theme_override_font_sizes/font_size = 40
+text = "85"
+label_settings = SubResource("LabelSettings_iedvw")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Day6Card" type="Panel" parent="PopupPanel/MainContainer/RewardsSection/Row2" unique_id=2008435886]
+custom_minimum_size = Vector2(242, 290)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_3npwa")
+
+[node name="TitleLabel" type="Label" parent="PopupPanel/MainContainer/RewardsSection/Row2/Day6Card" unique_id=901971054]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -120.0
+offset_top = 0.038391113
+offset_right = 120.0
+offset_bottom = 64.46155
+grow_horizontal = 2
+pivot_offset = Vector2(1831, 241.30768)
+theme_override_colors/font_color = Color(0.9137255, 0.9019608, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.18039216, 0.16470589, 0.5882353, 0.39215687)
+theme_override_colors/font_outline_color = Color(0.60784316, 0.5921569, 0.74509805, 0.39215687)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = SubResource("FontVariation_4gvxs")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxTexture_jdijm")
+text = "DAY 6"
+label_settings = SubResource("LabelSettings_jdijm")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="LockIcon" type="TextureRect" parent="PopupPanel/MainContainer/RewardsSection/Row2/Day6Card" unique_id=1775421028]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -34.0
+offset_top = -22.0
+offset_right = 24.0
+offset_bottom = 36.0
+grow_horizontal = 0
+texture = ExtResource("15_7bxf3")
+expand_mode = 1
+
+[node name="Icon" type="TextureRect" parent="PopupPanel/MainContainer/RewardsSection/Row2/Day6Card" unique_id=821736810]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -53.5
+offset_top = -69.5
+offset_right = 53.5
+offset_bottom = 69.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_noetd")
+expand_mode = 1
+
+[node name="RewardLabel" type="Label" parent="PopupPanel/MainContainer/RewardsSection/Row2/Day6Card" unique_id=1760386846]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.90500003
+anchor_right = 0.5
+anchor_bottom = 0.90500003
+offset_left = -23.0
+offset_top = -25.090012
+offset_right = 23.0
+offset_bottom = 16.909988
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.9137255, 0.9019608, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.16470589, 0.24705882, 0.5882353, 0.39215687)
+theme_override_colors/font_outline_color = Color(0.60784316, 0.5921569, 0.74509805, 0.39215687)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = SubResource("FontVariation_po287")
+theme_override_font_sizes/font_size = 40
+text = "x1"
+label_settings = SubResource("LabelSettings_dnwfj")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Row3" type="MarginContainer" parent="PopupPanel/MainContainer/RewardsSection" unique_id=1491691301]
+custom_minimum_size = Vector2(341, 100)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_top = 22
+
+[node name="Day7Card" type="Panel" parent="PopupPanel/MainContainer/RewardsSection/Row3" unique_id=485297180]
+custom_minimum_size = Vector2(823, 271)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_764ik")
+
+[node name="TitleLabel" type="Label" parent="PopupPanel/MainContainer/RewardsSection/Row3/Day7Card" unique_id=1900475218]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -120.0
+offset_right = 120.0
+offset_bottom = 66.34607
+grow_horizontal = 2
+pivot_offset = Vector2(1831, 241.30768)
+theme_override_colors/font_color = Color(0.9137255, 0.9019608, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.18039216, 0.16470589, 0.5882353, 0.39215687)
+theme_override_colors/font_outline_color = Color(0.60784316, 0.5921569, 0.74509805, 0.39215687)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = SubResource("FontVariation_4gvxs")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxTexture_jdijm")
+text = "DAY 7"
+label_settings = SubResource("LabelSettings_764ik")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="LockIcon" type="TextureRect" parent="PopupPanel/MainContainer/RewardsSection/Row3/Day7Card" unique_id=1416311881]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -31.0
+offset_top = -22.0
+offset_right = 27.0
+offset_bottom = 36.0
+grow_horizontal = 0
+texture = ExtResource("15_7bxf3")
+expand_mode = 1
+
+[node name="Icon" type="TextureRect" parent="PopupPanel/MainContainer/RewardsSection/Row3/Day7Card" unique_id=990120746]
+z_index = 3
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 50.0
+offset_top = -74.0
+offset_right = 209.0
+offset_bottom = 74.0
+grow_vertical = 2
+texture = ExtResource("20_h7uj1")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="RewardNameLabel" type="Label" parent="PopupPanel/MainContainer/RewardsSection/Row3/Day7Card" unique_id=1556450925]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.555
+anchor_top = 0.5
+anchor_right = 0.555
+anchor_bottom = 0.5
+offset_left = -147.0
+offset_top = -44.077026
+offset_right = 193.0
+offset_bottom = 30.922974
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.9137255, 0.9019608, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.16470589, 0.24705882, 0.5882353, 0.39215687)
+theme_override_colors/font_outline_color = Color(0.60784316, 0.5921569, 0.74509805, 0.39215687)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = SubResource("FontVariation_8yaum")
+theme_override_font_sizes/font_size = 40
+text = "Premium Chest"
+label_settings = SubResource("LabelSettings_jwjij")
+vertical_alignment = 1
+
+[node name="RewardLabel" type="Label" parent="PopupPanel/MainContainer/RewardsSection/Row3/Day7Card" unique_id=1816626104]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 229.0
+offset_top = -114.53848
+offset_right = 268.0
+offset_bottom = -46.538483
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.9137255, 0.9019608, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.16470589, 0.24705882, 0.5882353, 0.39215687)
+theme_override_colors/font_outline_color = Color(0.60784316, 0.5921569, 0.74509805, 0.39215687)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = SubResource("FontVariation_po287")
+theme_override_font_sizes/font_size = 40
+text = "x1"
+label_settings = SubResource("LabelSettings_7y8q1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="PopupPanel/MainContainer/RewardsSection/Row3/Day7Card" unique_id=1258991594]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 10.038446
+offset_right = 245.0
+offset_bottom = 242.03845
+texture = ExtResource("21_7bxf3")
+
+[connection signal="pressed" from="Overlay" to="." method="_on_overlay_pressed"]
+[connection signal="pressed" from="PopupPanel/MainContainer/Header/CloseBtn" to="." method="_on_close_btn_pressed"]

@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://duah0arftip7s"]
+
+[ext_resource type="Script" uid="uid://cukcujxjuka15" path="res://ZeroAimZone-Godot/3_Assets/obstacles/FireCannons/fire_cannon_piece.gd" id="1_tgimt"]
+[ext_resource type="AudioStream" uid="uid://boxkqbevxra2s" path="res://ZeroAimZone-Godot/3_Assets/AudioTracks/FireBurst 6063_58.mp3" id="2_lh34v"]
+[ext_resource type="Texture2D" uid="uid://ce6mm58kvb7t8" path="res://ZeroAimZone-Godot/3_Assets/obstacles/FireCannons/Sprites/FireCannonFigma.png" id="2_q3irw"]
+[ext_resource type="PackedScene" uid="uid://kh2mg4y4spfi" path="res://ZeroAimZone-Godot/3_Assets/obstacles/FireCannons/fire.tscn" id="3_q3irw"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dtkhy"]
+radius = 123.05698
+height = 932.4463
+
+[node name="FireCannonPiece" type="Node2D" unique_id=769281388 node_paths=PackedStringArray("flame_hitbox")]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_tgimt")
+flame_hitbox = NodePath("Area2D")
+fire_sound = ExtResource("2_lh34v")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1166134902]
+position = Vector2(170.00002, 166)
+rotation = 1.5670737
+scale = Vector2(3, 2.963)
+texture = ExtResource("2_q3irw")
+
+[node name="Muzzle" type="Marker2D" parent="." unique_id=640416871]
+position = Vector2(278, 284)
+rotation = -0.55850536
+
+[node name="Fire" parent="Muzzle" unique_id=1995082050 instance=ExtResource("3_q3irw")]
+position = Vector2(94.84149, 825.7295)
+rotation = 1.4594184
+scale = Vector2(4, 4)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=569707221]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1606354951]
+position = Vector2(544, 584)
+rotation = -0.72165835
+shape = SubResource("CapsuleShape2D_dtkhy")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1782526786]
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=138445656]
+position = Vector2(-0.2499935, 0.3149535)
+scale = Vector2(0.8419689, 0.752451)
+polygon = PackedVector2Array(0, -1, -2.0784695, 177.66612, 45.42923, 249.4316, 95.31231, 278.66937, 147.57079, 339.80292, 230.70924, 350.43484, 294.84464, 406.25244, 354.22925, 345.11887, 304.34616, 198.92996, 242.58617, 113.87459, 176.0754, 28.819216, 152.32155, 4.897391)

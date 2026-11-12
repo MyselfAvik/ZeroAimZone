@@ -1,0 +1,207 @@
+[gd_scene format=3 uid="uid://bnajq2mjr87id"]
+
+[ext_resource type="Script" uid="uid://bydncl07mmbgl" path="res://ZeroAimZone-Godot/1_Scripts/UI_Controllers/FriendRequestPopupController.gd" id="1_orit6"]
+[ext_resource type="Texture2D" uid="uid://d1ml8copow5eg" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/InGamePops/friendrequestbg.png" id="2_w2c08"]
+[ext_resource type="FontFile" uid="uid://giru623cv661" path="res://ZeroAimZone-Godot/3_Assets/Fonts/BarlowCondensed-Medium.ttf" id="3_hdxgs"]
+[ext_resource type="Texture2D" uid="uid://bpmu11kcccejn" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/CommonButton/toggle on.png" id="4_bacg7"]
+[ext_resource type="Texture2D" uid="uid://cjeksp3o5fo3x" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/CommonButton/toggle off.png" id="5_7j44g"]
+[ext_resource type="FontFile" uid="uid://10wk3avcupsd" path="res://ZeroAimZone-Godot/3_Assets/Fonts/BarlowCondensed-Bold.ttf" id="5_fev72"]
+[ext_resource type="Texture2D" uid="uid://bamvpd5siofiu" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/CommonButton/friendacceptbg.png" id="7_8dv42"]
+[ext_resource type="Texture2D" uid="uid://cr2s8rokrastc" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/CommonButton/friendrejectbg.png" id="8_bp1wn"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_orit6"]
+texture = ExtResource("2_w2c08")
+
+[sub_resource type="FontVariation" id="FontVariation_yv2fd"]
+base_font = ExtResource("3_hdxgs")
+
+[sub_resource type="LabelSettings" id="LabelSettings_fev72"]
+font = ExtResource("3_hdxgs")
+font_size = 42
+
+[sub_resource type="FontVariation" id="FontVariation_7j44g"]
+base_font = ExtResource("5_fev72")
+
+[sub_resource type="FontVariation" id="FontVariation_w2c08"]
+base_font = ExtResource("5_fev72")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hdxgs"]
+texture = ExtResource("7_8dv42")
+
+[sub_resource type="FontVariation" id="FontVariation_bacg7"]
+base_font = ExtResource("5_fev72")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fev72"]
+texture = ExtResource("8_bp1wn")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hdxgs"]
+
+[node name="FriendRequestPopup" type="Control" unique_id=473889628 node_paths=PackedStringArray("accept_btn", "reject_btn", "name_label", "timer_label", "timer_progress_bar", "countdown_timer")]
+z_index = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_orit6")
+accept_btn = NodePath("MainContainer/PopupPanel/HBoxContainer/AcceptButton")
+reject_btn = NodePath("MainContainer/PopupPanel/HBoxContainer/RejectButton")
+name_label = NodePath("MainContainer/PopupPanel/Label")
+timer_label = NodePath("MainContainer/PopupPanel/TimerBadge/TimerBadge/TimerLabel")
+timer_progress_bar = NodePath("MainContainer/PopupPanel/TimerBadge/TimerBadge")
+countdown_timer = NodePath("MainContainer/Timer")
+
+[node name="Overlay" type="TextureButton" parent="." unique_id=995364045]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MainContainer" type="MarginContainer" parent="." unique_id=995364046]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -616.0
+offset_top = -464.0
+offset_right = -51.0
+offset_bottom = -245.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/margin_top = 1
+theme_override_constants/margin_right = 1
+theme_override_constants/margin_bottom = 1
+
+[node name="PopupPanel" type="Panel" parent="MainContainer" unique_id=752433838]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_orit6")
+
+[node name="Label" type="Label" parent="MainContainer/PopupPanel" unique_id=1170887748]
+custom_minimum_size = Vector2(466, 62)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.305
+anchor_right = 0.5
+anchor_bottom = 0.305
+offset_left = -180.5
+offset_top = -25.425003
+offset_right = 187.5
+offset_bottom = 25.574997
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.60784316, 0.5921569, 0.74509805, 0.39215687)
+theme_override_colors/font_outline_color = Color(0.9137255, 0.9019608, 1, 0.39215687)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = SubResource("FontVariation_yv2fd")
+theme_override_font_sizes/font_size = 52
+text = "Roshan sent you request."
+label_settings = SubResource("LabelSettings_fev72")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TimerBadge" type="Control" parent="MainContainer/PopupPanel" unique_id=831621921]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -39.0
+offset_top = -22.0
+offset_right = 16.0
+offset_bottom = 33.0
+grow_horizontal = 0
+
+[node name="TimerBadge" type="TextureProgressBar" parent="MainContainer/PopupPanel/TimerBadge" unique_id=399123331]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+value = 100.0
+fill_mode = 4
+nine_patch_stretch = true
+texture_over = ExtResource("4_bacg7")
+texture_progress = ExtResource("5_7j44g")
+
+[node name="TimerLabel" type="Label" parent="MainContainer/PopupPanel/TimerBadge/TimerBadge" unique_id=534563456]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("FontVariation_7j44g")
+theme_override_font_sizes/font_size = 44
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainContainer/PopupPanel" unique_id=645645645]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -244.0
+offset_top = -106.0
+offset_right = 246.0
+offset_bottom = -34.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 60
+alignment = 1
+
+[node name="AcceptButton" type="Button" parent="MainContainer/PopupPanel/HBoxContainer" unique_id=756756756]
+custom_minimum_size = Vector2(120, 35)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.92941177, 0.84705883, 0.40784314, 0.39215687)
+theme_override_fonts/font = SubResource("FontVariation_w2c08")
+theme_override_font_sizes/font_size = 52
+theme_override_styles/normal = SubResource("StyleBoxTexture_hdxgs")
+theme_override_styles/hover = SubResource("StyleBoxTexture_hdxgs")
+theme_override_styles/focus = SubResource("StyleBoxTexture_hdxgs")
+text = "Accept"
+
+[node name="RejectButton" type="Button" parent="MainContainer/PopupPanel/HBoxContainer" unique_id=867867867]
+custom_minimum_size = Vector2(120, 35)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.6901961, 0.67058825, 0.8901961, 0.9411765)
+theme_override_colors/font_outline_color = Color(0.60784316, 0.5921569, 0.74509805, 0.39215687)
+theme_override_fonts/font = SubResource("FontVariation_bacg7")
+theme_override_font_sizes/font_size = 52
+theme_override_styles/normal = SubResource("StyleBoxTexture_fev72")
+theme_override_styles/hover = SubResource("StyleBoxTexture_fev72")
+theme_override_styles/focus = SubResource("StyleBoxTexture_fev72")
+text = "Reject"
+
+[node name="Timer" type="Timer" parent="MainContainer" unique_id=1703546713]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=973457674]
+visible = false
+modulate = Color(1, 1, 1, 0.40392157)
+z_index = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CompressedTexture2D_hdxgs")
+
+[connection signal="pressed" from="MainContainer/PopupPanel/HBoxContainer/AcceptButton" to="." method="_on_accept_button_pressed"]
+[connection signal="pressed" from="MainContainer/PopupPanel/HBoxContainer/RejectButton" to="." method="_on_reject_button_pressed"]

@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://b2x1k4t7p8d2q"]
+
+[ext_resource type="Script" uid="uid://cawyr8fk3a6bd" path="res://ZeroAimZone-Godot/1_Scripts/GameScene.gd" id="1_gs"]
+[ext_resource type="Script" uid="uid://c1g6n1ay6dpov" path="res://ZeroAimZone-Godot/1_Scripts/Managers/InGameUIManager.gd" id="2_igui"]
+
+[node name="GameScene" type="Node2D" unique_id=240487278]
+script = ExtResource("1_gs")
+
+[node name="InGameUIManager" type="CanvasLayer" parent="." unique_id=1010331375]
+script = ExtResource("2_igui")
+
+[node name="Controllers" type="Node2D" parent="." unique_id=330292435]

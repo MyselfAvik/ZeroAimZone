@@ -1,0 +1,9 @@
+[config]
+name="MetaSDKPlugin"
+binary_type="local"
+binary="MetaSDKPlugin-release.aar"
+
+[dependencies]
+local=[]
+remote=["com.facebook.android:facebook-android-sdk:17.0.0"]
+custom_maven_repos=[]

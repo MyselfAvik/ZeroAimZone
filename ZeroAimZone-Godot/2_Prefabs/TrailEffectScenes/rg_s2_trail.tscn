@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://6kfvhftunw67"]
+
+[ext_resource type="Texture2D" uid="uid://cfevcifdqill4" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/TrailSprites/rg_s2_t.png" id="1_hplwe"]
+[ext_resource type="Script" uid="uid://dr08beijcf6mt" path="res://addons/trail_renderer/trail_renderer.gd" id="2_p7hxt"]
+
+[node name="BulletTrail" type="Node2D" unique_id=706928379]
+
+[node name="bulletTrail" type="Sprite2D" parent="." unique_id=603269117]
+position = Vector2(-15, 0)
+rotation = 0.6981317
+scale = Vector2(0.18, 0.2)
+texture = ExtResource("1_hplwe")
+
+[node name="TrailRenderer" type="Node2D" parent="." unique_id=23233196]
+script = ExtResource("2_p7hxt")
+trail_length = 7
+trail_color = Color(0.8980392, 0.6862745, 0.5058824, 0.5647059)

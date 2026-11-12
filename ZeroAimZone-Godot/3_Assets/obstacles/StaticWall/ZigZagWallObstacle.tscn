@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bepl1tkyajr2g"]
+
+[ext_resource type="Script" uid="uid://dm8djf1rxol2n" path="res://ZeroAimZone-Godot/3_Assets/obstacles/StaticWall/zig_zag_wall_obstacle.gd" id="1_08v5n"]
+[ext_resource type="PackedScene" uid="uid://b484p3vmerkcr" path="res://ZeroAimZone-Godot/3_Assets/obstacles/StaticWall/SlidingWall.tscn" id="2_03jur"]
+
+[node name="ZigZagWallObstacle" type="Node2D" unique_id=1136778623]
+script = ExtResource("1_08v5n")
+wall_scene = ExtResource("2_03jur")

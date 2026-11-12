@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://druohe71omdqi"]
+
+[ext_resource type="Script" uid="uid://c3hn7m2xchgmw" path="res://ZeroAimZone-Godot/1_Scripts/UI_Controllers/BlackScreenPopupController.gd" id="1_yleuc"]
+[ext_resource type="FontFile" uid="uid://10wk3avcupsd" path="res://ZeroAimZone-Godot/3_Assets/Fonts/BarlowCondensed-Bold.ttf" id="2_cwvqi"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_te1me"]
+font = ExtResource("2_cwvqi")
+font_size = 56
+
+[node name="BlackScreenPopup" type="Control" unique_id=1653828190 node_paths=PackedStringArray("close_btn", "no_lan_ip_label", "multiple_lan_ip")]
+z_index = 5
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yleuc")
+close_btn = NodePath("ColorRect/Close")
+no_lan_ip_label = NodePath("NoLanIP")
+multiple_lan_ip = NodePath("MultipleLanIP")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2041406616]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.70980394)
+
+[node name="Close" type="Button" parent="ColorRect" unique_id=288598202]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="NoLanIP" type="Label" parent="." unique_id=570156350]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -225.0
+offset_top = -69.5
+offset_right = 225.0
+offset_bottom = 69.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "No LAN ip detected. Connect to same WIFI OR Hotspot."
+label_settings = SubResource("LabelSettings_te1me")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MultipleLanIP" type="Label" parent="." unique_id=1270937820]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -225.0
+offset_top = -69.5
+offset_right = 225.0
+offset_bottom = 69.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Multiple LAN ip detected. Please check WIFI and Hotspot
+ Both are Enabled."
+label_settings = SubResource("LabelSettings_te1me")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="ColorRect/Close" to="." method="_on_close_pressed"]

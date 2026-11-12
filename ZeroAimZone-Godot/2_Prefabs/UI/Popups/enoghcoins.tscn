@@ -1,0 +1,112 @@
+[gd_scene format=3 uid="uid://ba8b0bslxvjye"]
+
+[ext_resource type="Script" uid="uid://b3bi3wynk5gyc" path="res://ZeroAimZone-Godot/1_Scripts/UI_Controllers/EnoughCoinPopupController.gd" id="1_vp86q"]
+[ext_resource type="Texture2D" uid="uid://s6ku8kfbp0k6" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/InGamePops/notenoughcoins.png" id="2_vp86q"]
+[ext_resource type="FontFile" uid="uid://10wk3avcupsd" path="res://ZeroAimZone-Godot/3_Assets/Fonts/BarlowCondensed-Bold.ttf" id="3_yqmau"]
+[ext_resource type="FontFile" uid="uid://bwi6e3xaodcgb" path="res://ZeroAimZone-Godot/3_Assets/Fonts/Teko-Bold.ttf" id="4_pu48o"]
+[ext_resource type="FontFile" uid="uid://dobi5yff3px2t" path="res://ZeroAimZone-Godot/3_Assets/Fonts/BarlowCondensed-SemiBold.ttf" id="5_yqmau"]
+
+[sub_resource type="Gradient" id="Gradient_sa4p6"]
+offsets = PackedFloat32Array(0, 0.44929245, 0.7110849)
+colors = PackedColorArray(0, 0, 0, 0.654902, 0, 0, 0, 0.654902, 0, 0, 0, 0.654902)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_vp86q"]
+gradient = SubResource("Gradient_sa4p6")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wavmv"]
+texture = ExtResource("2_vp86q")
+
+[sub_resource type="FontVariation" id="FontVariation_ltxcg"]
+base_font = ExtResource("3_yqmau")
+
+[sub_resource type="LabelSettings" id="LabelSettings_dwxdb"]
+font = ExtResource("4_pu48o")
+font_size = 86
+
+[sub_resource type="FontVariation" id="FontVariation_sa4p6"]
+base_font = ExtResource("3_yqmau")
+
+[sub_resource type="LabelSettings" id="LabelSettings_kx2wb"]
+font = ExtResource("5_yqmau")
+font_size = 60
+
+[node name="EnoughCoinsPopup" type="Control" unique_id=1279329849 node_paths=PackedStringArray("header_label", "text_label")]
+z_index = 5
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vp86q")
+header_label = NodePath("MainContainer/Label")
+text_label = NodePath("MainContainer/Label2")
+
+[node name="Overlay" type="TextureButton" parent="." unique_id=33624614]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = SubResource("GradientTexture2D_vp86q")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="MainContainer" type="Panel" parent="." unique_id=548632290]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -455.0
+offset_top = -307.0
+offset_right = 455.0
+offset_bottom = 307.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(2305, 506)
+theme_override_styles/panel = SubResource("StyleBoxTexture_wavmv")
+
+[node name="Label" type="Label" parent="MainContainer" unique_id=1103075106]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -389.0
+offset_top = 37.0
+offset_right = 390.5
+offset_bottom = 161.0
+grow_horizontal = 2
+theme_override_fonts/font = SubResource("FontVariation_ltxcg")
+theme_override_font_sizes/font_size = 87
+text = "not enough gems"
+label_settings = SubResource("LabelSettings_dwxdb")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Label2" type="Label" parent="MainContainer" unique_id=531967750]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -397.0
+offset_top = -136.0
+offset_right = 396.0
+offset_bottom = 244.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource("FontVariation_sa4p6")
+theme_override_font_sizes/font_size = 54
+text = "Top up to get more gems or play 
+to earn."
+label_settings = SubResource("LabelSettings_kx2wb")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[connection signal="pressed" from="Overlay" to="." method="_on_overlay_pressed"]

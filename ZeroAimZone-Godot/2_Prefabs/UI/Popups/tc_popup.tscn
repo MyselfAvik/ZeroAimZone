@@ -1,0 +1,131 @@
+[gd_scene format=3 uid="uid://dbts6f8xxogj8"]
+
+[ext_resource type="Script" uid="uid://cjpks7e0nxhgm" path="res://ZeroAimZone-Godot/1_Scripts/UI_Controllers/TCPopupController.gd" id="1_ayals"]
+[ext_resource type="Texture2D" uid="uid://cnesg1vmiu0jo" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/InGamePops/Exitpanel.png" id="2_cgkh7"]
+[ext_resource type="FontFile" uid="uid://bwi6e3xaodcgb" path="res://ZeroAimZone-Godot/3_Assets/Fonts/Teko-Bold.ttf" id="3_v17ue"]
+[ext_resource type="FontFile" uid="uid://10wk3avcupsd" path="res://ZeroAimZone-Godot/3_Assets/Fonts/BarlowCondensed-Bold.ttf" id="4_mfqyt"]
+[ext_resource type="FontFile" uid="uid://dobi5yff3px2t" path="res://ZeroAimZone-Godot/3_Assets/Fonts/BarlowCondensed-SemiBold.ttf" id="5_yd3c0"]
+[ext_resource type="Texture2D" uid="uid://bd0h1coxlr1q1" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/CommonButton/GreenButtonNOShadow.png" id="7_tqota"]
+[ext_resource type="AudioStream" uid="uid://gkh5cvg1wwyp" path="res://ZeroAimZone-Godot/3_Assets/AudioTracks/The Button.mp3" id="8_v17ue"]
+
+[sub_resource type="Gradient" id="Gradient_sa4p6"]
+offsets = PackedFloat32Array(0, 0.44929245, 1)
+colors = PackedColorArray(0, 0, 0, 0.654902, 0, 0, 0, 0.654902, 0, 0, 0, 0.654902)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_xn724"]
+gradient = SubResource("Gradient_sa4p6")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wavmv"]
+texture = ExtResource("2_cgkh7")
+
+[sub_resource type="FontVariation" id="FontVariation_ltxcg"]
+base_font = ExtResource("3_v17ue")
+
+[sub_resource type="FontVariation" id="FontVariation_rwh14"]
+base_font = ExtResource("4_mfqyt")
+
+[sub_resource type="LabelSettings" id="LabelSettings_6r7l8"]
+font = ExtResource("5_yd3c0")
+font_size = 60
+
+[sub_resource type="FontVariation" id="FontVariation_3f1jj"]
+base_font = ExtResource("4_mfqyt")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h2vm0"]
+texture = ExtResource("7_tqota")
+
+[node name="Terms&Conditions_poup" type="Control" unique_id=1279329849 node_paths=PackedStringArray("accept_btn")]
+z_index = 5
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ayals")
+accept_btn = NodePath("MainContainer/Button2")
+
+[node name="Overlay_null" type="TextureButton" parent="." unique_id=852054833]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = SubResource("GradientTexture2D_xn724")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="MainContainer" type="Panel" parent="." unique_id=548632290]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -455.0
+offset_top = -367.0
+offset_right = 455.0
+offset_bottom = 367.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_wavmv")
+
+[node name="Label" type="Label" parent="MainContainer" unique_id=1103075106]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -72.0
+offset_top = 22.0
+offset_right = 72.0
+offset_bottom = 148.0
+grow_horizontal = 2
+theme_override_fonts/font = SubResource("FontVariation_ltxcg")
+theme_override_font_sizes/font_size = 87
+text = "TERMS & CONDITIONS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="MainContainer" unique_id=198136280]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -361.0
+offset_top = -107.0
+offset_right = 361.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource("FontVariation_rwh14")
+theme_override_font_sizes/font_size = 68
+text = "Please read and accept our
+Terms of Use and Privacy Policy."
+label_settings = SubResource("LabelSettings_6r7l8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button2" type="Button" parent="MainContainer" unique_id=1728900562]
+custom_minimum_size = Vector2(360, 0)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -180.0
+offset_top = -174.0
+offset_right = 180.0
+offset_bottom = -54.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.45882353, 0.40784314, 0.92941177, 1)
+theme_override_fonts/font = SubResource("FontVariation_3f1jj")
+theme_override_font_sizes/font_size = 68
+theme_override_styles/normal = SubResource("StyleBoxTexture_h2vm0")
+theme_override_styles/hover = SubResource("StyleBoxTexture_h2vm0")
+text = "Accept"

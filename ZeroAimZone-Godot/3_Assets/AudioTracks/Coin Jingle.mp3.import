@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://btmruqsgoxs22"
+path="res://.godot/imported/Coin Jingle.mp3-232ce89c2c583f8632f46df6a916dbb4.mp3str"
+
+[deps]
+
+source_file="res://ZeroAimZone-Godot/3_Assets/AudioTracks/Coin Jingle.mp3"
+dest_files=["res://.godot/imported/Coin Jingle.mp3-232ce89c2c583f8632f46df6a916dbb4.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

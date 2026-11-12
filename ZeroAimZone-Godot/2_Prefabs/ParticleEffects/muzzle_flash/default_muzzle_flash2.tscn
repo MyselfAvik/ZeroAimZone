@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://df1nlpyb21k2w"]
+
+[ext_resource type="Texture2D" uid="uid://bgawr0gvapv33" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/MuzzleFlashSprites/default_flash2.png" id="1_cffhs"]
+
+[sub_resource type="Curve" id="Curve_sxvm6"]
+_limits = [-200.0, 200.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.06478873, 36.061935), 0.0, 0.0, 0, 0, Vector2(0.14366196, 1.5486755), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Curve" id="Curve_an4ux"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.50412375), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_an4ux"]
+offsets = PackedFloat32Array(0.56980056, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.7254902)
+
+[node name="MuzzleFlash" type="CPUParticles2D" unique_id=1167964344]
+emitting = false
+amount = 1
+texture = ExtResource("1_cffhs")
+lifetime = 0.06999999999999999
+one_shot = true
+explosiveness = 1.0
+lifetime_randomness = 0.75
+local_coords = true
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 200.0
+initial_velocity_max = 400.0
+linear_accel_max = 50.0
+linear_accel_curve = SubResource("Curve_sxvm6")
+radial_accel_max = 19.49
+tangential_accel_min = -30.0
+tangential_accel_max = 30.0
+angle_min = -5.0
+angle_max = 5.0
+scale_amount_curve = SubResource("Curve_an4ux")
+color_ramp = SubResource("Gradient_an4ux")

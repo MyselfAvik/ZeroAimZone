@@ -1,0 +1,264 @@
+[gd_scene format=3 uid="uid://b2twncpjhy5q"]
+
+[ext_resource type="Script" uid="uid://t1gikty24aub" path="res://ZeroAimZone-Godot/1_Scripts/UI_Controllers/ShopPanelController.gd" id="1_wchdy"]
+[ext_resource type="PackedScene" uid="uid://bsh70ads65ppw" path="res://ZeroAimZone-Godot/2_Prefabs/UI/UICards/ShopCard.tscn" id="2_ekdsi"]
+[ext_resource type="Script" uid="uid://c1umaqh6220vy" path="res://addons/SmoothScroll/smooth_scroll_container.gd" id="3_2ke14"]
+[ext_resource type="Resource" uid="uid://cvwxilsp765pa" path="res://ZeroAimZone-Godot/4_Resources/Tres/ShopDataBase.tres" id="3_ihcb1"]
+[ext_resource type="Script" uid="uid://bp2ueafm1hjdu" path="res://addons/SmoothScroll/scroll_damper/expo_scroll_damper.gd" id="4_h1de8"]
+[ext_resource type="Texture2D" uid="uid://dqr2nkxe66eth" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/ShopPanel/Rectangle 3469096.png" id="6_brcxv"]
+[ext_resource type="Texture2D" uid="uid://bhhbpy5bc8l6e" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/CommonBg/Titlebg.png" id="6_ekdsi"]
+[ext_resource type="FontFile" uid="uid://dobi5yff3px2t" path="res://ZeroAimZone-Godot/3_Assets/Fonts/BarlowCondensed-SemiBold.ttf" id="7_ekdsi"]
+[ext_resource type="Texture2D" uid="uid://7tafrokyj8dj" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/ShopPanel/RemoveAds.png" id="7_f5xys"]
+[ext_resource type="FontFile" uid="uid://bwi6e3xaodcgb" path="res://ZeroAimZone-Godot/3_Assets/Fonts/Teko-Bold.ttf" id="8_ls3g2"]
+[ext_resource type="FontFile" uid="uid://10wk3avcupsd" path="res://ZeroAimZone-Godot/3_Assets/Fonts/BarlowCondensed-Bold.ttf" id="9_3y85v"]
+[ext_resource type="Texture2D" uid="uid://bdq8qchn55c0a" path="res://ZeroAimZone-Godot/3_Assets/Sprites/GameUI/CommonButton/Group 2085666346 (4).png" id="10_brcxv"]
+[ext_resource type="AudioStream" uid="uid://gkh5cvg1wwyp" path="res://ZeroAimZone-Godot/3_Assets/AudioTracks/The Button.mp3" id="12_3y85v"]
+
+[sub_resource type="Resource" id="Resource_r3q65"]
+script = ExtResource("4_h1de8")
+
+[sub_resource type="Resource" id="Resource_ompq6"]
+script = ExtResource("4_h1de8")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2ke14"]
+texture = ExtResource("6_brcxv")
+
+[sub_resource type="LabelSettings" id="LabelSettings_h1de8"]
+font = ExtResource("8_ls3g2")
+font_size = 90
+font_color = Color(0.03137255, 0.07450981, 0.35686275, 1)
+
+[sub_resource type="FontVariation" id="FontVariation_r3q65"]
+base_font = ExtResource("9_3y85v")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ompq6"]
+texture = ExtResource("10_brcxv")
+
+[sub_resource type="LabelSettings" id="LabelSettings_f5xys"]
+font = ExtResource("9_3y85v")
+font_size = 52
+font_color = Color(0.9019608, 1, 0.90588236, 1)
+outline_size = 1
+outline_color = Color(0.5921569, 0.74509805, 0.59607846, 1)
+
+[sub_resource type="FontVariation" id="FontVariation_ihcb1"]
+base_font = ExtResource("7_ekdsi")
+
+[node name="ShopPanel" type="Control" unique_id=111914105 node_paths=PackedStringArray("content_vbox", "remove_ads_panel", "coins_card_parent", "daimonds_card_parent", "shop_scroll", "coins_header", "gems_header")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wchdy")
+content_vbox = NodePath("HBoxContainer/MarginContainer/MainLayout/ScrollContainer/ContentVBox")
+remove_ads_panel = NodePath("HBoxContainer/MarginContainer/MainLayout/ScrollContainer/ContentVBox/Panel")
+shop_card = ExtResource("2_ekdsi")
+shop_data = ExtResource("3_ihcb1")
+coins_card_parent = NodePath("HBoxContainer/MarginContainer/MainLayout/ScrollContainer/ContentVBox/CoinsCardParent")
+daimonds_card_parent = NodePath("HBoxContainer/MarginContainer/MainLayout/ScrollContainer/ContentVBox/DaimondCardParent")
+shop_scroll = NodePath("HBoxContainer/MarginContainer/MainLayout/ScrollContainer")
+coins_header = NodePath("HBoxContainer/MarginContainer/MainLayout/ScrollContainer/ContentVBox/CoinsHeader")
+gems_header = NodePath("HBoxContainer/MarginContainer/MainLayout/ScrollContainer/ContentVBox/GemsHeader")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=391991138]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer" unique_id=1572316190]
+custom_minimum_size = Vector2(1080, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 85
+theme_override_constants/margin_right = 85
+
+[node name="MainLayout" type="VBoxContainer" parent="HBoxContainer/MarginContainer" unique_id=796539749]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer/MarginContainer/MainLayout" unique_id=1750901724]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+script = ExtResource("3_2ke14")
+wheel_scroll_damper = SubResource("Resource_r3q65")
+dragging_scroll_damper = SubResource("Resource_ompq6")
+
+[node name="ContentVBox" type="VBoxContainer" parent="HBoxContainer/MarginContainer/MainLayout/ScrollContainer" unique_id=530005068]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 30
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Panel" type="Panel" parent="HBoxContainer/MarginContainer/MainLayout/ScrollContainer/ContentVBox" unique_id=1577153803]
+custom_minimum_size = Vector2(0, 170)
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxTexture_2ke14")
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/MarginContainer/MainLayout/ScrollContainer/ContentVBox/Panel" unique_id=822136923]
+custom_minimum_size = Vector2(152, 152)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 10.0
+offset_top = -76.0
+offset_right = 162.0
+offset_bottom = 76.0
+grow_vertical = 2
+size_flags_horizontal = 0
+texture = ExtResource("7_f5xys")
+expand_mode = 1
+stretch_mode = 5
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Label" type="Label" parent="HBoxContainer/MarginContainer/MainLayout/ScrollContainer/ContentVBox/Panel" unique_id=1117091721]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -285.0
+offset_top = -61.0
+offset_right = 155.0
+offset_bottom = 69.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+mouse_filter = 1
+text = "Remove ADS"
+label_settings = SubResource("LabelSettings_h1de8")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Button" type="Button" parent="HBoxContainer/MarginContainer/MainLayout/ScrollContainer/ContentVBox/Panel" unique_id=1872695455]
+custom_minimum_size = Vector2(236, 50)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -270.0
+offset_top = -55.0
+offset_right = -34.0
+offset_bottom = 45.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 8
+mouse_filter = 1
+theme_override_fonts/font = SubResource("FontVariation_r3q65")
+theme_override_font_sizes/font_size = 52
+theme_override_styles/normal = SubResource("StyleBoxTexture_ompq6")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ompq6")
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Label" type="Label" parent="HBoxContainer/MarginContainer/MainLayout/ScrollContainer/ContentVBox/Panel/Button" unique_id=1585985790]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -79.0
+offset_top = -45.0
+offset_right = 79.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+text = "₹ 00.00"
+label_settings = SubResource("LabelSettings_f5xys")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="CoinsHeader" type="TextureRect" parent="HBoxContainer/MarginContainer/MainLayout/ScrollContainer/ContentVBox" unique_id=1515894799]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("6_ekdsi")
+expand_mode = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Label" type="Label" parent="HBoxContainer/MarginContainer/MainLayout/ScrollContainer/ContentVBox/CoinsHeader" unique_id=461392070]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -76.5
+offset_top = -50.0
+offset_right = 76.5
+offset_bottom = 42.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("FontVariation_ihcb1")
+theme_override_font_sizes/font_size = 62
+text = "Coins"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="CoinsCardParent" type="GridContainer" parent="HBoxContainer/MarginContainer/MainLayout/ScrollContainer/ContentVBox" unique_id=468929625]
+layout_mode = 2
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 40
+columns = 3
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="GemsHeader" type="TextureRect" parent="HBoxContainer/MarginContainer/MainLayout/ScrollContainer/ContentVBox" unique_id=269346860]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("6_ekdsi")
+expand_mode = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Label" type="Label" parent="HBoxContainer/MarginContainer/MainLayout/ScrollContainer/ContentVBox/GemsHeader" unique_id=45135483]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -85.5
+offset_top = -50.0
+offset_right = 85.5
+offset_bottom = 43.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("FontVariation_ihcb1")
+theme_override_font_sizes/font_size = 62
+text = "Gems"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="DaimondCardParent" type="GridContainer" parent="HBoxContainer/MarginContainer/MainLayout/ScrollContainer/ContentVBox" unique_id=2072803845]
+layout_mode = 2
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 40
+columns = 3
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[connection signal="pressed" from="HBoxContainer/MarginContainer/MainLayout/ScrollContainer/ContentVBox/Panel/Button" to="." method="_on_remove_ads_pressed"]
